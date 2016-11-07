@@ -13,7 +13,11 @@
     color: #fff;
 
 }
+.nav-ul a:hover{
+    color: green;
+    border-bottom: 2px solid white;
 
+}
 
 .parallax {
     background-image: url('../img/beginning-eslhelpers.jpg');
@@ -33,8 +37,9 @@
     background-size: cover;
 }
 .slideshow{
-    height: 52.5%;
+    height: 36.5vw;
     background-color: #fff;
 }
 
 
+            
