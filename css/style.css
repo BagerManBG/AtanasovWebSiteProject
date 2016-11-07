@@ -1,0 +1,40 @@
+.nav-ul {
+    overflow: hidden;
+    background-color: #000;
+    list-style-type: none;
+}
+.nav-ul li {
+    float: left;
+    padding: 1% 11%;
+
+}
+.nav-ul a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+
+.parallax {
+    background-image: url('../img/beginning-eslhelpers.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax_1 {
+    background-image: url('../img/Hearthstone Screenshot 02-14-16 16.54.06.png');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slideshow{
+    height: 52.5%;
+    background-color: #fff;
+}
+
+
