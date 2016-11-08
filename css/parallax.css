@@ -64,11 +64,11 @@ section.module.parallax h1 {
 }
 
 section.module.parallax-1 {
-    background-image: url("http://freshwallpapers.in/walls/tesla_model_x_p90d_suv-HD.jpg");
+    background-image: url('../img/beginning-eslhelpers.jpg');
 }
 
 section.module.parallax-3 {
-    background-image: url("http://www.wallpapersxl.com/get/1512342");
+    background-image: url('../img/beginning-eslhelpers.jpg');
 }
 
 @@media all and (min-width: 600px) {
