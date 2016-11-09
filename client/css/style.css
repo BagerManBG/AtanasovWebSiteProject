@@ -19,6 +19,8 @@ body{
 }
 .nav-ul a:hover{
     border-bottom: 2px solid white;
+    padding-bottom: 10.8px;
+    transition:0.2s;
 }
 
 .parallax {
@@ -45,13 +47,14 @@ body{
 .slideshow{
     height: 36.vw;
     background-color:#E6E8E6;
-    border-bottom: 5px solid black;
+    border-top: 5px solid black;
 }
 
 .rows{
     text-align: center;
     width: 50%;
     float: left;
+
 }
 
 .footer{
@@ -142,6 +145,7 @@ body{
     transition:0.3s;
 }
 
+<<<<<<< HEAD
 #toTop {
     padding: 5px 3px;
     background: rgba(64, 64, 64, 0.8);
@@ -156,3 +160,12 @@ body{
     border-radius: 25px 25px 5px 5px;
     cursor: pointer;
 }
+=======
+.contacts{
+    margin-bottom: 2%;
+}
+
+
+
+            
+>>>>>>> c86cca01a2a0f97c064aa8016d19deae5852a2e3
