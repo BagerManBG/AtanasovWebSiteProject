@@ -19,6 +19,8 @@ body{
 }
 .nav-ul a:hover{
     border-bottom: 2px solid white;
+    transition:0.3s;
+
 }
 
 .parallax {
@@ -52,6 +54,7 @@ body{
     text-align: center;
     width: 50%;
     float: left;
+
 }
 
 .footer{
@@ -142,6 +145,9 @@ body{
     transition:0.3s;
 }
 
+.contacts{
+    margin-bottom: 2%;
+}
 
 
 
