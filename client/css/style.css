@@ -19,8 +19,8 @@ body{
 }
 .nav-ul a:hover{
     border-bottom: 2px solid white;
-    transition:0.3s;
-
+    padding-bottom: 10.8px;
+    transition:0.2s;
 }
 
 .parallax {
@@ -47,7 +47,7 @@ body{
 .slideshow{
     height: 36.vw;
     background-color:#E6E8E6;
-    border-bottom: 5px solid black;
+    border-top: 5px solid black;
 }
 
 .rows{
