@@ -6,13 +6,13 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="css/parallax.css" rel="stylesheet" />
             <link href="css/pgwslider.css" rel="stylesheet" />
-            <link href="css/style.css" rel="stylesheet" />
-            <link rel="stylesheet" href="/css/master.css" media="screen" title="no title">
+            <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" media="screen" title="no title">
             <link rel="icon" href="img/logo.png">
+            <link href="css/style.css" rel="stylesheet" />
     </head>
     <body>
 
-        <ul class="nav-ul">
+        <ul id="top" class="nav-ul">
             <li><a href="#">Home</a></li>
             <li><a href="#">Q&A</a></li>
             <li><a href="#">Lessons</a></li>
@@ -86,10 +86,21 @@
             </footer>
         </section>
 
+        <div class="backToTop">
+          <a>
+            <div id="toTop" class="text-center">
+                <span class="glyphicon glyphicon-menu-up"></span>
+            </div>
+          </a>
+        </div>
 
         <script src="js/jquery.js"></script>
         <script src="js/pgwslider.js"></script>
         <script src="js/script.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="js/BackToTop/toTop.js">
+
+        </script>
 
     </body>
 </html>
