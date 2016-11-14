@@ -10,7 +10,7 @@ $from = $email;
 
 $to = "vzhuhov@gmail.com";
 
-$subject = "Atnasko";
+$subject = "Atanasko";
 
 $emailbody = "";
 $emailbody .= "Full name: " . $name . "\n";
