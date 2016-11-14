@@ -69,9 +69,9 @@
 }
 
 .logAction input {
-	margin-top:3%;
+	margin-top:5%;
 	width:65%;
-	font-size: 2vw;
+	font-size: 1.5vw;
 }
 
 #logDis {
@@ -100,9 +100,9 @@
 }
 
 .regAction input {
-	margin-top:3%;
+	margin-top:5%;
 	width:65%;
-	font-size: 2vw;
+	font-size: 1.5vw;
 }
 
 #regDis {
