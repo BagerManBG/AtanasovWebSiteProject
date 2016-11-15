@@ -1,5 +1,8 @@
 body{
     background-color: #E6E6FA;
+    background-image: url("../img/straws.png");
+    background-repeat: repeat;
+    font-family:Fertigo;
 }
 
 
@@ -151,4 +154,3 @@ body{
 hr {
     border-top: 1px solid black;
 }
-

@@ -12,7 +12,7 @@
             <link href="css/nav.css" rel="stylesheet" />
 
     </head>
-    <body>
+    <body ng-app="application">
         <nav>
             <ul id="top" class="nav-ul">
                 <li><a href="#">Home</a></li>
@@ -22,6 +22,7 @@
                 <li><a href="logIn.html">Login</a></li>
             </ul>
         </nav>
+
         <div id="wrapper">
             <section class="module parallax parallax-1">
                 <div class="container-p">
@@ -42,7 +43,6 @@
                             <li>
                                 <img src="img/005.jpg">
                                 <span>New York, NY, USA</span>
-                                </a>
                             </li>
                         </ul>
                     </div>
@@ -101,9 +101,9 @@
         <script src="js/pgwslider.js"></script>
         <script src="js/script.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="js/BackToTop/toTop.js">
-
-        </script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="js/app/app.js"></script>
+        <script src="js/BackToTop/toTop.js"></script>
 
     </body>
 </html>
