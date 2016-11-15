@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2016 at 08:59 AM
--- Server version: 5.6.26
--- PHP Version: 5.5.28
+-- Generation Time: Nov 15, 2016 at 09:38 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `atanasko`
 --
-CREATE DATABASE IF NOT EXISTS `atanasko` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `atanasko`;
 
 -- --------------------------------------------------------
 
@@ -28,13 +26,13 @@ USE `atanasko`;
 -- Table structure for table `courses`
 --
 
-CREATE TABLE IF NOT EXISTS `courses` (
+CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
   `students_capacity` int(11) NOT NULL,
   `difficulty_level` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -42,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `courses` (
 -- Table structure for table `difficulty_levels`
 --
 
-CREATE TABLE IF NOT EXISTS `difficulty_levels` (
+CREATE TABLE `difficulty_levels` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -53,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `difficulty_levels` (
 -- Table structure for table `lectures`
 --
 
-CREATE TABLE IF NOT EXISTS `lectures` (
+CREATE TABLE `lectures` (
   `id` int(11) NOT NULL,
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
@@ -69,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `lectures` (
 -- Table structure for table `messages`
 --
 
-CREATE TABLE IF NOT EXISTS `messages` (
+CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `text` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sent_time` datetime NOT NULL,
@@ -82,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
 -- Table structure for table `online_courses`
 --
 
-CREATE TABLE IF NOT EXISTS `online_courses` (
+CREATE TABLE `online_courses` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -96,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `online_courses` (
 -- Table structure for table `online_lectures`
 --
 
-CREATE TABLE IF NOT EXISTS `online_lectures` (
+CREATE TABLE `online_lectures` (
   `id` int(11) NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lecture_index` int(11) NOT NULL,
@@ -110,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `online_lectures` (
 -- Table structure for table `posts`
 --
 
-CREATE TABLE IF NOT EXISTS `posts` (
+CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -124,10 +122,10 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- Table structure for table `roles`
 --
 
-CREATE TABLE IF NOT EXISTS `roles` (
+CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `roles`
@@ -143,7 +141,7 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 -- Table structure for table `services`
 --
 
-CREATE TABLE IF NOT EXISTS `services` (
+CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -156,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `services` (
 -- Table structure for table `students_courses`
 --
 
-CREATE TABLE IF NOT EXISTS `students_courses` (
+CREATE TABLE `students_courses` (
   `student_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -167,14 +165,23 @@ CREATE TABLE IF NOT EXISTS `students_courses` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `Id` int(11) NOT NULL,
-  `Email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `FirstName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `LastName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`Id`, `email`, `first_name`, `last_name`, `password`, `avatar`, `role_id`) VALUES
+(3, 'a@a.bg', 'iuykjhk', 'hfghfgh', '5416d7cd6ef195a0f7622a9c56b55e84', 'http://atanasoff.local/media/tea_bag.jpg', 0),
+(4, 'ab@a.bg', 'iuykjhk', 'hfghfgh', '5416d7cd6ef195a0f7622a9c56b55e84', 'http://atanasoff.local/media/myCalm.png', 0);
 
 --
 -- Indexes for dumped tables
@@ -260,12 +267,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `difficulty_levels`
 --
 ALTER TABLE `difficulty_levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lectures`
 --
@@ -290,7 +297,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -300,7 +307,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
