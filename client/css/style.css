@@ -1,6 +1,13 @@
 body{
+<<<<<<< HEAD
     background-image: url("../img/dark_wood.png");
     background-repeat: repeat;
+=======
+    background-color: #E6E6FA;
+    background-image: url("../img/straws.png");
+    background-repeat: repeat;
+    font-family:Fertigo;
+>>>>>>> a022d210f987037bd4de7f5b2aa3a9607ac4c4fb
 }
 
 
@@ -153,4 +160,3 @@ body{
 hr {
     border-top: 1px solid black;
 }
-

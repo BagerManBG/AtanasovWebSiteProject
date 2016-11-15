@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="application">
 <head>
-	<title>Atanasoff</title>
+    <title>Atanasoff</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" media="screen" title="no title">
     <link rel="icon" href="img/logo.png">
-    <link href="css/logIn.css" rel="stylesheet" />
-    <link href="css/nav.css" rel="stylesheet" />
+    <link href="css/logIn.css" rel="stylesheet"/>
+    <link href="css/nav.css" rel="stylesheet"/>
 </head>
 <body>
+<<<<<<< HEAD
 	<nav>
         <ul id="top" class="nav-ul">
             <li><a href="index.html">Home</a></li>
@@ -76,6 +77,87 @@
 
 	<script src="js/jquery.js"></script>
 	<script src="js/login.js"></script>
+=======
+<nav>
+    <ul id="top" class="nav-ul">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Q&A</a></li>
+        <li><a href="#">Lessons</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li><a href="#">Login</a></li>
+    </ul>
+</nav>
+<div class="logForm">
+
+    <div class="changeForm">
+        <button class="positionLeft">Login</button>
+        <button class="positionRight">Register</button>
+    </div>
+
+    <div class="logAction">
+        <div class="title">Login</div>
+        <form method="post" action="#">
+            <input type="text" name="username_log" placeholder="Username" required="required"/>
+            <label class="logvalidation"></label>
+            <br>
+            <input id='log1' type="password" name="password_log" placeholder="Password" required="required"/>
+            <label id='log2' class="logvalidations"></label>
+            <br>
+            <input class="loginButton" id='logDis' type="submit" value="Login now!">
+        </form>
+    </div>
+
+
+    <div class="regAction">
+        <div class="title">Register now for free!</div>
+
+        <div class="sign">
+            <form id="signup" method="post" action="#" enctype="multipart/form-data">
+                <input class="validation" type="text" name="username_sign" placeholder="Username" required="required"
+                       onkeyup=""/>
+                <label class="validation-info"></label>
+
+                <input class="validation" type="password" name="password_sign" placeholder="Password"
+                       required="required" onkeyup=""/>
+                <label class="validation-info"></label>
+
+                <input class="validation" type="password" name="password_2" placeholder="Repeat Password"
+                       required="required"/>
+                <label class="validation-info"></label>
+
+                <!--<input class="validation" type="email" name="email" placeholder="Enter email address" required="required" />-->
+                <!--<label class="validation-info"></label>-->
+                <input type="text"
+                       class="form-control ng-dirty ng-valid-parse ng-invalid ng-invalid-email-watch ng-touched"
+                       name="email" ng-model="form.email" validator="email" email-error-message="Error Email"
+                       email-success-message="Good Email" message-id="emailWatch" id="email">
+                <span id="emailWatch"><p class="validation-invalid ng-scope">Error Email</p></span>
+
+                <input class="validation" type="text" name="first_name" placeholder="First name" required="required"/>
+                <label class="validation-info"></label>
+
+                <input class="validation" type="text" name="second_name" placeholder="Last name" required="required"/>
+                <label class="validation-info"></label>
+
+                <p class="imgInfo">Choose profile picture(optional).</p>
+                <input class="validation" type="file" name="image" id="image">
+                <label class="validation-info"></label>
+
+                <input class="regButton" id='regDis' type="submit" value="Register now!">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-validation/dist/angular-validation.js"></script>
+<script src="bower_components/angular-validation/dist/angular-validation-rule.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/login.js"></script>
+>>>>>>> a022d210f987037bd4de7f5b2aa3a9607ac4c4fb
 
 </body>
 </html>
