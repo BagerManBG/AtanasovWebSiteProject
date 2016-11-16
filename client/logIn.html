@@ -28,8 +28,8 @@
 
     <div class="logAction">
         <div class="title">Login</div>
-        <form method="post" action="#">
-            <input type="text" name="username_log" placeholder="Username" required="required"/>
+        <form method="post" action="php/login_db.php">
+            <input type="text" name="email_log" placeholder="Email" required="required"/>
             <label class="logvalidation"></label>
             <br>
             <input id='log1' type="password" name="password_log" placeholder="Password" required="required"/>
@@ -44,14 +44,14 @@
         <div class="title">Register now for free!</div>
 
         <div class="sign">
-            <form name="RegForm" id="signup" method="post" action="#" enctype="multipart/form-data">
+            <form name="RegForm" id="signup" method="post" action="php/register_db.php" enctype="multipart/form-data">
 
                 <input type="text" name="first_name" required="required" id="first_name" tabindex="1"
                        class="form-control form-validation" placeholder="First Name" value=""
                        ng-model="form.firstName" validator="required" valid-method="blur"
                        required-error-message="Please enter first name">
 
-                <input type="text" name="second_name" required="required" id="second_name" tabindex="2"
+                <input type="text" name="last_name" required="required" id="second_name" tabindex="2"
                        class="form-control form-validation" placeholder="Last Name" value=""
                        ng-model="form.lastName" validator="required" valid-method="blur"
                        required-error-message="Please enter last name">
@@ -64,7 +64,7 @@
                 <span id="emailWatch"><p class="validation-invalid ng-scope">Wrong Email</p></span>
 
                 <input class="form-control" id="regPassword" type="password" tabindex="4"
-                       name="password_sign" placeholder="Password" ng-model="form.password" validator="required"
+                       name="password" placeholder="Password" ng-model="form.password" validator="required"
                        valid-method="blur"
                        minlength="6" required-error-message="Please enter at least 6 symbols for password">
 
@@ -76,7 +76,7 @@
                 <h4 class="imgInfo">Choose profile picture(optional).</h4>
                 <input type="file" name="image" id="image">
 
-                <input class="regButton" validation-submit="RegForm" id='regDis' type="submit" value="Register now!">
+                <input class="regButton"  id='regDis' type="submit" value="Register now!">
             </form>
         </div>
 
