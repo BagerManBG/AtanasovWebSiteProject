@@ -1,6 +1,6 @@
 @font-face {
  font-family: "GothamW";
- src: url(fonts/GOTHW___.ttf);
+ src: url(/fonts/GOTHW___.ttf);
 } 
 
 .logForm {
@@ -131,3 +131,26 @@
 	margin-left:17.5%;
 	margin-top:4%;
 }
+
+.validation-valid {
+	display: none;
+}
+
+.validation-invalid {
+	color: #f1404b;
+}
+
+#regPassword.ng-invalid.ng-touched,
+#regPassword.ng-invalid.ng-invalid-name
+{
+	color: white;
+	background: #f46f78;
+}
+
+#regPassword2.ng-invalid.ng-touched,
+#regPassword2.ng-invalid.ng-invalid-name
+{
+	color: white;
+	background: #f46f78;
+}
+
