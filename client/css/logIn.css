@@ -100,9 +100,16 @@
 }
 
 .regAction input {
-	margin-top:5%;
+	margin-top:5%; 
 	width:65%;
+	border-radius:2px;
+	margin-left:17.5%; 
+	padding:1px;
 	font-size: 1.5vw;
+}
+
+.regButton {
+	margin-left:0px;
 }
 
 #regDis {

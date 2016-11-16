@@ -28,7 +28,7 @@
 		$hasError=true;
 	}	
 	
-	if(strlen($data['password']) < 4)
+	if(strlen($data['password']) < 6)
 	{
 		$hasError=true;
 	}

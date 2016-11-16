@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2016 at 10:32 PM
+-- Generation Time: Nov 15, 2016 at 09:38 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -168,9 +168,9 @@ CREATE TABLE `students_courses` (
 CREATE TABLE `users` (
   `Id` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -179,8 +179,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`Id`, `email`, `password`, `first_name`, `last_name`, `avatar`, `role_id`) VALUES
-(2, 'a@a.bg', '38cb54c850626765d5133892033290c1', 'asdsa', 'dasdas', 'http://atanasoff.local/media/shelby3.jpg', 0);
+INSERT INTO `users` (`Id`, `email`, `first_name`, `last_name`, `password`, `avatar`, `role_id`) VALUES
+(3, 'a@a.bg', 'iuykjhk', 'hfghfgh', '5416d7cd6ef195a0f7622a9c56b55e84', 'http://atanasoff.local/media/tea_bag.jpg', 0),
+(4, 'ab@a.bg', 'iuykjhk', 'hfghfgh', '5416d7cd6ef195a0f7622a9c56b55e84', 'http://atanasoff.local/media/myCalm.png', 0);
 
 --
 -- Indexes for dumped tables
@@ -256,7 +257,7 @@ ALTER TABLE `students_courses`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`Id`),
-  ADD UNIQUE KEY `user_role_id_index` (`role_id`);
+  ADD KEY `user_role_index` (`role_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -306,7 +307,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
