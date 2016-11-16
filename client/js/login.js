@@ -6,6 +6,6 @@ $( document ).ready(function() {
     });
     $('.positionRight').click(function(){
     	$('.logAction').hide()
-    	$('.regAction').show() 
+    	$('.regAction').show()
     });
 });
