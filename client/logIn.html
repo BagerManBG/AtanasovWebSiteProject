@@ -44,38 +44,39 @@
         <div class="title">Register now for free!</div>
 
         <div class="sign">
-            <form id="signup" method="post" action="#" enctype="multipart/form-data">
-                <input class="validation" type="text" name="username_sign" placeholder="Username" required="required"
-                       onkeyup=""/>
-                <label class="validation-info"></label>
+            <form name="RegForm" id="signup" method="post" action="#" enctype="multipart/form-data">
 
-                <input class="validation" type="password" name="password_sign" placeholder="Password"
-                       required="required" onkeyup=""/>
-                <label class="validation-info"></label>
+                <input type="text" name="first_name" required="required" id="first_name" tabindex="1"
+                       class="form-control form-validation" placeholder="First Name" value=""
+                       ng-model="form.firstName" validator="required" valid-method="blur"
+                       required-error-message="Please enter first name">
 
-                <input class="validation" type="password" name="password_2" placeholder="Repeat Password"
-                       required="required"/>
-                <label class="validation-info"></label>
+                <input type="text" name="second_name" required="required" id="second_name" tabindex="2"
+                       class="form-control form-validation" placeholder="Last Name" value=""
+                       ng-model="form.lastName" validator="required" valid-method="blur"
+                       required-error-message="Please enter last name">
 
-                <!--<input class="validation" type="email" name="email" placeholder="Enter email address" required="required" />-->
-                <!--<label class="validation-info"></label>-->
                 <input type="text"
-                       class="form-control ng-dirty ng-valid-parse ng-invalid ng-invalid-email-watch ng-touched"
-                       name="email" ng-model="form.email" validator="email" email-error-message="Error Email"
+                       class="form-control"
+                       name="email" tabindex="3" placeholder="Email" ng-model="form.email" required validator="email"
+                       email-error-message="Wrong Email"
                        email-success-message="Good Email" message-id="emailWatch" id="email">
-                <span id="emailWatch"><p class="validation-invalid ng-scope">Error Email</p></span>
+                <span id="emailWatch"><p class="validation-invalid ng-scope">Wrong Email</p></span>
 
-                <input class="validation" type="text" name="first_name" placeholder="First name" required="required"/>
-                <label class="validation-info"></label>
+                <input class="form-control" id="regPassword" type="password" tabindex="4"
+                       name="password_sign" placeholder="Password" ng-model="form.password" validator="required"
+                       valid-method="blur"
+                       minlength="6" required-error-message="Please enter at least 6 symbols for password">
 
-                <input class="validation" type="text" name="second_name" placeholder="Last name" required="required"/>
-                <label class="validation-info"></label>
+                <input class="form-control" id="regPassword2" type="password" tabindex="5"
+                       name="password_2" placeholder="Confirm Password" ng-model="form.password_2" validator="required"
+                       valid-method="blur"
+                       minlength="6" required-error-message="Please enter password that matches the first one">
 
-                <p class="imgInfo">Choose profile picture(optional).</p>
-                <input class="validation" type="file" name="image" id="image">
-                <label class="validation-info"></label>
+                <h4 class="imgInfo">Choose profile picture(optional).</h4>
+                <input type="file" name="image" id="image">
 
-                <input class="regButton" id='regDis' type="submit" value="Register now!">
+                <input class="regButton" validation-submit="RegForm" id='regDis' type="submit" value="Register now!">
             </form>
         </div>
 
