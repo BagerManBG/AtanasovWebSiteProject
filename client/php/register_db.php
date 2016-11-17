@@ -56,10 +56,16 @@
 	    }
 	}
 	
+
+	
 	// Check if file already exists
-	if (file_exists($target_file)) {
-		echo "Sorry, but file exist!";
-		$hasError=true;
+	while (file_exists($target_file)) {
+		/*echo "Sorry, but file exist!";
+		$hasError=true;*/
+		/*ToString($target_file);
+		str_replace($imageFileType ,"" ,$target_file)*/
+		$target_file = $target_file . "7" . "." .$imageFileType;
+		/*rename($target_file, $new_name);*/
 	}
 	// Check file size
 	if ($files["image"]["size"] > 5000000) {
