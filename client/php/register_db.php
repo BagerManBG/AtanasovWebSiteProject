@@ -56,17 +56,22 @@
 	    }
 	}
 	
-
 	
 	// Check if file already exists
 	while (file_exists($target_file)) {
 		/*echo "Sorry, but file exist!";
 		$hasError=true;*/
-		/*ToString($target_file);
-		str_replace($imageFileType ,"" ,$target_file)*/
-		$target_file = $target_file . "7" . "." .$imageFileType;
+		/*ToString($target_file);*/
+		/*str_replace($imageFileType ,"" ,$target_file);
+		echo gettype($target_file);*/
+
+		$target_file = $target_file . "." .$imageFileType;
+		
+		$file_name = $file_name . "." .$imageFileType;
+		
 		/*rename($target_file, $new_name);*/
 	}
+
 	// Check file size
 	if ($files["image"]["size"] > 5000000) {
 		echo "Sorry, but the file is too big";
