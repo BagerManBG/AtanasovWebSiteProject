@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2016 at 09:38 AM
+-- Generation Time: Nov 17, 2016 at 11:25 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -171,6 +171,7 @@ CREATE TABLE `users` (
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `special_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -179,9 +180,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`Id`, `email`, `first_name`, `last_name`, `password`, `avatar`, `role_id`) VALUES
-(3, 'a@a.bg', 'iuykjhk', 'hfghfgh', '5416d7cd6ef195a0f7622a9c56b55e84', 'http://atanasoff.local/media/tea_bag.jpg', 0),
-(4, 'ab@a.bg', 'iuykjhk', 'hfghfgh', '5416d7cd6ef195a0f7622a9c56b55e84', 'http://atanasoff.local/media/myCalm.png', 0);
+INSERT INTO `users` (`Id`, `email`, `first_name`, `last_name`, `password`, `special_key`, `avatar`, `role_id`) VALUES
+(3, 'abc@aggggg.bg', 'fgdsfadsad', 'fdasfdsfa', 'e10adc3949ba59abbe56e057f20f883e', 'dasdasdas', 'http://atanasoff.local/media/FB1AEAC8-61D3-4D80-8B1F-FACDA9A319F2.jpg', 0),
+(4, 'abjkjjjjjc@a.bg', 'fafdasda', 'sdasdasdasd', '5416d7cd6ef195a0f7622a9c56b55e84', 'fsdfasasdfasdfad', 'http://atanasoff.local/media/F0E96C47-36A3-4E91-9D8A-1DEEBCD4B334.jpg', 0),
+(5, 'abjjjjjjc@a.bg', 'dsadasdasd', 'fdsadasdasd', 'e10adc3949ba59abbe56e057f20f883e', 'fasdassa', 'http://atanasoff.local/media/B4C942F2-8DD6-4625-B33F-9AAB15B3484D.jpg', 0),
+(6, 'abcd@a.bg', 'adsdsadasdasd', 'dsadasdasdas', 'e10adc3949ba59abbe56e057f20f883e', 'fdadsadasdasd', 'http://atanasoff.local/media/F66995B9-4CA7-4AAA-8AE0-8A2C5B967DF2.jpg', 0);
 
 --
 -- Indexes for dumped tables
@@ -307,7 +310,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

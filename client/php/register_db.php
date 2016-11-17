@@ -114,7 +114,7 @@
 		$data['password'] = md5($data['password']);
 		$data['avatar'] = $media_path . $file_name;
 		$db->saveArray('users', $data);
-		header('Location: ../index.html');
+		header('Location: ../index.php');
        	echo 'no error';
     }
     else

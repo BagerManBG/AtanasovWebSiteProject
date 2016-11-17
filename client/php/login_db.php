@@ -11,18 +11,18 @@ if(!empty($result))
 	{
 		// 
 		$_SESSION['logged_user'] = $result[0];
-		header('Location: ../index.html');
+		header('Location: ../index.php');
 	}
 	else //if username exists but password is wrong
 	{
-		header('Location: ../index.html');
+		header('Location: ../index.php');
 
 	
 	}
 }
 else //if no user is found
 {
-		header('Location: ../index.html');
+		header('Location: ../index.php');
 
 	
 	

@@ -12,7 +12,7 @@
     <body>
           <nav>
             <ul id="top" class="nav-ul">
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Q&A</a></li>
                 <li><a href="#">Lessons</a></li>
                 <li><a href="#">Feedback</a></li>
