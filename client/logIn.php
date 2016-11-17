@@ -82,17 +82,10 @@
                        ng-model="form.lastName" validator="required" valid-method="blur"
                        required-error-message="Please enter last name">
 
-                <input type="text"
-                       class="form-control"
-                       name="email" tabindex="3" placeholder="Email" ng-model="form.email" required validator="email"
-                       email-error-message="Wrong Email"
-                       email-success-message="Good Email" message-id="emailWatch" id="email">
-                <span id="emailWatch"><p class="validation-invalid ng-scope">Wrong Email</p></span>
-
-               <!--  <div class="white_space">
-                    <input class="validation" type="email" name="email" placeholder="email" required="required" />
-                    <label class="validation-info"></label>
-                    </div> -->
+                 <div class="white_space">
+                    <input class="validation form-control" type="email" name="email" placeholder="email" required="required" />
+                    <label></label>
+                </div> 
 
                 <input class="form-control" id="regPassword" type="password" tabindex="4"
                        name="password" placeholder="Password" ng-model="form.password" validator="required"
