@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html ng-app="application">
 <head>
@@ -16,7 +17,16 @@
         <li><a href="#">Q&A</a></li>
         <li><a href="#">Lessons</a></li>
         <li><a href="#">Feedback</a></li>
-        <li><a href="#">Login</a></li>
+    <?php 
+        if(!isset($_SESSION['logged_user']))
+        {
+          echo "<li><a href=''>Login</a></li>";
+        }
+        else 
+        {
+          echo "<li><a href='Profile.html'>Profile</a></li>";
+        }
+        ?>
     </ul>
 </nav>
 <div class="logForm">
@@ -88,6 +98,10 @@
                        name="password_2" placeholder="Confirm Password" ng-model="form.password_2" validator="required"
                        valid-method="blur"
                        minlength="6" required-error-message="Please enter password that matches the first one">
+
+                <h4 class="imgInfo">Enter a unique word(can be used for recovoring account).</h4>
+
+                <input class="form-control" name="special_key" placeholder="Special Key" required="required">
 
                 <h4 class="imgInfo">Choose profile picture(optional).</h4>
                 <input type="file" name='image' id="image">
