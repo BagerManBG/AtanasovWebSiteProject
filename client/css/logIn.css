@@ -69,15 +69,19 @@
 }
 
 .logAction input {
+
+	/*Last commited code here: */
+
+
 	/*margin-top:5%;*/
 	/*width:65%;*/
 	/*font-size: 1.5vw;*/
 
-	margin-top:5%;
+	/*New code: */
+
 	margin-top:5%;
 	width:65%;
 	border-radius:2px;
-	margin-left:17.5%;
 	margin-left:17.5%;
 	padding:1px;
 	font-size: 1.5vw;
@@ -118,6 +122,10 @@
 }
 
 .regButton {
+	margin-left:0px;
+}
+
+.loginButton {
 	margin-left:0px;
 }
 
