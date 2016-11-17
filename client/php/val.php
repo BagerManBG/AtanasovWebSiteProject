@@ -2,8 +2,8 @@
 
 $data = $_POST;
 $result = array(
-    "color"=> "#2EE619",
-    "text"=> "Correct!",
+    "color"=> "#f1404b",
+    "text"=> "",
     "status"=> 0 
 );
 
@@ -16,8 +16,8 @@ else{
 
 
 
-if($result["text"] != "Correct!"){
-    $result["color"] = "#F71111";
+if($result["text"] != ""){
+    $result["color"] = "#f1404b";
     $result["status"] = 1;
 }
 echo json_encode($result);

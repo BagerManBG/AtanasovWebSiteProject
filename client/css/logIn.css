@@ -180,8 +180,10 @@
 
 .white_space{
 	white-space:nowrap;
+	margin-bottom: -4.5%;
 }
 .white_space label{
 	color:#49FC96;
+	font-weight: normal;
 }
 
