@@ -24,7 +24,9 @@
         }
         else 
         {
-          echo "<li><a href='Profile.html'>Profile</a></li>";
+          echo "
+          <li><a href='Profile.html'>Profile</a></li>
+          <li><a href='php/logout.php'>Log out</a><li>";
         }
         ?>
     </ul>
@@ -82,10 +84,12 @@
                        ng-model="form.lastName" validator="required" valid-method="blur"
                        required-error-message="Please enter last name">
 
+
                  <div class="white_space">
                     <input class="validation form-control" type="email" name="email" placeholder="email" required="required" />
                     <label></label>
                 </div> 
+
 
                 <input class="form-control" id="regPassword" type="password" tabindex="4"
                        name="password" placeholder="Password" ng-model="form.password" validator="required"

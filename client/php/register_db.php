@@ -35,12 +35,7 @@
 	
 	if($data['password'] != $data['password_2'])
 	{
-		$hasError=true;
-	}
-
-	if(strlen($data['special_key'] < 4))
-	{
-		$hasError=true;
+		$hasError = true;
 	}
 
 	$target_dir = dirname(dirname(__FILE__)) . "\media\\";
@@ -113,7 +108,6 @@
 		}
 	}
 	
-
 	if($hasError == false)
 	{
 		unset($data['password_2']);
