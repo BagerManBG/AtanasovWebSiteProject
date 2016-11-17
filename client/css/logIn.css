@@ -178,3 +178,10 @@
 	background: #f46f78;
 }
 
+.white_space{
+	white-space:nowrap;
+}
+.white_space label{
+	color:#49FC96;
+}
+
