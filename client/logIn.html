@@ -29,11 +29,27 @@
     <div class="logAction">
         <div class="title">Login</div>
         <form method="post" action="php/login_db.php">
-            <input type="text" name="email_log" placeholder="Email" required="required"/>
-            <label class="logvalidation"></label>
+            <!--<input type="text" name="email_log" placeholder="Email" required="required"/>-->
+            <!--<label class="logvalidation"></label>-->
+
+            <input type="text"
+                   class="form-control"
+                   name="email_log" tabindex="1" placeholder="Email" ng-model="log.email" required validator="email"
+                   email-error-message="Wrong Email"
+                   email-success-message="Good Email" message-id="log_emailWatch" id="email_log">
+            <span id="log_emailWatch"><p class="validation-invalid ng-scope">Wrong Email</p></span>
+
+            <input class="form-control" id="logPassword" type="password" tabindex="2"
+                   name="password_log" placeholder="Password" ng-model="log.password" validator="required"
+                   valid-method="blur"
+                   minlength="6" required-error-message="Please enter at least 6 symbols for password">
+
             <br>
-            <input id='log1' type="password" name="password_log" placeholder="Password" required="required"/>
-            <label id='log2' class="logvalidations"></label>
+            <!--<input id='log1' type="password" name="password_log" placeholder="Password" required="required"/>-->
+            <!--<label id='log2' class="logvalidations"></label>-->
+
+
+
             <br>
             <input class="loginButton" id='logDis' type="submit" value="Login now!">
         </form>
