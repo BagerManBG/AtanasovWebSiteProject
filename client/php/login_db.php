@@ -11,7 +11,7 @@ if(!empty($result))
 	{
 		// 
 		$_SESSION['logged_user'] = $result[0];
-		header('Location: ../profile.html');
+		header('Location: ../index.html');
 	}
 	else //if username exists but password is wrong
 	{
