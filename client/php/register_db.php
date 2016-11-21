@@ -17,9 +17,6 @@
 		$data[$k] = trim($data[$k]);
 	}
 	
-	$hasError = false;
-	
-	
 	$query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
 	
 	$result = $db->fetchArray($query);
@@ -40,38 +37,6 @@
 		$hasError = true;
 	}
 
-	$target_dir = dirname(dirname(__FILE__)) . "\media\\";
-	$file_name = $files["image"]["name"];
-	$target_file = $target_dir . basename($file_name);
-	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-	
-	// Allow certain file formats
-	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-	&& $imageFileType != "gif") 
-	{
-		$hasError = true;
-	} 
-
-	$new_name = GUID();
-	
-	$target_file = $target_dir .  $new_name . "." .$imageFileType;
-	$file_name = $new_name . "." .$imageFileType;
-
-	// Check if file already exists
-	while (file_exists($target_file)) {
-		
-		$new_name = GUID();
-
-		$target_file = $target_dir .  $new_name . "." .$imageFileType;
-		$file_name = $new_name . "." .$imageFileType;
-	}
-
-	// Check file size
-	if ($files["image"]["size"] > 5000000) {
-
-		$hasError = true;
-	}
-
 	//Check if user actually uploaded something
 	if ($files["image"]["size"] == 0) {
 	
@@ -79,7 +44,41 @@
 	} 
 	else {
 		move_uploaded_file($files["image"]["tmp_name"], $target_file); //move file to media directory
+
+		$target_dir = dirname(dirname(__FILE__)) . "\media\\";
+		$file_name = $files["image"]["name"];
+		$target_file = $target_dir . basename($file_name);
+		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+		
+		// Allow certain file formats
+		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+		&& $imageFileType != "gif") 
+		{
+			$hasError = true;
+		} 
+
+		$new_name = GUID();
+		
+		$target_file = $target_dir .  $new_name . "." .$imageFileType;
+		$file_name = $new_name . "." .$imageFileType;
+
+		// Check if file already exists
+		while (file_exists($target_file)) {
+			
+			$new_name = GUID();
+
+			$target_file = $target_dir .  $new_name . "." .$imageFileType;
+			$file_name = $new_name . "." .$imageFileType;
+		}
+
+		// Check file size
+		if ($files["image"]["size"] > 5000000) {
+
+			$hasError = true;
+		}
 	}
+
+	
 	
 	if($hasError == false)
 	{
