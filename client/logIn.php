@@ -92,7 +92,7 @@
                 <span id="emailWatch"><p class="validation-invalid ng-scope">Wrong Email</p></span> -->
 
                 <div class="white_space">
-                    <input class="validation" type="email" name="email" placeholder="email" required="required" />
+                    <input class="validation form-control" type="email" name="email" placeholder="email" required="required" />
                     <label class="validation-info"></label>
                 </div>
 
