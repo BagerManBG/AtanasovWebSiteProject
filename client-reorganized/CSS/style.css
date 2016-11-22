@@ -1,0 +1,156 @@
+body{
+    background-color: #E6E6FA;
+    background-image: url("../Images/BackgroundSocialMedia//straws.png");
+    background-repeat: repeat;
+    font-family:Fertigo;
+}
+
+
+.parallax {
+    height: 100%;
+    background-image: url('../Images/Background/beginning-eslhelpers.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax_1 {
+    /*background-image: url('../Images/Hearthstone Screenshot 02-14-16 16.54.06.png');*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax_1 h2{
+    margin-left: 40%;
+}
+
+.slideshow{
+    height: 36vw;
+    background-color:#E6E8E6;
+    border-top: 5px solid black;
+}
+
+.rows{
+    text-align: center;
+    width: 50%;
+    float: left;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+
+
+}
+
+.footer{
+    margin-top: 2%;
+    padding-bottom: 8%;
+}
+
+.facebook{
+        background-image:url("../Images/SocialMedia/facebook.jpg" );
+        background-attachment: center;
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: cover;
+        padding-left:6%;
+        padding-bottom: 2%;
+        margin-left: 2%;
+        border: 1px solid white;
+        border-radius: 30%;
+        box-shadow: black 1px 1px 1px 1px ;
+
+}
+
+.google{
+        background-image:url("../Images/SocialMedia/google.jpg");
+        background-attachment: center;
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: cover;
+        padding-left:6%;
+        padding-bottom: 2%;
+        margin-left: 2%;
+        border: 1px solid white;
+        border-radius: 30%;
+        box-shadow: black 1px 1px 1px 1px;
+
+
+}
+
+.instagram{
+        background-image:url("../Images/SocialMedia/instagram.jpg");
+        background-attachment: center;
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: cover;
+        padding-left:6%;
+        padding-bottom: 2%;
+        margin-left: 2%;
+        border: 1px solid white;
+        border-radius: 30%;
+        box-shadow: black 1px 1px 1px 1px;
+
+
+}
+
+.skype{
+        background-image:url("../Images/SocialMedia/skype.jpg");
+        background-attachment: center;
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: cover;
+        padding-left:6%;
+        padding-bottom: 2%;
+        margin-left: 2%;
+        border: 1px solid white;
+        border-radius: 30%;
+        box-shadow: black 1px 1px 1px 1px;
+
+}
+
+.youtube{
+        background-image:url("../Images/SocialMedia/youtube.jpg");
+        background-attachment: center;
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: cover;
+        padding-left:6%;
+        padding-bottom: 2%;
+        margin-left: 2%;
+        border: 1px solid white;
+        border-radius: 30%;
+        box-shadow: black 1px 1px 1px 1px;
+
+}
+
+.facebook:hover,.skype:hover,.google:hover,.instagram:hover,.skype:hover,.youtube:hover{
+    padding-left: 8%;
+    padding-top: 2%;
+    transition:0.3s;
+}
+
+#toTop {
+    padding: 5px 3px;
+    background: rgba(64, 64, 64, 0.8);
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+    display: none;
+    height: 10%;
+    width: 3%;
+    font-size: 40px ;
+    border-radius: 25px 25px 5px 5px;
+    cursor: pointer;
+}
+
+.contacts{
+    margin-bottom: 2%;
+
+
+}
+
+hr {
+    border-top: 1px solid black;
+}
