@@ -9,6 +9,7 @@
 	$data = $_POST;
 	$files = $_FILES;
 	$hasError = false;
+	$hasFileError = false;
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	$media_path = dirname(dirname($actual_link)) . "/media/";
 
@@ -40,10 +41,10 @@
 	//Check if user actually uploaded something
 	if ($files["image"]["size"] == 0) {
 	
-		$file_name =  "\profile_default_image.jpg" ;
+		$file_name =  "\profile_default_image.jpg";
+		$hasFileError = true;
 	} 
 	else {
-		move_uploaded_file($files["image"]["tmp_name"], $target_file); //move file to media directory
 
 		$target_dir = dirname(dirname(__FILE__)) . "\media\\";
 		$file_name = $files["image"]["name"];
@@ -52,9 +53,10 @@
 		
 		// Allow certain file formats
 		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-		&& $imageFileType != "gif") 
+		&& $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG"
+		&& $imageFileType != "GIF") 
 		{
-			$hasError = true;
+			$hasFileError = true;
 		} 
 
 		$new_name = GUID();
@@ -74,7 +76,7 @@
 		// Check file size
 		if ($files["image"]["size"] > 5000000) {
 
-			$hasError = true;
+			$hasFileError = true;
 		}
 	}
 
@@ -82,12 +84,24 @@
 	
 	if($hasError == false)
 	{
+		if($hasFileError == false)
+		{
+			if(!move_uploaded_file($files["image"]["tmp_name"], $target_file))
+			{
+				$file_name =  "\profile_default_image.jpg";
+			}
+		}
+		else
+		{
+			$file_name =  "\profile_default_image.jpg";
+		}	
+
 		unset($data['password_2']);
 		$data['password'] = md5($data['password']);
 		$data['avatar'] = $media_path . $file_name;
 		$db->saveArray('users', $data);
     }
-    
+
     header('Location: ../index.php');
 
     function GUID() //create random name
