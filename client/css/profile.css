@@ -1,3 +1,8 @@
+@font-face {
+ font-family: "GothamW";
+ src: url(/fonts/GOTHW___.ttf);
+} 
+
 * {
     margin: 0;
     padding: 0;
@@ -7,36 +12,70 @@
 }
 
 .profile{
-    background-image: url("../img/index.jpg");
+   /* background-image: url("../img/index.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: 30%;
-    margin-left: 30%;
-    padding-bottom: 12%;
+    background-size: cover;*/
+  
     border:black 1px solid;
-    border-radius: 5%;
-}
-
-.profileImage{
-    border: 1px black solid;
+    border-radius: 4px;
+    width: 60%;
+    margin-left: 20%;
+    float: left;
     margin-top: 2%;
-    margin-left: 32%;
+
+}
+
+.avatar{
+    border: 1px black solid;
+    margin-left: 0.3%;
     border-radius: 3%;
-}
+    width: 75%;
+    transform: rotate(-3deg);
+    }
 
-label{
+/*label{
     margin-left: 10%;
-    display: block;
     text-shadow: -1.2px 0 black, 0 1.2px black, 1.2px 0 black, 0 -1.2px black;
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-    border-bottom: black 1px solid;
-    padding-bottom: 1%;
+    float: left;
 
-}
+
+}*/
 
 .labels{
     margin-top: 5%;
+}
+
+.paperclip{
+    width: 12%;
+    top: -3%;
+    left: 1%;
+    position: absolute;
+    z-index: 1000;
+}
+
+.profileImage{
+    width: 30%;
+    float: left;
+    position: relative;
+}
+
+.profileHeader{
+    width: 70%;
+    float: left;
+}
+
+.profileHeader h2{
+    margin-left: 30%;
+    font-size: 4.5vw;
+    font-family: "GothamW";
+    font-weight: bold;
+
+}
+
+.profileInfo{
+    float: left;
 }

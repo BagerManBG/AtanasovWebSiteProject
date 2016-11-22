@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="en">
     <head>
         <title>Atanasoff</title>
@@ -21,16 +22,28 @@
         </nav>
         <section>
             <div class="profile">
-                <img class="profileImage" src="img/profile.jpg">
-                <div class="labels">
-                        <label>First Name: </label>
-                        <label>Second Name: </label>
-                        <label>Email: </label>
-                        <label>Rank:  </label> 
+                <div class="profileImage"> 
+                    <img class="paperclip" src="img/paperclip.png">
+                    <img class="avatar" src="<?php echo  "".$_SESSION['logged_user']['avatar']. "" ?>" >
+                </div>
+                
+                <div class="profileInfo">
+                    <div class= "profileHeader" >
+                        <h2>Profile</h2>
+                    </div>
+
+                    <input class="firstName" type="text"  placeholder= <?php echo  "".$_SESSION['logged_user']['first_name']. "" ?> />
+                
+                </div>    
+
+                <!-- <div class="labels">
+                        <label>First Name: <?php echo  "".$_SESSION['logged_user']['first_name']. "" ?> </label>
+                        <label>Second Name: <?php echo  "".$_SESSION['logged_user']['last_name']. "" ?> </label>
+                        <label>Email: <?php echo  "".$_SESSION['logged_user']['email']. "" ?> </label>
+                        <label>Rank:  Noob </label> 
 
  
-                </div>
-
+                </div> -->
             </div>
         </section>    
     </body>    
