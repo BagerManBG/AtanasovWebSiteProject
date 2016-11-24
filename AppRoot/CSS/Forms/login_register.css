@@ -31,7 +31,7 @@ a:hover {
 }
 
 .form {
-  background: rgba(19,35,47,.9);
+  background: rgba(19,35,47,.69);
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -156,7 +156,7 @@ input:focus {
   margin-right: 4%;
 }
 
-.top-row > div:last-child { 
+.top-row > div:last-child {
   margin: 0;
 }
 
