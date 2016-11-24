@@ -31,7 +31,7 @@ a:hover {
 }
 
 .form {
-  background: rgba(19,35,47,.69);
+  background: rgba(19,35,47, .9);
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -97,24 +97,15 @@ label {
   left: 13px;
   color: rgba(255,255,255,.5);
   transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   pointer-events: none;
   font-size: 22px;
-}
-
-label .req {
-  margin: 2px;
-  color: #fff;
 }
 
 label.active {
   transform: translateY(50px);
   left: 2px;
   font-size: 14px;
-}
-
-label.active .req {
-  opacity: 0;
 }
 
 label.highlight {
