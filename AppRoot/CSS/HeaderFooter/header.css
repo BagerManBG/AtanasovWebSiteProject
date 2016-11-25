@@ -32,12 +32,13 @@ nav li {
 
 nav li a {
     display: block;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 nav h1{
     float: left;
+    color: white;
     margin: 1.5%;
 }
 
@@ -79,6 +80,43 @@ section.module.parallax {
 section.module.parallax-1 {
   background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/01/24/12/v2-cute-cat-picture.jpg");
 }
+
+.banner{
+  background: rgba(0, 0, 0, 0.5); 
+  width: 100%;
+  margin-top: 29.5%;
+
+}
+
+.banner h2{
+  padding: 2%;
+  padding-bottom: 0;
+  font-size: 4vw;
+  color: white;
+}
+
+.banner p{
+  color: white;
+  padding-top: 0;
+  padding-left: 2%;
+  padding-bottom: 5%;
+}
+
+.banner button{
+  float: left;
+  margin-top: -12%;
+  margin-left: 70%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 7%;
+  padding-right: 7%;
+  background-color: transparent;
+  border: 1px white solid;
+  border-radius: 4px;
+  color: white;
+}
+
+
 
 
 /*@media all and (min-width: 600px) {
