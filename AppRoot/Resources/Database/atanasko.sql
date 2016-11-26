@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2016 at 11:25 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: 
+-- Версия на сървъра: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,9 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `courses`
+-- Структура на таблица `courses`
 --
 
+DROP TABLE IF EXISTS `courses`;
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -37,9 +38,10 @@ CREATE TABLE `courses` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `difficulty_levels`
+-- Структура на таблица `difficulty_levels`
 --
 
+DROP TABLE IF EXISTS `difficulty_levels`;
 CREATE TABLE `difficulty_levels` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -48,9 +50,10 @@ CREATE TABLE `difficulty_levels` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lectures`
+-- Структура на таблица `lectures`
 --
 
+DROP TABLE IF EXISTS `lectures`;
 CREATE TABLE `lectures` (
   `id` int(11) NOT NULL,
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -64,9 +67,10 @@ CREATE TABLE `lectures` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Структура на таблица `messages`
 --
 
+DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `text` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -77,9 +81,10 @@ CREATE TABLE `messages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `online_courses`
+-- Структура на таблица `online_courses`
 --
 
+DROP TABLE IF EXISTS `online_courses`;
 CREATE TABLE `online_courses` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -91,9 +96,10 @@ CREATE TABLE `online_courses` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `online_lectures`
+-- Структура на таблица `online_lectures`
 --
 
+DROP TABLE IF EXISTS `online_lectures`;
 CREATE TABLE `online_lectures` (
   `id` int(11) NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -105,9 +111,10 @@ CREATE TABLE `online_lectures` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Структура на таблица `posts`
 --
 
+DROP TABLE IF EXISTS `posts`;
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -119,16 +126,17 @@ CREATE TABLE `posts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Структура на таблица `roles`
 --
 
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Схема на данните от таблица `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`) VALUES
@@ -138,9 +146,10 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services`
+-- Структура на таблица `services`
 --
 
+DROP TABLE IF EXISTS `services`;
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -151,9 +160,10 @@ CREATE TABLE `services` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students_courses`
+-- Структура на таблица `students_courses`
 --
 
+DROP TABLE IF EXISTS `students_courses`;
 CREATE TABLE `students_courses` (
   `student_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL
@@ -162,29 +172,21 @@ CREATE TABLE `students_courses` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура на таблица `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `Id` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `special_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `secret_question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `secret_answer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role_id` int(11) NOT NULL
+  `role_id` int(11) NOT NULL DEFAULT '2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`Id`, `email`, `first_name`, `last_name`, `password`, `special_key`, `avatar`, `role_id`) VALUES
-(3, 'abc@aggggg.bg', 'fgdsfadsad', 'fdasfdsfa', 'e10adc3949ba59abbe56e057f20f883e', 'dasdasdas', 'http://atanasoff.local/media/FB1AEAC8-61D3-4D80-8B1F-FACDA9A319F2.jpg', 0),
-(4, 'abjkjjjjjc@a.bg', 'fafdasda', 'sdasdasdasd', '5416d7cd6ef195a0f7622a9c56b55e84', 'fsdfasasdfasdfad', 'http://atanasoff.local/media/F0E96C47-36A3-4E91-9D8A-1DEEBCD4B334.jpg', 0),
-(5, 'abjjjjjjc@a.bg', 'dsadasdasd', 'fdsadasdasd', 'e10adc3949ba59abbe56e057f20f883e', 'fasdassa', 'http://atanasoff.local/media/B4C942F2-8DD6-4625-B33F-9AAB15B3484D.jpg', 0),
-(6, 'abcd@a.bg', 'adsdsadasdasd', 'dsadasdasdas', 'e10adc3949ba59abbe56e057f20f883e', 'fdadsadasdasd', 'http://atanasoff.local/media/F66995B9-4CA7-4AAA-8AE0-8A2C5B967DF2.jpg', 0);
 
 --
 -- Indexes for dumped tables
@@ -310,7 +312,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
