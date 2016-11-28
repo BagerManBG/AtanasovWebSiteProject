@@ -19,10 +19,15 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
-ul {
+nav{
+    width: 100%;
+    position: absolute;
+}
+nav ul {
     list-style-type: none;
     overflow: hidden;
     background-color: transparent;
+
 }
 
 nav li {
@@ -62,7 +67,7 @@ section.module.content {
   padding: 40px 0;
 }
 section.module.parallax {
-  height: 47vw;
+  height: 67.5vh;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -83,10 +88,10 @@ section.module.parallax-1 {
 .blackLine{
  
   position: relative;
-  top: 32.5vw;
+  top: 53vh;
   background: rgba(0, 0, 0, 0.5); 
-  height: 10vw;
-  min-height: 8vw;
+  height: 14.5vh;
+  min-height: 8vh;
 
 }
 .banner{
@@ -99,14 +104,14 @@ section.module.parallax-1 {
 .banner h2{
   padding: 2%;
   padding-bottom: 0;
-  font-size: 4vw;
+  font-size: 6vh;
   color: white;
   float: left;
 }
 
 .banner p{
   width: 100%;
-  font-size: 2vw;
+  font-size: 4vh;
   color: white;
   padding-top: 0;
   padding-left: 2%;
@@ -133,6 +138,17 @@ section.module.parallax-1 {
   margin-top: 2%;
   margin-left: 15%;
 }*/
+
+.scroll{
+  background-color: black;
+  transition:0.7s;
+ 
+}
+
+.nav-scroll{
+  position: fixed;
+
+}
 
 
 
