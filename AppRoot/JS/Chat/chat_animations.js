@@ -1,53 +1,59 @@
 $(document).ready(function(){
 
-	$('.close').click(function(){
+	$('#chatBox').hide();
 
-		var chat = $(this).parent().parent();
-		CloseChat(chat);
+	$('#quesitonBubble').click(function(){
+
+		$('#quesitonBubble').hide();
+		$('#chatBox').fadeIn(400);
 	});
 
-	$('.chatBody .type input').focus(function(){
+	$('#close').click(function(){
 
-		var chat = $(this).parent().parent().parent();
-
-		$(document).keydown(function(e) {
-
-		    if (e.keyCode == 27) 
-		    {
-		        CloseChat(chat);
-		    }   
-		});
+		CloseChat();
 	});
 
-	$('.chatBody .type input').bind('keyup focus blur', function(){
+	$(document).keydown(function(e) {
 
-		var chat = $(this).parent().parent().parent();
-		var img = chat.find('.chatBody .type .send img');
-
-		if ($(this).val() === '')
-		{
-			img.addClass('blurred');
-		}
-		else
-		{
-			img.removeClass('blurred');
-		}
+	    if (e.keyCode == 27) 
+	    {
+	        CloseChat();
+	    }   
 	});
 
-	//Can't make this to work
-	/*$('.chatHeader').click(function(){
+	$('#chatBody #type input').bind('keyup focus blur', function(){
 
-		var chat = $(this).parent();
-		chat.addClass('minimised');
-	});*/
+		CheckInput();
+	});
+
+	
 });
 
-function CloseChat(chat) {
+function CloseChat() {
 
-	chat.animate({
+	$('#chatBox').animate({
 		opacity: 0.25,
 		bottom: '-100%'
 	}, 300, function(){
-		chat.remove();
+
+		$('#chatBox').css("opacity", "1");
+		$('#chatBox').hide();
+		$('#chatBox').css("bottom", "0.2%");
+		$('#quesitonBubble').fadeIn(400);
 	});
+}
+
+function CheckInput() {
+
+	var img = $('#chatBox').find('#chatBody #type #send');
+	var input = $('#chatBody #type input');
+
+	if (input.val() === '')
+	{
+		img.addClass('blurred');
+	}
+	else
+	{
+		img.removeClass('blurred');
+	}
 }

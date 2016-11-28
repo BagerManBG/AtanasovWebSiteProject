@@ -4,106 +4,48 @@
 <link rel="stylesheet" type="text/css" href="../../CSS/Chat/chat.css">
 <!-- Temporary -->
 
-<div id="container">
+<div id="quesitonBubble">
+	<img src="../Images/Chat/bubble.png">
+</div>
 
-	<div class="chatBox">
+<div id="chatBox">
 
-		<div class="chatHeader">
-			<p class="name">Todor Nikolov</p>
-			<div class="close">
-				<img src="../Images/Chat/close_1.png">
-			</div>
+	<div id="chatHeader">
+		<p id="status">Online</p>
+		<div id="close">
+			<img src="../Images/Chat/close.png">
 		</div>
-
-		<div class="chatBody">
-
-			<div class="content">
-
-				<!-- MESSAGES -->
-				<div class="hisMessage">
-					<div class="profilePic">
-						<img src="../Images/Profile/profile_default_image.jpg">
-					</div>
-					<p class="message">Hi :)</p>
-				</div>
-
-				<div class="myMessage">
-					<p class="message">Are you testing the chat design again???</p>
-				</div>
-
-				<div class="hisMessage">
-					<div class="profilePic">
-						<img src="../Images/Profile/profile_default_image.jpg">
-					</div>
-					<p class="message">Lorem ipsum dolor sit amet, consectetur(...)</p>
-				</div>
-
-				<div class="myMessage">
-					<p class="message">...</p>
-				</div>
-
-			</div>
-
-			<div class="type">
-
-				<input type="text" name="message" placeholder="Type Your Message...">
-
-				<div class="send">
-					<img class="blurred" src="../Images/Chat/send.png">
-				</div>
-			</div>
-
-		</div>
-
 	</div>
 
-	<div class="chatBox">
+	<div id="chatBody">
 
-		<div class="chatHeader">
-			<p class="name">Todor Nikolov</p>
-			<div class="close">
-				<img src="../Images/Chat/close_1.png">
+		<div id="content">
+
+			<div class="hisMessage">
+				<p class="message">Hi :)</p>
 			</div>
+
+			<div class="myMessage">
+				<p class="message">Are you testing the chat design again???</p>
+			</div>
+
+			<div class="hisMessage">
+				<p class="message">Lorem ipsum dolor sit amet, consectetur(...)</p>
+			</div>
+
+			<div class="myMessage">
+				<p class="message">...</p>
+			</div>
+
 		</div>
 
-		<div class="chatBody">
+		<div id="type">
 
-			<div class="content">
+			<input type="text" name="message" placeholder="Type Your Message...">
 
-				<!-- MESSAGES -->
-				<div class="hisMessage">
-					<div class="profilePic">
-						<img src="../Images/Profile/profile_default_image.jpg">
-					</div>
-					<p class="message">Hi :)</p>
-				</div>
-
-				<div class="myMessage">
-					<p class="message">Are you testing the chat design again???</p>
-				</div>
-
-				<div class="hisMessage">
-					<div class="profilePic">
-						<img src="../Images/Profile/profile_default_image.jpg">
-					</div>
-					<p class="message">Lorem ipsum dolor sit amet, consectetur(...)</p>
-				</div>
-
-				<div class="myMessage">
-					<p class="message">...</p>
-				</div>
-
+			<div id="send" class="blurred">
+				<img src="../Images/Chat/send.png">
 			</div>
-
-			<div class="type">
-
-				<input type="text" name="message" placeholder="Type Your Message...">
-
-				<div class="send">
-					<img class="blurred" src="../Images/Chat/send.png">
-				</div>
-			</div>
-
 		</div>
 
 	</div>
