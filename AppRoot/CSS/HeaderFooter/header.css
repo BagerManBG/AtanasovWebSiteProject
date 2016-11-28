@@ -92,6 +92,7 @@ section.module.parallax-1 {
   background: rgba(0, 0, 0, 0.5); 
   height: 14.5vh;
   min-height: 8vh;
+  z-index: 500;
 
 }
 .banner{
@@ -147,6 +148,7 @@ section.module.parallax-1 {
 
 .nav-scroll{
   position: fixed;
+      z-index: 1000;
 
 }
 
