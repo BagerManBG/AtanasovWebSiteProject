@@ -49,34 +49,28 @@ time, mark, audio, video {
     float: left;
     border-bottom: 1px rgba(144, 144, 144, 0.25) solid ;
     padding-bottom: 2%;
+
 }
 
 .container {
   margin: 0 auto;
+  overflow: hidden;
+
 }
 
-section.module:last-child {
-  margin-bottom: 0;
-}
 
-section.module p {
-  margin-bottom: 40px;
-  font-size: 16px;
-  font-weight: 300;
-}
-section.module p:last-child {
-  margin-bottom: 0;
-}
+
 section.module.content {
   padding: 40px 0;
 }
 section.module.parallax {
-  height: 40vh;
+  height: 60%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
+
 section.module.parallax h1 {
   color: rgba(255, 255, 255, 0.8);
   font-size: 48px;
@@ -91,4 +85,5 @@ section.module.parallax-2 {
   
 
 }
+
 
