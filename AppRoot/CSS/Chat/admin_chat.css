@@ -2,10 +2,11 @@
     height: 100%;
     width: 100%;
     position: relative;
+    vertical-align: middle;
 }
 .list {
-    position: absolute;
-    height: 100%;
+    margin-left: 2%;
+    height: 70%;
     width: 25%;
     float: left;
     background-color: #e3e3e3;
@@ -51,4 +52,104 @@
     display: inline;
     margin: 2%;
     vertical-align: middle;
+}
+.chatBody {
+    float: left;
+    width: 40%;
+    background-color: #e3e3e3;
+    margin-left: 2%;
+    border: 1px solid #f44336;
+}
+.chatHeader {
+    width: 100%;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    background-color: #f44336;
+}
+.chatHeader p {
+    padding-left: 2%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+.chatBody #chatContent {
+    height: 82%;
+    overflow-y: scroll;
+}
+.ownMessage {
+    float: right;
+    width: 90%;
+}
+.ownMessage .messages {
+    float: right;
+    padding: 2%;
+    margin: 3.6% 5% 0px;
+    max-width: 80%;
+    background-color: #fff;
+    border-radius: 3px;
+    color: #f44336;
+    font-size: 1.2vw;
+}
+.otherMessage {
+    float: left;
+    width: 97%;
+}
+.otherMessage .messages {
+    float: left;
+    padding: 2%;
+    margin: 3.6% 5% 0px;
+    max-width: 62%;
+    background-color: #f44336;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 1.2vw;
+}
+#typing {
+    height: 10%;
+    background-color: white;
+}
+#typing input {
+    float: left;
+    width: 70%;
+    color: #000;
+    border: none;
+    border-bottom: 1px solid #808080;
+    margin: 3%;
+    padding-left: 1.4%;
+    font-size: 1.15vw;
+}
+#typing #sendIcon {
+    width: 7%;
+    float: left;
+    border-radius: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1.5%;
+    margin-left: 3%;
+}
+#typing #sendIcon img {
+    float: left;
+    width: 100%;
+}
+#userInfo {
+    height: 100%;
+    width: 25%;
+    border: 1px solid #f44336;
+    float: left;
+    margin-left: 2%;
+    text-align: center;
+}
+#profileHeader {
+    background-color: #f44336;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+}
+#profileHeader p {
+    text-align: left;
+    color: white;
+    padding-left: 2%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.profileInfoContent {
+    padding-top: 5%;
+    padding-bottom: 10%;
 }
