@@ -2,6 +2,14 @@ $(document).ready(function(){
 
 	$('#chatBox').hide();
 
+	$('#content').hide();
+	$('#type').hide();
+
+	$('#connectButton').click(function(){
+
+		ConnectToChat();
+	});
+
 	$('#quesitonBubble').click(function(){
 
 		$('#quesitonBubble').hide();
@@ -56,4 +64,15 @@ function CheckInput() {
 	{
 		img.removeClass('blurred');
 	}
+}
+
+function ConnectToChat() {
+
+	$('#connect').fadeOut(200);
+
+	setTimeout(function(){
+
+		$('#content').fadeIn(200);
+		$('#type').fadeIn(200);
+	}, 200);
 }
