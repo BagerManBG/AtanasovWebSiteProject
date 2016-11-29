@@ -68,11 +68,47 @@ function CheckInput() {
 
 function ConnectToChat() {
 
-	$('#connect').fadeOut(200);
+	var errorName = false;
+	var errorMessage = false;
+	var name = $('#connect #connectName').val();
+	var message = $('#connect #connectMessage').val();
+	var RegExpression = /^[a-zA-Z\s]*$/;
 
-	setTimeout(function(){
+	if(!RegExpression.test(name))
+	{
+		name = '';
+	}
 
-		$('#content').fadeIn(200);
-		$('#type').fadeIn(200);
-	}, 200);
+	if(name.length < 3)
+	{
+		errorName = true;
+	}
+
+	if(message.length == '')
+	{
+		errorMessage = true;
+	}
+
+	if(errorName)
+	{
+		$('#connect #connectName').val('');
+		$('#connect #connectName').attr('placeholder', 'Short, empty or had non letters');
+	}
+	else if(errorMessage)
+	{
+		$('#connect #connectMessage').val('');
+		$('#connect #connectMessage').attr('placeholder', 'Empty');
+	}
+	else 
+	{
+		//send message here
+
+		$('#connect').fadeOut(200);
+
+		setTimeout(function(){
+
+			$('#content').fadeIn(200);
+			$('#type').fadeIn(200);
+		}, 200);
+	}
 }
