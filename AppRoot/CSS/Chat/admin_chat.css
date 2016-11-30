@@ -53,6 +53,9 @@
     margin: 2%;
     vertical-align: middle;
 }
+.showContent {
+    display: none;
+}
 .chatBody {
     float: left;
     width: 40%;
