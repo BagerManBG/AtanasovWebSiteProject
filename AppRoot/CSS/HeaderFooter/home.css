@@ -52,7 +52,7 @@ time, mark, audio, video {
 
 }
 
-.container {
+#container {
   margin: 0 auto;
   overflow: hidden;
 
@@ -63,7 +63,7 @@ time, mark, audio, video {
 section.module.content {
   padding: 40px 0;
 }
-section.module.parallax {
+section.module.parallax-2 {
   height: 60%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -71,7 +71,7 @@ section.module.parallax {
   background-size: cover;
 }
 
-section.module.parallax h1 {
+section.module.parallax h3 {
   color: rgba(255, 255, 255, 0.8);
   font-size: 48px;
   line-height: 600px;
