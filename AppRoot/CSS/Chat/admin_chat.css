@@ -157,3 +157,40 @@
 .profileInfoContent #profilePic img {
     width: 80%;
 }
+@media only screen and (max-width: 800px) {
+    .list {
+        width: 100%;
+        margin-bottom: 2%;
+    }
+    .user .name {
+        font-size: 5vw;
+    }
+    .chatBody {
+        width: 100%;
+        margin-bottom: 2%;
+    }
+    #userInfo {
+        width: 100%;
+        max-height: 80%;
+    }
+    .profileInfoContent {
+        width: 60%;
+    }
+    .profileInfoContent #profilePic img {
+        width: 50%;
+    }
+    .otherMessage .messages {
+        max-width: 80%;
+        font-size: 4vw;
+    }
+    .ownMessage .messages {
+        max-width: 80%;
+        font-size: 4vw;
+    }
+    #typing input {
+        font-size: 3vw;
+    }
+    .profileInfoContent {
+        margin-left: 18%;
+    }
+}
