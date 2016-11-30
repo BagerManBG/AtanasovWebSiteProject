@@ -4,20 +4,21 @@ require_once "../../Models/Database/db.class.php";
 $data = $_POST;
 
 echo "<pre>";
-$data['email_log'] = mysqli_real_escape_string($db->dbHandle, $data['email_log']);
-$query = "SELECT * FROM `users` WHERE `email` = '".$data['email_log']."' ";
+$data['email'] = mysqli_real_escape_string($db->dbHandle, $data['email']);
+$query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
 $result = $db->fetchArray($query);
 if(!empty($result))
 {
-	if($result[0]['password'] == md5($data['password_log']))
+	if($result[0]['password'] == md5($data['password']))
 	{ 
 		$_SESSION['logged_user'] = $result[0];
-		header('Location: ../index.php');
+		header('Location: ../../Resources/Templates/login_register.html');
+
 		
 	}
 	else //if username exists but password is wrong
 	{
-		header('Location: ../logIn.php');
+		header('Location: ../../Resources/Templates/login_register.html');
 		
 
 	
@@ -25,8 +26,10 @@ if(!empty($result))
 }
 else //if no user is found
 {
-		header('Location: ../logIn.php');
+		header('Location: ../../Resources/Templates/login_register.html');
 		
-	
-	
+
 }
+
+//print_r($_POST);	
+//print_r($_SESSION);

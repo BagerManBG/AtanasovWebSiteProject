@@ -11,7 +11,7 @@
 	$hasError = false;
 	$hasFileError = false;
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$media_path = dirname(dirname($actual_link)) . "/media/";
+	$media_path = dirname(dirname(dirname($actual_link))) . "/Resources/Images/Profile/";
 
 	foreach($data as $k=>$v)
 	{
@@ -93,16 +93,18 @@
 		}
 		else
 		{
-			$file_name =  "\profile_default_image.jpg";
+			$file_name =  "profile_default_image.jpg";
 		}	
 
 		unset($data['password_confirm']);
 		$data['password'] = md5($data['password']);
 		$data['avatar'] = $media_path . $file_name;
 		$db->saveArray('users', $data);
+		echo '<pre>';
+		print_r($data);
     }
 
-    header('Location: ../index.php');
+    header('Location: ../../Resources/Templates/login_register.html');
 
     function GUID() //create random name
     {
