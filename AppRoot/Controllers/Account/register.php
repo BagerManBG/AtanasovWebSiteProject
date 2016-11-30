@@ -33,7 +33,7 @@
 		$hasError = true;
 	}
 	
-	if($data['password'] != $data['password_2'])
+	if($data['password'] != $data['password_confirm'])
 	{
 		$hasError = true;
 	}
@@ -96,7 +96,7 @@
 			$file_name =  "\profile_default_image.jpg";
 		}	
 
-		unset($data['password_2']);
+		unset($data['password_confirm']);
 		$data['password'] = md5($data['password']);
 		$data['avatar'] = $media_path . $file_name;
 		$db->saveArray('users', $data);
