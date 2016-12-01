@@ -23,6 +23,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура на таблица `chat_users`
+--
+
+DROP TABLE IF EXISTS `chat_users`;
+CREATE TABLE `chat_users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `avatar` varchar(255) NOT NULL,
+  `role` int(11) NOT NULL,
+  `last_time_online` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Схема на данните от таблица `chat_users`
+--
+
+INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `role`, `last_time_online`) VALUES
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 1, 1480610291),
+(2, 'test_email@test.tt', 'BagerMan', 'TheBest', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2, 1480610043),
+(3, 'toshko_1998@abv.bg', 'TEST', 'NAME', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2, 1480610291);
+
+-- --------------------------------------------------------
+
+--
 -- Структура на таблица `courses`
 --
 
@@ -73,9 +99,10 @@ CREATE TABLE `lectures` (
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
-  `text` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sent_time` datetime NOT NULL,
-  `user_id` int(11) NOT NULL
+  `message` varchar(510) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `send_time` datetime NOT NULL,
+  `sender_id` int(11) NOT NULL,
+  `receiver_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -189,8 +216,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Схема на данните от таблица `users`
+--
+
+INSERT INTO `users` (`Id`, `email`, `first_name`, `last_name`, `password`, `secret_question`, `secret_answer`, `avatar`, `role_id`) VALUES
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasov', 'e10adc3949ba59abbe56e057f20f883e', 'My favourite class?', 'Zh class.', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 1),
+(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2);
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `chat_users`
+--
+ALTER TABLE `chat_users`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `courses`
@@ -269,6 +310,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `chat_users`
+--
+ALTER TABLE `chat_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
@@ -312,7 +358,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
