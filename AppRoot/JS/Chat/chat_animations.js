@@ -5,15 +5,9 @@ $(document).ready(function(){
 	$('#content').hide();
 	$('#type').hide();
 
-	$('#connectButton').click(function(){
-
-		ConnectToChat();
-	});
-
 	$('#quesitonBubble').click(function(){
 
-		$('#quesitonBubble').hide();
-		$('#chatBox').fadeIn(400);
+		ConnectToChat();
 	});
 
 	$('#close').click(function(){
@@ -67,40 +61,21 @@ function CheckInput() {
 
 function ConnectToChat() {
 
-	var errorName = false;
-	var errorMessage = false;
-	var first_name = $('#connect #connectFirstName').val();
-	var last_name = $('#connect #connectLastName').val();
-	var email = $('#connect #connectEmail').val();
-
-	var data = {
-		first_name: first_name,
-		last_name: last_name,
-		email: email
-	};
-
 	$.ajax({
-
-		url: '../../Controllers/Chat/postChatUserData.php',
-		method: 'POST',
-		data: {data: data},
-		success: function() {
-			$('#connect').fadeOut(200);
-
-			setTimeout(function(){
-
-				$('#content').fadeIn(200);
-				$('#type').fadeIn(200);
-			}, 200);
-
-			setInterval(function(){
-
-				$.ajax({
-					url: '../../Controllers/Chat/updateUserLastOnlineTime.php',
-					method: 'POST',
-					data: {email: email}
-				});
-			}, 1000);
+		url: '../../Controllers/Chat/checkLogged.php',
+		method: 'GET',
+		success: function(result) {
+			if(result != 'Okay')
+			{
+				alert(result);
+			}
+			else
+			{
+				$('#quesitonBubble').hide();
+				$('#chatBox').fadeIn(400);
+				$('#content').fadeIn(400);
+				$('#type').fadeIn(400);
+			}
 		}
 	});
 }

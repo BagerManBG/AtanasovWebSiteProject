@@ -11,6 +11,10 @@ if(!empty($result))
 {
 	if($result[0]['password'] == md5($data['password']))
 	{ 
+		unset($result[0]['password']);
+		unset($result[0]['secret_question']);
+		unset($result[0]['secret_answer']);
+
 		$_SESSION['logged_user'] = $result[0];
 		header('Location: ../../Resources/Templates/login_register.html');
 

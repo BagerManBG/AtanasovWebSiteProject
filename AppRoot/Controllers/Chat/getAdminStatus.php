@@ -2,7 +2,7 @@
 
 require_once('../../Models/Database/db.class.php');
 
-$q = "SELECT * FROM `chat_users` WHERE `role` = 1";
+$q = "SELECT * FROM `chat_users` WHERE `role_id` = 1";
 $data = $db->fetchArray($q);
 
 $curr_time = time();
