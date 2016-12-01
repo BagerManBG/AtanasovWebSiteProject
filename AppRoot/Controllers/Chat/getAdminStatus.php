@@ -1,7 +1,7 @@
 <?php 
 
-header('Content-Type: text/event-stream');
-header('Cache-Control: no-cache');
+// header('Content-Type: text/event-stream');
+// header('Cache-Control: no-cache');
 
 require_once('../../Models/Database/db.class.php');
 
@@ -16,13 +16,13 @@ $admn_time = $data[0]['last_time_online'];
 
 if($curr_time - $admn_time > 5)
 {
-	echo "data: Offline\n\n";
+	echo "Offline";
 }
 else
 {
-	echo "data: Online\n\n";
+	echo "Online";
 }
 
-ob_flush();
-flush();
+// ob_flush();
+// flush();
 ?>

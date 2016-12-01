@@ -69,45 +69,38 @@ function ConnectToChat() {
 
 	var errorName = false;
 	var errorMessage = false;
-	var name = $('#connect #connectName').val();
-	var message = $('#connect #connectMessage').val();
-	var RegExpression = /^[a-zA-Z\s]*$/;
+	var first_name = $('#connect #connectFirstName').val();
+	var last_name = $('#connect #connectLastName').val();
+	var email = $('#connect #connectEmail').val();
 
-	if(!RegExpression.test(name))
-	{
-		name = '';
-	}
+	var data = {
+		first_name: first_name,
+		last_name: last_name,
+		email: email
+	};
 
-	if(name.length < 3)
-	{
-		errorName = true;
-	}
+	$.ajax({
 
-	if(message.length == '')
-	{
-		errorMessage = true;
-	}
+		url: '../../Controllers/Chat/postChatUserData.php',
+		method: 'POST',
+		data: {data: data},
+		success: function() {
+			$('#connect').fadeOut(200);
 
-	if(errorName)
-	{
-		$('#connect #connectName').val('');
-		$('#connect #connectName').attr('placeholder', 'Short, empty or had non letters');
-	}
-	else if(errorMessage)
-	{
-		$('#connect #connectMessage').val('');
-		$('#connect #connectMessage').attr('placeholder', 'Empty');
-	}
-	else 
-	{
-		//send message here
+			setTimeout(function(){
 
-		$('#connect').fadeOut(200);
+				$('#content').fadeIn(200);
+				$('#type').fadeIn(200);
+			}, 200);
 
-		setTimeout(function(){
+			setInterval(function(){
 
-			$('#content').fadeIn(200);
-			$('#type').fadeIn(200);
-		}, 200);
-	}
+				$.ajax({
+					url: '../../Controllers/Chat/updateUserLastOnlineTime.php',
+					method: 'POST',
+					data: {email: email}
+				});
+			}, 1000);
+		}
+	});
 }

@@ -157,10 +157,10 @@
 	display: block;
 	color: #f44336;
 	font-size: 1.3vw;
-	margin-bottom: 0px; 
+	margin-bottom: 6px; 
 }
 
-#connect label #connectName, #connect label #connectMessage {
+#connect label input {
 	width: 100%;
 	display: block;
 	color: #000;
