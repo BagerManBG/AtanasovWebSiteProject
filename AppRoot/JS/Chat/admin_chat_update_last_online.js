@@ -1,0 +1,1 @@
+var source = new EventSource("../../Controllers/Chat/updateLastOnline.php");
