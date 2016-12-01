@@ -114,3 +114,7 @@ section.module.parallax-2 {
       margin-left: 11%;
 
 }
+
+.video{
+  overflow: hidden;
+}

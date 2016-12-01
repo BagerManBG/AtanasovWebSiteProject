@@ -50,28 +50,33 @@ section.module:last-child {
   margin-bottom: 0;
 }
 
-section.module p {
+section.module-1 p {
   margin-bottom: 40px;
   font-size: 16px;
   font-weight: 300;
 }
-section.module p:last-child {
+section.module-1 p:last-child {
   margin-bottom: 0;
 }
-section.module.content {
+section.module-1.content {
   padding: 40px 0;
 }
-section.module.parallax {
-  height: 30vw;
+section.module-1.parallax {
+  height: 20vw;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-section.module.parallax-1 {
+section.module-1.parallax-1 {
   background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/01/24/12/v2-cute-cat-picture.jpg");
 }
-
+.module-1:after{
+     content: '';
+  display: block;
+  position: absolute;
+  z-index: 2;
+}
 .rows{
     text-align: center;
     width: 33%;
