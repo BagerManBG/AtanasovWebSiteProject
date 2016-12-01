@@ -41,7 +41,7 @@
 	//Check if user actually uploaded something
 	if ($files["image"]["size"] == 0) {
 	
-		$file_name =  "\profile_default_image.jpg";
+		$file_name =  "profile_default_image.jpg";
 		$hasFileError = true;
 	} 
 	else {
@@ -88,7 +88,7 @@
 		{
 			if(!move_uploaded_file($files["image"]["tmp_name"], $target_file))
 			{
-				$file_name =  "\profile_default_image.jpg";
+				$file_name =  "profile_default_image.jpg";
 			}
 		}
 		else
