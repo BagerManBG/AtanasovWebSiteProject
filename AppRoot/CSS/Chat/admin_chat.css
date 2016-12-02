@@ -187,6 +187,10 @@
     width: 80%;
 }
 
+.blurred {
+    opacity: 0.479;
+}
+
 @media only screen and (max-width: 800px) {
     .list {
         width: 100%;
