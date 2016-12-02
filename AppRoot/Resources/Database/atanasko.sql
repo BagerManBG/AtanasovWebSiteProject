@@ -33,7 +33,7 @@ CREATE TABLE `chat_users` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `avatar` varchar(255) NOT NULL,
-  `role` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
   `last_time_online` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,10 +41,10 @@ CREATE TABLE `chat_users` (
 -- Схема на данните от таблица `chat_users`
 --
 
-INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `role`, `last_time_online`) VALUES
-(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 1, 1480610291),
-(2, 'test_email@test.tt', 'BagerMan', 'TheBest', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2, 1480610043),
-(3, 'toshko_1998@abv.bg', 'TEST', 'NAME', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2, 1480610291);
+INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `role_id`, `last_time_online`) VALUES
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 1, 1480713249),
+(158, 'BagerMan@abv.bg', 'Bager', 'Man', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2, 1480628567),
+(159, 'test@abv.bg', 'Todor', 'Nikolov', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2, 1480713177);
 
 -- --------------------------------------------------------
 
@@ -204,7 +204,7 @@ CREATE TABLE `students_courses` (
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `Id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -219,9 +219,11 @@ CREATE TABLE `users` (
 -- Схема на данните от таблица `users`
 --
 
-INSERT INTO `users` (`Id`, `email`, `first_name`, `last_name`, `password`, `secret_question`, `secret_answer`, `avatar`, `role_id`) VALUES
+INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secret_question`, `secret_answer`, `avatar`, `role_id`) VALUES
 (1, 'atanasoff@gmail.com', 'Atanas', 'Atanasov', 'e10adc3949ba59abbe56e057f20f883e', 'My favourite class?', 'Zh class.', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 1),
-(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2);
+(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2),
+(3, 'toshko_1998@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2),
+(4, 'test@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2);
 
 --
 -- Indexes for dumped tables
@@ -302,7 +304,8 @@ ALTER TABLE `students_courses`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`Id`),
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
   ADD KEY `user_role_index` (`role_id`);
 
 --
@@ -313,7 +316,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `chat_users`
 --
 ALTER TABLE `chat_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 --
 -- AUTO_INCREMENT for table `courses`
 --
@@ -358,7 +361,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

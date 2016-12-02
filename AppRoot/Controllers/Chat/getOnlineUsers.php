@@ -9,7 +9,7 @@ $result = $db->fetchArray($q);
 foreach ($result as $key => $value) 
 {
 	echo '
-		<div class="user">
+		<div class="user" id="'.$value['id'].'">
             <img src="'.$value['avatar'].'" alt="userPic">
 
             <p class="name">'.$value['first_name'].' '.$value['last_name'].'</p>

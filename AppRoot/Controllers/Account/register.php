@@ -104,7 +104,7 @@
 		print_r($data);
     }
 
-    header('Location: ../../Resources/Templates/login_register.html');
+    //header('Location: ../../Resources/Templates/login_register.html');
 
     function GUID() //create random name
     {
