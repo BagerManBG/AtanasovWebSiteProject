@@ -1,0 +1,115 @@
+
+
+.profile{
+   /* background-image: url("../img/index.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+  
+    border:black 1px solid;
+    border-radius: 4px;
+    width: 60%;
+    margin-left: 20%;
+    float: left;
+    margin-top: 2%;
+
+}
+
+.avatar{
+    border: 1px black solid;
+    margin-left: 0.3%;
+    border-radius: 3%;
+    width: 75%;
+    transform: rotate(-3deg);
+    }
+
+/*label{
+    margin-left: 10%;
+    text-shadow: -1.2px 0 black, 0 1.2px black, 1.2px 0 black, 0 -1.2px black;
+    font-size: 1.5vw;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    float: left;
+
+
+}*/
+
+.labels{
+    margin-top: 5%;
+}
+
+.paperclip{
+    width: 12%;
+    top: -3%;
+    left: 1%;
+    position: absolute;
+    z-index: 1000;
+}
+
+.profileImage{
+    width: 30%;
+    float: left;
+    position: relative;
+}
+
+.profileHeader{
+    width: 70%;
+    float: left;
+}
+
+.profileHeader h2{
+    margin-left: 33%;
+    font-size: 4.5vw;
+    font-family: "GothamW";
+    font-weight: bold;
+
+}
+
+.profileInfo{
+    width: 60%;
+    float: left;
+}
+
+.profileData{
+    float: left;
+}
+
+
+input{
+    width: 65%;
+    height: 4.5%;
+    color: black;
+    background-color: white;
+    border:1px #4d5968 solid;
+    margin-left: 8%;
+    margin-bottom: 3%;
+    font-size: 1.5vw;
+}
+
+.button{  
+  background-color: transparent;
+  border: 1px #7e8895 solid;
+  border-radius: 4px;
+  color: #7e8895;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-right: 5%;
+  padding-left: 5%;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 5.5%;
+
+}
+
+.buttons{
+    float: left;
+    width: 100%;
+    margin-left: 2.5%;
+    margin-top: 5%;
+    padding-bottom: 10%;
+}
+
+.button:hover{
+  background-color: #d3d3d3 ;
+  transition:0.2s;
+}

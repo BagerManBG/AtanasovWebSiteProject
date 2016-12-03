@@ -15,7 +15,7 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font: inherit;    
     vertical-align: baseline;
 }
 
@@ -183,4 +183,19 @@ section.module-1.parallax-1 {
 
 hr {
     border-top: 1px solid black;
+}
+footer p{
+    color: white;
+
+}
+
+h3{
+  color: #4d5968;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+label{
+      color: #4d5968;
+
 }
