@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
+	$('#typing').hide();
+
 	$('#list_users').on('click', '.user', function(){
+
+		$('#typing').show();
 
 		var id = $(this).attr('id');
 
