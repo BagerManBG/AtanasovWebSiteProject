@@ -75,15 +75,51 @@
 }
 
 
+input[type="text"]:disabled {
+    width: 65%;
+    height: 4.5%;
+    color: black;
+    background-color: white;
+    margin-left: 8%;
+    margin-bottom: 3%;
+    font-size: 1.5vw;
+    border: 1px black solid;
+    padding-left: 1%;
+    border: none;
+}
+
 input{
     width: 65%;
     height: 4.5%;
     color: black;
     background-color: white;
-    border:1px #4d5968 solid;
     margin-left: 8%;
     margin-bottom: 3%;
     font-size: 1.5vw;
+    border: 1px black solid;
+    padding-left: 1%;
+
+
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+   color: black;
+}
+
+:-moz-placeholder { 
+   color: black;  
+}
+
+::-moz-placeholder {  
+   color: black;  
+}
+
+:-ms-input-placeholder {  
+   color: black;  
 }
 
 .button{  
@@ -98,8 +134,10 @@ input{
   cursor: pointer;
   text-decoration: none;
   margin-left: 5.5%;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 8.5px 25px 0 rgba(0,0,0,0.19);
 
 }
+
 
 .buttons{
     float: left;
@@ -111,5 +149,13 @@ input{
 
 .button:hover{
   background-color: #d3d3d3 ;
+  box-shadow: none;
   transition:0.2s;
 }
+
+.button:active {
+  box-shadow: 0 3px #666;
+  transform: translateY(1px);
+}
+
+
