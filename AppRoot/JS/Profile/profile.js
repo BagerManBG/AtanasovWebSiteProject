@@ -1,4 +1,3 @@
-alert(9);
 $(document).ready(function(){
   $( "#Edit" ).click(function() {
         $("input").removeAttr('disabled');
