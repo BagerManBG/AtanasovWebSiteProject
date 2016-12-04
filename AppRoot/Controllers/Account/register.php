@@ -11,7 +11,7 @@
 	$hasError = false;
 	$hasFileError = false;
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$media_path = dirname(dirname(dirname($actual_link))) . "/Resources/Images/Profile/";
+	$media_path = dirname(dirname(dirname($actual_link))) . "/Resources/Images/ProfilePics/";
 
 	foreach($data as $k=>$v)
 	{
