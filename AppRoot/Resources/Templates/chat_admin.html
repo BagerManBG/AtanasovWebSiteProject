@@ -6,6 +6,7 @@
 <script src="../../JS/Chat/admin_chat_update_last_online.js"></script>
 <script src="../../JS/Chat/admin_chat_get_users.js"></script>
 <script src="../../JS/Chat/admin_chat_get_user_info.js"></script>
+<script src="../../JS/Chat/send_message_admin.js"></script>
 <!-- Temporary -->
 
 <div id="container">
@@ -29,7 +30,7 @@
     <div class="showContent">
         <div class="chatBody">
             <div class="chatHeader">
-                <p>Name</p>
+                <p id="selectedName">Name</p>
             </div>
             <div id="chatContent">
                 <!-- <div class="otherMessage">
@@ -50,7 +51,8 @@
             </div>
             <div id="typing">
 
-                <input type="text" name="message" placeholder="Type Your Message...">
+                <input type="text" name="message" id="message_input" placeholder="Type Your Message...">
+                <input type="hidden" id="user_id">
 
                 <div id="sendIcon" class="blurred">
                     <img src="../Images/Chat/send.png">
@@ -62,16 +64,14 @@
                 <p>Profile Info</p>
             </div>
             <div class="profileInfoContent">
-                <!-- <div id="profilePic">
+                <div id="profilePic">
                     <img src="">
                 </div>
                 <div class="description">
-                    <h2 id="first Name"></h2>
-                    <h2 id="second Name"></h2>
+                    <h2 id="Name"></h2>
 
-                    <p id="email"></p>
-
-                </div> -->
+                     <p id="email"></p>
+                </div>
             </div>
         </div>
     </div>

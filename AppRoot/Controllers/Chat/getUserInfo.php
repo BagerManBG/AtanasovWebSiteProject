@@ -12,16 +12,9 @@ if(!empty($result))
 {
 	foreach ($result as $key => $value) 
 	{
-		echo '
-			<div id="profilePic">
-                <img src="'.$value['avatar'].'">
-            </div>
-            <div class="description">
-                <h2 id="Name">'.$value['first_name'].' '.$value['last_name'].'</h2>
-
-                <p id="email">'.$value['email'].'</p>
-            </div>
-		';
+		unset($value['role_id']);
+		unset($value['last_time_online']);
+		print json_encode($value);
 	}
 }
 else

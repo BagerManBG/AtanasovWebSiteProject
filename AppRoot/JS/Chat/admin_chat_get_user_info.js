@@ -15,8 +15,15 @@ $(document).ready(function(){
 			success: function(result) {
 				if(result != 'error')
 				{
-					$('.profileInfoContent').empty();
-					$('.profileInfoContent').append(result);
+					var data = JSON.parse(result);
+
+					var name = data['first_name'] + ' ' + data['last_name'];
+					
+					$('.chatBody #typing #user_id').val(data['id']);
+					$('.profileInfoContent #profilePic img').attr('src', data['avatar']);
+					$('.profileInfoContent .description #Name').text(name);
+					$('.profileInfoContent .description #email').text(data['email']);
+					$('#selectedName').text(name);
 				}
 			}
 		});

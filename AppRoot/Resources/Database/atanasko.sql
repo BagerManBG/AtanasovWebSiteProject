@@ -42,9 +42,9 @@ CREATE TABLE `chat_users` (
 --
 
 INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `role_id`, `last_time_online`) VALUES
-(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 1, 1480713249),
-(158, 'BagerMan@abv.bg', 'Bager', 'Man', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2, 1480628567),
-(159, 'test@abv.bg', 'Todor', 'Nikolov', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2, 1480713177);
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1, 1480870992),
+(158, 'BagerMan@abv.bg', 'Bager', 'Man', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1480628567),
+(159, 'test@abv.bg', 'Todor', 'Nikolov', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1480713177);
 
 -- --------------------------------------------------------
 
@@ -100,10 +100,18 @@ DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `message` varchar(510) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `send_time` datetime NOT NULL,
+  `send_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sender_id` int(11) NOT NULL,
   `receiver_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Схема на данните от таблица `messages`
+--
+
+INSERT INTO `messages` (`id`, `message`, `send_time`, `sender_id`, `receiver_id`) VALUES
+(1, 'asdf', '1480874156', 2, 1),
+(2, 'bager', '1480874426', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -220,10 +228,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secret_question`, `secret_answer`, `avatar`, `role_id`) VALUES
-(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasov', 'e10adc3949ba59abbe56e057f20f883e', 'My favourite class?', 'Zh class.', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 1),
-(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2),
-(3, 'toshko_1998@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2),
-(4, 'test@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/Profile/profile_default_image.jpg', 2);
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasov', 'e10adc3949ba59abbe56e057f20f883e', 'My favourite class?', 'Zh class.', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
+(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(3, 'toshko_1998@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(4, 'test@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2);
 
 --
 -- Indexes for dumped tables
@@ -332,6 +340,11 @@ ALTER TABLE `difficulty_levels`
 --
 ALTER TABLE `lectures`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `online_courses`
 --
