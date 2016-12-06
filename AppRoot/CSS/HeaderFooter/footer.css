@@ -69,6 +69,7 @@ section.module-1.parallax {
   background-size: cover;
 }
 section.module-1.parallax-1 {
+
   background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/01/24/12/v2-cute-cat-picture.jpg");
 }
 .module-1:after{
@@ -197,5 +198,9 @@ h3{
 
 label{
       color: #4d5968;
+
+}
+
+.footer p{
 
 }

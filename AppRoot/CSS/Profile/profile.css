@@ -76,7 +76,7 @@
 
 
 input[type="text"]:disabled {
-    width: 65%;
+    width: 85%;
     height: 4.5%;
     color: black;
     background-color: white;
@@ -85,7 +85,7 @@ input[type="text"]:disabled {
     font-size: 1.5vw;
     border: 1px black solid;
     padding-left: 1%;
-    border: none;
+    border: 1px white solid;
 }
 
 input{
@@ -129,20 +129,23 @@ textarea:focus, input:focus{
   color: #7e8895;
   padding-top: 3%;
   padding-bottom: 3%;
-  padding-right: 5%;
-  padding-left: 5%;
+  width: 20%;
   cursor: pointer;
   text-decoration: none;
-  margin-left: 5.5%;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 8.5px 25px 0 rgba(0,0,0,0.19);
+  margin-left: 2%;
 
+}
+
+.button:first-of-type{
+  margin-left: 0;
 }
 
 
 .buttons{
     float: left;
     width: 100%;
-    margin-left: 2.5%;
+    margin-left: 8%;
     margin-top: 5%;
     padding-bottom: 10%;
 }
@@ -156,6 +159,16 @@ textarea:focus, input:focus{
 .button:active {
   box-shadow: 0 3px #666;
   transform: translateY(1px);
+}
+
+.ProfileData label{
+  width: 100%;
+  float: left;
+  color: black;
+  margin-left: 8%;
+  font-size: 24px;
+  padding-bottom: 1%;
+
 }
 
 
