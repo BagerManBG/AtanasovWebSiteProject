@@ -5,10 +5,10 @@ $(document).ready(function(){
 
 	$('#list_users').on('click', '.user', function(){
 
+		$('.chatBody #chatContent').empty();
+
 		var messages = new Array();
 		id = $(this).attr('id');
-
-		$('.chatBody #chatContent').empty();
 		
 		setInterval(function(){
 

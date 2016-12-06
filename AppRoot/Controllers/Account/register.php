@@ -46,7 +46,7 @@
 	} 
 	else {
 
-		$target_dir = dirname(dirname(__FILE__)) . "\media\\";
+		$target_dir = dirname(dirname(__FILE__)) . "/../Resources/Images/ProfilePics/";
 		$file_name = $files["image"]["name"];
 		$target_file = $target_dir . basename($file_name);
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -104,7 +104,7 @@
 		print_r($data);
     }
 
-    //header('Location: ../../Resources/Templates/login_register.html');
+    header('Location: ../../Resources/Templates/login_register.html');
 
     function GUID() //create random name
     {
