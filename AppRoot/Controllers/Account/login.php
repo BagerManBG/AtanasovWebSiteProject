@@ -16,7 +16,7 @@ if(!empty($result))
 		unset($result[0]['secret_answer']);
 
 		$_SESSION['logged_user'] = $result[0];
-		header('Location: ../../Resources/Templates/login_register.html');
+		header('Location: ../../');
 
 		
 	}
