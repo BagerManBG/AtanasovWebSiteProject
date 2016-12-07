@@ -1,0 +1,65 @@
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css">
+<link rel="stylesheet" type="text/css" href="../../CSS/Forms/logIn.css">
+
+
+<div class="logForm">
+
+    <div class="changeForm">
+        <button class="positionLeft">Login</button>
+        <button class="positionRight">Register</button>
+    </div>
+
+    <div class="logAction">
+        <div class="title">Login</div>
+        <form method="post" action="../../Controllers/Account/login.php">
+
+            <input type="text" class="form-control" name="email_log" placeholder="Email" required validator="email" id="email_log" autocomplete="off">
+
+            <input id="logPassword" type="password" name="password_log" placeholder="Password" autocomplete="off">
+
+            <button class="loginButton" id='logDis' type="submit" value="Login now!">Login now!</button>
+        </form>
+    </div>
+
+
+    <div class="regAction">
+        <div class="title">Register now for free!</div>
+
+        <div class="sign">
+            <form name="RegForm" id="signup" method="post" action="php/register_db.php" enctype="multipart/form-data">
+
+                <input type="text" name="first_name" required="required" id="first_name" placeholder="First Name" autocomplete="off">
+
+                <input type="text" name="last_name" required="required" id="second_name" placeholder="Last Name" autocomplete="off">
+
+                <input type="email" name="email" placeholder="email" required="required" autocomplete="off"/>
+
+                <input id="regPassword" type="password" placeholder="Password" autocomplete="off">
+
+                <input id="regPassword2" type="password" placeholder="Confirm Password" autocomplete="off">
+
+                <input name="secret_question" placeholder="Question" required="required" autocomplete="off">
+
+                <input name="secret_answer" placeholder="Answer" required="required" autocomplete="off">
+
+                <h4 class="imgInfo">Choose profile picture(optional).</h4>
+                
+
+                <div class="main-content">
+
+                  <div class="file-input">
+                      <input type="file" name="image" id="image">
+                      <span class="input-value">Browse File</span>
+                  </div>
+
+                </div>
+
+                <button class="regButton"  id='regDis' type="submit" value="Register now!">Register now!</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<script src="../Libraries/JQuery/jquery.js"></script>
+<script src="../../JS/login.js"></script>
