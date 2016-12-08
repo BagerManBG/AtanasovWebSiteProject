@@ -1,11 +1,12 @@
 $(document).ready(function(){
   $( "#Edit" ).click(function() {
-        $("input").removeAttr('disabled');
+        $("input").prop('disabled', false);
+        
 });
 
   $( "#Cancel" ).click(function() {
-        $("input").val('');
         $("input").prop('disabled', true);
+
 
 });
 });
