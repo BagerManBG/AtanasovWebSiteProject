@@ -94,13 +94,13 @@ section.module-1.parallax-1 {
 }
 
 .facebook{
-        background-image:url("../img/facebook.jpg" );
+        background-image:url("../../Resources/Images/Footer/facebook.jpg" );
         background-attachment: center;
         background-position: center;
         background-repeat:no-repeat;
         background-size: cover;
-        padding-left:6%;
-        padding-bottom: 2%;
+        padding-left:8%;
+        padding-bottom: 4%;
         margin-left: 2%;
         border: 1px solid white;
         border-radius: 30%;
@@ -109,13 +109,13 @@ section.module-1.parallax-1 {
 }
 
 .google{
-        background-image:url("../img/google.jpg");
+        background-image:url("../../Resources/Images/Footer/google.jpg");
         background-attachment: center;
         background-position: center;
         background-repeat:no-repeat;
         background-size: cover;
-        padding-left:6%;
-        padding-bottom: 2%;
+        padding-left:8%;
+        padding-bottom: 4%;
         margin-left: 2%;
         border: 1px solid white;
         border-radius: 30%;
@@ -125,13 +125,13 @@ section.module-1.parallax-1 {
 }
 
 .instagram{
-        background-image:url("../img/instagram.jpg");
+        background-image:url("../../Resources/Images/Footer/instagram.jpg");
         background-attachment: center;
         background-position: center;
         background-repeat:no-repeat;
         background-size: cover;
-        padding-left:6%;
-        padding-bottom: 2%;
+        padding-left:8%;
+        padding-bottom: 4%;
         margin-left: 2%;
         border: 1px solid white;
         border-radius: 30%;
@@ -141,13 +141,13 @@ section.module-1.parallax-1 {
 }
 
 .skype{
-        background-image:url("../img/skype.jpg");
+        background-image:url("../../Resources/Images/Footer/skype.jpg");
         background-attachment: center;
         background-position: center;
         background-repeat:no-repeat;
         background-size: cover;
-        padding-left:6%;
-        padding-bottom: 2%;
+        padding-left:8%;
+        padding-bottom: 4%;
         margin-left: 2%;
         border: 1px solid white;
         border-radius: 30%;
@@ -156,13 +156,13 @@ section.module-1.parallax-1 {
 }
 
 .youtube{
-        background-image:url("../img/youtube.jpg");
+        background-image:url("../../Resources/Images/Footer/youtube.jpg");
         background-attachment: center;
         background-position: center;
         background-repeat:no-repeat;
         background-size: cover;
-        padding-left:6%;
-        padding-bottom: 2%;
+        padding-left:8%;
+        padding-bottom: 4%;
         margin-left: 2%;
         border: 1px solid white;
         border-radius: 30%;
@@ -171,7 +171,7 @@ section.module-1.parallax-1 {
 }
 
 .facebook:hover,.skype:hover,.google:hover,.instagram:hover,.skype:hover,.youtube:hover{
-    padding-left: 8%;
+    padding-left: 10%;
     padding-top: 2%;
     transition:0.3s;
 }
