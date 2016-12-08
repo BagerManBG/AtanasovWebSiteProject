@@ -13,7 +13,7 @@ a:hover {
 }
 
 .form {
-  background: rgba(19,35,47, .9);
+  /*background: rgba(19,35,47, .9);*/
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -48,18 +48,18 @@ li a {
 }
 
 li a:hover {
-  background: #caa178;
-  color: fff;
+  background: #C0C0C0;
+  color: #fff;
 }
 
 .active a {
-  background: #1ab188;
-  color: fff;
+  background: #101010;
+  color: #fff;
 }
 
 .active a:hover {
-  background: #1ab188;
-  color: fff;
+  background: #101010;
+  color: #fff;
 }
 
 .tab-content > div:last-child {
@@ -78,7 +78,7 @@ label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
-  color: rgba(255,255,255,.5);
+  color: black;
   transition: all 0.25s ease;
   /*-webkit-backface-visibility: hidden;*/
   pointer-events: none;
@@ -92,7 +92,7 @@ label.active {
 }
 
 label.highlight {
-	color: #fff;
+	color: black;
 }
 
 input {
@@ -103,7 +103,7 @@ input {
   background: none;
   background-image: none;
   border: 1px solid #a0b3b0;
-  color: #fff;
+  color: black;
   border-radius: 0;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
@@ -143,14 +143,14 @@ input:focus {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: #C0C0C0;
   color: #fff;
   transition: all.5s ease;
   -webkit-appearance: none;
 }
 
 .button:hover, .button:focus {
-  background: #1aa188;
+  background: #101010;
   cursor: pointer;
 }
 
@@ -167,4 +167,5 @@ input:focus {
 .optional {
   margin-top: -20px;
   text-align: right;
+  color: #101010;
 }
