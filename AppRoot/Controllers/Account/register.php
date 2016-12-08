@@ -21,7 +21,7 @@
 	$query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
 	
 	$result = $db->fetchArray($query);
-	print_r($result);
+	//print_r($result);
 	
 	if(!empty($result))
 	{
@@ -104,7 +104,7 @@
 		print_r($data);
     }
 
-    header('Location: ../../Resources/Templates/login_register.html');
+    header('Location: ../../Resources/Templates/login_2.html');
 
     function GUID() //create random name
     {

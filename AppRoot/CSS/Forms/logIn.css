@@ -97,14 +97,6 @@
 	text-align: center;
 }
 
-/*.regAction input {
-	margin-top:5%; 
-	width:65%;
-	border-radius:2px;
-	padding:1px;
-	font-size: 1.5vw;
-}*/
-
 .regButton {
 	margin-left:0px;
 	background-color: #C0C0C0;
@@ -137,58 +129,32 @@
 	text-align:left;
 	margin:0px 20%;
 	margin-top:4%;
+	font-size:1vw;
 	margin-bottom:2%;
 	padding: 0 1.5vw;
 }
 
 /* File input */
-
-.browse {
-	padding-left:30%;
-}
-.main-content {
-	width: 100%;
-	height: 100%;
-	display: table-cell;
-	vertical-align: middle;
+#image {
+	display:none;
 }
 
-.file-input {
-	display: inline-block;
-	width:100%;
-	padding: 0px;
-	position: relative;
-	z-index: 1;
+#coverButton {
+	font-family: "GothamW";
+	font-weight:bold;
 	border-radius:2px;
-	border: 1px solid grey;
+	height:2.5vw;
+	font-size:1.2vw;
+	width: 40%;
+	border: none;
+	transition: background-color 0.5s ease; 
+}
+#coverButton:hover {
+	background-color: #c9302c;
+	color: #fff;
 	transition: background-color 0.5s ease;
 }
 
-.file-input:hover {
-	background-color:#101010;
-	transition: background-color 0.5s ease;
-}
-
-.file-input > input[type="file"] {
-	float: left;
-	width: 100%;
-	height: 100%;
-	margin: 0px;
-	padding: 0px;
-	cursor: pointer;
-	position: relative;
-	z-index: 4;
-	opacity: 0;
-}
-.file-input > span {
-	position: absolute;
-	top: 0.5vw;
-	left: 0px;
-	margin: 0px;
-	padding: 0px 55px 0px 15px;
-	font-size: 1.2vw;
-	color: #101010;
-}
 
 /*Input fields*/
 .input {
