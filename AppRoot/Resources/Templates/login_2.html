@@ -11,19 +11,19 @@
 
     <div class="logAction">
         <div class="title">Login</div>
-        <form method="post" action="../../Controllers/Account/login.php">
+        <form method="post" action="../../Controllers/Account/login.php" enctype="multipart/form-data">
 
             <span class="input input--manami">
                 <input class="input__field input__field--manami" name="email" type="text" id="input-32" />
                 <label class="input__label input__label--manami" for="input-32">
-                     <span class="input__label-content input__label-content--manami">Username:</span>
+                     <span id = "email_span" class="input__label-content input__label-content--manami">email:</span>
                 </label>
             </span>
 
             <span class="input input--manami">
                 <input class="input__field input__field--manami" name="password" type="password" id="input-32" />
                 <label class="input__label input__label--manami" for="input-32">
-                     <span class="input__label-content input__label-content--manami">Password:</span>
+                     <span id = "password_span_login" class="input__label-content input__label-content--manami">Password:</span>
                 </label>
             </span>
 
@@ -41,21 +41,21 @@
                 <span class="input input--manami">
                     <input class="input__field input__field--manami" name="first_name" type="text" id="input-32" />
                     <label class="input__label input__label--manami" for="input-32">
-                        <span class="input__label-content input__label-content--manami">First Name:</span>
+                        <span id = "first_name_span" class="input__label-content input__label-content--manami">First Name:</span>
                     </label>
                 </span>
 
                <span class="input input--manami">
                     <input class="input__field input__field--manami" name="last_name" type="text" id="input-32" />
                     <label class="input__label input__label--manami" for="input-32">
-                        <span class="input__label-content input__label-content--manami">Last Name:</span>
+                        <span id = "last_name_span" class="input__label-content input__label-content--manami">Last Name:</span>
                     </label>
                 </span>
 
                 <span class="input input--manami">
                     <input class="input__field input__field--manami" name="email" type="text" id="input-32" />
                     <label class="input__label input__label--manami" for="input-32">
-                        <span class="input__label-content input__label-content--manami">email:</span>
+                        <span id = "email_reg" class="input__label-content input__label-content--manami">email:</span>
                     </label>
                 </span>
 
@@ -76,14 +76,14 @@
                 <span class="input input--manami">
                     <input class="input__field input__field--manami" name="secret_question" type="text" id="input-32" />
                     <label class="input__label input__label--manami" for="input-32">
-                        <span class="input__label-content input__label-content--manami">Question:</span>
+                        <span id = "question_reg" class="input__label-content input__label-content--manami">Question:</span>
                     </label>
                 </span>
 
                 <span class="input input--manami">
                     <input class="input__field input__field--manami" name="secret_answer" type="text" id="input-32" />
                     <label class="input__label input__label--manami" for="input-32">
-                        <span class="input__label-content input__label-content--manami">Answer</span>
+                        <span id = "answer_reg" class="input__label-content input__label-content--manami">Answer:</span>
                     </label>
                 </span>
 

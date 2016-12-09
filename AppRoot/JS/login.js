@@ -26,6 +26,77 @@ $(function(){
 
 });
 
+$(function(){
+
+    $( "input[name='email']" ).on('click change',function(){
+
+        var inputValue = $(this).val();
+
+        $('#email_span').html("email: " + inputValue);
+
+    });
+
+});
+
+$(function(){
+
+    $( "input[name='first_name']" ).on('click change',function(){
+
+        var inputValue = $(this).val();
+
+        $('#first_name_span').html("First Name: " + inputValue);
+
+    });
+
+});
+
+$(function(){
+
+    $( "input[name='last_name']" ).on('click change',function(){
+
+        var inputValue = $(this).val();
+
+        $('#last_name_span').html("Last Name: " + inputValue);
+
+    });
+
+});
+
+$(function(){
+
+    $( "input[name='email']" ).on('click change',function(){
+
+        var inputValue = $(this).val();
+
+        $('#email_reg').html("email: " + inputValue);
+
+    });
+
+});
+
+$(function(){
+
+    $( "input[name='secret_question']" ).on('click change',function(){
+
+        var inputValue = $(this).val();
+
+        $('#question_reg').html("Question: " + inputValue);
+
+    });
+
+});
+
+$(function(){
+
+    $( "input[name='secret_answer']" ).on('click change',function(){
+
+        var inputValue = $(this).val();
+
+        $('#answer_reg').html("Answer: " + inputValue);
+
+    });
+
+});
 
 /*!
  * classie - class helper functions
