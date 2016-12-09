@@ -102,9 +102,9 @@
 		$db->saveArray('users', $data);
 		echo '<pre>';
 		print_r($data);
-    }
+	  }
 
-    //header('Location: ../../Resources/Templates/login_2.html');
+    header('Location: ../../Resources/Templates/login_2.html');
 
     function GUID() //create random name
     {
