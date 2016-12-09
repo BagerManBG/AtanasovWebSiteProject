@@ -17,22 +17,22 @@
 	{
 		$data[$k] = trim($data[$k]);
 	}
-	
+
 	$query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
-	
+
 	$result = $db->fetchArray($query);
 	//print_r($result);
-	
+
 	if(!empty($result))
 	{
 		$hasError = true;
-	}	
-	
+	}
+
 	if(strlen($data['password']) < 6)
 	{
 		$hasError = true;
 	}
-	
+
 	if($data['password'] != $data['password_confirm'])
 	{
 		$hasError = true;
@@ -40,33 +40,33 @@
 
 	//Check if user actually uploaded something
 	if ($files["image"]["size"] == 0) {
-	
+
 		$file_name =  "profile_default_image.jpg";
 		$hasFileError = true;
-	} 
+	}
 	else {
 
 		$target_dir = dirname(dirname(__FILE__)) . "/../Resources/Images/ProfilePics/";
 		$file_name = $files["image"]["name"];
 		$target_file = $target_dir . basename($file_name);
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-		
+
 		// Allow certain file formats
 		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 		&& $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG"
-		&& $imageFileType != "GIF") 
+		&& $imageFileType != "GIF")
 		{
 			$hasFileError = true;
-		} 
+		}
 
 		$new_name = GUID();
-		
+
 		$target_file = $target_dir .  $new_name . "." .$imageFileType;
 		$file_name = $new_name . "." .$imageFileType;
 
 		// Check if file already exists
 		while (file_exists($target_file)) {
-			
+
 			$new_name = GUID();
 
 			$target_file = $target_dir .  $new_name . "." .$imageFileType;
@@ -80,8 +80,8 @@
 		}
 	}
 
-	
-	
+
+
 	if($hasError == false)
 	{
 		if($hasFileError == false)
@@ -94,7 +94,7 @@
 		else
 		{
 			$file_name =  "profile_default_image.jpg";
-		}	
+		}
 
 		unset($data['password_confirm']);
 		$data['password'] = md5($data['password']);
@@ -104,7 +104,7 @@
 		print_r($data);
     }
 
-    header('Location: ../../Resources/Templates/login_2.html');
+    //header('Location: ../../Resources/Templates/login_2.html');
 
     function GUID() //create random name
     {
