@@ -16,21 +16,23 @@ $(document).ready(function(){
 
 function SendMessage() {
 
-	var data = {
-		message: $('#chatBody #type input').val(),
-		sender_id: getId('user'),
-		receiver_id: getId('admin')
-	};
+	if($('#chatBody #type input').val() != '') {
 
-	$('#chatBody #type input').val('');
-	$('#send').addClass('blurred');
+		var data = {
+			message: $('#chatBody #type input').val(),
+			sender_id: getId('user'),
+			receiver_id: getId('admin')
+		};
 
-	$.ajax({
-		url: '../../Controllers/Chat/sendMessage.php',
-		method: 'POST',
-		data: {message_data: data}
-	});
+		$('#chatBody #type input').val('');
+		$('#send').addClass('blurred');
 
+		$.ajax({
+			url: '../../Controllers/Chat/sendMessage.php',
+			method: 'POST',
+			data: {message_data: data}
+		});
+	}
 }
 
 function getId(person) {
