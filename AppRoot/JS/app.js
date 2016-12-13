@@ -1,11 +1,8 @@
+'use strict';
+
 var app = angular.module('app', ['ngRoute']);
 
-app.config(function($routeProvider, $locationProvider) {
-
-    $locationProvider.html5Mode({
-        enabled:true,
-        requireBase:false
-    });
+app.config(function($routeProvider) {
 
     $routeProvider.when('/', {
         templateUrl: 'Resources/Templates/home.html'
@@ -19,5 +16,23 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/profile', {
         templateUrl: 'Resources/Templates/profile.html'
     });
+    $routeProvider.when('/login', {
+        templateUrl: 'Resources/Templates/login_register.html'
+    });
     $routeProvider.otherwise({redirectTo: '/'});
+});
+
+app.directive('navigation', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'Resources/Templates/nav.html',
+        scope: {}
+    }
+});
+
+app.directive('footer', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'Resources/Templates/footer.html'
+    }
 });
