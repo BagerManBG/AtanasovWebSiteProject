@@ -6,98 +6,100 @@
 <link rel="stylesheet" type="text/css" href="../../CSS/Forms/logIn_register.css">
 <!-- Temporary -->
 
-<div class="form" method="post" action="../../Controllers/Account/register.php" enctype="multipart/form-data">
+<div id="formContainer">
+    <div class="form" method="post" action="../../Controllers/Account/register.php" enctype="multipart/form-data">
 
-    <ul class="tab-group">
-        <li class="tab active"><a href="#login">Log In</a></li>
-        <li class="tab"><a href="#signup">Sign Up</a></li>
-    </ul>
+        <ul class="tab-group">
+            <li class="tab active"><a href="#login">Log In</a></li>
+            <li class="tab"><a href="#signup">Sign Up</a></li>
+        </ul>
 
-    <div class="tab-content">
-        <div id="login">
-            <h1>Welcome Back!</h1>
+        <div class="tab-content">
+            <div id="login">
+                <h1>Welcome Back!</h1>
 
-            <form action="../../Controllers/Account/login.php" method="post">
+                <form action="../../Controllers/Account/login.php" method="post">
 
-                <div class="field-wrap">
-                    <label>
+                    <div class="field-wrap">
+                        <label>
               Email Address
             </label>
-                    <input type="email" name="email" autocomplete="off" />
-                </div>
+                        <input type="text" name="email" autocomplete="off" />
+                    </div>
 
-                <div class="field-wrap">
-                    <label>
+                    <div class="field-wrap">
+                        <label>
               Password
             </label>
-                    <input type="password" name="password" autocomplete="off" />
-                </div>
+                        <input type="password" name="password" autocomplete="off" />
+                    </div>
 
-                <button type="submit" class="button button-block" />Log In</button>
+                    <button type="submit" class="button button-block" />Log In</button>
 
-            </form>
-        </div>
+                </form>
+            </div>
 
-        <div id="signup">
-            <h1>Sign Up for Free</h1>
+            <div id="signup">
+                <h1>Sign Up for Free</h1>
 
-            <form action="../../Controllers/Account/register.php" method="post" enctype="multipart/form-data">
+                <form action="../../Controllers/Account/register.php" method="post" enctype="multipart/form-data">
 
-                <div class="top-row">
-                    <div class="field-wrap">
-                        <label>
+                    <div class="top-row">
+                        <div class="field-wrap">
+                            <label>
                 First Name
               </label>
-                        <input name="first_name" type="text" autocomplete="off" />
+                            <input name="first_name" type="text" autocomplete="off" />
+                        </div>
+
+                        <div class="field-wrap">
+                            <label>
+                Last Name
+              </label>
+                            <input name="last_name" type="text" autocomplete="off" />
+                        </div>
                     </div>
 
                     <div class="field-wrap">
                         <label>
-                Last Name
-              </label>
-                        <input name="last_name" type="text" autocomplete="off" />
-                    </div>
-                </div>
-
-                <div class="field-wrap">
-                    <label>
               Email Address
             </label>
-                    <input name="email" type="text" autocomplete="off" />
-                </div>
+                        <input name="email" type="text" autocomplete="off" />
+                    </div>
 
-                <div class="field-wrap">
-                    <label>
+                    <div class="field-wrap">
+                        <label>
               Set A Password
             </label>
-                    <input name="password" type="password" autocomplete="off" />
-                </div>
+                        <input name="password" type="password" autocomplete="off" />
+                    </div>
 
-                <div class="field-wrap">
-                    <label>
+                    <div class="field-wrap">
+                        <label>
               Confirm Password
             </label>
-                    <input name="password_confirm" type="password" autocomplete="off" />
-                </div>
+                        <input name="password_confirm" type="password" autocomplete="off" />
+                    </div>
 
-                <div class="field-wrap">
-                    <label>
+                    <div class="field-wrap">
+                        <label>
               Secret Question<span> (optional)</span>
             </label>
-                    <input name="secret_question" type="text" autocomplete="off" />
-                </div>
+                        <input name="secret_question" type="text" autocomplete="off" />
+                    </div>
 
-                <div class="field-wrap">
-                    <label>
+                    <div class="field-wrap">
+                        <label>
               Answer<span> (optional)</span>
             </label>
-                    <input name="secret_answer" type="text" autocomplete="off" />
-                </div>
+                        <input name="secret_answer" type="text" autocomplete="off" />
+                    </div>
 
-                <button type="submit" class="button button-block">Get Started</button>
+                    <button type="submit" class="button button-block">Get Started</button>
 
-            </form>
+                </form>
+            </div>
+
         </div>
-
     </div>
 </div>

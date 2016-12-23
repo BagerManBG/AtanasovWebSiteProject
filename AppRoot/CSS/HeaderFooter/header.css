@@ -1,33 +1,12 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-nav{
+nav {
     width: 100%;
     position: absolute;
 }
+
 nav ul {
     list-style-type: none;
     overflow: hidden;
     background-color: transparent;
-
 }
 
 nav li {
@@ -35,45 +14,51 @@ nav li {
     margin: 1.5%;
 }
 
-nav li a {
+nav li a,
+nav li p {
     display: block;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
-nav h1{
+nav h1 {
     float: left;
     color: white;
     margin: 1.5%;
 }
 
 .container {
-  margin: 0 auto;
-  
+    margin: 0 auto;
 }
 
 section.module:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 section.module p {
-  margin-bottom: 40px;
-  font-size: 16px;
-  font-weight: 300;
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 300;
 }
+
 section.module p:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
+
 section.module.content {
-  padding: 40px 0;
+    padding: 40px 0;
 }
+
 section.module.parallax {
-  height: 67.5vh;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+    height: 67.5vh;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
+
 /*section.module.parallax h1 {
   color: rgba(255, 255, 255, 0.8);
   font-size: 48px;
@@ -83,79 +68,70 @@ section.module.parallax {
   text-transform: uppercase;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }*/
+
 section.module.parallax-1 {
-  background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/01/24/12/v2-cute-cat-picture.jpg");
-}
-.blackLine{
- 
-  position: relative;
-  top: 53vh;
-  background: rgba(0, 0, 0, 0.5); 
-  height: 14.5vh;
-  min-height: 8vh;
-  z-index: 500;
-
-}
-.banner{
-  
-  width: 98%;
-  position: relative;
- 
+    background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/01/24/12/v2-cute-cat-picture.jpg");
 }
 
-.banner h2{
-  padding: 2%;
-  padding-bottom: 0;
-  font-size: 6vh;
-  color: white;
-  float: left;
+.blackLine {
+    position: relative;
+    top: 53vh;
+    background: rgba(0, 0, 0, 0.5);
+    height: 14.5vh;
+    min-height: 8vh;
+    z-index: 500;
 }
 
-.banner p{
-  width: 100%;
-  font-size: 4vh;
-  color: white;
-  padding-top: 0;
-  padding-left: 2%;
-  padding-bottom: 5%;
-  float: left;
+.banner {
+    width: 98%;
+    position: relative;
 }
 
-.button{  
-  background-color: transparent;
-  border: 1px #7e8895 solid;
-  border-radius: 4px;
-  color: #7e8895;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  padding-right: 5%;
-  padding-left: 5%;
-  cursor: pointer;
-  text-decoration: none;
-
+.banner h2 {
+    padding: 2%;
+    padding-bottom: 0;
+    font-size: 6vh;
+    color: white;
+    float: left;
 }
 
-.button:hover{
-  background-color: #d3d3d3 ;
-  transition:0.2s;
+.banner p {
+    width: 100%;
+    font-size: 4vh;
+    color: white;
+    padding-top: 0;
+    padding-left: 2%;
+    padding-bottom: 5%;
+    float: left;
 }
 
-
-
-
-.scroll{
-  background-color: black;
-  transition:0.7s;
- 
+.button {
+    background-color: transparent;
+    border: 1px #7e8895 solid;
+    border-radius: 4px;
+    color: #7e8895;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-right: 5%;
+    padding-left: 5%;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.nav-scroll{
-  position: fixed;
-  z-index: 1000;
-
+.button:hover {
+    background-color: #d3d3d3;
+    transition: 0.2s;
 }
 
+.scroll {
+    background-color: black;
+    transition: 0.7s;
+}
 
+.nav-scroll {
+    position: fixed;
+    z-index: 1000;
+}
 
 
 /*@media all and (min-width: 600px) {
@@ -174,8 +150,3 @@ section.module.parallax-1 {
     font-size: 160px;
   }
 }*/
-
-
-
-
-

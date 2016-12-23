@@ -1,171 +1,190 @@
-*, *:before, *:after {
-  box-sizing: border-box;
+#formContainer *,
+#formContainer *:before,
+#formContainer *:after {
+    box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: #1ab188;
-  transition: .5s ease;
+#formContainer {
+    margin: auto;
+    position: fixed;
+    top: 100px;
+    left: 30vw;
+    z-index: 7000;
 }
 
-a:hover {
-  color: #1ab188;
+#formContainer a {
+    text-decoration: none;
+    color: #1ab188;
+    transition: .5s ease;
 }
 
-.form {
-  /*background: rgba(19,35,47, .9);*/
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19,35,47,.3);
+#formContainer a:hover {
+    color: #1ab188;
 }
 
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
+#formContainer .form {
+    background: rgba(19, 35, 47, .9);
+    padding: 2%;
+    width: 40vw;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, .3);
 }
 
-.tab-group:after {
-  content: "";
-  display: table;
-  clear: both;
+#formContainer .tab-group {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
 }
 
-li a {
-  display: block;
-  text-decoration: none;
-  padding: 15px;
-  background: rgba(160,179,176,.25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  transition: .5s ease;
+#formContainer .tab-group:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-li a:hover {
-  background: #C0C0C0;
-  color: #fff;
+#formContainer li a {
+    display: block;
+    text-decoration: none;
+    padding: 4%;
+    background: rgba(160, 179, 176, .25);
+    color: #a0b3b0;
+    font-size: 1.6vw;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease;
 }
 
-.active a {
-  background: #101010;
-  color: #fff;
+#formContainer li a:hover {
+    background: rgba(160, 179, 176, .5);
+    color: #fff;
 }
 
-.active a:hover {
-  background: #101010;
-  color: #fff;
+#formContainer .active a {
+    background: #1ab188;
+    color: #fff;
 }
 
-.tab-content > div:last-child {
-  display: none;
+#formContainer .active a:hover {
+    background: #1ab188;
+    color: #fff;
 }
 
-h1 {
-  text-align: center;
-  color: #fff;
-  font-weight: 300;
-  font-size: 30px;
-  margin: 0 0 40px;
+#formContainer .tab-content>div:last-child {
+    display: none;
 }
 
-label {
-  position: absolute;
-  transform: translateY(6px);
-  left: 13px;
-  color: black;
-  transition: all 0.25s ease;
-  /*-webkit-backface-visibility: hidden;*/
-  pointer-events: none;
-  font-size: 22px;
+#formContainer h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.8vw;
+    margin: 0 0 6%;
 }
 
-label.active {
-  transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
+#formContainer label {
+    position: absolute;
+    transform: translateY(6px);
+    left: 13px;
+    color: rgba(256, 256, 256, .5);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-size: 1.6vw;
 }
 
-label.highlight {
-	color: black;
+#formContainer label.active {
+    transform: translateY(50px);
+    left: 2px;
+    font-size: 1.4vw;
 }
 
-input {
-  font-size :22px;
-  display: block;
-  width: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid #a0b3b0;
-  color: black;
-  border-radius: 0;
-  transition: border-color .25s ease, box-shadow .25s ease;
+#formContainer label.highlight {
+    color: #fff;
 }
 
-input:focus {
-  outline: 0;
-  border-color: #1ab188;
+#formContainer input {
+    font-size: 1.6vw;
+    display: block;
+    width: 100%;
+    padding: 1% 2%;
+    background: none;
+    background-image: none;
+    border: 1px solid #a0b3b0;
+    color: #fff;
+    border-radius: 0;
+    transition: border-color .25s ease, box-shadow .25s ease;
 }
 
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px;
+#formContainer input:focus {
+    outline: 0;
+    border-color: #1ab188;
 }
 
-.top-row:after {
-  content: "";
-  display: table;
-  clear: both;
+#formContainer .field-wrap {
+    position: relative;
+    margin-bottom: 40px;
 }
 
-.top-row > div {
-  float: left;
-  width: 48%;
-  margin-right: 4%;
+#formContainer .top-row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.top-row > div:last-child {
-  margin: 0;
+#formContainer .top-row>div {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
 }
 
-.button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #C0C0C0;
-  color: #fff;
-  transition: all.5s ease;
-  -webkit-appearance: none;
+#formContainer .top-row>div:last-child {
+    margin: 0;
 }
 
-.button:hover, .button:focus {
-  background: #101010;
-  cursor: pointer;
+#formContainer .button {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 3% 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #1ab188;
+    color: #fff;
+    transition: all.5s ease;
+    -webkit-appearance: none;
 }
 
-.button-block {
-  display: block;
-  width: 100%;
+#formContainer .button:hover,
+#formContainer .button:focus {
+    background: #1ac188;
+    cursor: pointer;
 }
 
-.forgot {
-  margin-top: -20px;
-  text-align: right;
+#formContainer .button-block {
+    display: block;
+    width: 100%;
 }
 
-.optional {
-  margin-top: -20px;
-  text-align: right;
-  color: #101010;
+#formContainer .forgot {
+    margin-top: -20px;
+    text-align: right;
+}
+
+#formContainer .optional {
+    margin-top: -20px;
+    text-align: right;
+    color: #101010;
+}
+
+#mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .75);
 }
