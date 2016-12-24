@@ -2,117 +2,121 @@
 
 	require_once "../../Models/Database/db.class.php";
 
-	echo "<pre>";
-	print_r($_POST);
-	print_r($_FILES);
+	$data = [
+		'first_name' => $_POST['reg_data'][0],
+		'last_name' => $_POST['reg_data'][1],
+		'email' => $_POST['reg_data'][2],
+		'password' => $_POST['reg_data'][3],
+		'password_confirm' => $_POST['reg_data'][4],
+		'secret_question' => $_POST['reg_data'][5],
+		'secret_answer' => $_POST['reg_data'][6]
+	];
 
-	$data = $_POST;
-	$files = $_FILES;
 	$hasError = false;
-	$hasFileError = false;
-	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$media_path = dirname(dirname(dirname($actual_link))) . "/Resources/Images/ProfilePics/";
 
-	foreach($data as $k=>$v)
-	{
-		$data[$k] = trim($data[$k]);
-	}
+	$q = "SELECT * FROM `users` WHERE `email` = '".$data['email']."'";
+	$result = $db->fetchArray($q);
 
-	$query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
-
-	$result = $db->fetchArray($query);
-	//print_r($result);
-
-	if(!empty($result))
-	{
+	if(!empty($result)) {
 		$hasError = true;
 	}
 
-	if(strlen($data['password']) < 6)
-	{
-		$hasError = true;
-	}
+	CheckName($data['first_name']);
+	CheckName($data['last_name']);
+	CheckEmail($data['email']);
+	CheckPassword($data['password']);
+	CheckPasswordConfirm($data['password'], $data['password_confirm']);
+	CheckSecretInfo('q', $data['secret_question']);
+	CheckSecretInfo('a', $data['secret_answer']);
 
-	if($data['password'] != $data['password_confirm'])
-	{
-		$hasError = true;
-	}
-
-	//Check if user actually uploaded something
-	if ($files["image"]["size"] == 0) {
-
-		$file_name =  "profile_default_image.jpg";
-		$hasFileError = true;
-	}
-	else {
-
-		$target_dir = dirname(dirname(__FILE__)) . "/../Resources/Images/ProfilePics/";
-		$file_name = $files["image"]["name"];
-		$target_file = $target_dir . basename($file_name);
-		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-		// Allow certain file formats
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-		&& $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG"
-		&& $imageFileType != "GIF")
-		{
-			$hasFileError = true;
-		}
-
-		$new_name = GUID();
-
-		$target_file = $target_dir .  $new_name . "." .$imageFileType;
-		$file_name = $new_name . "." .$imageFileType;
-
-		// Check if file already exists
-		while (file_exists($target_file)) {
-
-			$new_name = GUID();
-
-			$target_file = $target_dir .  $new_name . "." .$imageFileType;
-			$file_name = $new_name . "." .$imageFileType;
-		}
-
-		// Check file size
-		if ($files["image"]["size"] > 5000000) {
-
-			$hasFileError = true;
-		}
-	}
-
-
-
-	if($hasError == false)
-	{
-		if($hasFileError == false)
-		{
-			if(!move_uploaded_file($files["image"]["tmp_name"], $target_file))
-			{
-				$file_name =  "profile_default_image.jpg";
-			}
-		}
-		else
-		{
-			$file_name =  "profile_default_image.jpg";
-		}
+	if(!$hasError) {
+		
+		$file = 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg';
 
 		unset($data['password_confirm']);
 		$data['password'] = md5($data['password']);
-		$data['avatar'] = $media_path . $file_name;
+		$data['avatar'] = $file;
+
 		$db->saveArray('users', $data);
-		echo '<pre>';
-		print_r($data);
-	  }
 
-    header('Location: ../../Resources/Templates/login_2.html');
+		unset($result[0]['password']);
+		unset($result[0]['secret_question']);
+		unset($result[0]['secret_answer']);
 
-    function GUID() //create random name
-    {
-		if (function_exists('com_create_guid') === true)
-		{
-		    return trim(com_create_guid(), '{}');
-		}
+		$_SESSION['logged_user'] = $data;
 
-		return sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
+		echo 'OK';
 	}
+
+function CheckName($name) {
+
+    $regex = '/^[a-zA-Z]+$/';
+
+    if (strlen($name) < 3) {
+        $hasError = true;
+    }
+
+    if (strlen($name) > 21) {
+        $hasError = true;
+    }
+
+    if (!preg_match($regex, $name)) {
+        $hasError = true;
+    }
+}
+
+function CheckEmail($email) {
+
+    $regex = '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/';
+
+    if (!preg_match($regex, $email)) {
+        $hasError = true;
+    }
+}
+
+function CheckPassword($password) {
+
+    $regex = '/^[a-zA-Z1-9]+$/';
+
+    if (strlen($password) < 4) {
+        $hasError = true;
+    }
+
+    if (strlen($password) > 30) {
+        $hasError = true;
+    }
+
+    if (!preg_match($regex, $password)) {
+        $hasError = true;
+    }
+}
+
+function CheckPasswordConfirm($password, $password_confirm) {
+
+    if ($password != $password_confirm) {
+        $hasError = true;
+    }
+}
+
+function CheckSecretInfo($type, $str) {
+
+    $regex;
+    $symbol;
+
+    switch ($type) {
+        case 'q':
+            $symbol = '?';
+            $regex = '/^([a-zA-Z1-9][a-zA-Z1-9\s]*[a-zA-Z1-9]*[?])?$/';
+            break;
+        case 'a':
+            $symbol = '!';
+            $regex = '/^([a-zA-Z1-9][a-zA-Z1-9\s]*[a-zA-Z1-9]*[!])?$/';
+            break;
+    }
+
+    if (!preg_match($regex, $str)) {
+        $hasError = true;
+    }
+}
+
 ?>

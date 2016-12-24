@@ -14,6 +14,7 @@
     <script src="Resources/Libraries/JQuery/jquery.js"></script>
     <script src="JS/main.js"></script>
     <script src="JS/Forms/add_remove_highlighter.js"></script>
+    <script src="JS/Forms/validate_register.js"></script>
 </head>
 
 <body>
@@ -229,16 +230,12 @@
                     <form action="../../Controllers/Account/login.php" method="post">
 
                         <div class="field-wrap">
-                            <label>
-              Email Address
-            </label>
+                            <label>Email Address</label>
                             <input type="text" name="email" autocomplete="off" />
                         </div>
 
                         <div class="field-wrap">
-                            <label>
-              Password
-            </label>
+                            <label>Password</label>
                             <input type="password" name="password" autocomplete="off" />
                         </div>
 
@@ -254,60 +251,66 @@
 
                         <div class="top-row">
                             <div class="field-wrap">
-                                <label>
-                First Name
-              </label>
-                                <input name="first_name" type="text" autocomplete="off" />
+                                <label>First Name</label>
+                                <input name="first_name" id="first_name" type="text" autocomplete="off" />
+                                <p id="errorDisplay">
+                                    <span id='1'><!--error--></span>
+                                </p>
                             </div>
 
                             <div class="field-wrap">
-                                <label>
-                Last Name
-              </label>
-                                <input name="last_name" type="text" autocomplete="off" />
+                                <label>Last Name</label>
+                                <input name="last_name" id="last_name" type="text" autocomplete="off" />
+                                <p id="errorDisplay">
+                                    <span id='2'><!--error--></span>
+                                </p>
                             </div>
                         </div>
 
                         <div class="field-wrap">
-                            <label>
-              Email Address
-            </label>
-                            <input name="email" type="text" autocomplete="off" />
+                            <label>Email Address</label>
+                            <input name="email" id="email" type="text" autocomplete="off" />
+                            <p id="errorDisplay">
+                                <span id='3'><!--error--></span>
+                            </p>
                         </div>
 
                         <div class="field-wrap">
-                            <label>
-              Set A Password
-            </label>
-                            <input name="password" type="password" autocomplete="off" />
+                            <label>Set A Password</label>
+                            <input name="password" id="password" type="password" autocomplete="off" />
+                            <p id="errorDisplay">
+                                <span id='4'><!--error--></span>
+                            </p>
                         </div>
 
                         <div class="field-wrap">
-                            <label>
-              Confirm Password
-            </label>
-                            <input name="password_confirm" type="password" autocomplete="off" />
+                            <label>Confirm Password</label>
+                            <input name="password_confirm" id="password_confirm" type="password" autocomplete="off" />
+                            <p id="errorDisplay">
+                                <span id='5'><!--error--></span>
+                            </p>
                         </div>
 
                         <div class="field-wrap">
-                            <label>
-              Secret Question<span> (optional)</span>
-            </label>
-                            <input name="secret_question" type="text" autocomplete="off" />
+                            <label>Secret Question<span> (optional)</span></label>
+                            <input name="secret_question" id="secret_question" type="text" autocomplete="off" />
+                            <p id="errorDisplay">
+                                <span id='6'><!--error--></span>
+                            </p>
                         </div>
 
                         <div class="field-wrap">
-                            <label>
-              Answer<span> (optional)</span>
-            </label>
-                            <input name="secret_answer" type="text" autocomplete="off" />
+                            <label>Answer<span> (optional)</span></label>
+                            <input name="secret_answer" id="secret_answer" type="text" autocomplete="off" />
+                            <p id="errorDisplay">
+                                <span id='7'><!--error--></span>
+                            </p>
                         </div>
 
-                        <button type="button" class="button button-block">Get Started</button>
+                        <button type="button" class="button button-block" id="registerButton">Get Started</button>
 
                     </form>
                 </div>
-
             </div>
         </div>
     </div>

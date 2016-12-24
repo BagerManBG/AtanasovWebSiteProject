@@ -17,6 +17,12 @@ $(document).ready(function() {
         $('#mask').fadeOut(400);
     });
 
+    $(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+            $('#mask').click();
+        }
+    });
+
     $('.tab a').on('click', function(e) {
 
         e.preventDefault();
