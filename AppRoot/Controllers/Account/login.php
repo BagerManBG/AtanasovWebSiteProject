@@ -1,39 +1,33 @@
 <?php
-require_once "../../Models/Database/db.class.php";
+	require_once "../../Models/Database/db.class.php";
 
-$data = $_POST;
+	$data = [
+		'email' => $_POST['log_data'][0],
+		'password' => $_POST['log_data'][1],
+	];
 
-echo "<pre>";
-$data['email'] = mysqli_real_escape_string($db->dbHandle, $data['email']);
-$query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
-$result = $db->fetchArray($query);
-if(!empty($result))
-{
-	if($result[0]['password'] == md5($data['password']))
-	{ 
-		unset($result[0]['password']);
-		unset($result[0]['secret_question']);
-		unset($result[0]['secret_answer']);
+	$query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
+	$result = $db->fetchArray($query);
 
-		$_SESSION['logged_user'] = $result[0];
-		header('Location: ../../');
-
-		
-	}
-	else //if username exists but password is wrong
+	if(!empty($result))
 	{
-		header('Location: ../../Resources/Templates/login_register.html');
-		
+		if($result[0]['password'] == md5($data['password']))
+		{ 
+			unset($result[0]['password']);
+			unset($result[0]['secret_question']);
+			unset($result[0]['secret_answer']);
 
-	
+			$_SESSION['logged_user'] = $result[0];
+
+			echo 'OK';
+		}
+		else //if username exists but password is wrong
+		{
+			
+		}
 	}
-}
-else //if no user is found
-{
-		header('Location: ../../Resources/Templates/login_register.html');
-		
+	else //if no user is found
+	{
 
-}
-
-//print_r($_POST);	
-//print_r($_SESSION);
+	}
+?>

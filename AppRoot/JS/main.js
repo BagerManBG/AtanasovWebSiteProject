@@ -1,3 +1,5 @@
+var formOpened = false;
+
 $(document).ready(function() {
 
     DynamicNav();
@@ -10,11 +12,13 @@ $(document).ready(function() {
 
         var tab = $(this).attr('id');
         OpenForm(tab);
+        formOpened = true;
     });
 
     $('#mask').click(function() {
         $('#formContainer').fadeOut(400);
         $('#mask').fadeOut(400);
+        formOpened = false;
     });
 
     $(document).keyup(function(e) {

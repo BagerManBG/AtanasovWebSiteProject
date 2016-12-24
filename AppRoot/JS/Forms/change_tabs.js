@@ -12,6 +12,5 @@ $(document).ready(function() {
         $('.tab-content > div').not(target).hide();
 
         $(target).fadeIn(400);
-
     });
 });

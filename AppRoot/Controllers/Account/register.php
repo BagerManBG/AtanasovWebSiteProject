@@ -39,11 +39,14 @@
 
 		$db->saveArray('users', $data);
 
+        $query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
+        $result = $db->fetchArray($query);
+
 		unset($result[0]['password']);
 		unset($result[0]['secret_question']);
 		unset($result[0]['secret_answer']);
 
-		$_SESSION['logged_user'] = $data;
+        $_SESSION['logged_user'] = $result[0];
 
 		echo 'OK';
 	}
