@@ -91,6 +91,9 @@ function UserHandler() {
                 htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li>";
                 var userNameHTML = "<h1 class='dynamic'>Welcome, " + result + "</h1>";
                 $('#username').prepend(userNameHTML);
+
+                $('#formContainer').remove();
+                $('#mask').remove();
             }
 
             $('#links').prepend(htmlToAdd);

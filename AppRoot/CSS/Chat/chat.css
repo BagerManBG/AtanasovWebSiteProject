@@ -1,190 +1,191 @@
 #chatBox {
-	position: fixed;
-	bottom: 0.2%;
-	right: 1%;
-	border: 1px solid #ff5722;
-	float: right;
-	margin-left: 1%;
-	width: 22%;
+    position: fixed;
+    bottom: 0.2%;
+    right: 1%;
+    border: 1px solid #ff5722;
+    float: right;
+    margin-left: 1%;
+    width: 22%;
+    z-index: 8000;
 }
 
 #chatHeader {
-	background-color: #f44336;
-	width: 100%;
-	float: left;
+    background-color: #f44336;
+    width: 100%;
+    float: left;
 }
 
 #chatHeader #status {
-	float: left;
-	font-size: 1.35vw;
-	color: #fff;
-	width: 80%;
-	margin: 2.69%;
-	cursor: default;
+    float: left;
+    font-size: 1.35vw;
+    color: #fff;
+    width: 80%;
+    margin: 2.69%;
+    cursor: default;
 }
 
 #chatHeader #close {
-	float: right;
-	width: 6%;
-	margin: 3.5% 2.69%;
-	cursor: pointer;
+    float: right;
+    width: 6%;
+    margin: 3.5% 2.69%;
+    cursor: pointer;
 }
 
 #chatHeader #close img {
-	float: left;
-	width: 100%;
+    float: left;
+    width: 100%;
 }
 
 #chatBody {
-	float: left;
-	width: 100%;
-	border-top: 2px solid #ff5722;
-	background-color: #e3e3e3;
+    float: left;
+    width: 100%;
+    border-top: 2px solid #ff5722;
+    background-color: #e3e3e3;
 }
 
 #chatBody #content {
-	float: left;
-	width: 100%;
-	height: 30vh;
-	max-height: 300px;
-	min-height: 260px;
-	overflow-y: scroll;
-	margin-top: 5%; 
+    float: left;
+    width: 100%;
+    height: 30vh;
+    max-height: 300px;
+    min-height: 260px;
+    overflow-y: scroll;
+    margin-top: 5%;
 }
 
 #chatBody #type {
-	float: left;
-	width: 100%;
-	background-color: #fff;
+    float: left;
+    width: 100%;
+    background-color: #fff;
 }
 
 #chatBody #type input {
-	float: left;
-	width: 70%;
-	color: #000;
-	border: none;
-	border-bottom: 1px solid #808080;
-	margin: 5.2% 3%;
-	padding-left: 1.4%;
-	font-size: 1.15vw;
+    float: left;
+    width: 70%;
+    color: #000;
+    border: none;
+    border-bottom: 1px solid #808080;
+    margin: 5.2% 3%;
+    padding-left: 1.4%;
+    font-size: 1.15vw;
 }
 
 #chatBody #type #send {
-	float: right;
-	width: 12%;
-	border-radius: 100%;
-	overflow: hidden;
-	cursor: pointer;
-	margin: 3.2% 3%;
+    float: right;
+    width: 12%;
+    border-radius: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 3.2% 3%;
 }
 
 #chatBody #type #send img {
-	float: left;
-	width: 100%; 
+    float: left;
+    width: 100%;
 }
 
 .hisMessage {
-	float: left;
-	width: 97%;
+    float: left;
+    width: 97%;
 }
 
 .hisMessage .message {
-	float: left;
-	padding: 2%;
-	margin: 2.6% 5% 2%;
-	max-width: 62%;
-	background-color: #f44336;
-	border-radius: 3px;
-	color: #fff;
-	font-size: 1.2vw;
+    float: left;
+    padding: 2%;
+    margin: 2.6% 5% 2%;
+    max-width: 62%;
+    background-color: #f44336;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 1.2vw;
 }
 
 .myMessage {
-	float: right;
-	width: 90%;
+    float: right;
+    width: 90%;
 }
 
 .myMessage .message {
-	float: right;
-	padding: 2%;
-	margin: 2.6% 5% 2%;
-	max-width: 80%;
-	background-color: #fff;
-	border-radius: 3px;
-	color: #f44336;
-	font-size: 1.2vw;
+    float: right;
+    padding: 2%;
+    margin: 2.6% 5% 2%;
+    max-width: 80%;
+    background-color: #fff;
+    border-radius: 3px;
+    color: #f44336;
+    font-size: 1.2vw;
 }
 
 #noMessagesYet {
-	font-size: 1.2vw;
-	margin: 4%;
-	text-decoration: underline;
-	color: #111;
-	text-shadow: 1px 1px 1px #000;
+    font-size: 1.2vw;
+    margin: 4%;
+    text-decoration: underline;
+    color: #111;
+    text-shadow: 1px 1px 1px #000;
 }
 
 .blurred {
-	opacity: 0.479;
+    opacity: 0.479;
 }
 
 #quesitonBubble {
-	position: fixed;
-	bottom: 0.2%;
-	right: 0.2%;
-	width: 10%;
-	cursor: pointer;
+    position: fixed;
+    bottom: 0.2%;
+    right: 0.2%;
+    width: 10%;
+    cursor: pointer;
 }
 
-#quesitonBubble img{
-	width: 100%;
+#quesitonBubble img {
+    width: 100%;
 }
 
 #connect {
-	width: 100%;
-	height: 30vh;
-	max-height: 300px;
-	min-height: 260px;
+    width: 100%;
+    height: 30vh;
+    max-height: 300px;
+    min-height: 260px;
 }
 
 #connect label {
-	width: 80%;
-	margin: 5% 10% 0px;
-	display: block;
+    width: 80%;
+    margin: 5% 10% 0px;
+    display: block;
 }
 
 #connect label p {
-	width: 100%;
-	display: block;
-	color: #f44336;
-	font-size: 1.3vw;
-	margin-bottom: 6px; 
+    width: 100%;
+    display: block;
+    color: #f44336;
+    font-size: 1.3vw;
+    margin-bottom: 6px;
 }
 
 #connect label input {
-	width: 100%;
-	display: block;
-	color: #000;
-	font-size: 1.2vw;
-	padding: 1%;
-	resize: none;
+    width: 100%;
+    display: block;
+    color: #000;
+    font-size: 1.2vw;
+    padding: 1%;
+    resize: none;
 }
 
 #connect #connectButton {
-	width: 60%;
-	margin: 12% 20%;
-	display: block;
-	background-color: #f44336;
-	color: #fff;
-	padding: 3%;
-	font-weight: bold;
-	border: none;
-	cursor: pointer;
-	border: 1px solid #f44336;
-	font-size: 1.2vw;
-	transition: 0.5s ease;
+    width: 60%;
+    margin: 12% 20%;
+    display: block;
+    background-color: #f44336;
+    color: #fff;
+    padding: 3%;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #f44336;
+    font-size: 1.2vw;
+    transition: 0.5s ease;
 }
 
 #connect #connectButton:hover {
-	background-color: #fff;
-	color: #f44336
+    background-color: #fff;
+    color: #f44336
 }

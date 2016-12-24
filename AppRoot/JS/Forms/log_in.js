@@ -1,13 +1,18 @@
 $(document).ready(function() {
 
+    $('#wrongLog').addClass('bgColor');
+
+    $('#login input').bind('input', function() {
+
+        $('#wrongLog').addClass('bgColor');
+    });
+
     $('#loginButton').click(function() {
 
         var log_data = new Array(
             $('#login_email').val(),
             $('#login_password').val()
         );
-
-        console.log(log_data);
 
         $.ajax({
             url: 'Controllers/Account/login.php',
@@ -19,6 +24,8 @@ $(document).ready(function() {
                 if (result === 'OK') {
                     $('#formContainer').fadeOut(400);
                     location.reload();
+                } else {
+                    $('#wrongLog').removeClass('bgColor');
                 }
             }
         });

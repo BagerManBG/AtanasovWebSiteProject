@@ -4,18 +4,26 @@
 <head>
     <meta charset="UTF-8">
 
+    <title>Atanasoff</title>
+
     <link rel="stylesheet" type="text/css" href="CSS/reset.css">
     <link rel="stylesheet" type="text/css" href="CSS/HeaderFooter/header.css">
     <link rel="stylesheet" type="text/css" href="CSS/HeaderFooter/home.css">
     <link rel="stylesheet" type="text/css" href="CSS/HeaderFooter/footer.css">
     <link rel="stylesheet" type="text/css" href="CSS/Forms/logIn_register.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Chat/chat.css">
 
+    <link rel="shortcut icon" type="image/png" href="Resources/Images/Favicon/favicon.ico">
 
     <script src="Resources/Libraries/JQuery/jquery.js"></script>
     <script src="JS/main.js"></script>
     <script src="JS/Forms/add_remove_highlighter.js"></script>
     <script src="JS/Forms/validate_register.js"></script>
     <script src="JS/Forms/log_in.js"></script>
+    <script src="JS/Chat/chat_animations.js"></script>
+    <script src="JS/Chat/chat_check_admin_status.js"></script>
+    <script src="JS/Chat/send_message_user.js"></script>
+    <script src="JS/Chat/get_messages_user.js"></script>
 </head>
 
 <body>
@@ -27,7 +35,7 @@
 
                     <ul>
 
-                        <h1>Name</h1>
+                        <h1>Atanasoff Website</h1>
                         <div id="username">
                             <!-- <h1 class="dynamic">Welcome, User</h1> -->
                         </div>
@@ -215,6 +223,31 @@
 
     </footer>
 
+    <!--Chat Start-->
+    <div id="quesitonBubble">
+        <img src="Resources/Images/Chat/bubble.png">
+    </div>
+
+    <div id="chatBox">
+        <div id="chatHeader">
+            <p id="status"></p>
+            <div id="close">
+                <img src="Resources/Images/Chat/close.png">
+            </div>
+        </div>
+
+        <div id="chatBody">
+            <div id="content"></div>
+            <div id="type">
+                <input type="text" name="message" placeholder="Type Your Message...">
+                <div id="send" class="blurred">
+                    <img src="Resources/Images/Chat/send.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Chat End-->
+
     <!--Login/Register Forms Begin-->
     <div id="formContainer">
         <div class="form" method="post" action="../../Controllers/Account/register.php" enctype="multipart/form-data">
@@ -239,6 +272,8 @@
                             <label>Password</label>
                             <input type="password" id="login_password" name="password" autocomplete="off" />
                         </div>
+
+                        <p id="wrongLog">Wrong email or password</p>
 
                         <button type="button" id="loginButton" class="button button-block" />Log In</button>
 

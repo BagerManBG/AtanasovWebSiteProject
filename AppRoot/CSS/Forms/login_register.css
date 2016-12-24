@@ -195,3 +195,21 @@
     transition: .5s ease;
     border-color: #f53412 !important;
 }
+
+#wrongLog {
+    font-size: 1.4vw;
+    color: #f53412;
+    transition: .5s ease;
+    margin-bottom: 10px;
+}
+
+.bgColor {
+    transition: .5s ease;
+    color: rgba(19, 35, 47, .9) !important;
+    opacity: 0;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
