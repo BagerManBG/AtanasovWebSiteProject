@@ -1,17 +1,27 @@
 <?php
 
-/*    require_once "../../Models/Database/db.class.php";
-    
-    $data = $_POST;
+require_once "../../Models/Database/db.class.php";
 
-    foreach($data as $k=>$v)
-    {
-        $data[$k] = trim($data[$k]);
-    }
-    $id = $_SESSION['logged_user']['id'];
-    $firstName = $_SESSION['logged_user']['first_name'];
-    $query = "SELECT * FROM `users` WHERE `id` = '".$id."' ";
+// FirstName
+// LastName
+// Email
 
-    $result = $db->updateRow(`users`,$firstName);
-    print_r($result);
-*/?>    
+$new_data = $_POST['data'];
+
+$first_name = $new_data['first_name'];
+$last_name = $new_data['last_name'];
+$email = $new_data['email'];
+
+$user_id = $_SESSION['logged_user']['id'];
+
+$q = "SELECT * FROM `users` WHERE `id` = '$user_id'";
+
+$user_data = $db->fetchArray($q);
+
+$user_data['first_name'] = $first_name;
+$user_data['last_name'] = $last_name;
+$user_data['email'] = $email;
+
+$db->saveArray('users', $user_data);
+
+?>
