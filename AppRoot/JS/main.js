@@ -88,7 +88,7 @@ function UserHandler() {
             if (result == '') {
                 htmlToAdd = "<li><p class='dynamic account' id='reg'>Register</p></li><li><p class='dynamic account' id='log'>Log In</p></li>";
             } else {
-                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li>";
+                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='Resources/Templates/profile.html' class='dynamic'>Profile</a></li>";
                 var userNameHTML = "<h1 class='dynamic'>Welcome, " + result + "</h1>";
                 $('#username').prepend(userNameHTML);
 

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <body>
         <!-- Temporary -->
         <link rel="stylesheet" type="text/css" href="../../CSS/Profile/profile.css">
@@ -11,39 +10,32 @@
                 <div class="profileImage"> 
                     <img class="paperclip" src="../Images/Profile/paperclip.png">
                      <img class="avatar" src="../Images/ProfilePics/profile_default_image.jpg" >
-                     <div class="Options">
-                        Password
-                    </div>
-
-                        
-                    </div>
+                </div>
                 
                 <div class="profileInfo">
                     <div class= "profileHeader" >
                         <h2>Profile</h2>
                         
                     </div>
-                    <form action="../../Controllers/Account/profile.php" method="post" class="buttons">
-
                     <div class="ProfileData">
                     <label>First Name</label>   
-                    <input type="text" name="first_name" value="Firstname" disabled>                   
-                    <label>Last Name</label>
-                    <input class="firstName" type="text" name="last_name" value="Lastname"  disabled>
-                    <label>Email</label>   
-                    <input class="email" type="email" name='email' value="Email"  disabled>
-                  <!--   <label>Password</label>   
+                    <input type="text" name="firstname" value="Firstname" disabled>                   
+                    <label>Second Name</label>   
+                    <input class="firstName" type="text"  value="Secondname"  disabled>
+                    <label>Password</label>   
                     <input class="firstName" type="text"  value="Password"  disabled>
                     <label>Password Confirm</label>   
                     <input class="firstName" type="text"  value="Password Conf"  disabled>
-                    </div> -->
+                    </div>
 
                     <div class="buttons">
-                        <button class="button" id="Edit" type="button">Edit</button>
-                        <button class="button" id="Cancel" type="button">Cancel</button>
-                        <button class="button" type="submit">Save</button>
-                    </form>        
- 
+                        <button class="button" id="Edit">Edit</button>
+                        <button class="button" id="Cancel">Cancel</button>
+<!--                     <form action="../../Controllers/Account/profile.php" method="post">
+ -->                        <button class="button" type="submit">Save</button>
+<!--                     </form>            
+ -->
+
                     </div>
 
 
@@ -51,14 +43,14 @@
                 
                 </div>    
 
-                <!--<div class="labels">
+                <div class="labels">
                         <label>First Name: <?php echo  "".$_SESSION['logged_user']['first_name']. "" ?> </label>
                         <label>Second Name: <?php echo  "".$_SESSION['logged_user']['last_name']. "" ?> </label>
                         <label>Email: <?php echo  "".$_SESSION['logged_user']['email']. "" ?> </label>
                         <label>Rank:  Noob </label> 
 
  
-                </div> -->
+                </div> 
             </div>
         </section>
         <script src="../Libraries/JQuery/jquery.js"></script>
