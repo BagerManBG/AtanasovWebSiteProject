@@ -101,6 +101,19 @@ input[type="email"]:disabled {
     border: 1px white solid;
 }
 
+input[type="password"]:disabled {
+    width: 85%;
+    height: 4.5%;
+    color: black;
+    background-color: white;
+    margin-left: 8%;
+    margin-bottom: 3%;
+    font-size: 1.5vw;
+    border: 1px black solid;
+    padding-left: 1%;
+    border: 1px white solid;
+}
+
 
 
 
@@ -187,22 +200,28 @@ textarea:focus, input:focus{
 
 }
 
-.Options{
-  background-color: black;
-  color: white;
-  width: 80%;
-  margin-top: 3%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+#arrow {
+  text-align: center;
+  width: 11vw;
+  height: 2.2vw;
+  background-color: #ccc;
+  position: relative;
+  margin-top: 2%;
 }
 
-.Options::before { 
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 10px;
-    background-color: yellow;
-    color: red;
-    font-weight: bold;
-}
+#arrow:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 11vw;
+  width: 0;
+  height: 0;
+  border: 1.1vw solid transparent;
+  border-left: 5vw solid #ccc;
+  }
+
+  #arrow_label{
+    position: relative;
+    top:20%;
+  }
 

@@ -9,4 +9,19 @@ $(document).ready(function(){
 
 
 });
+
+  $( ".password" ).hide();
+  $( ".control_2" ).click(function() {
+        $( ".password" ).show();
+        $( ".names" ).hide();
+
+    });
+
+   $( ".control_1" ).click(function() {
+        $( ".password" ).hide();
+        $( ".names" ).show();
+    });
 });
+
+
+   
