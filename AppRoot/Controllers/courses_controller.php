@@ -42,7 +42,7 @@
     }
 
     function edit($id, $name, $description, $capacity, $difficulty_level_id) {
-      $info = ["name" => $name, "description" => $description, "students_capacity" => $capacity, "difficulty_level" => $difficulty_level_id];
+      $info = ["id" => $id, "name" => $name, "description" => $description, "students_capacity" => $capacity, "difficulty_level" => $difficulty_level_id];
       $result = $this->db->saveArray($this->tableName, $info);
     }
 

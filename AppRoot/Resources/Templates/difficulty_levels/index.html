@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous">
+    </script>
+    <script>
+        $.ajax({
+          type: "POST",
+          url: "../../../Models/ViewModels/getDifficultyLevels.php",
+          success: function(data){
+            var obj = JSON.parse(data);
+            
+            for (var i in obj) {
+              var level = obj[i];
+              var div = $('<div class="level"></div>');
+              var link = $('<a href="details.html?id=' + level["id"] + '">' + level["name"] + '</a>');
+              div.append(link);
+              $('#levels').append(div);
+            }
+          }
+        });
+    </script>
+    <div class="emo">
+      <div id="levels">
+
+      </div>
+    </div>
+  </body>
+</html>

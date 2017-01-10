@@ -13,7 +13,7 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $('#calendar').fullCalendar({
-            events: '/AtanasovWebSiteProject/AppRoot/Models/ViewModels/getLectures.php',
+            events: '../../../Models/ViewModels/getLectures.php',
             header: {
               left: 'prev,next today addEvent',
               center: 'title',
@@ -53,8 +53,8 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                    <a data-dismiss="modal" class="btn btn-warning" id="editLecture">Редактирай</a>
-                    <a data-dismiss="modal" class="btn btn-danger" id="deleteLecture">Изтрий</a>
+                    <a class="btn btn-warning" id="editLecture">Редактирай</a>
+                    <a class="btn btn-danger" id="deleteLecture">Изтрий</a>
                     <a href="#" data-dismiss="modal" class="btn btn-default">Затвори</a>
                 </div>
             </div>
