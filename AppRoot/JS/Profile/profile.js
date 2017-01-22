@@ -11,17 +11,14 @@ $(document).ready(function(){
 });
 
   $( ".password" ).hide();
-  $( ".control_2" ).click(function() {
-        $( ".password" ).show();
-        $( ".names" ).hide();
-
-    });
 
    $( ".control_1" ).click(function() {
-        $( ".password" ).hide();
-        $( ".names" ).show();
+        $( ".password" ).fadeOut(300);
+        $( ".names" ).delay(300).fadeIn(300);
+    });
+
+   $( ".control_2" ).click(function() {
+        $( ".password" ).delay(300).fadeIn(300);
+        $( ".names" ).fadeOut(300);
     });
 });
-
-
-   
