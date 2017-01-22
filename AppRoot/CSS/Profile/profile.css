@@ -227,3 +227,15 @@ textarea:focus, input:focus{
     top:20%;
   }
 
+  .arrow_1:hover{
+    margin-left: 5%;
+    transition:0.4s;
+  }
+
+   .arrow_2:hover{
+    margin-left: 5%;
+    transition:0.4s;
+
+  }
+
+
