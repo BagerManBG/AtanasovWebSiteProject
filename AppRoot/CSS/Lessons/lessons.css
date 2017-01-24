@@ -33,7 +33,19 @@ display:inline-block;
 #menuitems {
     background-color: #dbdbdb;
 }
-#heading{
+
+#menuitems_1 {
+    background-color: #dbdbdb;
+}
+#heading {
+  width: 100%;
+  padding-left: 32%;
+  padding-right: 32%;
+  padding-top: 6%;
+  padding-bottom: 6%
+}
+
+#heading_1 {
   width: 100%;
   padding-left: 32%;
   padding-right: 32%;
@@ -42,7 +54,7 @@ display:inline-block;
 }
 
 
-/*******************/
+
 .but {
      background-color:#58585A;
     border:solid black 2px;
