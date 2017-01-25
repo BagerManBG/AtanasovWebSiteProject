@@ -34,7 +34,7 @@ display:inline-block;
     background-color: #dbdbdb;
 }
 
-#menuitems_1 {
+#menuitems_1 , #menuitems_2 #menuitems_3{
     background-color: #dbdbdb;
 }
 #heading {
@@ -46,6 +46,22 @@ display:inline-block;
 }
 
 #heading_1 {
+  width: 100%;
+  padding-left: 32%;
+  padding-right: 32%;
+  padding-top: 6%;
+  padding-bottom: 6%
+}
+
+#heading_2 {
+  width: 100%;
+  padding-left: 32%;
+  padding-right: 32%;
+  padding-top: 6%;
+  padding-bottom: 6%
+}
+
+#heading_3 {
   width: 100%;
   padding-left: 32%;
   padding-right: 32%;

@@ -58,8 +58,8 @@ section.module.parallax {
     background-size: cover;
 }
 section.module.parallax-5 {
-    height: 27.5vh;
-    background-position: 30% 60%;
+    height: 27vh;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
