@@ -3,7 +3,7 @@ display:inline-block;
   list-style-type:none;
 }
 .item {
-    font-size: 20px;
+    font-size: 1.3em;
      font-family:verdana;
     line-height:140%;
     font-size:0.9em;
@@ -34,7 +34,15 @@ display:inline-block;
     background-color: #dbdbdb;
 }
 
-#menuitems_1 , #menuitems_2 #menuitems_3{
+#menuitems_1{
+    background-color: #dbdbdb;
+}
+
+#menuitems_2{
+    background-color: #dbdbdb;
+}
+
+#menuitems_3{
     background-color: #dbdbdb;
 }
 #heading {
@@ -76,7 +84,7 @@ display:inline-block;
     border:solid black 2px;
     color:white;
     margin:auto;
-    font-size: 12px;
+    font-size: 0.8em;
     font-family: verdana;
  
     
@@ -91,6 +99,10 @@ display:inline-block;
        -o-transition: 0.1s;
        -ms-transition: 0.1s;
        -moz-transition: 0.1s;
+}
+
+.video{
+  width: 50%;
 }
 
 
