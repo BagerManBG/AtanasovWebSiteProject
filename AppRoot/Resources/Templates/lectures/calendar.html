@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Календар</title>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/libs/moment.min.js"></script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/libs/fullcalendar.js"></script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/libs/bootstrap.js"></script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/utils.js"></script>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/calendar/fullcalendar.css">
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap-theme.css">
+<!--<!DOCTYPE html>-->
+
+    <script type="text/javascript" src="JS/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="JS/libs/moment.min.js"></script>
+    <script type="text/javascript" src="JS/libs/fullcalendar.js"></script>
+    <script type="text/javascript" src="JS/libs/bootstrap.js"></script>
+    <script type="text/javascript" src="JS/utils.js"></script>
+    <link rel="stylesheet" href="CSS/calendar/fullcalendar.css">
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap-theme.css">
     <script type="text/javascript">
       $(document).ready(function() {
         $('#calendar').fullCalendar({
-            events: '../../../Models/ViewModels/getLectures.php',
+            events: 'Models/ViewModels/getLectures.php',
             header: {
               left: 'prev,next today addEvent',
               center: 'title',
@@ -40,8 +37,7 @@
         }
       });
     </script>
-  </head>
-  <body>
+
     <div class="modal fade" id="events-modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -69,5 +65,3 @@
     </div>
     <div id="calendar">
     </div>
-  </body>
-</html>

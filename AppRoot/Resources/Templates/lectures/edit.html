@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/utils.js">
+
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+    <script type="text/javascript" src="JS/utils.js">
 
     </script>
-  </head>
-  <body>
+
     <script
       src="https://code.jquery.com/jquery-3.1.1.js"
       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -17,7 +12,7 @@
     <script>
         $.ajax({
           type: "POST",
-          url: "../../../Models/ViewModels/getCourses.php",
+          url: "Models/ViewModels/getCourses.php",
           success: function(data){
             var obj = JSON.parse(data);
             for (var i = 0; i < obj.length; i++) {
@@ -81,5 +76,3 @@
         </div>
       </form>
     </div>
-  </body>
-</html>

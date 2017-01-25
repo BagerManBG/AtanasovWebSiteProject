@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
-  </head>
-  <body>
+
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+
+
     <script
       src="https://code.jquery.com/jquery-3.1.1.js"
       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
       crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/utils.js"></script>
+    <script type="text/javascript" src="JS/utils.js"></script>
     <script>
       var id = getQueryVariable("id");
 
       $.ajax({
         type: "POST",
-        url: "../../../Models/ViewModels/getCourseById.php?id=" + id,
+        url: "Models/ViewModels/getCourseById.php?id=" + id,
         success: function(data) {
           var obj = JSON.parse(data);
           $('#name').html(obj[0]["name"]);
@@ -32,7 +28,7 @@
 
       $.ajax({
         type: "POST",
-        url: "../../../Models/ViewModels/getLecturesByCourse.php?course=" + id,
+        url: "Models/ViewModels/getLecturesByCourse.php?course=" + id,
         success: function(data){
           var obj = JSON.parse(data);
           for (var i in obj) {
@@ -60,5 +56,3 @@
         <a id="delete-btn" class="btn btn-danger">Изтрий</a>
       </div>
     </div>
-  </body>
-</html>
