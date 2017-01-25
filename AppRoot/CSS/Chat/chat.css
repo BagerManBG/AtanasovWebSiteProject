@@ -17,7 +17,7 @@
 
 #chatHeader #status {
     float: left;
-    font-size: 1.35vw;
+    font-size: 1em;
     color: #fff;
     width: 80%;
     margin: 2.69%;
@@ -67,7 +67,7 @@
     border-bottom: 1px solid #808080;
     margin: 5.2% 3%;
     padding-left: 1.4%;
-    font-size: 1.15vw;
+    font-size: 1em;
 }
 
 #chatBody #type #send {
@@ -97,7 +97,7 @@
     background-color: #f44336;
     border-radius: 3px;
     color: #fff;
-    font-size: 1.2vw;
+    font-size: 1.01em;
 }
 
 .myMessage {
@@ -113,11 +113,11 @@
     background-color: #fff;
     border-radius: 3px;
     color: #f44336;
-    font-size: 1.2vw;
+    font-size: 1em;
 }
 
 #noMessagesYet {
-    font-size: 1.2vw;
+    font-size: 1em
     margin: 4%;
     text-decoration: underline;
     color: #111;
@@ -157,7 +157,7 @@
     width: 100%;
     display: block;
     color: #f44336;
-    font-size: 1.3vw;
+    font-size: 1em;
     margin-bottom: 6px;
 }
 
@@ -165,7 +165,7 @@
     width: 100%;
     display: block;
     color: #000;
-    font-size: 1.2vw;
+    font-size: 1em;
     padding: 1%;
     resize: none;
 }
@@ -181,7 +181,7 @@
     border: none;
     cursor: pointer;
     border: 1px solid #f44336;
-    font-size: 1.2vw;
+    font-size: 1em;
     transition: 0.5s ease;
 }
 
