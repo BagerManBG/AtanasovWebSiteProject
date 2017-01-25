@@ -61,7 +61,7 @@
 
 .profileHeader h2{
     margin-left: 33%;
-    font-size: 4.5vw;
+    font-size: 3em;
     font-family: "GothamW";
     font-weight: bold;
 
@@ -84,7 +84,7 @@ input[type="text"]:disabled {
     background-color: white;
     margin-left: 8%;
     margin-bottom: 3%;
-    font-size: 1.5vw;
+    font-size: 1.5em;
     border: 1px black solid;
     padding-left: 1%;
     border: 1px white solid;
@@ -97,7 +97,7 @@ input[type="email"]:disabled {
     background-color: white;
     margin-left: 8%;
     margin-bottom: 3%;
-    font-size: 1.5vw;
+    font-size: 1.5em;
     border: 1px black solid;
     padding-left: 1%;
     border: 1px white solid;
@@ -110,7 +110,7 @@ input[type="password"]:disabled {
     background-color: white;
     margin-left: 8%;
     margin-bottom: 3%;
-    font-size: 1.5vw;
+    font-size: 1.5em;
     border: 1px black solid;
     padding-left: 1%;
     border: 1px white solid;
@@ -126,10 +126,9 @@ input{
     background-color: white;
     margin-left: 8%;
     margin-bottom: 3%;
-    font-size: 1.5vw;
+    font-size: 1.5em;
     border: 1px black solid;
     padding-left: 1%;
-
 
 }
 
@@ -197,15 +196,15 @@ textarea:focus, input:focus{
   float: left;
   color: black;
   margin-left: 8%;
-  font-size: 24px;
+  font-size: 1.2em;
   padding-bottom: 1%;
 
 }
 
 #arrow {
   text-align: center;
-  width: 11vw;
-  height: 2.2vw;
+  width: 11em;
+  height: 2.2em;
   background-color: #ccc;
   position: relative;
   margin-top: 2%;
@@ -215,11 +214,11 @@ textarea:focus, input:focus{
   content: '';
   position: absolute;
   top: 0px;
-  left: 11vw;
+  left: 11em;
   width: 0;
   height: 0;
-  border: 1.1vw solid transparent;
-  border-left: 5vw solid #ccc;
+  border: 1.1em solid transparent;
+  border-left: 5em solid #ccc;
   }
 
   #arrow_label{
@@ -237,3 +236,4 @@ textarea:focus, input:focus{
     transition:0.4s;
 
   }
+

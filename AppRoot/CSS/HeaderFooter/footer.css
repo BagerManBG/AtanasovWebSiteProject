@@ -31,7 +31,7 @@ section.module:last-child {
 
 section.module-1 p {
     margin-bottom: 40px;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 300;
 }
 

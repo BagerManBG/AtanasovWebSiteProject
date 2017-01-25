@@ -55,7 +55,7 @@
 }
 
 .user .name {
-    font-size: 1.15vw;
+    font-size: 1em
     display: inline;
     margin: 2%;
     vertical-align: middle;
@@ -105,7 +105,7 @@
     background-color: #fff;
     border-radius: 3px;
     color: #f44336;
-    font-size: 1.2vw;
+    font-size: 1em;
 }
 
 .otherMessage {
@@ -121,7 +121,7 @@
     background-color: #f44336;
     border-radius: 3px;
     color: #fff;
-    font-size: 1.2vw;
+    font-size: 1em;
 }
 
 #typing {
@@ -137,7 +137,7 @@
     border-bottom: 1px solid #808080;
     margin: 3%;
     padding-left: 1.4%;
-    font-size: 1.15vw;
+    font-size: 1em;
 }
 
 #typing #sendIcon {
@@ -197,7 +197,7 @@
         margin-bottom: 2%;
     }
     .user .name {
-        font-size: 5vw;
+        font-size: 3em;
     }
     .chatBody {
         width: 100%;
@@ -215,14 +215,14 @@
     }
     .otherMessage .messages {
         max-width: 80%;
-        font-size: 4vw;
+        font-size: 2em;
     }
     .ownMessage .messages {
         max-width: 80%;
-        font-size: 4vw;
+        font-size: 2em;
     }
     #typing input {
-        font-size: 3vw;
+        font-size: 2.5em;
     }
     .profileInfoContent {
         margin-left: 18%;
