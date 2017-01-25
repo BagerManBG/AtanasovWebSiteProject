@@ -26,6 +26,37 @@
     <!--<script src="Resources/Libraries/angular/angular.js"></script>
     <script src="Resources/Libraries/angular-route/angular-route.js"></script>
     <script src="JS/app.js"></script>-->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function () {
+          $.ajax({
+            type: "POST",
+            url: "Models/ViewModels/getCourses.php",
+            success: function(data){
+              var obj = JSON.parse(data);
+
+              for (var i in obj) {
+                var course = obj[i];
+                var div = $('<div class="row"></div>');
+                var link = $('<div class="rows-1"><h3>' + course["name"] + '</h3><label>(Eazy Peazy)</label></div>');
+                var description = $('<div class="rows-2"><p>' + course["description"] + '</p></div>')
+                div.append(link);
+                console.log(link);
+                div.append(description)
+                $('#container').append(div);
+
+                if (i == 2) {
+                  break;
+                }
+              }
+            }
+          });
+        });
+    </script>
 </head>
 
 <body>
@@ -89,19 +120,6 @@
                 <div class="rows-1">
                     <h3>Name of course</h3>
                     <label>(Meddium)</label>
-
-                </div>
-                <div class="rows-2">
-                    <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper laoreet, lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla diet consectetur. Morbi libero orci,
-                        consectetur in odio maximus felis.</p>
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rows-1">
-                    <h3>Name of course</h3>
-                    <label>(Hard)</label>
 
                 </div>
                 <div class="rows-2">

@@ -15,27 +15,14 @@
     <script>
       var id = getQueryVariable("id");
 
-      function enrollStudent() {
-        console.log(id);
-        $.ajax({
-          type: "POST",
-          url: "../../../Models/ViewModels/enroll.php?id=" + id,
-          success: function(data) {
-            $('#enroll-btn').hide();
-          }
-        });
-      }
-
       $.ajax({
         type: "POST",
-        url: "../../../Models/ViewModels/getCourseById.php?id=" + id,
+        url: "../../../Models/ViewModels/getOnlineCourseById.php?id=" + id,
         success: function(data) {
           var obj = JSON.parse(data);
           $('#name').html(obj[0]["name"]);
           $('#description').html(obj[0]["description"]);
-          $('#capacity').html("Max students count: " + obj[0]["students_capacity"]);
           $('#difficulty_level').html("Difficulty Level: " + obj[0]["difficulty"]);
-
           $('#edit-btn').attr("href", "edit.html?id=" + id);
           $('#delete-btn').attr("href", "delete.html?id=" + id);
         }
@@ -43,13 +30,13 @@
 
       $.ajax({
         type: "POST",
-        url: "../../../Models/ViewModels/getLecturesByCourse.php?course=" + id,
+        url: "../../../Models/ViewModels/getOnlineLecturesByCourse.php?course=" + id,
         success: function(data){
           var obj = JSON.parse(data);
           for (var i in obj) {
             var lecture = obj[i];
             var div = $('<div class="lecture"></div>');
-            var link = $('<a href="../lectures/calendar.html?date=' + lecture["date"] + '">' + lecture["title"] + '</a>');
+            var link = $('<a href="../online_lectures/details.html?id=' + lecture["id"] + '">' + lecture["title"] + '</a>');
             div.append(link);
             $('#lectures').append(div);
           }
@@ -59,7 +46,6 @@
     <div class="emo">
       <h4 id="name"></h4>
       <p id="description"></p>
-      <p id="capacity"></p>
       <p id="difficulty_level"></p>
       <hr />
       <div id="lectures">
@@ -67,7 +53,6 @@
       </div>
       <hr />
       <div id="operations">
-        <button type="button" id="enroll-btn" onclick="enrollStudent()" class="btn btn-default">Запиши се</button>
         <a id="edit-btn" class="btn btn-warning">Редактирай</a>
         <a id="delete-btn" class="btn btn-danger">Изтрий</a>
       </div>

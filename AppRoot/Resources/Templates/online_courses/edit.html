@@ -30,20 +30,19 @@
 
         $.ajax({
           type: "POST",
-          url: "../../../Models/ViewModels/getCourseById.php?id=" + id,
+          url: "../../../Models/ViewModels/getOnlineCourseById.php?id=" + id,
           success: function(data) {
             var obj = JSON.parse(data);
-            $("#id").attr('value', id)
+            $("#id").val(id);
             $("#name").attr('value', obj[0]["name"]);
             $('#description').html(obj[0]["description"]);
-            $('#students_capacity').attr('value', obj[0]["students_capacity"]);
             $('#difficulty_level').val(obj[0]["level_id"]);
           }
         });
       });
     </script>
     <div class="emo" >
-      <form method="post" action="/AtanasovWebSiteProject/AppRoot/Controllers/courses_controller.php">
+      <form method="post" action="/AtanasovWebSiteProject/AppRoot/Controllers/online_courses_controller.php">
         <div class="form-group">
           <input class="form-control" type="hidden" name="id" id="id" />
         </div>
@@ -54,10 +53,6 @@
         <div class="form-group">
           <label for="description">Описание</label>
           <textarea class="form-control" style="resize: vertical;" name="description" id="description"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="students_capacity">Максимален брой записани</label>
-          <input class="form-control" type="number" name="students_capacity" id="students_capacity" />
         </div>
         <div class="form-group">
           <label for="difficulty_level">Ниво на трудност</label>

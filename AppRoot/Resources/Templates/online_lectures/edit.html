@@ -17,7 +17,7 @@
     <script>
         $.ajax({
           type: "POST",
-          url: "../../../Models/ViewModels/getCourses.php",
+          url: "../../../Models/ViewModels/getOnlineCourses.php",
           success: function(data){
             var obj = JSON.parse(data);
             for (var i = 0; i < obj.length; i++) {
@@ -31,21 +31,18 @@
 
         $.ajax({
           type: "POST",
-          url: "../../../Models/ViewModels/getLectureById.php?id=" + id,
+          url: "../../../Models/ViewModels/getOnlineLectureById.php?id=" + id,
           success: function(data){
             var obj = JSON.parse(data);
             $("#id").attr('value', id);
             $("#title").attr('value', obj[0]["title"]);
-            $('#description').html(obj[0]["description"]);
-            $('#date').attr('value', obj[0]["date"]);
-            $('#start').attr('value', obj[0]["start"]);
-            $('#end').attr('value', obj[0]["end"]);
+            $('#link').attr('value', obj[0]["video_link"]);
             $('#courseId').val(obj[0]["course_id"]);
           }
         });
     </script>
     <div class="emo">
-      <form method="post" action="/AtanasovWebSiteProject/AppRoot/Controllers/lectures_controller.php">
+      <form method="post" action="/AtanasovWebSiteProject/AppRoot/Controllers/online_lectures_controller.php">
         <div class="form-group">
           <input class="form-control" type="hidden" name="id" id="id" />
         </div>
@@ -54,20 +51,8 @@
           <input class="form-control" type="text" name="title" id="title" />
         </div>
         <div class="form-group">
-          <label for="description">Описание</label>
-          <textarea class="form-control" style="resize: vertical;" name="description" id="description"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="date">Дата</label>
-          <input class="form-control" type="date" name="date" id="date" />
-        </div>
-        <div class="form-group">
-          <label for="start">Начало</label>
-          <input class="form-control" type="time" name="start" id="start" />
-        </div>
-        <div class="form-group">
-          <label for="end">Край</label>
-          <input class="form-control" type="time" name="end" id="end" />
+          <label for="link">Видео линк</label>
+          <input class="form-control" type="text" name="link" id="link" />
         </div>
         <div class="form-group">
           <label for="courseId">Курс</label>

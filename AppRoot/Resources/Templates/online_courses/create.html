@@ -6,7 +6,6 @@
   </head>
   <body>
     <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/utils.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.1.1.js"
       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -24,29 +23,9 @@
           }
         });
     </script>
-    <script>
-      $(document).ready(function () {
-        var id = getQueryVariable("id");
 
-        $.ajax({
-          type: "POST",
-          url: "../../../Models/ViewModels/getCourseById.php?id=" + id,
-          success: function(data) {
-            var obj = JSON.parse(data);
-            $("#id").attr('value', id)
-            $("#name").attr('value', obj[0]["name"]);
-            $('#description').html(obj[0]["description"]);
-            $('#students_capacity').attr('value', obj[0]["students_capacity"]);
-            $('#difficulty_level').val(obj[0]["level_id"]);
-          }
-        });
-      });
-    </script>
     <div class="emo" >
-      <form method="post" action="/AtanasovWebSiteProject/AppRoot/Controllers/courses_controller.php">
-        <div class="form-group">
-          <input class="form-control" type="hidden" name="id" id="id" />
-        </div>
+      <form method="post" action="/AtanasovWebSiteProject/AppRoot/Controllers/online_courses_controller.php">
         <div class="form-group">
           <label for="name">Име</label>
           <input class="form-control" type="text" name="name" id="name" />
@@ -56,22 +35,16 @@
           <textarea class="form-control" style="resize: vertical;" name="description" id="description"></textarea>
         </div>
         <div class="form-group">
-          <label for="students_capacity">Максимален брой записани</label>
-          <input class="form-control" type="number" name="students_capacity" id="students_capacity" />
-        </div>
-        <div class="form-group">
           <label for="difficulty_level">Ниво на трудност</label>
           <select class="form-control" id="difficulty_level" class="difficulty_level" name="difficulty_level"></select>
         </div>
         <div class="form-group">
-          <input class="form-control" type="hidden" value="edit" name="action" />
+          <input class="form-control" type="hidden" value="create" name="action" />
         </div>
         <div class="form-group">
-          <input class="btn btn-default" type="submit" value="Редактирай" />
+          <input class="btn btn-default" type="submit" value="Създай" />
         </div>
       </form>
     </div>
   </body>
 </html>
-<script>
-</script>

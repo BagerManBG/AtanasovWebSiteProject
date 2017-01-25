@@ -27,6 +27,10 @@
 
 		}
 
+		function execute($query)
+		{
+			$result = mysqli_query($this->dbHandle,$query);
+		}
 
 		function fetchArray($query)
 		{
