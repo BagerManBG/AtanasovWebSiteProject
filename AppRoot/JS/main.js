@@ -88,8 +88,13 @@ function UserHandler() {
             if (result == '') {
                 htmlToAdd = "<li><p class='dynamic account' id='reg'>Register</p></li><li><p class='dynamic account' id='log'>Log In</p></li>";
             } else {
-                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='Resources/Templates/profile.html' class='dynamic'>Profile</a></li>";
+<<<<<<< HEAD
+                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#profile' class='dynamic'>Profile</a></li>";
                 var userNameHTML = "<h1 class='dynamic'>Welcome, " + result + "</h1>";
+=======
+                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='Resources/Templates/profile.html' class='dynamic'>Profile</a></li>";
+                var userNameHTML = "<li><h2 class='dynamic'>Welcome, " + result + "</h2></li>";
+>>>>>>> 6e2fb38aaeb92f3ea10eb27c2a16acc9fe6f2787
                 $('#username').prepend(userNameHTML);
 
                 $('#formContainer').remove();

@@ -6,7 +6,7 @@
 
 #formContainer {
     margin: auto;
-    position: fixed;
+    position: absolute;
     top: 100px;
     left: 30vw;
     z-index: 7000;
@@ -48,12 +48,13 @@
     padding: 4%;
     background: rgba(160, 179, 176, .25);
     color: #a0b3b0;
-    font-size: 1.6vw;
+    font-size: 1.5em;
     float: left;
     width: 50%;
     text-align: center;
     cursor: pointer;
     transition: .5s ease;
+
 }
 
 #formContainer li a:hover {
@@ -79,28 +80,28 @@
     text-align: center;
     color: #fff;
     font-weight: 300;
-    font-size: 1.8vw;
+    font-size: 1.5em;
     margin: 0 0 6%;
 }
 
 #formContainer label {
     position: absolute;
-    transform: translateY(6px);
+    transform: translateY(36%);
     left: 13px;
     color: rgba(256, 256, 256, .5);
     transition: all 0.25s ease;
     pointer-events: none;
-    font-size: 1.6vw;
+    font-size: 1.3em;
 }
 
 #formContainer label.active {
-    transform: translateY(42px);
+    transform: translateY(36%);
     left: 2px;
-    font-size: 1.4vw;
+    font-size: 1.2em;
 }
 
 #formContainer .top-row label.active {
-    transform: translateY(35px);
+    transform: translateY(26%);
 }
 
 #formContainer label.highlight {
@@ -108,7 +109,7 @@
 }
 
 #formContainer input {
-    font-size: 1.6vw;
+    font-size: 1.3em;
     display: block;
     width: 100%;
     padding: 1% 2%;
@@ -186,7 +187,7 @@
     position: absolute;
     right: 2px;
     transform: translateY(2px);
-    font-size: 1.4vw;
+    font-size: 1.4em;
     color: #f53412;
 }
 
@@ -197,7 +198,7 @@
 }
 
 #wrongLog {
-    font-size: 1.4vw;
+    font-size: 1.4em;
     color: #f53412;
     transition: .5s ease;
     margin-bottom: 10px;
