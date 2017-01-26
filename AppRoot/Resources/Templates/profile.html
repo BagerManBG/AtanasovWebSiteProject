@@ -1,16 +1,37 @@
+         <link rel="stylesheet" type="text/css" href="../../CSS/HeaderFooter/header.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/Profile/profile.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/reset.css">
 
-        <link rel="stylesheet" type="text/css" href="CSS/Profile/profile.css">
-        <link rel="stylesheet" type="text/css" href="CSS/reset.css">
 
-        <script src="Libraries/JQuery/jquery.js"></script>
-        <script src="JS/Profile/profile.js"></script>
 
-          
+        <script src="../Libraries/JQuery/jquery.js"></script>
+        <script src="../../JS/Profile/profile.js"></script>
+         <script src="../../JS/main.js"></script>
+
+
+          <nav>
+
+             <ul>
+
+                 <h1>Name</h1>
+                 <div id="username">
+                     <!-- <h1 class="dynamic">Welcome, User</h1> -->
+                 </div>
+                 <div id="links">
+                     <!-- <li><a href="#" class="dynamic">Register</a></li>
+                     <li><a href="#" class="dynamic">Log In</a></li>
+                     <li><a href="#" class="dynamic">Log Out</a></li> -->
+                     <li><a href="#">Lessons</a></li>
+                     <li><a href="#">Home</a></li>
+                 </div>
+             </ul>
+
+         </nav>
         <section>
             <div class="profile">
                 <div class="profileImage"> 
-                    <img class="paperclip" src="Images/Profile/paperclip.png">
-                     <img class="avatar" src="Images/ProfilePics/profile_default_image.jpg" >
+                    <img class="paperclip" src="../Images/Profile/paperclip.png">
+                     <img class="avatar" src="../Images/ProfilePics/profile_default_image.jpg" >
                     
                 <section>    
                     <div id="arrow"  class="control_1 arrow_1" onclick="showit()">
@@ -26,10 +47,10 @@
                 
                 <div class="profileInfo">
                     <div class= "profileHeader" >
-                        <h2>ID Card</h2>
+                        <h2 id="header">Personal Profile</h2>
                         
                     </div>
-                    <form action="Controllers/Account/profile.php" method="post" class="buttons">
+                    <form action="../../Controllers/Account/profile.php" method="post" class="buttons">
 
                     <div class="ProfileData">
                         <div class="names">   

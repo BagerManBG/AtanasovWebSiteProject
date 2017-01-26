@@ -12,8 +12,14 @@
     width: 60%;
     margin-left: 20%;
     float: left;
-    margin-top: 2%;
+    margin-top: 10%;
     box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 8.5px 25px 0 rgba(0,0,0,0.19);
+    background-image: url("../../Resources/Images/Profile/wood.jpg");
+    background-attachment: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 
 }
 
@@ -38,6 +44,7 @@
 
 .labels{
     margin-top: 5%;
+    text-shadow: 1px 1px 1px white;
 }
 
 .paperclip{
@@ -61,9 +68,10 @@
 
 .profileHeader h2{
     margin-left: 33%;
-    font-size: 3em;
+    font-size: 3.5em;
     font-family: "GothamW";
-    font-weight: bold;
+    font-weight: normal;
+    text-align: center;
 
 }
 
@@ -81,39 +89,39 @@ input[type="text"]:disabled {
     width: 85%;
     height: 4.5%;
     color: black;
-    background-color: white;
+    background-color: transparent;
     margin-left: 8%;
     margin-bottom: 3%;
     font-size: 1.5em;
     border: 1px black solid;
     padding-left: 1%;
-    border: 1px white solid;
+    border: 1px transparent solid;
 }
 
 input[type="email"]:disabled {
     width: 85%;
     height: 4.5%;
     color: black;
-    background-color: white;
+    background-color: transparent;
     margin-left: 8%;
     margin-bottom: 3%;
     font-size: 1.5em;
     border: 1px black solid;
     padding-left: 1%;
-    border: 1px white solid;
+    border: 1px transparent solid;
 }
 
 input[type="password"]:disabled {
     width: 85%;
     height: 4.5%;
     color: black;
-    background-color: white;
+    background-color: transparent;
     margin-left: 8%;
     margin-bottom: 3%;
     font-size: 1.5em;
     border: 1px black solid;
     padding-left: 1%;
-    border: 1px white solid;
+    border: 1px transparent solid;
 }
 
 
@@ -138,6 +146,7 @@ textarea:focus, input:focus{
 
 ::-webkit-input-placeholder {
    color: black;
+
 }
 
 :-moz-placeholder { 
@@ -153,10 +162,10 @@ textarea:focus, input:focus{
 }
 
 .button{  
-  background-color: transparent;
+  background-color: rgba(255,255,255,);
   border: 1px #7e8895 solid;
   border-radius: 4px;
-  color: #7e8895;
+  color: white;
   padding-top: 3%;
   padding-bottom: 3%;
   width: 20%;
@@ -184,6 +193,7 @@ textarea:focus, input:focus{
   background-color: #d3d3d3 ;
   box-shadow: none;
   transition:0.2s;
+  color: black;
 }
 
 .button:active {
@@ -205,7 +215,7 @@ textarea:focus, input:focus{
   text-align: center;
   width: 11em;
   height: 2.2em;
-  background-color: #ccc;
+  background-color: rgba(255,255,255,0.4);
   position: relative;
   margin-top: 2%;
 }
@@ -214,11 +224,11 @@ textarea:focus, input:focus{
   content: '';
   position: absolute;
   top: 0px;
-  left: 11em;
+  left: 11.0em;
   width: 0;
-  height: 0;
+  height: 2;
   border: 1.1em solid transparent;
-  border-left: 5em solid #ccc;
+  border-left: 5em solid rgba(255,255,255,0.4);
   }
 
   #arrow_label{
@@ -236,4 +246,26 @@ textarea:focus, input:focus{
     transition:0.4s;
 
   }
+
+nav{
+background-color:rgba(0, 0, 0, 1);
+}
+
+.names label{
+  font-size: 1.5em;
+}
+
+.password label{
+  font-size: 1.5em;
+}
+
+.control_1{
+  font-size: 1.1em;
+} 
+
+.control_2{
+  font-size: 1.1em;
+}
+
+
 
