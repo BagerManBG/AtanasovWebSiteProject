@@ -90,7 +90,7 @@ function UserHandler() {
             } else {
 
                 htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='Resources/Templates/profile.html' class='dynamic'>Profile</a></li>";
-                var userNameHTML = "<li><h2 class='dynamic'>Welcome, " + result + "</h2></li>";
+                var userNameHTML = "<li class='dynamic-1'><h2  id='ivan'>Welcome, " + result + "</h2></li>";
                 $('#username').prepend(userNameHTML);
 
                 $('#formContainer').remove();

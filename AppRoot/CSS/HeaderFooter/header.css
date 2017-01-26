@@ -26,6 +26,7 @@ nav h1 {
     float: left;
     color: white;
     margin: 1.5%;
+    font-size: 1em;
 }
 
 .container {
@@ -67,7 +68,7 @@ section.module.parallax-5 {
 
 section.module.parallax h1 {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 3em;
+  font-size: 1.5em;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -142,9 +143,10 @@ section.module.parallax-5 {
     z-index: 1000;
 }
 
-.dynamic{
+.dynamic-1{
     color: white;
-    float: left;
+    float:left;
+    margin-left: 5%;
 }
 
 
