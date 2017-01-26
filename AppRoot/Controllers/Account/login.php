@@ -6,13 +6,13 @@
 		'password' => $_POST['log_data'][1],
 	];
 
-	$query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
+	$query = "SELECT u.*, r.name as role FROM users u INNER JOIN roles r ON u.role_id = r.id WHERE `email` = '".$data['email']."' ";
 	$result = $db->fetchArray($query);
 
 	if(!empty($result))
 	{
 		if($result[0]['password'] == md5($data['password']))
-		{ 
+		{
 			unset($result[0]['password']);
 			unset($result[0]['secret_question']);
 			unset($result[0]['secret_answer']);
@@ -23,7 +23,7 @@
 		}
 		else //if username exists but password is wrong
 		{
-			
+
 		}
 	}
 	else //if no user is found

@@ -30,7 +30,7 @@
 	CheckSecretInfo('a', $data['secret_answer']);
 
 	if(!$hasError) {
-		
+
 		$file = 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg';
 
 		unset($data['password_confirm']);
@@ -39,14 +39,15 @@
 
 		$db->saveArray('users', $data);
 
-        $query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
-        $result = $db->fetchArray($query);
+    $query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
+    $result = $db->fetchArray($query);
 
 		unset($result[0]['password']);
 		unset($result[0]['secret_question']);
 		unset($result[0]['secret_answer']);
 
-        $_SESSION['logged_user'] = $result[0];
+		$result["role"] = "normal";
+    $_SESSION['logged_user'] = $result[0];
 
 		echo 'OK';
 	}

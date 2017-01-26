@@ -22,10 +22,10 @@ app.config(function($routeProvider) {
     $routeProvider.when('/courses/edit', {
         templateUrl: 'Resources/Templates/courses/edit.html'
     });
-    $routeProvider.when('/create', {
+    $routeProvider.when('/courses/create', {
         templateUrl: 'Resources/Templates/courses/create.html'
     });
-    $routeProvider.when('/calendar', {
+    $routeProvider.when('/lectures', {
         templateUrl: 'Resources/Templates/lectures/calendar.html'
     });
     $routeProvider.when('/create-lecture', {
