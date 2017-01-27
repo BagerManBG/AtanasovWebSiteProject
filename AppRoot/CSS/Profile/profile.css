@@ -239,13 +239,15 @@ textarea:focus, input:focus{
   .arrow_1:hover{
     margin-left: 5%;
     transition:0.4s;
+
   }
 
    .arrow_2:hover{
     margin-left: 5%;
     transition:0.4s;
-
   }
+
+
 
 nav{
 background-color:rgba(0, 0, 0, 1);
