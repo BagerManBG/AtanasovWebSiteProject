@@ -92,6 +92,10 @@
     overflow-y: scroll;
 }
 
+.messages {
+    word-wrap: break-word;
+}
+
 .ownMessage {
     float: right;
     width: 90%;

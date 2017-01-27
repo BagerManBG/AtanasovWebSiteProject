@@ -84,6 +84,10 @@
     width: 100%;
 }
 
+.message {
+    word-wrap: break-word;
+}
+
 .hisMessage {
     float: left;
     width: 97%;
