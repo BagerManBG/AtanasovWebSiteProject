@@ -1,0 +1,91 @@
+body {
+  background-color: #eee;
+}
+
+.emo {
+  font-family: sans-serif;
+  width: 40%;
+  margin-left: 26%;
+  -ms-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  box-sizing:content-box;
+  color: #333;
+}
+
+.emo form {
+  width: 100%;
+  padding: 5%;
+  padding-right: 10%;
+  border: 0px solid #999;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.emo form .form-group {
+  width: 100%;
+  margin-top: 0.5%;
+}
+
+.emo form label {
+  display: block;
+}
+
+.emo form .form-control {
+  margin-top: 0.5%;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #999999;
+  color: #333333;
+
+  -ms-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  box-sizing:content-box;
+}
+
+.emo form .form-group:last-of-type {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+}
+
+.emo .btn {
+  padding: 6px 12px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #999999;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emo .btn-default {
+  background-color: #428bca;
+  color: #ffffff;
+  border: 0px solid #999;
+}
+
+.emo .btn-default:hover {
+  background-color: #3680c1;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px){
+  .emo {
+    width: 80%;
+    margin-left: 4%;
+  }
+
+  .emo form .form-group:last-of-type {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .emo {
+  }
+}

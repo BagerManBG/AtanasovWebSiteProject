@@ -5,8 +5,8 @@
     <title></title>
   </head>
   <body>
-    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
-    <script type="text/javascript" src="JS/utils.js"></script>
+    <link rel="stylesheet" href="../../../CSS/forms.css">
+    <script type="text/javascript" src="../../../JS/utils.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.1.1.js"
       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -15,7 +15,7 @@
     <script>
         $.ajax({
           type: "POST",
-          url: "Models/ViewModels/getDifficultyLevels.php",
+          url: "../../../Models/ViewModels/getDifficultyLevels.php",
           success: function(data){
             var obj = JSON.parse(data);
             for (var i = 0; i < obj.length; i++) {
@@ -30,7 +30,7 @@
 
         $.ajax({
           type: "POST",
-          url: "Models/ViewModels/getCourseById.php?id=" + id,
+          url: "../../../Models/ViewModels/getCourseById.php?id=" + id,
           success: function(data) {
             var obj = JSON.parse(data);
             $("#id").attr('value', id)
@@ -43,7 +43,7 @@
       });
     </script>
     <div class="emo" >
-      <form method="post" action="Controllers/courses_controller.php">
+      <form method="post" action="../../../Controllers/courses_controller.php">
         <div class="form-group">
           <input class="form-control" type="hidden" name="id" id="id" />
         </div>

@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../../CSS/list.css">
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.js"
@@ -15,14 +15,14 @@
     <script>
         $.ajax({
           type: "POST",
-          url: "Models/ViewModels/getCourses.php",
+          url: "../../../Models/ViewModels/getCourses.php",
           success: function(data){
             var obj = JSON.parse(data);
 
             for (var i in obj) {
               var course = obj[i];
               var div = $('<div class="course"></div>');
-              var link = $('<a href="details.html?id=' + course["id"] + '">' + course["name"] + '</a>');
+              var link = $('<h4>' + course["name"] + '</h4><p>' + course["description"] + '</p><a class="button" href="details.html?id=' + course["id"] + '">Learn more...</a><hr />');
               div.append(link);
               $('#courses').append(div);
             }
@@ -30,6 +30,8 @@
         });
     </script>
     <div class="emo">
+      <h2>Courses</h2>
+      <hr />
       <div id="courses">
 
       </div>

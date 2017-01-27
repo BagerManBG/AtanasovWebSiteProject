@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/list.css">
   </head>
   <body>
     <script
@@ -21,7 +21,7 @@
             for (var i in obj) {
               var lecture = obj[i];
               var div = $('<div class="lecture"></div>');
-              var link = $('<a href="details.html?id=' + lecture["id"] + '">' + lecture["title"] + '</a>');
+              var link = $('<h4>' + lecture["title"] + '</h4><a class="button" href="details.html?id=' + lecture["id"] + '">Learn more...</a><hr />');
               div.append(link);
               $('#lectures').append(div);
             }
@@ -29,6 +29,8 @@
         });
     </script>
     <div class="emo">
+      <h2>Lectures</h2>
+      <hr />
       <div id="lectures">
 
       </div>

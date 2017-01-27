@@ -5,8 +5,8 @@
     <title></title>
   </head>
   <body>
-    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
-    <script type="text/javascript" src="JS/utils.js"></script>
+    <link rel="stylesheet" href="../../../CSS/forms.css">
+    <script type="text/javascript" src="../../../JS/utils.js"></script>
 
       <script
         src="https://code.jquery.com/jquery-3.1.1.js"
@@ -18,7 +18,7 @@
 
           $.ajax({
             type: "POST",
-            url: "Models/ViewModels/getDifficultyLevelById.php?id=" + id,
+            url: "../../../Models/ViewModels/getDifficultyLevelById.php?id=" + id,
             success: function(data){
               var obj = JSON.parse(data);
               $("#id").attr('value', obj[0]["id"]);
@@ -27,7 +27,7 @@
           });
       </script>
       <div class="emo">
-        <form method="post" action="Controllers/difficulty_levels_controller.php">
+        <form method="post" action="../../../Controllers/difficulty_levels_controller.php">
           <div class="form-group">
             <input type="hidden" name="id" id="id" />
           </div>

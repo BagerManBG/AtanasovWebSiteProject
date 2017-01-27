@@ -1,0 +1,36 @@
+.emo {
+  text-align: center;
+  font-family: sans-serif;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px #7e8895 solid;
+  border-radius: 4px;
+  color: #7e8895;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-right: 2%;
+  padding-left: 2%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button:hover {
+    background-color: #d3d3d3;
+    transition: 0.2s;
+}
+
+.emo p {
+  margin-bottom: 3%;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}

@@ -5,8 +5,8 @@
     <title></title>
   </head>
   <body>
-    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
-    <script type="text/javascript" src="JS/utils.js">
+    <link rel="stylesheet" href="../../../CSS/forms.css">
+    <script type="text/javascript" src="../../../JS/utils.js">
 
     </script>
 
@@ -18,7 +18,7 @@
     <script>
         $.ajax({
           type: "POST",
-          url: "Models/ViewModels/getCourses.php",
+          url: "../../../Models/ViewModels/getCourses.php",
           success: function(data){
             var obj = JSON.parse(data);
             for (var i = 0; i < obj.length; i++) {

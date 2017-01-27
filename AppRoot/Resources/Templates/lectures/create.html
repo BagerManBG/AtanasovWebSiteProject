@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../../CSS/forms.css">
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.js"
@@ -15,7 +15,7 @@
     <script>
         $.ajax({
           type: "POST",
-          url: "Models/ViewModels/getCourses.php",
+          url: "../../../Models/ViewModels/getCourses.php",
           success: function(data){
             var obj = JSON.parse(data);
             for (var i = 0; i < obj.length; i++) {
@@ -26,7 +26,7 @@
     </script>
 
     <div class="emo">
-      <form method="post" action="Controllers/lectures_controller.php">
+      <form method="post" action="../../../Controllers/lectures_controller.php">
         <div class="form-group">
           <label for="title">Заглавие</label>
           <input class="form-control" type="text" name="title" id="title" />

@@ -1,6 +1,5 @@
 <?php
   require_once "../Models/Database/db.class.php";
-  require_once "Account/check_role.php";
   $data = $_POST;
   $method = $_POST["action"];
   $controller = new LecturesController($db);

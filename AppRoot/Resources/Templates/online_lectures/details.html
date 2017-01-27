@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/details.css">
   </head>
   <body>
     <script
@@ -21,7 +21,7 @@
         success: function(data) {
           var obj = JSON.parse(data);
           $('#title').html(obj[0]["title"]);
-          $('#link').html(obj[0]["video_link"]);
+          $('#link').attr("src", obj[0]["video_link"].replace("watch?v=", "embed/"));
           $('#edit-btn').attr("href", "edit.html?id=" + id);
           $('#delete-btn').attr("href", "delete.html?id=" + id);
         }
@@ -29,7 +29,10 @@
     </script>
     <div class="emo">
       <h4 id="title"></h4>
-      <p id="link"></p>
+      <hr />
+      <iframe id="link" frameborder="0" allowfullscreen width="80%" height="500px"
+        src="">
+      </iframe>
       <hr />
       <div id="operations">
         <a id="edit-btn" class="btn btn-warning">Редактирай</a>

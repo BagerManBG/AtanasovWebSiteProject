@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../../CSS/bootstrap/bootstrap.css">
   </head>
   <body>
     <script
@@ -12,13 +12,13 @@
       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
       crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="JS/utils.js"></script>
+    <script type="text/javascript" src="../../../JS/utils.js"></script>
     <script>
       var id = getQueryVariable("id");
 
       $.ajax({
         type: "POST",
-        url: "Models/ViewModels/getDifficultyLevelById.php?id=" + id,
+        url: "../../../Models/ViewModels/getDifficultyLevelById.php?id=" + id,
         success: function(data){
           var obj = JSON.parse(data);
           $('#title').html(obj[0]["name"]);
@@ -29,7 +29,7 @@
 
       $.ajax({
         type: "POST",
-        url: "Models/ViewModels/getCoursesByLevel.php?level=" + id,
+        url: "../../../Models/ViewModels/getCoursesByLevel.php?level=" + id,
         success: function(data){
           var obj = JSON.parse(data);
 

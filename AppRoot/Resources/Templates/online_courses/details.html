@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/details.css">
   </head>
   <body>
     <script
@@ -35,8 +35,8 @@
           var obj = JSON.parse(data);
           for (var i in obj) {
             var lecture = obj[i];
-            var div = $('<div class="lecture"></div>');
-            var link = $('<a href="../online_lectures/details.html?id=' + lecture["id"] + '">' + lecture["title"] + '</a>');
+            var div = $('<div class="row"></div>');
+            var link = $('<div class="image"></div><div class="rows-3"><h3>' + lecture["title"] + '</h3><a href="../online_lectures/details.html?id=' + lecture["id"] + '" class="button">Learn More</a>');
             div.append(link);
             $('#lectures').append(div);
           }
@@ -51,7 +51,6 @@
       <div id="lectures">
 
       </div>
-      <hr />
       <div id="operations">
         <a id="edit-btn" class="btn btn-warning">Редактирай</a>
         <a id="delete-btn" class="btn btn-danger">Изтрий</a>
