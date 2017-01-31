@@ -20,7 +20,7 @@ $(document).ready(function(){
 					var name = data['first_name'] + ' ' + data['last_name'];
 					
 					$('.chatBody #typing #user_id').val(data['id']);
-					$('.profileInfoContent #profilePic img').attr('src', data['avatar']);
+					$('.profileInfoContent #profilePic img').attr('src', '../Images/ProfilePics/profile_default_image.jpg');
 					$('.profileInfoContent .description #Name').text(name);
 					$('.profileInfoContent .description #email').text(data['email']);
 					$('#selectedName').text(name);

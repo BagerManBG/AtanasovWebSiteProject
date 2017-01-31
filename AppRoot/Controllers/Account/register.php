@@ -7,9 +7,7 @@
 		'last_name' => $_POST['reg_data'][1],
 		'email' => $_POST['reg_data'][2],
 		'password' => $_POST['reg_data'][3],
-		'password_confirm' => $_POST['reg_data'][4],
-		'secret_question' => $_POST['reg_data'][5],
-		'secret_answer' => $_POST['reg_data'][6]
+		'password_confirm' => $_POST['reg_data'][4]
 	];
 
 	$hasError = false;
@@ -26,8 +24,6 @@
 	CheckEmail($data['email']);
 	CheckPassword($data['password']);
 	CheckPasswordConfirm($data['password'], $data['password_confirm']);
-	CheckSecretInfo('q', $data['secret_question']);
-	CheckSecretInfo('a', $data['secret_answer']);
 
 	if(!$hasError) {
 
@@ -42,11 +38,9 @@
     $query = "SELECT * FROM `users` WHERE `email` = '".$data['email']."' ";
     $result = $db->fetchArray($query);
 
-		unset($result[0]['password']);
-		unset($result[0]['secret_question']);
-		unset($result[0]['secret_answer']);
+	unset($result[0]['password']);
 
-		$result["role"] = "normal";
+	$result["role"] = "normal";
     $_SESSION['logged_user'] = $result[0];
 
 		echo 'OK';
@@ -98,27 +92,6 @@ function CheckPassword($password) {
 function CheckPasswordConfirm($password, $password_confirm) {
 
     if ($password != $password_confirm) {
-        $hasError = true;
-    }
-}
-
-function CheckSecretInfo($type, $str) {
-
-    $regex;
-    $symbol;
-
-    switch ($type) {
-        case 'q':
-            $symbol = '?';
-            $regex = '/^([a-zA-Z1-9][a-zA-Z1-9\s]*[a-zA-Z1-9]*[?])?$/';
-            break;
-        case 'a':
-            $symbol = '!';
-            $regex = '/^([a-zA-Z1-9][a-zA-Z1-9\s]*[a-zA-Z1-9]*[!])?$/';
-            break;
-    }
-
-    if (!preg_match($regex, $str)) {
         $hasError = true;
     }
 }

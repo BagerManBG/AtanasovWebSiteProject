@@ -52,7 +52,7 @@ section.module-1.parallax {
 }
 
 section.module-1.parallax-1 {
-    background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/01/24/12/v2-cute-cat-picture.jpg");
+    background-image: url("../../Resources/Images/Home/cat-picture.jpg");
 }
 
 .module-1:after {

@@ -64,16 +64,12 @@ $(document).ready(function() {
         data['email'] = $('#signup #email').val();
         data['password'] = $('#signup #password').val();
         data['password_confirm'] = $('#signup #password_confirm').val();
-        data['secret_question'] = $('#signup #secret_question').val();
-        data['secret_answer'] = $('#signup #secret_answer').val();
 
         responce[0] = CheckName(data['first_name']);
         responce[1] = CheckName(data['last_name']);
         CheckEmail(data['email']);
         responce[3] = CheckPassword(data['password']);
         responce[4] = CheckPasswordConfirm(data['password'], data['password_confirm']);
-        responce[5] = CheckSecretInfo('q', data['secret_question']);
-        responce[6] = CheckSecretInfo('a', data['secret_answer']);
 
         DisplayValidations();
 
@@ -84,8 +80,6 @@ $(document).ready(function() {
             $('#signup #email').val('');
             $('#signup #password').val('');
             $('#signup #password_confirm').val('');
-            $('#signup #secret_question').val('');
-            $('#signup #secret_answer').val('');
 
             var reg_data = new Array(
                 data['first_name'],
@@ -226,24 +220,24 @@ function CheckPasswordConfirm(password, password_confirm) {
     return 'OK';
 }
 
-function CheckSecretInfo(type, str) {
-
-    var regex, symbol;
-
-    switch (type) {
-        case 'q':
-            symbol = '?';
-            regex = /^([a-zA-Z1-9][a-zA-Z1-9\s]*[a-zA-Z1-9]*[?])?$/;
-            break;
-        case 'a':
-            symbol = '!';
-            regex = /^([a-zA-Z1-9][a-zA-Z1-9\s]*[a-zA-Z1-9]*[!])?$/;
-            break;
-    }
-
-    if (!regex.test(str)) {
-        return 'invalid format or no ' + symbol + ' at end';
-    }
-
-    return 'OK';
-}
+//function CheckSecretInfo(type, str) {
+//
+//    var regex, symbol;
+//
+//    switch (type) {
+//        case 'q':
+//            symbol = '?';
+//            regex = /^([a-zA-Z1-9][a-zA-Z1-9\s]*[a-zA-Z1-9]*[?])?$/;
+//            break;
+//        case 'a':
+//            symbol = '!';
+//            regex = /^([a-zA-Z1-9][a-zA-Z1-9\s]*[a-zA-Z1-9]*[!])?$/;
+//            break;
+//    }
+//
+//    if (!regex.test(str)) {
+//        return 'invalid format or no ' + symbol + ' at end';
+//    }
+//
+//    return 'OK';
+//}

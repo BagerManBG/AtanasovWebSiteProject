@@ -10,7 +10,7 @@ foreach ($result as $key => $value)
 {
 	echo '
 		<div class="user" id="'.$value['id'].'">
-            <img src="'.$value['avatar'].'" alt="userPic">
+            <img src="../Images/ProfilePics/profile_default_image.jpg" alt="userPic">
 
             <p class="name">'.$value['first_name'].' '.$value['last_name'].'</p>
         </div>
