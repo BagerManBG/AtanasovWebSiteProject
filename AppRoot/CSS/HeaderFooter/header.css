@@ -95,6 +95,7 @@ section.module.parallax-5 {
 .banner {
     width: 98%;
     position: relative;
+    z-index: 600;
 }
 
 .banner h2 {
