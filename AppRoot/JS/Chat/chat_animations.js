@@ -61,6 +61,7 @@ function ConnectToChat() {
         url: 'Controllers/Chat/checkLogged.php',
         method: 'GET',
         success: function(result) {
+            console.log(result);
             if (result != 'Okay') {
                 $('#loginTab').click();
                 $('#formContainer').fadeIn(400);

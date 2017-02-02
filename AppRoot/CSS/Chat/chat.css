@@ -84,6 +84,10 @@
     width: 100%;
 }
 
+.message {
+    word-wrap: break-word;
+}
+
 .hisMessage {
     float: left;
     width: 97%;
@@ -117,7 +121,7 @@
 }
 
 #noMessagesYet {
-    font-size: 1em
+    font-size: 1em;
     margin: 4%;
     text-decoration: underline;
     color: #111;
@@ -134,6 +138,7 @@
     right: 0.2%;
     width: 10%;
     cursor: pointer;
+    z-index: 1000;
 }
 
 #quesitonBubble img {

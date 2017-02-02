@@ -12,10 +12,10 @@ if(isset($_SESSION['logged_user']))
 
 	if(empty($result))
 	{
-
 		$data = $_SESSION['logged_user'];
 		$data['last_time_online'] = time();
 		unset($data['id']);
+		unset($data['role']);
 		$db->saveArray('chat_users', $data);
 	}
 }
