@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv='cache-control' content='no-cache'>
 
     <title>Atanasoff</title>
 
@@ -23,20 +24,17 @@
     <script src="JS/Chat/chat_check_admin_status.js"></script>
     <script src="JS/Chat/send_message_user.js"></script>
     <script src="JS/Chat/get_messages_user.js"></script>
+    <script src="JS/libs/sammy.js"></script>
+    <script src="JS/routing.js"></script>
 </head>
 
 <body>
-
 <header>
-     <section class="module parallax parallax-1">
+     <section id="header" class="module parallax parallax-1">
          <div class="container">
-
-             <nav>
-
+             <nav class='nav-scroll'>
                  <ul>
-
                      <h1>Atanasoff Website</h1>
-
                      <div id="username">
                          <!-- <h1 class="dynamic">Welcome, User</h1> -->
                      </div>
@@ -44,184 +42,16 @@
                          <!-- <li><a href="#" class="dynamic">Register</a></li>
                  <li><a href="#" class="dynamic">Log In</a></li>
                  <li><a href="#" class="dynamic">Log Out</a></li> -->
-                         <li><a href="#/lessons">Lessons</a></li>
-                         <li><a href="#/">Home</a></li>
+                         <li><a href="#/lectures">Lessons</a></li>
+                         <li><a href="#/home">Home</a></li>
                      </div>
                  </ul>
-
              </nav>
-             <div class="blackLine">
-                 <div class="banner">
-                     <div class="text">
-                         <h2>За Емо</h2>
-
-                         <p>"Илън Мъск е супер пич, Tesla ftw, врат, казвах друго, щото съм скептичен! Сигурен
-                             съм, че ти си новия Илън Мъск. Кандидатирай се за президент, ще гласувам за теб!"</p>
-                     </div>
-
-                 </div>
-
-             </div>
-
          </div>
-
      </section>
-
  </header>
 
-
- <section class="module content">
-     <div id="container">
-         <div class="row">
-             <div class="rows-1">
-                 <h3>Name of course</h3>
-                 <label>(Easy)</label>
-
-             </div>
-             <div class="rows-2">
-                 <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper
-                     laoreet, lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla
-                     diet consectetur. Morbi libero orci,
-                     consectetur in odio maximus felis.</p>
-
-             </div>
-         </div>
-
-         <div class="row">
-             <div class="rows-1">
-                 <h3>Name of course</h3>
-                 <label>(Meddium)</label>
-
-             </div>
-             <div class="rows-2">
-                 <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper
-                     laoreet, lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla
-                     diet consectetur. Morbi libero orci,
-                     consectetur in odio maximus felis.</p>
-
-             </div>
-         </div>
-
-         <div class="row">
-             <div class="rows-1">
-                 <h3>Name of course</h3>
-                 <label>(Hard)</label>
-
-             </div>
-             <div class="rows-2">
-                 <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper
-                     laoreet, lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla
-                     diet consectetur. Morbi libero orci,
-                     consectetur in odio maximus felis.</p>
-
-             </div>
-         </div>
-     </div>
- </section>
-
- <section class="module parallax parallax-2">
-     <div class="container">
-         <h3>Video</h3>
-     </div>
- </section>
-
- <section class="video">
-     <div class="row">
-         <div class="image">
-         </div>
-         <div class="rows-3">
-
-             <h3>Demo</h3>
-             <label>(Easy)</label>
-
-             <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper laoreet,
-                 lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla diet
-                 consectetur.</p>
-             <button class="button">Learn More</button>
-
-         </div>
-
-         <div class="image" id="secondImage">
-         </div>
-         <div class="rows-3">
-
-             <h3>Demo</h3>
-             <label>(Easy)</label>
-
-             <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper laoreet,
-                 lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla diet
-                 consectetur.</p>
-             <button class="button">Learn More</button>
-
-         </div>
-
-
-     </div>
-
-     <div class="row">
-         <div class="image">
-         </div>
-         <div class="rows-3">
-
-             <h3>Demo</h3>
-             <label>(Easy)</label>
-
-             <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper laoreet,
-                 lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla diet
-                 consectetur.</p>
-             <button class="button">Learn More</button>
-
-         </div>
-
-         <div class="image" id="secondImage">
-         </div>
-         <div class="rows-3">
-
-             <h3>Demo</h3>
-             <label>(Easy)</label>
-
-             <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper laoreet,
-                 lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla diet
-                 consectetur.</p>
-             <button class="button">Learn More</button>
-
-         </div>
-
-
-     </div>
-
-     <div class="row">
-         <div class="image">
-         </div>
-         <div class="rows-3">
-
-             <h3>Demo</h3>
-             <label>(Easy)</label>
-
-             <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper laoreet,
-                 lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla diet
-                 consectetur.</p>
-             <button class="button">Learn More</button>
-
-         </div>
-
-         <div class="image" id="secondImage">
-         </div>
-         <div class="rows-3">
-
-             <h3>Demo</h3>
-             <label>(Easy)</label>
-
-             <p>Lorem ipsum dolor sit amet interdum mollis sapien. Sed ac risus. Phasellus lacinia, ullamcorper laoreet,
-                 lectus arcu pulvinar lorem ipsum interdum sed tempus sagittis lorem feugiat. In fringilla diet
-                 consectetur.</p>
-             <button class="button">Learn More</button>
-         </div>
-
-     </div>
-
- </section>
-
+ <div id="main"><div id="view-content"></div></div>
  <footer>
 
      <section class="module-1 parallax parallax-1">
@@ -256,7 +86,7 @@
 
  <!--Chat Start-->
  <div id="quesitonBubble">
-     <img src="Resources/Images/Chat/bubble.png">
+     <img src="Resources/Images/Chat/chat-bubble.png">
  </div>
 
  <div id="chatBox">

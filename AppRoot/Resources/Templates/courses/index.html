@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <link rel="stylesheet" href="../../../CSS/list.css">
 
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.js"
-      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-      crossorigin="anonymous">
-    </script>
-    <script>
-        $.ajax({
-          type: "POST",
-          url: "../../../Models/ViewModels/getCourses.php",
-          success: function(data){
-            var obj = JSON.parse(data);
+<link rel="stylesheet" href="CSS/list.css">
 
-            for (var i in obj) {
-              var course = obj[i];
-              var div = $('<div class="course"></div>');
-              var link = $('<h4>' + course["name"] + '</h4><p>' + course["description"] + '</p><a class="button" href="details.html?id=' + course["id"] + '">Learn more...</a><hr />');
-              div.append(link);
-              $('#courses').append(div);
-            }
-          }
-        });
-    </script>
-    <div class="emo">
-      <h2>Courses</h2>
-      <hr />
-      <div id="courses">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous">
+</script>
+<script>
+    $.ajax({
+      type: "POST",
+      url: "Models/ViewModels/getCourses.php",
+      success: function(data){
+        var obj = JSON.parse(data);
 
-      </div>
-    </div>
-  </body>
-</html>
+        for (var i in obj) {
+          var course = obj[i];
+          var div = $('<div class="course"></div>');
+          var link = $('<h4>' + course["name"] + '</h4><p>' + course["description"] + '</p><a class="button" href="details.html?id=' + course["id"] + '">Learn more...</a><hr />');
+          div.append(link);
+          $('#courses').append(div);
+        }
+      }
+    });
+</script>
+<div class="emo">
+  <h2>Courses</h2>
+  <hr />
+  <div id="courses">
+
+  </div>
+</div>

@@ -1,103 +1,82 @@
-         <link rel="stylesheet" type="text/css" href="../../CSS/HeaderFooter/header.css">
-        <link rel="stylesheet" type="text/css" href="../../CSS/Profile/profile.css">
-        <link rel="stylesheet" type="text/css" href="../../CSS/reset.css">
+ <link rel="stylesheet" type="text/css" href="CSS/HeaderFooter/header.css">
+<link rel="stylesheet" type="text/css" href="CSS/Profile/profile.css">
+<link rel="stylesheet" type="text/css" href="CSS/reset.css">
 
 
 
-        <script src="../Libraries/JQuery/jquery.js"></script>
-        <script src="../../JS/Profile/profile.js"></script>
-         <script src="../../JS/main.js"></script>
+<script src="
+Libraries/JQuery/jquery.js"></script>
+<script src="JS/Profile/profile.js"></script>
+ <script src="JS/main.js"></script>
+<section>
+    <div class="profile">
+        <div class="profileImage">
+            <img class="paperclip" src="Resources/Images/Profile/paperclip.png">
+             <img class="avatar" src="Resources/Images/ProfilePics/profile_default_image.jpg" >
 
-
-         <nav>
-
-                 <ul>
-
-                     <h1>Atanasoff Website</h1>
-
-                     <div id="username">
-                         <!-- <h1 class="dynamic">Welcome, User</h1> -->
-                     </div>
-                     <div id="links">
-                         <!-- <li><a href="#" class="dynamic">Register</a></li>
-                 <li><a href="#" class="dynamic">Log In</a></li>
-                 <li><a href="#" class="dynamic">Log Out</a></li> -->
-                         <li><a href="lessons.html">Lessons</a></li>
-                         <li><a href="../../index.html">Home</a></li>
-                     </div>
-                 </ul>
-
-             </nav>
         <section>
-            <div class="profile">
-                <div class="profileImage"> 
-                    <img class="paperclip" src="../Images/Profile/paperclip.png">
-                     <img class="avatar" src="../Images/ProfilePics/profile_default_image.jpg" >
-                    
-                <section>    
-                    <div id="arrow"  class="control_1 arrow_1" onclick="showit()">
-                    <label id="arrow_label" >Basic Details</label>
-                   </div>
-                   <div id="arrow" class="control_2 arrow_2" onclick="showit2()">
-                    <label id="arrow_label">Password</label>
-                   </div>
-                </section>    
-
-                        
-                    </div>
-                
-                <div class="profileInfo">
-                    <div class= "profileHeader" >
-                        <h2 id="header">Personal Profile</h2>
-                        
-                    </div>
-                    <form action="../../Controllers/Account/profile.php" method="post" class="buttons">
-
-                    <div class="ProfileData">
-                        <div class="names">   
-                            <label>First Name</label>   
-                            <input type="text" id="first_name" name="first_name" value="Firstname" disabled>                   
-                            <label>Last Name</label>
-                            <input class="firstName" id="last_name" type="text" name="last_name" value="Lastname"  disabled>
-                            <label>Email</label>   
-                            <input class="email" id="email" type="email" name='email' value="Email"  disabled >
-                        </div>
-
-                        <div class="password">
-                            <label>Old Password</label>   
-                            <input  type="password"  placeholder="Old Password" name='password'  disabled>
-                            <label>New Password</label>   
-                            <input  type="password"  placeholder="New Password" name='password'  disabled>
-                        </div>
-
-                        <div class="password">    
-                            <label>Password Confirm</label>   
-                            <input  type="password"  placeholder="New Password Confirm" name='password_2' disabled>
-                        </div>
-
-                     
-
-                        <div class="buttons">
-                            <button class="button" id="Edit" type="button">Edit</button>
-                            <button class="button" id="Cancel" type="button">Cancel</button>
-                            <button class="button" type="submit">Save</button>
-                    </form>        
- 
-                    </div>
-
-
-
-                
-                </div>    
-
-                <!--<div class="labels">
-                        <label>First Name: <?php echo  "".$_SESSION['logged_user']['first_name']. "" ?> </label>
-                        <label>Second Name: <?php echo  "".$_SESSION['logged_user']['last_name']. "" ?> </label>
-                        <label>Email: <?php echo  "".$_SESSION['logged_user']['email']. "" ?> </label>
-                        <label>Rank:  Noob </label> 
-
- 
-                </div> -->
-            </div>
+            <div id="arrow"  class="control_1 arrow_1" onclick="showit()">
+            <label id="arrow_label" >Basic Details</label>
+           </div>
+           <div id="arrow" class="control_2 arrow_2" onclick="showit2()">
+            <label id="arrow_label">Password</label>
+           </div>
         </section>
 
+
+            </div>
+
+        <div class="profileInfo">
+            <div class= "profileHeader" >
+                <h2 id="header">Personal Profile</h2>
+
+            </div>
+            <form action="Controllers/Account/profile.php" method="post" class="buttons">
+
+            <div class="ProfileData">
+                <div class="names">
+                    <label>First Name</label>
+                    <input type="text" id="first_name" name="first_name" value="Firstname" disabled>
+                    <label>Last Name</label>
+                    <input class="firstName" id="last_name" type="text" name="last_name" value="Lastname"  disabled>
+                    <label>Email</label>
+                    <input class="email" id="email" type="email" name='email' value="Email"  disabled >
+                </div>
+
+                <div class="password">
+                    <label>Old Password</label>
+                    <input  type="password"  placeholder="Old Password" name='password'  disabled>
+                    <label>New Password</label>
+                    <input  type="password"  placeholder="New Password" name='password'  disabled>
+                </div>
+
+                <div class="password">
+                    <label>Password Confirm</label>
+                    <input  type="password"  placeholder="New Password Confirm" name='password_2' disabled>
+                </div>
+
+
+
+                <div class="buttons">
+                    <button class="button" id="Edit" type="button">Edit</button>
+                    <button class="button" id="Cancel" type="button">Cancel</button>
+                    <button class="button" type="submit">Save</button>
+            </form>
+
+            </div>
+
+
+
+
+        </div>
+
+        <!--<div class="labels">
+                <label>First Name: <?php echo  "".$_SESSION['logged_user']['first_name']. "" ?> </label>
+                <label>Second Name: <?php echo  "".$_SESSION['logged_user']['last_name']. "" ?> </label>
+                <label>Email: <?php echo  "".$_SESSION['logged_user']['email']. "" ?> </label>
+                <label>Rank:  Noob </label>
+
+
+        </div> -->
+    </div>
+</section>

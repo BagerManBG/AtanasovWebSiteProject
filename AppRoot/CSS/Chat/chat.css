@@ -138,6 +138,7 @@
 
 #quesitonBubble img {
     width: 100%;
+    z-index: 420;
 }
 
 #connect {
