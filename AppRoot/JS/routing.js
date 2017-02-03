@@ -7,6 +7,7 @@ $(document).ready(function() {
 
           this.get('#/home', function() {
             $.get(path + 'home.html', function(templ) {
+              bringBackHeader();
               main.html(templ);
             });
           });
@@ -65,6 +66,13 @@ $(document).ready(function() {
               $('#header nav').attr('class', 'nav-scroll');
               $('#header nav ul').attr('class', 'scroll');
               main.attr('style', 'padding-top: 120px');
+          }
+
+          function bringBackHeader() {
+            $('#header').attr('class', 'module parallax parallax-1');
+            $('#header nav').attr('class', 'nav-scroll');
+            $('#header nav ul').attr('class', 'scroll');
+            main.attr('style', '');
           }
 
           /*this.before({except:{path:'#\/(login\/|register\/)?'}}, function() {
