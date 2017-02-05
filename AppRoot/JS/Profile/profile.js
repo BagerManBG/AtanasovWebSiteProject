@@ -3,12 +3,12 @@ var data;
 $(document).ready(function(){
 
   $( "#Edit" ).click(function() {
-        
-      $("input").prop('disabled', false); 
+
+      $("input").prop('disabled', false);
   });
 
   $( "#Cancel" ).click(function() {
-        
+
       $("input").prop('disabled', true);
       Refresh();
   });
@@ -28,17 +28,17 @@ $(document).ready(function(){
   });
 
   $.ajax({
-      url: '../../Controllers/Account/getProfileData.php',
+      url: 'Controllers/Account/getProfileData.php',
       method: 'GET',
       success: function(result) {
 
         if(result != null) {
 
             data = JSON.parse(result);
-            
+
             Refresh();
         }
-      }  
+      }
   });
 });
 

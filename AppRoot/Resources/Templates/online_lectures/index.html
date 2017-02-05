@@ -1,39 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/list.css">
-  </head>
-  <body>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.js"
-      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-      crossorigin="anonymous">
-    </script>
-    <script>
-        $.ajax({
-          type: "POST",
-          url: "../../../Models/ViewModels/getOnlineLectures.php",
-          success: function(data){
-            var obj = JSON.parse(data);
 
-            for (var i in obj) {
-              var lecture = obj[i];
-              var div = $('<div class="lecture"></div>');
-              var link = $('<h4>' + lecture["title"] + '</h4><a class="button" href="details.html?id=' + lecture["id"] + '">Learn more...</a><hr />');
-              div.append(link);
-              $('#lectures').append(div);
-            }
-          }
-        });
-    </script>
-    <div class="emo">
-      <h2>Lectures</h2>
-      <hr />
-      <div id="lectures">
+<link rel="stylesheet" href="CSS/list.css">
+<script>
+    $.ajax({
+      type: "POST",
+      url: "Models/ViewModels/getOnlineLectures.php",
+      success: function(data){
+        var obj = JSON.parse(data);
 
-      </div>
-    </div>
-  </body>
-</html>
+        for (var i in obj) {
+          var lecture = obj[i];
+          var div = $('<div class="lecture"></div>');
+          var link = $('<h4>' + lecture["title"] + '</h4><a class="button" href="details.html?id=' + lecture["id"] + '">Learn more...</a><hr />');
+          div.append(link);
+          $('#lectures').append(div);
+        }
+      }
+    });
+</script>
+<div class="emo">
+  <h2>Lectures</h2>
+  <hr />
+  <div id="lectures">
+
+  </div>
+</div>

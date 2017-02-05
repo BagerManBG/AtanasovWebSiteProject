@@ -3,7 +3,7 @@ $(document).ready(function(){
 	setInterval(function(){
 
 		$.ajax({
-			url: '../../Controllers/Chat/getOnlineUsers.php',
+			url: 'Controllers/Chat/getOnlineUsers.php',
 			method: 'GET',
 			success: function(result) {
 

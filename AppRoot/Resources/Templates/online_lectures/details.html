@@ -1,43 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/details.css">
-  </head>
-  <body>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.js"
-      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-      crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/utils.js"></script>
-    <script>
-      var id = getQueryVariable("id");
+<link rel="stylesheet" href="CSS/details.css">
+<script type="text/javascript" src="JS/utils.js"></script>
+<script>
+  var id = getQueryVariable("id");
 
-      $.ajax({
-        type: "POST",
-        url: "../../../Models/ViewModels/getOnlineLectureById.php?id=" + id,
-        success: function(data) {
-          var obj = JSON.parse(data);
-          $('#title').html(obj[0]["title"]);
-          $('#link').attr("src", obj[0]["video_link"].replace("watch?v=", "embed/"));
-          $('#edit-btn').attr("href", "edit.html?id=" + id);
-          $('#delete-btn').attr("href", "delete.html?id=" + id);
-        }
-      });
-    </script>
-    <div class="emo">
-      <h4 id="title"></h4>
-      <hr />
-      <iframe id="link" frameborder="0" allowfullscreen width="80%" height="500px"
-        src="">
-      </iframe>
-      <hr />
-      <div id="operations">
-        <a id="edit-btn" class="btn btn-warning">Редактирай</a>
-        <a id="delete-btn" class="btn btn-danger">Изтрий</a>
-      </div>
-    </div>
-  </body>
-</html>
+  $.ajax({
+    type: "POST",
+    url: "Models/ViewModels/getOnlineLectureById.php?id=" + id,
+    success: function(data) {
+      var obj = JSON.parse(data);
+      $('#title').html(obj[0]["title"]);
+      $('#link').attr("src", obj[0]["video_link"].replace("watch?v=", "embed/"));
+      $('#edit-btn').attr("href", "edit.html?id=" + id);
+      $('#delete-btn').attr("href", "delete.html?id=" + id);
+    }
+  });
+</script>
+<div class="emo">
+  <h4 id="title"></h4>
+  <hr />
+  <iframe id="link" frameborder="0" allowfullscreen width="80%" height="500px"
+    src="">
+  </iframe>
+  <hr />
+  <div id="operations">
+    <a id="edit-btn" class="btn btn-warning">Редактирай</a>
+    <a id="delete-btn" class="btn btn-danger">Изтрий</a>
+  </div>
+</div>

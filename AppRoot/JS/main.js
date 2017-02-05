@@ -61,6 +61,17 @@ function OpenForm(tab) {
 }
 
 function DynamicNav() {
+
+    // $(window).scroll(function() {
+    //
+    //     if ($(document).scrollTop() > 160) {
+    //         $("ul").addClass("scroll");
+    //         $("nav").addClass("nav-scroll");
+    //     } else {
+    //         $("ul").removeClass("scroll");
+    //         $("nav").removeClass("nav-scroll");
+    //     }
+    // });
 }
 
 function UserHandler() {
@@ -78,7 +89,7 @@ function UserHandler() {
                 htmlToAdd = "<li><p class='dynamic account' id='reg'>Register</p></li><li><p class='dynamic account' id='log'>Log In</p></li>";
             } else {
 
-                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/profile' class='dynamic'>Profile</a></li>";
+                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/Resources/Templates/profile.html' class='dynamic'>Profile</a></li>";
                 var userNameHTML = "<li class='dynamic-1'><h2  id='ivan'>Welcome, " + result + "</h2></li>";
                 $('#username').prepend(userNameHTML);
 

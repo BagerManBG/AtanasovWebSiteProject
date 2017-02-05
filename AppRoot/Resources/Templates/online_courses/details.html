@@ -1,60 +1,46 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/details.css">
-  </head>
-  <body>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.js"
-      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-      crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/utils.js"></script>
-    <script>
-      var id = getQueryVariable("id");
+<link rel="stylesheet" href="CSS/details.css">
+<script type="text/javascript" src="JS/utils.js"></script>
+<script>
+  var id = getQueryVariable("id");
 
-      $.ajax({
-        type: "POST",
-        url: "../../../Models/ViewModels/getOnlineCourseById.php?id=" + id,
-        success: function(data) {
-          var obj = JSON.parse(data);
-          $('#name').html(obj[0]["name"]);
-          $('#description').html(obj[0]["description"]);
-          $('#difficulty_level').html("Difficulty Level: " + obj[0]["difficulty"]);
-          $('#edit-btn').attr("href", "edit.html?id=" + id);
-          $('#delete-btn').attr("href", "delete.html?id=" + id);
-        }
-      });
+  $.ajax({
+    type: "POST",
+    url: "Models/ViewModels/getOnlineCourseById.php?id=" + id,
+    success: function(data) {
+      var obj = JSON.parse(data);
+      $('#name').html(obj[0]["name"]);
+      $('#description').html(obj[0]["description"]);
+      $('#difficulty_level').html("Difficulty Level: " + obj[0]["difficulty"]);
+      $('#edit-btn').attr("href", "edit.html?id=" + id);
+      $('#delete-btn').attr("href", "delete.html?id=" + id);
+    }
+  });
 
-      $.ajax({
-        type: "POST",
-        url: "../../../Models/ViewModels/getOnlineLecturesByCourse.php?course=" + id,
-        success: function(data){
-          var obj = JSON.parse(data);
-          for (var i in obj) {
-            var lecture = obj[i];
-            var div = $('<div class="row"></div>');
-            var link = $('<div class="image"></div><div class="rows-3"><h3>' + lecture["title"] + '</h3><a href="../online_lectures/details.html?id=' + lecture["id"] + '" class="button">Learn More</a>');
-            div.append(link);
-            $('#lectures').append(div);
-          }
-        }
-      });
-    </script>
-    <div class="emo">
-      <h4 id="name"></h4>
-      <p id="description"></p>
-      <p id="difficulty_level"></p>
-      <hr />
-      <div id="lectures">
+  $.ajax({
+    type: "POST",
+    url: "Models/ViewModels/getOnlineLecturesByCourse.php?course=" + id,
+    success: function(data){
+      var obj = JSON.parse(data);
+      for (var i in obj) {
+        var lecture = obj[i];
+        var div = $('<div class="row"></div>');
+        var link = $('<div class="image"></div><div class="rows-3"><h3>' + lecture["title"] + '</h3><a href="../online_lectures/details.html?id=' + lecture["id"] + '" class="button">Learn More</a>');
+        div.append(link);
+        $('#lectures').append(div);
+      }
+    }
+  });
+</script>
+<div class="emo">
+  <h4 id="name"></h4>
+  <p id="description"></p>
+  <p id="difficulty_level"></p>
+  <hr />
+  <div id="lectures">
 
-      </div>
-      <div id="operations">
-        <a id="edit-btn" class="btn btn-warning">Редактирай</a>
-        <a id="delete-btn" class="btn btn-danger">Изтрий</a>
-      </div>
-    </div>
-  </body>
-</html>
+  </div>
+  <div id="operations">
+    <a id="edit-btn" class="btn btn-warning">Редактирай</a>
+    <a id="delete-btn" class="btn btn-danger">Изтрий</a>
+  </div>
+</div>

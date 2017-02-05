@@ -1,59 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <link rel="stylesheet" href="../../../CSS/bootstrap/bootstrap.css">
-  </head>
-  <body>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.js"
-      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-      crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="../../../JS/utils.js"></script>
-    <script>
-      var id = getQueryVariable("id");
+<link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+<script type="text/javascript" src="../../../JS/utils.js"></script>
+<script>
+  var id = getQueryVariable("id");
 
-      $.ajax({
-        type: "POST",
-        url: "../../../Models/ViewModels/getDifficultyLevelById.php?id=" + id,
-        success: function(data){
-          var obj = JSON.parse(data);
-          $('#title').html(obj[0]["name"]);
-          $('#edit-btn').attr("href", "edit.html?id=" + id);
-          $('#delete-btn').attr("href", "delete.html?id=" + id);
-        }
-      });
+  $.ajax({
+    type: "POST",
+    url: "Models/ViewModels/getDifficultyLevelById.php?id=" + id,
+    success: function(data){
+      var obj = JSON.parse(data);
+      $('#title').html(obj[0]["name"]);
+      $('#edit-btn').attr("href", "edit.html?id=" + id);
+      $('#delete-btn').attr("href", "delete.html?id=" + id);
+    }
+  });
 
-      $.ajax({
-        type: "POST",
-        url: "../../../Models/ViewModels/getCoursesByLevel.php?level=" + id,
-        success: function(data){
-          var obj = JSON.parse(data);
+  $.ajax({
+    type: "POST",
+    url: "Models/ViewModels/getCoursesByLevel.php?level=" + id,
+    success: function(data){
+      var obj = JSON.parse(data);
 
-          for (var i in obj) {
-            var course = obj[i];
-            var div = $('<div class="course"></div>');
-            var link = $('<a href="details.html?id=' + course["id"] + '">' + course["name"] + '</a>');
-            div.append(link);
-            $('#courses').append(div);
-          }
-        }
-      });
-    </script>
-    <div class="emo">
-      <h4 id="title"></h4>
-      <hr />
-      <div id="courses">
+      for (var i in obj) {
+        var course = obj[i];
+        var div = $('<div class="course"></div>');
+        var link = $('<a href="details.html?id=' + course["id"] + '">' + course["name"] + '</a>');
+        div.append(link);
+        $('#courses').append(div);
+      }
+    }
+  });
+</script>
+<div class="emo">
+  <h4 id="title"></h4>
+  <hr />
+  <div id="courses">
 
-      </div>
-      <hr />
-      <div id="operations">
-        <a id="edit-btn" class="btn btn-warning">Редактирай</a>
-        <a id="delete-btn" class="btn btn-danger">Изтрий</a>
-      </div>
-    </div>
-  </body>
-</html>
+  </div>
+  <hr />
+  <div id="operations">
+    <a id="edit-btn" class="btn btn-warning">Редактирай</a>
+    <a id="delete-btn" class="btn btn-danger">Изтрий</a>
+  </div>
+</div>

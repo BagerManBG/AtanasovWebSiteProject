@@ -1,18 +1,10 @@
-
 <link rel="stylesheet" href="CSS/details.css">
-
-
-<script
-  src="https://code.jquery.com/jquery-3.1.1.js"
-  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-  crossorigin="anonymous">
-</script>
 <script type="text/javascript" src="JS/utils.js"></script>
 <script>
   var id = getQueryVariable("id");
+  console.log(id);
 
   function enrollStudent() {
-    console.log(id);
     $.ajax({
       type: "POST",
       url: "Models/ViewModels/enroll.php?id=" + id,
@@ -26,6 +18,7 @@
     type: "POST",
     url: "Models/ViewModels/getCourseById.php?id=" + id,
     success: function(data) {
+      console.log("Models/ViewModels/getCourseById.php?id=" + id);
       var obj = JSON.parse(data);
       $('#name').html(obj[0]["name"]);
       $('#description').html(obj[0]["description"]);

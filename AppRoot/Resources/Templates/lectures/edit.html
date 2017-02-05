@@ -1,86 +1,69 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <link rel="stylesheet" href="../../../CSS/forms.css">
-    <script type="text/javascript" src="../../../JS/utils.js">
+<link rel="stylesheet" href="CSS/forms.css">
+<script type="text/javascript" src="JS/utils.js"></script>
+<script>
+    $.ajax({
+      type: "POST",
+      url: "Models/ViewModels/getCourses.php",
+      success: function(data){
+        var obj = JSON.parse(data);
+        for (var i = 0; i < obj.length; i++) {
+          $("#courseId").append($('<option value=' + obj[i]["id"] + '>' + obj[i]["name"] + '</option>'));
+        }
+      }
+    });
+</script>
+<script>
+  var id = getQueryVariable("id");
 
-    </script>
-
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.js"
-      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-      crossorigin="anonymous">
-    </script>
-    <script>
-        $.ajax({
-          type: "POST",
-          url: "../../../Models/ViewModels/getCourses.php",
-          success: function(data){
-            var obj = JSON.parse(data);
-            for (var i = 0; i < obj.length; i++) {
-              $("#courseId").append($('<option value=' + obj[i]["id"] + '>' + obj[i]["name"] + '</option>'));
-            }
-          }
-        });
-    </script>
-    <script>
-      var id = getQueryVariable("id");
-
-        $.ajax({
-          type: "POST",
-          url: "../../../Models/ViewModels/getLectureById.php?id=" + id,
-          success: function(data){
-            var obj = JSON.parse(data);
-            $("#id").attr('value', id);
-            $("#title").attr('value', obj[0]["title"]);
-            $('#description').html(obj[0]["description"]);
-            $('#date').attr('value', obj[0]["date"]);
-            $('#start').attr('value', obj[0]["start"]);
-            $('#end').attr('value', obj[0]["end"]);
-            $('#courseId').val(obj[0]["course_id"]);
-          }
-        });
-    </script>
-    <div class="emo">
-      <form method="post" action="/AtanasovWebSiteProject/AppRoot/Controllers/lectures_controller.php">
-        <div class="form-group">
-          <input class="form-control" type="hidden" name="id" id="id" />
-        </div>
-        <div class="form-group">
-          <label for="title">Заглавие</label>
-          <input class="form-control" type="text" name="title" id="title" />
-        </div>
-        <div class="form-group">
-          <label for="description">Описание</label>
-          <textarea class="form-control" style="resize: vertical;" name="description" id="description"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="date">Дата</label>
-          <input class="form-control" type="date" name="date" id="date" />
-        </div>
-        <div class="form-group">
-          <label for="start">Начало</label>
-          <input class="form-control" type="time" name="start" id="start" />
-        </div>
-        <div class="form-group">
-          <label for="end">Край</label>
-          <input class="form-control" type="time" name="end" id="end" />
-        </div>
-        <div class="form-group">
-          <label for="courseId">Курс</label>
-          <select id="courseId" class="courseId form-control" name="courseId"></select>
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="hidden" value="edit" name="action" />
-        </div>
-        <div class="form-group">
-          <input class="btn btn-default" type="submit" value="Редактирай" />
-        </div>
-      </form>
+    $.ajax({
+      type: "POST",
+      url: "Models/ViewModels/getLectureById.php?id=" + id,
+      success: function(data){
+        var obj = JSON.parse(data);
+        $("#id").attr('value', id);
+        $("#title").attr('value', obj[0]["title"]);
+        $('#description').html(obj[0]["description"]);
+        $('#date').attr('value', obj[0]["date"]);
+        $('#start').attr('value', obj[0]["start"]);
+        $('#end').attr('value', obj[0]["end"]);
+        $('#courseId').val(obj[0]["course_id"]);
+      }
+    });
+</script>
+<div class="emo">
+  <form method="post" action="Controllers/lectures_controller.php">
+    <div class="form-group">
+      <input class="form-control" type="hidden" name="id" id="id" />
     </div>
-  </body>
-</html>
+    <div class="form-group">
+      <label for="title">Заглавие</label>
+      <input class="form-control" type="text" name="title" id="title" />
+    </div>
+    <div class="form-group">
+      <label for="description">Описание</label>
+      <textarea class="form-control" style="resize: vertical;" name="description" id="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="date">Дата</label>
+      <input class="form-control" type="date" name="date" id="date" />
+    </div>
+    <div class="form-group">
+      <label for="start">Начало</label>
+      <input class="form-control" type="time" name="start" id="start" />
+    </div>
+    <div class="form-group">
+      <label for="end">Край</label>
+      <input class="form-control" type="time" name="end" id="end" />
+    </div>
+    <div class="form-group">
+      <label for="courseId">Курс</label>
+      <select id="courseId" class="courseId form-control" name="courseId"></select>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="hidden" value="edit" name="action" />
+    </div>
+    <div class="form-group">
+      <input class="btn btn-default" type="submit" value="Редактирай" />
+    </div>
+  </form>
+</div>

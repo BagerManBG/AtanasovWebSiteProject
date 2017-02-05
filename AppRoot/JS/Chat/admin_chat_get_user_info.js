@@ -9,7 +9,7 @@ $(document).ready(function(){
 		var id = $(this).attr('id');
 
 		$.ajax({
-			url: '../../Controllers/Chat/getUserInfo.php',
+			url: 'Controllers/Chat/getUserInfo.php',
 			method: 'POST',
 			data: {id: id},
 			success: function(result) {
@@ -18,9 +18,9 @@ $(document).ready(function(){
 					var data = JSON.parse(result);
 
 					var name = data['first_name'] + ' ' + data['last_name'];
-					
+
 					$('.chatBody #typing #user_id').val(data['id']);
-					$('.profileInfoContent #profilePic img').attr('src', '../Images/ProfilePics/profile_default_image.jpg');
+					$('.profileInfoContent #profilePic img').attr('src', 'Resources/Images/ProfilePics/profile_default_image.jpg');
 					$('.profileInfoContent .description #Name').text(name);
 					$('.profileInfoContent .description #email').text(data['email']);
 					$('#selectedName').text(name);

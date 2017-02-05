@@ -71,7 +71,8 @@
 				else
 				{
 					// insert
-					$this->insertRow($table, $row);
+					$id = $this->insertRow($table, $row);
+					return $id;
 				}
 			}
 		}
@@ -102,6 +103,7 @@
 			$query .= "'".implode("','", $row)."'";
 			$query .= ")";
 			mysqli_query($this->dbHandle, $query);
+			return mysqli_insert_id($this->dbHandle);
 		}
 
 		function deleteRow($table, $where, $searchBy)

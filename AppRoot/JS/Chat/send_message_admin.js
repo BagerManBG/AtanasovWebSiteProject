@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	$(document).keypress(function(e) {
 
-	    if(e.which == 13) 
+	    if(e.which == 13)
 	    {
 	        SendMessage();
 	    }
@@ -28,7 +28,7 @@ function SendMessage() {
 		$('#sendIcon').addClass('blurred');
 
 		$.ajax({
-			url: '../../Controllers/Chat/sendMessage.php',
+			url: 'Controllers/Chat/sendMessage.php',
 			method: 'POST',
 			data: {message_data: data}
 		});

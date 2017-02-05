@@ -9,15 +9,15 @@ $(document).ready(function(){
 
 		var messages = new Array();
 		id = $(this).attr('id');
-		
+
 		setInterval(function(){
 
 			$.ajax({
-				url: '../../Controllers/Chat/getMessages.php',
+				url: 'Controllers/Chat/getMessages.php',
 				method: 'POST',
 				data: {user_id: id},
 				success: function(result) {
-					
+
 					if(result != '')
 					{
 						var data = JSON.parse(result);
@@ -27,8 +27,8 @@ $(document).ready(function(){
 							messages = data;
 							$('.chatBody #chatContent').empty();
 
-							for (var i = 0; i < data.length; i++) 
-							{ 
+							for (var i = 0; i < data.length; i++)
+							{
 								var msg = data[i]['message'];
 								var sender = data[i]['sender_id'];
 								var receiver = data[i]['receiver_id'];
