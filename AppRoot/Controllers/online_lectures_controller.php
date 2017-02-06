@@ -32,17 +32,36 @@
     }
 
     function create($title, $link, $courseId) {
-      $info = ["title" => $title, "video_link" => $link, "lecture_index" => 1, "course_id" => $courseId];
-      $this->db->saveArray($this->tableName, $info);
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $info = ["title" => $title, "video_link" => $link, "lecture_index" => 1, "course_id" => $courseId];
+        $this->db->saveArray($this->tableName, $info);
+        header('Location: ' . '../#/online-lectures/' . $id . '/details');
+        exit();
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function edit($id, $title, $link, $courseId) {
-      $info = ["id" => $id, "title" => $title, "video_link" => $link, "lecture_index" => 1, "course_id" => $courseId];
-      $result = $this->db->saveArray($this->tableName, $info);
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $info = ["id" => $id, "title" => $title, "video_link" => $link, "lecture_index" => 1, "course_id" => $courseId];
+        $result = $this->db->saveArray($this->tableName, $info);
+        header('Location: ' . '../#/online-lectures/' . $id . '/details');
+        exit();
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function delete($id) {
-      $result = $this->db->deleteRow($this->tableName, $id, "id");
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $result = $this->db->deleteRow($this->tableName, $id, "id");
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function getById($id) {

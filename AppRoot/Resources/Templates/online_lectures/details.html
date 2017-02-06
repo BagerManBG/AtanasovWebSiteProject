@@ -11,7 +11,6 @@
       $('#title').html(obj[0]["title"]);
       $('#link').attr("src", obj[0]["video_link"].replace("watch?v=", "embed/"));
       $('#edit-btn').attr("href", "edit.html?id=" + id);
-      $('#delete-btn').attr("href", "delete.html?id=" + id);
     }
   });
 </script>
@@ -24,6 +23,5 @@
   <hr />
   <div id="operations">
     <a id="edit-btn" class="btn btn-warning">Редактирай</a>
-    <a id="delete-btn" class="btn btn-danger">Изтрий</a>
   </div>
 </div>

@@ -10,9 +10,8 @@
       var obj = JSON.parse(data);
       $('#name').html(obj[0]["name"]);
       $('#description').html(obj[0]["description"]);
-      $('#difficulty_level').html("Difficulty Level: " + obj[0]["difficulty"]);
-      $('#edit-btn').attr("href", "edit.html?id=" + id);
-      $('#delete-btn').attr("href", "delete.html?id=" + id);
+      $('#difficulty_level').html("(" + obj[0]["difficulty"] + ")");
+      $('#edit-btn').attr("href", "#/online-courses/" + id + '/edit');
     }
   });
 
@@ -24,7 +23,7 @@
       for (var i in obj) {
         var lecture = obj[i];
         var div = $('<div class="row"></div>');
-        var link = $('<div class="image"></div><div class="rows-3"><h3>' + lecture["title"] + '</h3><a href="../online_lectures/details.html?id=' + lecture["id"] + '" class="button">Learn More</a>');
+        var link = $('<div class="image"></div><div class="rows-3"><h3>' + lecture["title"] + '</h3><a href="#/online-lectures/' + lecture["id"] + '/details" class="button">Learn More</a>');
         div.append(link);
         $('#lectures').append(div);
       }
@@ -33,14 +32,14 @@
 </script>
 <div class="emo">
   <h4 id="name"></h4>
-  <p id="description"></p>
   <p id="difficulty_level"></p>
+  <hr />
+  <p id="description"></p>
   <hr />
   <div id="lectures">
 
   </div>
   <div id="operations">
     <a id="edit-btn" class="btn btn-warning">Редактирай</a>
-    <a id="delete-btn" class="btn btn-danger">Изтрий</a>
   </div>
 </div>

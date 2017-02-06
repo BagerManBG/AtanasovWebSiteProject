@@ -88,11 +88,7 @@ function UserHandler() {
             if (result == '') {
                 htmlToAdd = "<li><p class='dynamic account' id='reg'>Register</p></li><li><p class='dynamic account' id='log'>Log In</p></li>";
             } else {
-
-                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/Resources/Templates/profile.html' class='dynamic'>Profile</a></li>";
-                var userNameHTML = "<li class='dynamic-1'><h2  id='ivan'>Welcome, " + result + "</h2></li>";
-                $('#username').prepend(userNameHTML);
-
+                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/profile' class='dynamic'>Profile</a></li>";
                 $('#formContainer').remove();
                 $('#mask').remove();
             }

@@ -37,23 +37,35 @@
     }
 
     function create($name, $description, $capacity, $difficulty_level_id) {
-      $info = ["name" => $name, "description" => $description, "students_capacity" => $capacity, "difficulty_level" => $difficulty_level_id];
-      $id = $this->db->saveArray($this->tableName, $info);
-      header('Location: ' . '../#/courses/' . $id . '/details');
-      exit();
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $info = ["name" => $name, "description" => $description, "students_capacity" => $capacity, "difficulty_level" => $difficulty_level_id];
+        $id = $this->db->saveArray($this->tableName, $info);
+        header('Location: ' . '../#/courses/' . $id . '/details');
+        exit();
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function edit($id, $name, $description, $capacity, $difficulty_level_id) {
-      $info = ["id" => $id, "name" => $name, "description" => $description, "students_capacity" => $capacity, "difficulty_level" => $difficulty_level_id];
-      $result = $this->db->saveArray($this->tableName, $info);
-      header('Location: ' . '../#/courses/' . $id . '/details');
-      exit();
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $info = ["id" => $id, "name" => $name, "description" => $description, "students_capacity" => $capacity, "difficulty_level" => $difficulty_level_id];
+        $result = $this->db->saveArray($this->tableName, $info);
+        header('Location: ' . '../#/courses/' . $id . '/details');
+        exit();
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function enrollStudent($courseId, $studentId) {
-      $name = "students_courses";
-      $info = ["student_id" => $studentId, "course_id" => $course_id];
-      $this->db->saveArray($name, $info);
+      if (isset($_SESSION["logged_user"])) {
+        $name = "students_courses";
+        $info = ["student_id" => $studentId, "course_id" => $course_id];
+        $this->db->saveArray($name, $info);
+      }
     }
 
     function disenrollStudent($courseId, $studentId) {
@@ -63,7 +75,12 @@
     }
 
     function delete($id) {
-      $result = $this->db->deleteRow($this->tableName, $id, "id");
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $result = $this->db->deleteRow($this->tableName, $id, "id");
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function getById($id) {

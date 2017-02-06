@@ -32,18 +32,36 @@
     }
 
     function create($name) {
-      #$query = "INSERT INTO difficulty_levels(name) VALUES('" . $name . "')";
-      $info = ["name" => $name];
-      $this->db->saveArray($this->tableName, $info);
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $info = ["name" => $name];
+        $this->db->saveArray($this->tableName, $info);
+        header('Location: ' . '../#/difficulty-levels/' . $id . '/details');
+        exit();
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function edit($id, $name) {
-      $info = ["id" => $id, "name" => $name];
-      $result = $this->db->saveArray($this->tableName, $info);
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $info = ["id" => $id, "name" => $name];
+        $result = $this->db->saveArray($this->tableName, $info);
+        header('Location: ' . '../#/difficulty-levels/' . $id . '/details');
+        exit();
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function delete($id) {
-      $result = $this->db->deleteRow($this->tableName, $id, "id");
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $result = $this->db->deleteRow($this->tableName, $id, "id");
+      } else {
+        header('Location: ' . '../#/home');
+        exit();
+      }
     }
 
     function getById($id) {

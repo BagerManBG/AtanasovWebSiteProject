@@ -10,7 +10,7 @@
         for (var i in obj) {
           var lecture = obj[i];
           var div = $('<div class="lecture"></div>');
-          var link = $('<h4>' + lecture["title"] + '</h4><a class="button" href="details.html?id=' + lecture["id"] + '">Learn more...</a><hr />');
+          var link = $('<h4>' + lecture["title"] + '</h4><a class="button" href="#/online-lectures/' + lecture["id"] + '/details">Learn more...</a><hr />');
           div.append(link);
           $('#lectures').append(div);
         }

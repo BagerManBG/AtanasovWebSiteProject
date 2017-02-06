@@ -21,12 +21,10 @@
       console.log("Models/ViewModels/getCourseById.php?id=" + id);
       var obj = JSON.parse(data);
       $('#name').html(obj[0]["name"]);
-      $('#description').html(obj[0]["description"]);
-      $('#capacity').html("Max students count: " + obj[0]["students_capacity"]);
-      $('#difficulty_level').html("Difficulty Level: " + obj[0]["difficulty"]);
+      $('#description').html(obj[0]["description"] + ")");
+      $('#difficulty_level').html("(" + obj[0]["difficulty"] + ")");
 
-      $('#edit-btn').attr("href", "edit.html?id=" + id);
-      $('#delete-btn').attr("href", "delete.html?id=" + id);
+      $('#edit-btn').attr("href", '#/courses/' + id + "/edit");
     }
   });
 
@@ -38,7 +36,7 @@
       for (var i in obj) {
         var lecture = obj[i];
         var div = $('<div class="row"></div>');
-        var link = $('<div class="image"></div><div class="rows-3"><h3>' + lecture["title"] + '</h3><p>' + lecture["description"] + '</p><a href="../lectures/calendar.html?date=' + lecture["date"] + '" class="button">Learn More</a>')
+        var link = $('<div class="image"></div><div class="rows-3"><h3>' + lecture["title"] + '</h3><p>' + lecture["description"] + '</p>');
         div.append(link);
         $('#lectures').append(div);
       }
@@ -47,10 +45,9 @@
 </script>
 <div class="emo">
   <h3 id="name"></h4>
+  <p id="difficulty_level"></p>
   <hr>
   <p id="description"></p>
-  <p id="capacity"></p>
-  <p id="difficulty_level"></p>
   <hr />
   <div id="lectures">
     <h4>Лекции</h4>
@@ -60,6 +57,5 @@
     <button type="button" id="enroll-btn" onclick="enrollStudent()" class="btn btn-default">Запиши се</button>
     <hr />
     <a id="edit-btn" class="btn btn-warning">Редактирай</a>
-    <a id="delete-btn" class="btn btn-danger">Изтрий</a>
   </div>
 </div>

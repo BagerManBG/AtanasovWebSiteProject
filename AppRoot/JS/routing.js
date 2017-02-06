@@ -33,6 +33,13 @@ $(document).ready(function() {
             });
           });
 
+          this.get('#/courses/create', function() {
+            $.get(path + 'courses/create.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
           this.get('#/courses/:id/details', function() {
             sessionStorage.setItem('id', this.params['id']);
             $.get(path + 'courses/details.html', function(templ) {
@@ -49,8 +56,23 @@ $(document).ready(function() {
             });
           });
 
-          this.get('#/courses/create', function() {
-            $.get(path + 'courses/create.html', function(templ) {
+          this.get('#/lectures', function() {
+            $.get(path + 'Lectures/calendar.html', function(templ) {
+              addHeader();
+              main.html(templ);
+            });
+          });
+
+          this.get('#/lectures/create', function() {
+            $.get(path + 'lectures/create.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
+          this.get('#/lectures/:id/edit', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'lectures/edit.html', function(templ) {
               addHeader();
               checkAdmin(templ);
             });
@@ -70,17 +92,56 @@ $(document).ready(function() {
             });
           });
 
-          this.get('#/login', function() {
-            $('#formContainer').show();
-            $('#mask').show();
+          this.get('#/online-courses/:id/details', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'online_courses/details.html', function(templ) {
+              addHeader();
+              main.html(templ);
+            });
           });
 
-          this.get('#/lectures', function() {
-            $.get(path + 'Lectures/calendar.html', function(templ) {
+          this.get('#/online-courses/:id/edit', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'online_courses/edit.html', function(templ) {
               addHeader();
               checkAdmin(templ);
             });
           });
+
+          this.get('#/online-lectures', function() {
+            $.get(path + 'online_lectures/index.html', function(templ) {
+              addHeader();
+              main.html(templ);
+            });
+          });
+
+          this.get('#/online-lectures/create', function() {
+            $.get(path + 'online_lectures/create.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
+          this.get('#/online-lectures/:id/details', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'online_lectures/details.html', function(templ) {
+              addHeader();
+              main.html(templ);
+            });
+          });
+
+          this.get('#/online-lectures/:id/edit', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'online_lectures/edit.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
+          // this.get('#/login', function() {
+          //   $('#formContainer').show();
+          //   $('#mask').show();
+          // });
 
           function addHeader() {
               $('#header').attr('class', '');
