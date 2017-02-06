@@ -35,7 +35,7 @@
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
         $info = ["title" => $title, "description" => $description, "date" => $date, "start" => $start, "end" => $end, "course_id" => $courseId];
         $this->db->saveArray($this->tableName, $info);
-        header('Location: ' . '../#/lectures/' . $id . '/details');
+        header('Location: ' . '../#/lectures');
         exit();
       } else {
         header('Location: ' . '../#/home');
@@ -47,7 +47,7 @@
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
         $info = ["id" => $id, "title" => $title, "description" => $description, "date" => $date, "start" => $start, "end" => $end, "course_id" => $courseId];
         $result = $this->db->saveArray($this->tableName, $info);
-        header('Location: ' . '../#/lectures/' . $id . '/details');
+        header('Location: ' . '../#/lectures');
         exit();
       } else {
         header('Location: ' . '../#/home');
