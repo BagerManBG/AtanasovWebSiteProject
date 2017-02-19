@@ -1,0 +1,100 @@
+.Intro h2{
+    font-size: 5em;
+    text-align: center;
+    width: 80%;
+    border-bottom: 1px solid black;
+    padding-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #CCCCCC;
+    text-shadow:1px 1px 1px  black;
+}
+
+.Intro-img{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.Intro p{
+    width: 80%;
+    margin-right:10%;
+    margin-left: 10%;
+
+}
+
+.Intro ul{
+    list-style-type: none;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    float: left;
+}
+
+.Intro li:first-of-type{
+    float: left;
+    width: 28%;
+    border: 1px solid black;
+    margin-left: -3%;
+}
+
+.Intro li:nth-of-type(2){
+    float: left;
+    width: 28%;
+    border: 1px solid black;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.Intro li:last-of-type{
+    float: left;
+    width: 28%;
+    border: 1px solid black;
+}
+
+/*.Intro li img:hover{
+    background-color: black;
+}
+
+.Intro li {
+    background: black;
+}
+.Intro li img {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.Intro li:hover img {
+    opacity: .5;
+}*/
+.Intro-image {
+    position:relative;
+    width:20%;
+    float: left;
+    margin-left: 10%;
+    margin-bottom: 2%;
+
+}
+.Intro-image img {
+    width:100%;
+    vertical-align:top;
+}
+.Intro-image:after {
+    content: attr(data-content);
+    color:#fff;
+    position:absolute;
+    width:100%; 
+    height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    text-align: center;
+    padding: 2%;
+    font-size: 1.2em;
+}
+.Intro-image:hover:after {
+    opacity:1;
+}
+
