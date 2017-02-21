@@ -86,7 +86,7 @@ function UserHandler() {
             var htmlToAdd;
 
             if (result == '') {
-                htmlToAdd = "<li><p class='dynamic account' id='reg'>Register</p></li><li><p class='dynamic account' id='log'>Log In</p></li>";
+                htmlToAdd = "<li><a class='dynamic account' id='reg'>Register</a></li><li><a class='dynamic account' id='log'>Log In</a></li>";
             } else {
                 htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/profile' class='dynamic'>Profile</a></li>";
                 $('#formContainer').remove();
