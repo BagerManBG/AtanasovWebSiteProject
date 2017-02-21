@@ -8,8 +8,7 @@ $(document).ready(function() {
     $('#formContainer').hide();
     $('#mask').hide();
 
-    $('nav').on('click', '.account', function() {
-
+    $('.nav').on('click', '.account', function() {
         var tab = $(this).attr('id');
         OpenForm(tab);
         formOpened = true;
