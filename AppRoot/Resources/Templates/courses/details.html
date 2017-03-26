@@ -2,23 +2,11 @@
 <script type="text/javascript" src="JS/utils.js"></script>
 <script>
   var id = getQueryVariable("id");
-  console.log(id);
-
-  function enrollStudent() {
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/enroll.php?id=" + id,
-      success: function(data) {
-        $('#enroll-btn').hide();
-      }
-    });
-  }
 
   $.ajax({
     type: "POST",
     url: "Models/ViewModels/getCourseById.php?id=" + id,
     success: function(data) {
-      console.log("Models/ViewModels/getCourseById.php?id=" + id);
       var obj = JSON.parse(data);
       $('#name').html(obj[0]["name"]);
       $('#description').html(obj[0]["description"] + ")");
@@ -42,6 +30,17 @@
       }
     }
   });
+
+  $.ajax({
+    type: "GET",
+    url: "Controllers/Account/checkRole.php",
+    success: function(role){
+      if (role == 'admin') {
+        var adminActions = $('<hr /><div id="operations"><a class="btn btn-default" href="#/courses/' + id + '/edit">Редактирай</a><a class="btn btn-default" href="#/courses/' + id + '/delete">Изтрий</a></div>');
+        $('.emo').append(adminActions);
+      }
+    }
+  });
 </script>
 <div class="emo">
   <h3 id="name"></h4>
@@ -51,11 +50,5 @@
   <hr />
   <div id="lectures">
     <h4>Лекции</h4>
-  </div>
-  <hr />
-  <div id="operations">
-    <button type="button" id="enroll-btn" onclick="enrollStudent()" class="btn btn-default">Запиши се</button>
-    <hr />
-    <a id="edit-btn" class="btn btn-warning">Редактирай</a>
   </div>
 </div>

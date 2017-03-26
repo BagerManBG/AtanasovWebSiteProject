@@ -11,6 +11,9 @@
     case 'edit':
       $controller->edit($data["id"], $data["title"], $data["description"], $data["date"], $data["start"], $data["end"], $data["courseId"]);
       break;
+    case 'book':
+      $controller->book($data["seat_index"], $data["lecture_id"]);
+      break;
     case 'delete':
       $controller->delete($data["id"]);
       break;
@@ -34,7 +37,12 @@
     function create($title, $description, $date, $start, $end, $courseId) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
         $info = ["title" => $title, "description" => $description, "date" => $date, "start" => $start, "end" => $end, "course_id" => $courseId];
-        $this->db->saveArray($this->tableName, $info);
+        $id = $this->db->saveArray($this->tableName, $info);
+
+        for ($i = 1; $i <= 6; $i++) {
+          $this->db->saveArray('seats', ['seat_index' => $i, 'lecture_id' => $id]);
+        }
+
         header('Location: ' . '../#/lectures');
         exit();
       } else {
@@ -52,6 +60,26 @@
       } else {
         header('Location: ' . '../#/home');
         exit();
+      }
+    }
+
+    function book($seat_index, $lecture_id) {
+      $checkForOtherPlaceQuery = 'SELECT * FROM seats WHERE lecture_id = ' . $lecture_id . ' AND user_id = ' . $user_id;
+      $seat = $this->db->fetchArray($checkForOtherPlaceQuery);
+      if (sizeof($seat) > 0) {
+        echo '<p>You already have a seat</p>';
+      } else {
+        $getSeatQuery = 'SELECT * FROM seats WHERE seat_index = ' . $seat_index . ' AND lecture_id = ' . $lecture_id . ' AND user_id IS NULL';
+        $seat = $this->db->fetchArray($getSeatQuery);
+        if (is_null($seat[0]['user_id'])) {
+          $user_id = $_SESSION['logged_user']['id'];
+          $info = ['id' => $seat[0]['id'], 'lecture_id' => $lecture_id, 'seat_index' => $data[0]['seat_index'], 'user_id' => $user_id];
+          $this->db->saveArray('seats', $info);
+          header('Location: ' . '../#/lectures');
+        }
+        else {
+          echo('<p>Seat already taken</p>');
+        }
       }
     }
 

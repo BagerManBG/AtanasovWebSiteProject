@@ -1,0 +1,45 @@
+#hall {
+  width: 100%;
+  text-align: center;
+}
+
+#hall .column {
+  width: 48%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: inline-block;
+}
+
+#hall .column .desk {
+  margin-bottom: 5%;
+  height: 10em;
+  padding: 0.5em;
+  background-color: #6a4741;
+  text-align: center;
+}
+
+#hall .column .desk .seat {
+  background-color: #758638;
+  height: 9em;
+  width: 40%;
+  display: inline-block;
+}
+
+#hall .column .desk button.seat {
+  border: none;
+}
+
+#hall #lecturer {
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 10em;
+  background-color: #c1b28b;
+}
+
+#hall #lecturer p {
+  color: #ffffff;
+  font-size: 3em;
+  padding-top: 1em;
+}

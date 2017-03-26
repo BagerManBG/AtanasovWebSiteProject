@@ -5,11 +5,17 @@ $(document).ready(function(){
   $( "#Edit" ).click(function() {
 
       $("input").prop('disabled', false);
+      $('#Edit').hide();
+      $('#Save').show();
+      $('#Cancel').show();
   });
 
   $( "#Cancel" ).click(function() {
 
       $("input").prop('disabled', true);
+      $('#Save').hide();
+      $('#Cancel').hide();
+      $('#Edit').show();
       Refresh();
   });
 

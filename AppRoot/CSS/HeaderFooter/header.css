@@ -1,3 +1,7 @@
+#view-content {
+  margin-top: 75px;
+}
+
 nav {
     width: 100%;
     position: absolute;
@@ -124,7 +128,6 @@ section.module.parallax-5 {
 .button {
     background-color: transparent;
     border: 1px #7e8895 solid;
-    border-radius: 4px;
     color: #7e8895;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -187,4 +190,3 @@ section.module.parallax-5 {
     font-size: 160px;
   }
 }*/
-  

@@ -5,6 +5,12 @@ $(document).ready(function() {
           var main = $(selector);
           path = 'Resources/Templates/';
 
+          this.get('#/', function() {
+            $.get(path + 'root.html', function(templ) {
+              $('body').html(templ);
+            });
+          });
+
           this.get('#/home', function() {
             $.get(path + 'home.html', function(templ) {
               bringBackHeader();
@@ -19,10 +25,48 @@ $(document).ready(function() {
             });
           });
 
+          this.get('#/lectures/:id/book', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'lectures/hall.html', function(templ) {
+              addHeader();
+              checkLogged(templ);
+            });
+          });
+
           this.get('#/profile', function() {
             $.get(path + 'profile.html', function(templ) {
               addHeader();
               checkLogged(templ);
+            });
+          });
+
+          this.get('#/levels', function() {
+            $.get(path + 'difficulty_levels/index.html', function(templ) {
+              addHeader();
+              main.html(templ);
+            });
+          });
+
+          this.get('#/levels/:id/details', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'difficulty_levels/details.html', function(templ) {
+              addHeader();
+              main.html(templ);
+            });
+          });
+
+          this.get('#/levels/create', function() {
+            $.get(path + 'difficulty_levels/create.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
+          this.get('#/levels/:id/edit', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'difficulty_levels/edit.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
             });
           });
 
@@ -147,7 +191,6 @@ $(document).ready(function() {
               $('#header').attr('class', '');
               $('#header nav').attr('class', 'nav-scroll');
               $('#header nav ul').attr('class', 'scroll');
-              main.attr('style', 'padding-top: 120px');
           }
 
           function bringBackHeader() {

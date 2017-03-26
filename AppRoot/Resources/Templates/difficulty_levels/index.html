@@ -9,7 +9,7 @@
         for (var i in obj) {
           var level = obj[i];
           var div = $('<div class="level"></div>');
-          var link = $('<a href="details.html?id=' + level["id"] + '">' + level["name"] + '</a>');
+          var link = $('<a href="#/levels/' + level['id'] + '/details">' + level["name"] + '</a>');
           div.append(link);
           $('#levels').append(div);
         }

@@ -3,6 +3,7 @@
 <script type="text/javascript" src="JS/libs/bootstrap.js"></script>
 <script type="text/javascript" src="JS/utils.js"></script>
 <link rel="stylesheet" href="CSS/calendar/fullcalendar.css">
+<link rel="stylesheet" href="CSS/list.css">
 <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
 <script type="text/javascript">
   $(document).ready(function() {
@@ -19,7 +20,37 @@
           $('#start').html('<i class="fa fa-calendar-plus-o"></i>&nbsp;<b>Начало</b>: ' + event.startTime);
           $('#end').html('<i class="fa fa-calendar-plus-o"></i>&nbsp;<b>Край</b>: ' + event.endTime);
           $('#description').html('<i class="fa fa-calendar-check-o"></i>&nbsp;<b>Описание</b>: ' + event.description);
-          $('#course').html('<i class="fa fa-calendar-check-o"></i>&nbsp;<b>Курс</b>: <a href="../courses/details.html?id=' + event.courseId + '">' + event.name + '</a>');
+          $('#course').html('<i class="fa fa-calendar-check-o"></i>&nbsp;<b>Курс</b>: <a href="#/courses/' + event.courseId + '/details">' + event.name + '</a>');
+          $('#book').attr('href', '#/lectures/' + event.id + '/book');
+
+          var now = moment();
+          if (now.isAfter(event.end)) {
+            $('#book').hide();
+          }
+
+          $.ajax({
+            type: "GET",
+            url: "Controllers/Account/checkRole.php",
+            success: function(role){
+              if (role == 'admin') {
+                var admin = $('#admin-ops');
+                admin.html('');
+                var adminActions = $('<hr /><div><a class="btn btn-warning" href="#/lectures/' + event.id + '/edit">Редактирай</a></div>');
+                admin.append(adminActions);
+              }
+            }
+          });
+
+          $.ajax({
+            type: "GET",
+            url: "Models/ViewModels/checkIfAlreadyBooked.php?id=" + event.id,
+            success: function(data) {
+              if (JSON.parse(data).length > 0) {
+                $('#book').hide();
+              }
+            }
+          });
+
           $('#editLecture').attr('href', '#/lectures/' + event.id + '/edit');
         }
     });
@@ -50,9 +81,10 @@
                 <h4 id="course"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Курс</b>: </h4>
               </div>
             </div>
+            <div style="text-align: right;" id="admin-ops"></div>
             <div class="modal-footer">
-                <a class="btn btn-warning" id="editLecture">Редактирай</a>
-                <a href="#" data-dismiss="modal" class="btn btn-default">Затвори</a>
+              <a class="btn btn-default" id="book">Запиши се</a>
+              <a href="#" data-dismiss="modal" class="btn btn-default">Затвори</a>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
-<script type="text/javascript" src="../../../JS/utils.js"></script>
+<script type="text/javascript" src="JS/utils.js"></script>
 <script>
   var id = getQueryVariable("id");
 
@@ -9,7 +9,7 @@
     success: function(data){
       var obj = JSON.parse(data);
       $('#title').html(obj[0]["name"]);
-      $('#edit-btn').attr("href", "edit.html?id=" + id);
+      $('#edit-btn').attr("href", "#/levels/" + id + "/edit");
       $('#delete-btn').attr("href", "delete.html?id=" + id);
     }
   });
@@ -23,9 +23,20 @@
       for (var i in obj) {
         var course = obj[i];
         var div = $('<div class="course"></div>');
-        var link = $('<a href="details.html?id=' + course["id"] + '">' + course["name"] + '</a>');
+        var link = $('<a href="#/courses/' + course['id'] + '/details">' + course["name"] + '</a>');
         div.append(link);
         $('#courses').append(div);
+      }
+    }
+  });
+
+  $.ajax({
+    type: "GET",
+    url: "Controllers/Account/checkRole.php",
+    success: function(role){
+      if (role == 'admin') {
+        var adminActions = $('<hr /><div id="operations"><a class="btn btn-warning" href="#/levels/' + id + '/edit">Редактирай</a><a class="btn btn-danger" href="#/levels/' + id + '/delete">Изтрий</a></div>');
+        $('.emo').append(adminActions);
       }
     }
   });
@@ -35,10 +46,5 @@
   <hr />
   <div id="courses">
 
-  </div>
-  <hr />
-  <div id="operations">
-    <a id="edit-btn" class="btn btn-warning">Редактирай</a>
-    <a id="delete-btn" class="btn btn-danger">Изтрий</a>
   </div>
 </div>

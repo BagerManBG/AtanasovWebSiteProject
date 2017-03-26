@@ -65,13 +65,13 @@ body {
 }
 
 .emo .btn-default {
-  background-color: #428bca;
+  background-color: #5d836e;
   color: #ffffff;
   border: 0px solid #999;
 }
 
 .emo .btn-default:hover {
-  background-color: #3680c1;
+  background-color: #155149;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px){

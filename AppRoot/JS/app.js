@@ -4,8 +4,8 @@ var app = angular.module('app', ['ngRoute']);
 
 app.config(function($routeProvider) {
 
-    $routeProvider.when('/', {
-        templateUrl: 'Resources/Templates/home.html'
+    $routeProvider.when('#/', {
+        templateUrl: 'Resources/Templates/root.html'
     });
     $routeProvider.when('/chat-admin', {
         templateUrl: 'Resources/Templates/chat_admin.html'
