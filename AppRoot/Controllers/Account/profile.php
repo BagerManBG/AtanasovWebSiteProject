@@ -11,6 +11,8 @@ $last_name = $_POST['last_name'];
 $email = $_POST['email'];
 $password =$_POST['password'];
 $password_2 =$_POST['password_2'];
+$skype = $_POST['skypeName'];
+$google_acc = $_POST['google_acc'];
 
 
 
@@ -56,38 +58,36 @@ $password_2 =$_POST['password_2'];
         </script>
         ";*/
 
-                    if(empty($password))
-{
-            $user_id = $_SESSION['logged_user']['id'];
+if(empty($password)) {
 
-            $q = "SELECT * FROM `users` WHERE `id` = '$user_id'";
+    $user_id = $_SESSION['logged_user']['id'];
 
-            $user_data = $db->fetchArray($q);
+    $q = "SELECT * FROM `users` WHERE `id` = '$user_id'";
 
-            $data = [
-                'id' => $user_data[0]['id'],
-                'first_name' => $first_name,
-                'last_name' => $last_name,
-                'email' => $email
-            ];
+    $user_data = $db->fetchArray($q);
 
-            $db->saveArray('users', $data);
+    $data = [
+        'id' => $user_data[0]['id'],
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'email' => $email,
+        'skype' => $skype,
+        'google_acc' => $google_acc
+    ];
 
-            $_SESSION['logged_user']['first_name'] = $first_name;
-            $_SESSION['logged_user']['last_name'] = $last_name;
-            $_SESSION['logged_user']['email'] = $email;
+    $db->saveArray('users', $data);
 
-            header('location: ../../index.html');
-            
-           
+    $_SESSION['logged_user']['first_name'] = $first_name;
+    $_SESSION['logged_user']['last_name'] = $last_name;
+    $_SESSION['logged_user']['email'] = $email;
+    $_SESSION['logged_user']['skype'] = $skype;
+    $_SESSION['logged_user']['google_acc'] = $google_acc;
 
-              
-}
-else {
+    header('location: ../../#/profile');             
+} else {
 
+    if($password  == $password_2 ) {
 
-            if($password  == $password_2 )
-        {
         $user_id = $_SESSION['logged_user']['id'];
 
         $q = "SELECT * FROM `users` WHERE `id` = '$user_id'";
@@ -109,15 +109,12 @@ else {
         $_SESSION['logged_user']['email'] = $email;
 
         header('location: ../../index.html');
-        }
-        else{
+    } else {
 
-                 echo"<script language='javascript'>
-                    alert('passwords must matches ')
-        </script>
-        ";
-
-            }
+        echo"<script language='javascript'>
+                alert('passwords must matches ')
+             </script>";
     }
+}
         
-        ?>
+?>

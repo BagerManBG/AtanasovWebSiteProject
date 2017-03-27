@@ -7,7 +7,9 @@
 		'last_name' => $_POST['reg_data'][1],
 		'email' => $_POST['reg_data'][2],
 		'password' => $_POST['reg_data'][3],
-		'password_confirm' => $_POST['reg_data'][4]
+		'password_confirm' => $_POST['reg_data'][4],
+        'skype' => $_POST['reg_data'][5],
+        'google_acc' => $_POST['reg_data'][6]
 	];
 
 	$hasError = false;
@@ -24,6 +26,8 @@
 	CheckEmail($data['email']);
 	CheckPassword($data['password']);
 	CheckPasswordConfirm($data['password'], $data['password_confirm']);
+    CheckSkype($data['skype']);
+    CheckGmail($data['google_acc']);
 
 	if(!$hasError) {
 
@@ -96,4 +100,30 @@ function CheckPasswordConfirm($password, $password_confirm) {
     }
 }
 
+
+function CheckSkype($skype) {
+
+    $regex = '/^[a-zA-Z][a-zA-Z1-9._]+[a-zA-Z1-9]$/';
+
+    if (strlen($skype) < 4 && $skype != "") {
+        $hasError = true;
+    }
+
+    if (strlen($skype) > 30) {
+        $hasError = true;
+    }
+
+    if (!preg_match($regex, $skype)) {
+        $hasError = true;
+    }
+}
+
+function CheckGmail($google_acc) {
+
+    $regex = '/ ^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@gmail\.com$ /';
+
+    if (!preg_match($regex, $google_acc) && $google_acc != "") {
+        $hasError = true;
+    } 
+}
 ?>

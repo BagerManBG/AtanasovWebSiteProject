@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2017 at 11:10 AM
--- Server version: 5.6.26
--- PHP Version: 5.5.28
+-- Generation Time: 
+-- Версия на сървъра: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -25,10 +25,11 @@ USE `atanasko`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chat_users`
+-- Структура на таблица `chat_users`
 --
 
-CREATE TABLE IF NOT EXISTS `chat_users` (
+DROP TABLE IF EXISTS `chat_users`;
+CREATE TABLE `chat_users` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
@@ -36,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `chat_users` (
   `avatar` varchar(255) NOT NULL,
   `role_id` int(11) NOT NULL,
   `last_time_online` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `chat_users`
+-- Схема на данните от таблица `chat_users`
 --
 
 INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `role_id`, `last_time_online`) VALUES
@@ -51,19 +52,20 @@ INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `r
 -- --------------------------------------------------------
 
 --
--- Table structure for table `courses`
+-- Структура на таблица `courses`
 --
 
-CREATE TABLE IF NOT EXISTS `courses` (
+DROP TABLE IF EXISTS `courses`;
+CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
   `students_capacity` int(11) NOT NULL,
   `difficulty_level` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `courses`
+-- Схема на данните от таблица `courses`
 --
 
 INSERT INTO `courses` (`id`, `name`, `description`, `students_capacity`, `difficulty_level`) VALUES
@@ -84,16 +86,17 @@ INSERT INTO `courses` (`id`, `name`, `description`, `students_capacity`, `diffic
 -- --------------------------------------------------------
 
 --
--- Table structure for table `difficulty_levels`
+-- Структура на таблица `difficulty_levels`
 --
 
-CREATE TABLE IF NOT EXISTS `difficulty_levels` (
+DROP TABLE IF EXISTS `difficulty_levels`;
+CREATE TABLE `difficulty_levels` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `difficulty_levels`
+-- Схема на данните от таблица `difficulty_levels`
 --
 
 INSERT INTO `difficulty_levels` (`id`, `name`) VALUES
@@ -104,10 +107,11 @@ INSERT INTO `difficulty_levels` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lectures`
+-- Структура на таблица `lectures`
 --
 
-CREATE TABLE IF NOT EXISTS `lectures` (
+DROP TABLE IF EXISTS `lectures`;
+CREATE TABLE `lectures` (
   `id` int(11) NOT NULL,
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
@@ -115,10 +119,10 @@ CREATE TABLE IF NOT EXISTS `lectures` (
   `start` time NOT NULL,
   `end` time NOT NULL,
   `course_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `lectures`
+-- Схема на данните от таблица `lectures`
 --
 
 INSERT INTO `lectures` (`id`, `title`, `description`, `date`, `start`, `end`, `course_id`) VALUES
@@ -130,19 +134,20 @@ INSERT INTO `lectures` (`id`, `title`, `description`, `date`, `start`, `end`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Структура на таблица `messages`
 --
 
-CREATE TABLE IF NOT EXISTS `messages` (
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `message` varchar(510) COLLATE utf8mb4_unicode_ci NOT NULL,
   `send_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sender_id` int(11) NOT NULL,
   `receiver_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `messages`
+-- Схема на данните от таблица `messages`
 --
 
 INSERT INTO `messages` (`id`, `message`, `send_time`, `sender_id`, `receiver_id`) VALUES
@@ -289,19 +294,20 @@ INSERT INTO `messages` (`id`, `message`, `send_time`, `sender_id`, `receiver_id`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `online_courses`
+-- Структура на таблица `online_courses`
 --
 
-CREATE TABLE IF NOT EXISTS `online_courses` (
+DROP TABLE IF EXISTS `online_courses`;
+CREATE TABLE `online_courses` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `picture` longblob,
   `difficulty_level` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `online_courses`
+-- Схема на данните от таблица `online_courses`
 --
 
 INSERT INTO `online_courses` (`id`, `name`, `description`, `picture`, `difficulty_level`) VALUES
@@ -310,19 +316,20 @@ INSERT INTO `online_courses` (`id`, `name`, `description`, `picture`, `difficult
 -- --------------------------------------------------------
 
 --
--- Table structure for table `online_lectures`
+-- Структура на таблица `online_lectures`
 --
 
-CREATE TABLE IF NOT EXISTS `online_lectures` (
+DROP TABLE IF EXISTS `online_lectures`;
+CREATE TABLE `online_lectures` (
   `id` int(11) NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lecture_index` int(11) NOT NULL,
   `video_link` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `course_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `online_lectures`
+-- Схема на данните от таблица `online_lectures`
 --
 
 INSERT INTO `online_lectures` (`id`, `title`, `lecture_index`, `video_link`, `course_id`) VALUES
@@ -331,10 +338,11 @@ INSERT INTO `online_lectures` (`id`, `title`, `lecture_index`, `video_link`, `co
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Структура на таблица `posts`
 --
 
-CREATE TABLE IF NOT EXISTS `posts` (
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -345,16 +353,17 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Структура на таблица `roles`
 --
 
-CREATE TABLE IF NOT EXISTS `roles` (
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Схема на данните от таблица `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`) VALUES
@@ -364,18 +373,19 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seats`
+-- Структура на таблица `seats`
 --
 
-CREATE TABLE IF NOT EXISTS `seats` (
+DROP TABLE IF EXISTS `seats`;
+CREATE TABLE `seats` (
   `id` int(11) NOT NULL,
   `seat_index` int(11) NOT NULL,
   `lecture_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `seats`
+-- Схема на данните от таблица `seats`
 --
 
 INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
@@ -389,10 +399,11 @@ INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services`
+-- Структура на таблица `services`
 --
 
-CREATE TABLE IF NOT EXISTS `services` (
+DROP TABLE IF EXISTS `services`;
+CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -402,16 +413,17 @@ CREATE TABLE IF NOT EXISTS `services` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students_courses`
+-- Структура на таблица `students_courses`
 --
 
-CREATE TABLE IF NOT EXISTS `students_courses` (
+DROP TABLE IF EXISTS `students_courses`;
+CREATE TABLE `students_courses` (
   `student_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `students_courses`
+-- Схема на данните от таблица `students_courses`
 --
 
 INSERT INTO `students_courses` (`student_id`, `course_id`) VALUES
@@ -422,10 +434,11 @@ INSERT INTO `students_courses` (`student_id`, `course_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура на таблица `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -433,21 +446,26 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `secret_question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `secret_answer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `skype` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_acc` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` int(11) NOT NULL DEFAULT '2'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Схема на данните от таблица `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secret_question`, `secret_answer`, `avatar`, `role_id`) VALUES
-(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasov', 'e10adc3949ba59abbe56e057f20f883e', 'My favourite class?', 'Zh class.', 'http://localhost:8088/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
-(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(3, 'toshko_1998@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(4, 'test@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(5, 'emil_krumov@hotmail.com', 'Emil', 'Krumov', '588bbc7137db3eff5ac3e352aff3666e', 'Emo qk li e?', 'Em da ne kat tosho vrat!', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
-(6, 'emo@abv.bg', 'emo', 'emov', 'd7613e3be440114904df5802ef2e31c8', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2);
+INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secret_question`, `secret_answer`, `skype`, `google_acc`, `avatar`, `role_id`) VALUES
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasov', 'e10adc3949ba59abbe56e057f20f883e', 'My favourite class?', 'Zh class.', NULL, NULL, 'http://localhost:8088/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
+(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'bagerman98', 'toshko@gmail.com', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(3, 'toshko_1998@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(4, 'test@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(5, 'emil_krumov@hotmail.com', 'Emil', 'Krumov', '588bbc7137db3eff5ac3e352aff3666e', 'Emo qk li e?', 'Em da ne kat tosho vrat!', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
+(6, 'emo@abv.bg', 'emo', 'emov', 'd7613e3be440114904df5802ef2e31c8', '', '', NULL, NULL, 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(7, 'toshko@abv.bg', 'newestg', 'test', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'korona', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(8, 'test@test.test', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '', '', 'toshko@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(9, 'test@test.tes', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2);
 
 --
 -- Indexes for dumped tables
@@ -548,37 +566,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `chat_users`
 --
 ALTER TABLE `chat_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=161;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `difficulty_levels`
 --
 ALTER TABLE `difficulty_levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `lectures`
 --
 ALTER TABLE `lectures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=140;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 --
 -- AUTO_INCREMENT for table `online_courses`
 --
 ALTER TABLE `online_courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `online_lectures`
 --
 ALTER TABLE `online_lectures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `posts`
 --
@@ -588,12 +606,12 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `seats`
 --
 ALTER TABLE `seats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -603,7 +621,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

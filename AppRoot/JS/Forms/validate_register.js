@@ -43,17 +43,31 @@ $(document).ready(function() {
         DisplayValidations();
     });
 
-    $('#signup input#secret_question').bind("input", function() {
+    // $('#signup input#secret_question').bind("input", function() {
 
-        data['secret_question'] = $('#signup #secret_question').val();
-        responce[5] = CheckSecretInfo('q', data['secret_question']);
+    //     data['secret_question'] = $('#signup #secret_question').val();
+    //     responce[5] = CheckSecretInfo('q', data['secret_question']);
+    //     DisplayValidations();
+    // });
+
+    // $('#signup input#secret_answer').bind("input", function() {
+
+    //     data['secret_answer'] = $('#signup #secret_answer').val();
+    //     responce[6] = CheckSecretInfo('a', data['secret_answer']);
+    //     DisplayValidations();
+    // });
+
+    $('#signup input#skype').bind("input", function() {
+
+        data['skype'] = $('#signup #skype').val();
+        responce[5] = CheckSkypeName(data['skype']);
         DisplayValidations();
     });
 
-    $('#signup input#secret_answer').bind("input", function() {
+    $('#signup input#google_acc').bind("input", function() {
 
-        data['secret_answer'] = $('#signup #secret_answer').val();
-        responce[6] = CheckSecretInfo('a', data['secret_answer']);
+        data['google_acc'] = $('#signup #google_acc').val();
+        responce[6] = CheckGmail(data['google_acc']);
         DisplayValidations();
     });
 
@@ -64,14 +78,16 @@ $(document).ready(function() {
         data['email'] = $('#signup #email').val();
         data['password'] = $('#signup #password').val();
         data['password_confirm'] = $('#signup #password_confirm').val();
+        data['skype'] = $('#signup #skype').val();
+        data['google_acc'] = $('#signup #google_acc').val();
 
         responce[0] = CheckName(data['first_name']);
         responce[1] = CheckName(data['last_name']);
         CheckEmail(data['email']);
         responce[3] = CheckPassword(data['password']);
         responce[4] = CheckPasswordConfirm(data['password'], data['password_confirm']);
-
-        DisplayValidations();
+        responce[5] = CheckSkypeName(data['skype']);
+        responce[6] = CheckGmail(data['google_acc']);
 
         if (CheckOK(responce)) {
 
@@ -87,8 +103,8 @@ $(document).ready(function() {
                 data['email'],
                 data['password'],
                 data['password_confirm'],
-                data['secret_question'],
-                data['secret_answer']
+                data['skype'],
+                data['google_acc']
             );
 
             $.ajax({
@@ -104,6 +120,8 @@ $(document).ready(function() {
                     }
                 }
             });
+        } else {
+            DisplayValidations();
         }
     });
 
@@ -241,3 +259,41 @@ function CheckPasswordConfirm(password, password_confirm) {
 //
 //    return 'OK';
 //}
+
+function CheckSkypeName(skype) {
+
+    var regex = /^[a-zA-Z][a-zA-Z1-9._]+[a-zA-Z1-9]$/;
+
+    if (skype == '') {
+        return 'OK';
+    }
+
+    if (skype.length < 4) {
+        return 'too short';
+    }
+
+    if (skype.length > 30) {
+        return 'too long';
+    }
+
+    if (!regex.test(skype)) {
+        return 'invalid skype name';
+    }
+
+    return 'OK';
+}
+
+function CheckGmail(gmail) {
+
+    var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@gmail\.com$/;
+
+    if (gmail == '') {
+        return 'OK';
+    }
+
+    if (!regex.test(gmail)) {
+        return 'invalid gmail format';
+    } 
+
+    return 'OK';
+}

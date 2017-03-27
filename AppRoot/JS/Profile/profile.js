@@ -39,13 +39,15 @@ $(document).ready(function(){
       success: function(result) {
 
         if(result != null) {
-
+          
             data = JSON.parse(result);
 
             Refresh();
         }
       }
   });
+
+
 });
 
 function Refresh() {
@@ -53,4 +55,6 @@ function Refresh() {
     $('input#first_name').val(data['first_name']);
     $('input#last_name').val(data['last_name']);
     $('input#email').val(data['email']);
+    $('input#skypeName').val(data['skype']);
+    $('input#google_acc').val(data['gmail']);
 }
