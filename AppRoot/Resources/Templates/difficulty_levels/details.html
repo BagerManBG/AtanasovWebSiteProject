@@ -1,7 +1,20 @@
-<link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="CSS/details.css">
 <script type="text/javascript" src="JS/utils.js"></script>
 <script>
   var id = getQueryVariable("id");
+
+  function deleteLevel() {
+    if (confirm('Delete level?')) {
+      $.ajax({
+        type: "POST",
+        url: "Controllers/difficulty_levels_controller.php",
+        data: { 'action': 'delete', 'id': id },
+        success: function(result) {
+          // TO-DO: redirect
+        }
+      });
+    }
+  }
 
   $.ajax({
     type: "POST",
@@ -35,15 +48,15 @@
     url: "Controllers/Account/checkRole.php",
     success: function(role){
       if (role == 'admin') {
-        var adminActions = $('<hr /><div id="operations"><a class="btn btn-warning" href="#/levels/' + id + '/edit">Редактирай</a><a class="btn btn-danger" href="#/levels/' + id + '/delete">Изтрий</a></div>');
+        var adminActions = $('<hr /><div id="operations"><a class="btn btn-warning" href="#/levels/' + id + '/edit">Edit</a><button class="btn btn-danger" onclick="deleteLevel()">Delete</button></div>');
         $('.emo').append(adminActions);
       }
     }
   });
 </script>
 <div class="emo">
-  <h4 id="title"></h4>
-  <hr />
+  <h3 id="title"></h4>
+  <br />
   <div id="courses">
 
   </div>

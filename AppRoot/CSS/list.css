@@ -7,25 +7,16 @@
 }
 
 .button {
-  background-color: transparent;
-  border: 1px #7e8895 solid;
-  border-radius: 2px;
-  color: #7e8895;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
-  padding-right: 1%;
-  padding-left: 1%;
+  display: block;
+  background-color: #5d836e;
+  color: #ffffff;
   cursor: pointer;
   text-decoration: none;
-}
-
-.button:hover {
-    background-color: #d3d3d3;
-    transition: 0.2s;
-}
-
-.emo p {
-  margin-bottom: 3%;
+  padding: 0.5em 0;
+  width: 15%;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr {
@@ -35,6 +26,10 @@ hr {
   margin-top: 2%;
 }
 
-h4 {
-  margin-bottom: 1%;
+.course, .action, .user {
+  text-align: center;
+  background-color: #fff;
+  padding: 1em 0em 1em 0em;
+  margin-bottom: 1em;
+  width: 100%;
 }

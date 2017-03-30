@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="CSS/list.css">
+<script type="text/javascript">
+  $.ajax({
+    type: "POST",
+    url: "Controllers/Account/getUsers.php",
+    success: function(data){
+      var obj = JSON.parse(data);
+      console.log(obj);
+      for (var i = 0; i < obj.length; i++) {
+        var user = obj[i];
+        var htmlToAdd = '<div class="user"><p>' + user.email + '</p><hr /><p>Full Name: ' + user.first_name + ' ' + user.last_name + '</p><p>Google Account: ' +
+                  user.google_acc + '</p><p>Skype: ' + user.skype + '</p></div>';
+        $('#users').append(htmlToAdd);
+      }
+    }
+  });
+</script>
+<div id="users">
+</div>

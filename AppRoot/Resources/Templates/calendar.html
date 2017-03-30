@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Календар</title>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/libs/moment.min.js"></script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/libs/fullcalendar.js"></script>
-    <script type="text/javascript" src="/AtanasovWebSiteProject/AppRoot/JS/libs/bootstrap.js"></script>
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/calendar/fullcalendar.css">
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/AtanasovWebSiteProject/AppRoot/CSS/bootstrap/bootstrap-theme.css">
+    <script type="text/javascript" src="JS/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="JS/libs/moment.min.js"></script>
+    <script type="text/javascript" src="JS/libs/fullcalendar.js"></script>
+    <script type="text/javascript" src="JS/libs/bootstrap.js"></script>
+    <link rel="stylesheet" href="CSS/calendar/fullcalendar.css">
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap-theme.css">
     <script type="text/javascript">
       $(document).ready(function() {
         $('#calendar').fullCalendar({
-            events: '/AtanasovWebSiteProject/AppRoot/Models/ViewModels/getLectures.php',
+            events: 'Models/ViewModels/getLectures.php',
             header: {
               left: 'prev,next today addEvent',
               center: 'title',
@@ -44,18 +44,18 @@
                 </div>
                 <div class="modal-body" style="height: 320px" id="modal-body">
                   <div id="event-meta" class="container">
-                    <h4 id="start"><i class="fa fa-calendar-plus-o"></i>&nbsp;<b>Начало</b>: </h4>
-                    <h4 id="end"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Край</b>: </h4>
+                    <h4 id="start"><i class="fa fa-calendar-plus-o"></i>&nbsp;<b>Start</b>: </h4>
+                    <h4 id="end"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>End</b>: </h4>
                     <br>
-                    <h4 id="description"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Описание</b>: </h4>
+                    <h4 id="description"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Description</b>: </h4>
                     <br>
-                    <h4 id="course"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Курс</b>: </h4>
+                    <h4 id="course"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Course</b>: </h4>
                   </div>
                 </div>
                 <div class="modal-footer">
-                    <a data-dismiss="modal" class="btn btn-warning" id="editLecture">Редактирай</a>
-                    <a data-dismiss="modal" class="btn btn-danger" id="deleteLecture">Изтрий</a>
-                    <a href="#" data-dismiss="modal" class="btn btn-default">Затвори</a>
+                    <a data-dismiss="modal" class="btn btn-warning" id="editLecture">Edit</a>
+                    <a data-dismiss="modal" class="btn btn-danger" id="deleteLecture">Delete</a>
+                    <a href="#" data-dismiss="modal" class="btn btn-default">Close</a>
                 </div>
             </div>
         </div>

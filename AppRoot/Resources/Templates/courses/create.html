@@ -15,26 +15,23 @@
 <div class="emo" >
   <form method="post" action="Controllers/courses_controller.php">
     <div class="form-group">
-      <label for="name">Име</label>
+      <label for="name">Name</label>
       <input class="form-control" type="text" name="name" id="name" />
     </div>
     <div class="form-group">
-      <label for="description">Описание</label>
+      <label for="description">Description</label>
       <textarea class="form-control" style="resize: vertical;" name="description" id="description"></textarea>
     </div>
+    <input class="form-control" type="hidden" name="students_capacity" value="0" id="students_capacity" />
     <div class="form-group">
-      <label for="students_capacity">Максимален брой записани</label>
-      <input class="form-control" type="number" name="students_capacity" id="students_capacity" />
-    </div>
-    <div class="form-group">
-      <label for="difficulty_level">Ниво на трудност</label>
+      <label for="difficulty_level">Difficulty Level</label>
       <select class="form-control" id="difficulty_level" class="difficulty_level" name="difficulty_level"></select>
     </div>
     <div class="form-group">
       <input class="form-control" type="hidden" value="create" name="action" />
     </div>
     <div class="form-group">
-      <input class="btn btn-default" type="submit" value="Създай" />
+      <input class="btn btn-default" type="submit" value="Create" />
     </div>
   </form>
 </div>

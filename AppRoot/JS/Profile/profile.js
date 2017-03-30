@@ -38,8 +38,7 @@ $(document).ready(function(){
       method: 'GET',
       success: function(result) {
 
-        if(result != null) {
-          
+        if(result != null && result != 'null') {
             data = JSON.parse(result);
 
             Refresh();

@@ -10,17 +10,6 @@ a, a:hover, a:focus {
   text-decoration: none;
   color: #428bca;
 }
-.emo .btn {
-  padding: 10px 12px;
-  width: 20%;
-  border-radius: 3px;
-  background-color: #fff;
-  border: 1px solid #999999;
-  margin-top: 2%;
-  margin-bottom: 1.5%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .emo .btn-default {
   background-color: #428bca;
@@ -30,6 +19,11 @@ a, a:hover, a:focus {
 
 .emo .btn-default:hover {
   background-color: #3680c1;
+}
+
+.emo #description {
+  background-color: #fff;
+  padding: 1em 0em;
 }
 
 #operations {
@@ -49,45 +43,9 @@ hr {
   margin-top: 2%;
 }
 
-.row {
-    width: 100%;
-    margin-top: 2%;
-    float: left;
-    border-bottom: 1px rgba(144, 144, 144, 0.25) solid;
-    padding-bottom: 2%;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.image {
-    background-image: url("../Resources/Images/VideoCovers/video-tutorials.png");
-    padding: 8%;
-    width: 10%;
-    display: block;
-    background-attachment: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 1px black solid;
-    border-radius: 6px;
-    text-align: center;
-    margin-left: 37%;
-    margin-bottom: 3%;
-}
-
 #link {
   margin-left: auto;
   margin-right: auto;
-}
-
-.rows-3 {
-  display: inline-block;
-    text-align: center;
-    width: 100%;
-    float: none;
-    /*    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);*/
-    margin-bottom: 2%;
-    margin-left: 0;
 }
 
 .button {
@@ -107,4 +65,13 @@ hr {
 .button:hover {
     background-color: transparent;
     transition: 0.2s;
+}
+
+.course, .level, .lecture {
+  background-color: #fff;
+  padding: 1em 0em 1em 0em;
+  margin-bottom: 0.3em;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }

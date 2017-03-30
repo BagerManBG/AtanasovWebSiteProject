@@ -1,4 +1,8 @@
 #view-content {
+  margin-top: 50px;
+}
+
+#view-content>h3, #view-content>.emo>h3 {
   margin-top: 75px;
 }
 
@@ -123,24 +127,6 @@ section.module.parallax-5 {
 
 #LittleText{
     font-size:2em;
-}
-
-.button {
-    background-color: transparent;
-    border: 1px #7e8895 solid;
-    color: #7e8895;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-right: 5%;
-    padding-left: 5%;
-    cursor: pointer;
-    text-decoration: none;
-    margin-top: 3%;
-}
-
-.button:hover {
-    background-color: #d3d3d3;
-    transition: 0.2s;
 }
 
 .scroll {

@@ -12,12 +12,12 @@
     width: 25%;
     float: left;
     background-color: #e3e3e3;
-    border: 1px solid #f44336;
+    border: 1px solid #155149;
 }
 
 #header {
     width: 100%;
-    background-color: #f44336;
+    background-color: #155149;
     color: #fff;
     overflow-y: visible;
 }
@@ -72,13 +72,13 @@
     margin: 0.25% 0px;
     margin-left: 2%;
     background-color: #e3e3e3;
-    border: 1px solid #f44336;
+    border: 1px solid #155149;
     overflow: hidden;
 }
 
 .chatHeader {
     width: 100%;
-    background-color: #f44336;
+    background-color: #155149;
 }
 
 .chatHeader p {
@@ -108,7 +108,7 @@
     max-width: 80%;
     background-color: #fff;
     border-radius: 3px;
-    color: #f44336;
+    color: #155149;
     font-size: 1em;
 }
 
@@ -122,7 +122,7 @@
     padding: 2%;
     margin: 3.6% 5% 0px;
     max-width: 62%;
-    background-color: #f44336;
+    background-color: #155149;
     border-radius: 3px;
     color: #fff;
     font-size: 1em;
@@ -164,13 +164,13 @@
     margin-left: 2%;
     height: 95%;
     width: 25%;
-    border: 1px solid #f44336;
+    border: 1px solid #155149;
     float: left;
     text-align: center;
 }
 
 #profileHeader {
-    background-color: #f44336;
+    background-color: #155149;
     color: #fff;
 }
 

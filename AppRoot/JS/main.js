@@ -86,13 +86,25 @@ function UserHandler() {
 
             if (result == '') {
                 htmlToAdd = "<li><a class='dynamic account' id='reg'>Register</a></li><li><a class='dynamic account' id='log'>Log In</a></li>";
+                $('#links').prepend(htmlToAdd);
             } else {
                 htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/profile' class='dynamic'>Profile</a></li>";
+
+                $.ajax({
+                    url: 'Controllers/Account/checkRole.php',
+                    method: 'GET',
+                    success: function(result) {
+                      if (result == 'admin') {
+                        htmlToAdd += '<li><a href="#/admin" class="dynamic">Admin</a></li>';
+                      }
+
+                      $('#links').prepend(htmlToAdd);
+                    }
+                  });
+
                 $('#formContainer').remove();
                 $('#mask').remove();
             }
-
-            $('#links').prepend(htmlToAdd);
         }
     });
 }

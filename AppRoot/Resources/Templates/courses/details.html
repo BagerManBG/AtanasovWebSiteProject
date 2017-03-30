@@ -3,6 +3,19 @@
 <script>
   var id = getQueryVariable("id");
 
+  function deleteCourse() {
+    if (confirm('Delete course?')) {
+      $.ajax({
+        type: "POST",
+        url: "Controllers/courses_controller.php",
+        data: { 'action': 'delete', 'id': id },
+        success: function(result) {
+          // TO-DO: redirect
+        }
+      });
+    }
+  }
+
   $.ajax({
     type: "POST",
     url: "Models/ViewModels/getCourseById.php?id=" + id,
@@ -23,8 +36,8 @@
       var obj = JSON.parse(data);
       for (var i in obj) {
         var lecture = obj[i];
-        var div = $('<div class="row"></div>');
-        var link = $('<div class="image"></div><div class="rows-3"><h3>' + lecture["title"] + '</h3><p>' + lecture["description"] + '</p>');
+        var div = $('<div class="lecture"></div>');
+        var link = $('<div><h3>' + lecture["title"] + '</h3><p>' + lecture["description"] + '</p>');
         div.append(link);
         $('#lectures').append(div);
       }
@@ -36,7 +49,7 @@
     url: "Controllers/Account/checkRole.php",
     success: function(role){
       if (role == 'admin') {
-        var adminActions = $('<hr /><div id="operations"><a class="btn btn-default" href="#/courses/' + id + '/edit">Редактирай</a><a class="btn btn-default" href="#/courses/' + id + '/delete">Изтрий</a></div>');
+        var adminActions = $('<hr /><div id="operations"><a class="btn btn-warning" href="#/courses/' + id + '/edit">Edit</a><button class="btn btn-danger" onclick="deleteCourse()">Delete</button></div>');
         $('.emo').append(adminActions);
       }
     }
@@ -49,6 +62,7 @@
   <p id="description"></p>
   <hr />
   <div id="lectures">
-    <h4>Лекции</h4>
+    <h3>Lectures</h3>
+    <br />
   </div>
 </div>

@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 0.2%;
     right: 1%;
-    border: 1px solid #ff5722;
+    border: 1px solid #155149;
     float: right;
     margin-left: 1%;
     width: 22%;
@@ -10,7 +10,7 @@
 }
 
 #chatHeader {
-    background-color: #f44336;
+    background-color: #155149;
     width: 100%;
     float: left;
 }
@@ -39,7 +39,7 @@
 #chatBody {
     float: left;
     width: 100%;
-    border-top: 2px solid #ff5722;
+    border-top: 2px solid #155149;
     background-color: #e3e3e3;
 }
 
@@ -98,7 +98,7 @@
     padding: 2%;
     margin: 2.6% 5% 2%;
     max-width: 62%;
-    background-color: #f44336;
+    background-color: #155149;
     border-radius: 3px;
     color: #fff;
     font-size: 1.01em;
@@ -116,7 +116,7 @@
     max-width: 80%;
     background-color: #fff;
     border-radius: 3px;
-    color: #f44336;
+    color: #155149;
     font-size: 1em;
 }
 

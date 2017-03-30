@@ -6,9 +6,10 @@ $(document).ready(function() {
           path = 'Resources/Templates/';
 
           this.get('#/', function() {
-            $.get(path + 'root.html', function(templ) {
-              $('body').html(templ);
-            });
+            window.location = path + 'root.html';
+            // $.get(path + 'root.html', function(templ) {
+            //   $('body').html(templ);
+            // });
           });
 
           this.get('#/home', function() {
@@ -30,6 +31,20 @@ $(document).ready(function() {
             $.get(path + 'lectures/hall.html', function(templ) {
               addHeader();
               checkLogged(templ);
+            });
+          });
+
+          this.get('#/admin', function() {
+            $.get(path + 'admin.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
+          this.get('#/users', function() {
+            $.get(path + 'users.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
             });
           });
 
@@ -104,6 +119,8 @@ $(document).ready(function() {
             $.get(path + 'Lectures/calendar.html', function(templ) {
               addHeader();
               main.html(templ);
+              $('.modal-backdrop.fade.in').hide();
+              $('body').attr('class', '');
             });
           });
 
@@ -186,6 +203,12 @@ $(document).ready(function() {
           //   $('#formContainer').show();
           //   $('#mask').show();
           // });
+
+          function getIndex() {
+            $.get('index.html', function(templ) {
+              $(document.documentElement).html(templ);
+            });
+          }
 
           function addHeader() {
               $('#header').attr('class', '');
