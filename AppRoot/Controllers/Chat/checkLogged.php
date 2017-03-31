@@ -16,6 +16,10 @@ if(isset($_SESSION['logged_user']))
 		$data['last_time_online'] = time();
 		unset($data['id']);
 		unset($data['role']);
+		unset($data['secret_question']);
+		unset($data['secret_answer']);
+		unset($data['skype']);
+		unset($data['google_acc']);
 		$db->saveArray('chat_users', $data);
 	}
 }
