@@ -6,10 +6,10 @@
 
   switch ($method) {
     case 'create':
-      $controller->create($data["title"], $data["description"], $data["date"], $data["start"], $data["end"], $data["courseId"]);
+      $controller->create($data["title"], $data["description"], $data["date"], $data["date_end"], $data["start"], $data["end"], $data["courseId"]);
       break;
     case 'edit':
-      $controller->edit($data["id"], $data["title"], $data["description"], $data["date"], $data["start"], $data["end"], $data["courseId"]);
+      $controller->edit($data["id"], $data["title"], $data["description"], $data["date"], $data["date_end"], $data["start"], $data["end"], $data["courseId"]);
       break;
     case 'book':
       $controller->book($data["seat_index"], $data["lecture_id"]);
@@ -34,9 +34,9 @@
       $this->tableName = "lectures";
     }
 
-    function create($title, $description, $date, $start, $end, $courseId) {
+    function create($title, $description, $date, $date_end, $start, $end, $courseId) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
-        $info = ["title" => $title, "description" => $description, "date" => $date, "start" => $start, "end" => $end, "course_id" => $courseId];
+        $info = ["title" => $title, "description" => $description, "date" => $date, "date_end" => $date_end, "start" => $start, "end" => $end, "course_id" => $courseId];
         $id = $this->db->saveArray($this->tableName, $info);
 
         for ($i = 1; $i <= 6; $i++) {
@@ -51,9 +51,9 @@
       }
     }
 
-    function edit($id, $title, $description, $date, $start, $end, $courseId) {
+    function edit($id, $title, $description, $date, $date_end, $start, $end, $courseId) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
-        $info = ["id" => $id, "title" => $title, "description" => $description, "date" => $date, "start" => $start, "end" => $end, "course_id" => $courseId];
+        $info = ["id" => $id, "title" => $title, "description" => $description, "date" => $date, "date_end" => $date_end, "start" => $start, "end" => $end, "course_id" => $courseId];
         $result = $this->db->saveArray($this->tableName, $info);
         header('Location: ' . '../#/lectures');
         exit();
