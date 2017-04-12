@@ -130,6 +130,14 @@
     margin-bottom: 40px;
 }
 
+#formContainer .field-wrap img.qmark {
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    width: 3%;
+    cursor: pointer;
+}
+
 #formContainer .top-row:after {
     content: "";
     display: table;
