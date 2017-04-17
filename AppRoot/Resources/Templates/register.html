@@ -1,0 +1,94 @@
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css">
+<link rel="stylesheet" type="text/css" href="../../CSS/HeaderFooter/header.css">
+<link rel="stylesheet" type="text/css" href="../../CSS/Forms/login_register.css">
+
+<script src="../Libraries/JQuery/jquery.js"></script>
+<script src="../../JS/Forms/validate_register.js"></script>
+<script src="JS/Forms/add_remove_highlighter.js"></script>
+
+<div id="formContainer">
+     <div class="form" method="post" action="Controllers/Account/register.php" enctype="multipart/form-data">
+
+         <div class="tab-content">
+
+             <div id="signup">
+                 <h1>Sign Up for Free</h1>
+
+                 <form action="Controllers/Account/register.php" method="post" enctype="multipart/form-data">
+
+                     <div class="top-row">
+                         <div class="field-wrap">
+<!--                              <label>First Name</label>
+ -->                             <input name="first_name" id="first_name" type="text" autocomplete="off" placeholder="First Name"/>
+
+                             <p id="errorDisplay">
+                                 <span id='1'><!--error--></span>
+                             </p>
+                         </div>
+
+                         <div class="field-wrap">
+<!--                              <label>Last Name</label>
+ -->                             <input name="last_name" id="last_name" type="text" autocomplete="off" placeholder="Last Name"/>
+
+                             <p id="errorDisplay">
+                                 <span id='2'><!--error--></span>
+                             </p>
+                         </div>
+                     </div>
+
+                     <div class="field-wrap">
+<!--                          <label>Email Address</label>
+ -->                         <input name="email" id="email" type="text" autocomplete="off" placeholder="Email Address"/>
+
+                         <p id="errorDisplay">
+                             <span id='3'><!--error--></span>
+                         </p>
+                     </div>
+
+                     <div class="field-wrap">
+<!--                          <label>Set A Password</label>
+ -->                         <input name="password" id="password" type="password" autocomplete="off" placeholder="Set A Password"/>
+
+                         <p id="errorDisplay">
+                             <span id='4'><!--error--></span>
+                         </p>
+                     </div>
+
+                     <div class="field-wrap">
+<!--                          <label>Confirm Password</label>
+ -->                         <input name="password_confirm" id="password_confirm" type="password" autocomplete="off" placeholder="Confirm Password"/>
+
+                         <p id="errorDisplay">
+                             <span id='5'><!--error--></span>
+                         </p>
+                     </div>
+
+                     <div class="field-wrap">
+<!--&lt;!&ndash;                          <label>Secret Question<span> (optional)</span></label>-->
+                             <input name="skype" id="skype" type="text" autocomplete="off" placeholder="Skype Name(optional)"/>
+
+                             <img src="../Images/Register/test2.png" class="qmark" title="Field Explanation Number 1">
+
+                         <p id="errorDisplay">
+                             <span id='6'><!--error--></span>
+                         </p>
+                     </div>
+
+                     <div class="field-wrap">
+<!--&lt;!&ndash;                          <label>Answer<span> (optional)</span></label>-->
+                             <input name="google_acc" id="google_acc" type="text" autocomplete="off" placeholder="Google + Account(optional)"/>
+
+                             <img src="../Images/Register/test2.png" class="qmark" title="Field Explanation Number 2">
+
+                         <p id="errorDisplay">
+                             <span id='7'><!--error--></span>
+                         </p>
+                     </div>
+
+                     <button type="button" class="button button-block" id="registerButton">Get Started</button>
+
+                 </form>
+             </div>
+         </div>
+     </div>
+ </div>

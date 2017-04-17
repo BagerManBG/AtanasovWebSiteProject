@@ -108,7 +108,7 @@ $(document).ready(function() {
             );
 
             $.ajax({
-                url: 'Controllers/Account/register.php',
+                url: '../../Controllers/Account/register.php',
                 method: 'POST',
                 datatype: 'json',
                 data: { reg_data: reg_data },
@@ -190,11 +190,12 @@ function CheckEmail(email) {
     var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (!regex.test(email)) {
+
         responce[2] = 'invalid email format';
     } else {
 
         $.ajax({
-            url: 'Controllers/Account/checkEmailTaken.php',
+            url: '../../Controllers/Account/checkEmailTaken.php',
             method: 'POST',
             data: { email: email },
             async: false,
