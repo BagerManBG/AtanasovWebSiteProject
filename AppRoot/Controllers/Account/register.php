@@ -124,6 +124,6 @@ function CheckGmail($google_acc) {
 
     if (!preg_match($regex, $google_acc) && $google_acc != "") {
         $hasError = true;
-    } 
+    }
 }
 ?>

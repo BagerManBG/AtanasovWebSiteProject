@@ -108,15 +108,14 @@ $(document).ready(function() {
             );
 
             $.ajax({
-                url: '../../Controllers/Account/register.php',
+                url: 'Controllers/Account/register.php',
                 method: 'POST',
                 datatype: 'json',
                 data: { reg_data: reg_data },
                 success: function(result) {
-
                     if (result === 'OK') {
-                        $('#formContainer').fadeOut(400);
-                        location.reload();
+                      location.href = "#/home";
+                      location.reload();
                     }
                 }
             });
@@ -195,7 +194,7 @@ function CheckEmail(email) {
     } else {
 
         $.ajax({
-            url: '../../Controllers/Account/checkEmailTaken.php',
+            url: 'Controllers/Account/checkEmailTaken.php',
             method: 'POST',
             data: { email: email },
             async: false,
@@ -294,7 +293,7 @@ function CheckGmail(gmail) {
 
     if (!regex.test(gmail)) {
         return 'invalid gmail format';
-    } 
+    }
 
     return 'OK';
 }

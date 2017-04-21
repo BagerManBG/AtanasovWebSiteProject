@@ -41,7 +41,8 @@
       url: 'Controllers/lectures_controller.php',
       data: { "action": 'book', 'seat_index': index, "lecture_id": id },
       success: function(data) {
-        console.log(data);
+        location.href = "#/lectures";
+        location.reload();
       }
     })
   }
@@ -55,14 +56,16 @@
       <div class="desk" id='seat-2'>
           <button type="button" class="seat" name="seat" data-id="2" onclick="book(2)" disabled="disabled">Seat taken</button>
       </div>
+    </div>
+    <div class="column">
       <div class="desk" id='seat-3'>
           <button type="button" class="seat" name="seat" data-id="3" onclick="book(3)" disabled="disabled">Seat taken</button>
       </div>
-    </div>
-    <div class="column">
       <div class="desk" id='seat-4'>
           <button type="button" class="seat" name="seat" data-id="4" onclick="book(4)" disabled="disabled">Seat taken</button>
       </div>
+    </div>
+    <div class="column">
       <div class="desk" id='seat-5'>
           <button type="button" class="seat" name="seat" data-id="5" onclick="book(5)" disabled="disabled">Seat taken</button>
       </div>

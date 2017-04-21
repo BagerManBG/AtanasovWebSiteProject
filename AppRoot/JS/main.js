@@ -8,14 +8,14 @@ $(document).ready(function() {
     $('#formContainer').hide();
     $('#mask').hide();
 
-    $('.nav').on('click', '.account', function() {
+    $('.nav').on('click', '#log.account', function() {
         var tab = $(this).attr('id');
         OpenForm(tab);
         formOpened = true;
     });
 
     $('#mask').click(function() {
-        $('#formContainer').fadeOut(400);
+        $('.loginForm').fadeOut(400);
         $('#mask').fadeOut(400);
         formOpened = false;
     });
@@ -85,7 +85,7 @@ function UserHandler() {
             var htmlToAdd;
 
             if (result == '') {
-                htmlToAdd = "<li><a class='dynamic account' id='reg'>Register</a></li><li><a class='dynamic account' id='log'>Log In</a></li>";
+                htmlToAdd = "<li><a href='#/register' class='dynamic account'>Register</a></li><li><a class='dynamic account' id='log'>Log In</a></li>";
                 $('#links').prepend(htmlToAdd);
             } else {
                 htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/profile' class='dynamic'>Profile</a></li>";

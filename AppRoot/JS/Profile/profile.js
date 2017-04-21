@@ -1,36 +1,50 @@
 var data;
 
 $(document).ready(function(){
+  var passwordMode = false;
 
   $( "#Edit" ).click(function() {
 
       $("input").prop('disabled', false);
       $('#Edit').hide();
+      $('#ChangePass').hide();
       $('#Save').show();
       $('#Cancel').show();
   });
 
   $( "#Cancel" ).click(function() {
+    console.log(passwordMode);
+    if (passwordMode) {
+      $( ".names" ).delay(300).fadeIn(300);
+      $( ".password" ).fadeOut(300);
+      passwordMode = false;
+    }
 
-      $("input").prop('disabled', true);
-      $('#Save').hide();
-      $('#Cancel').hide();
-      $('#Edit').show();
-      Refresh();
+    $("input").prop('disabled', true);
+    $('#Save').hide();
+    $('#Cancel').hide();
+    $('#Edit').show();
+    $('#ChangePass').show();
+    Refresh();
   });
+
+  $("#ChangePass").click(function() {
+      passwordMode = true;
+      $( ".password" ).delay(300).fadeIn(300);
+      $( ".names" ).fadeOut(300);
+      $('.password input').attr('disabled', false);
+      $('#ChangePass').hide();
+      $('#Edit').hide();
+      $('#Cancel').show();
+      $('#Save').show();
+  })
 
   $( ".password" ).hide();
 
   $( ".control_1" ).click(function() {
 
-      $( ".password" ).fadeOut(300);
+      $(".password" ).fadeOut(300);
       $( ".names" ).delay(300).fadeIn(300);
-  });
-
-  $( ".control_2" ).click(function() {
-
-      $( ".password" ).delay(300).fadeIn(300);
-      $( ".names" ).fadeOut(300);
   });
 
   $.ajax({

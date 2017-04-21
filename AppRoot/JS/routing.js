@@ -19,6 +19,13 @@ $(document).ready(function() {
             });
           });
 
+          this.get('#/register', function() {
+            $.get(path + 'register.html', function(templ) {
+              bringBackHeader();
+              main.html(templ);
+            });
+          });
+
           this.get('#/chat-admin', function() {
             $.get(path + 'chat_admin.html', function(templ) {
               addHeader();
