@@ -12,7 +12,8 @@ $.ajax({
       if (post["type"] == 0) {
         postElement = $('<p>' + post["content"] + '</p>');
       } else {
-        postElement = $('<iframe frameborder="0" allowfullscreen width="100%" height="500px" src="' + post["content"] + '"></iframe>');
+        var src = post["content"].replace("watch?v=", "embed/");
+        postElement = $('<iframe frameborder="0" allowfullscreen width="100%" height="500px" src="' + src + '"></iframe>');
       }
 
       postDiv.append(postElement);
