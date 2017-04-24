@@ -7,13 +7,17 @@ $(document).ready(function() {
 
           this.get('#/', function() {
             window.location = path + 'root.html';
-            // $.get(path + 'root.html', function(templ) {
-            //   $('body').html(templ);
-            // });
           });
 
           this.get('#/home', function() {
             $.get(path + 'home.html', function(templ) {
+              bringBackHeader();
+              main.html(templ);
+            });
+          });
+
+          this.get('#/contacts', function() {
+            $.get(path + 'contacts.html', function(templ) {
               bringBackHeader();
               main.html(templ);
             });
@@ -43,6 +47,21 @@ $(document).ready(function() {
 
           this.get('#/admin', function() {
             $.get(path + 'admin.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
+          this.get('#/posts/create', function() {
+            $.get(path + 'posts/create.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
+          this.get('#/posts/:id/edit', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'posts/edit.html', function(templ) {
               addHeader();
               checkAdmin(templ);
             });
