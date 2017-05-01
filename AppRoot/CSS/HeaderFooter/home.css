@@ -46,6 +46,40 @@ body {
   font-size: 2em;
 }
 
+#slideshow {
+  position: relative;
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  height: 500px;
+}
+
+#slideshow iframe {
+  position: absolute;
+  visibility: hidden;
+  top: 0px;
+  left: 0px;
+}
+
+#slideshow iframe#vid_1 {
+  visibility: visible;
+}
+
+#slideshow .arrow {
+  position: absolute;
+  width: 10%;
+  top: 44%;
+  cursor: pointer;
+}
+
+#slideshow .arrow#left_arr {
+  left: 10px;
+}
+
+#slideshow .arrow#right_arr {
+  right: 10px;
+}
+
 @media screen and (max-width: 1000px) {
   #left, #right {
     width: 100%;
