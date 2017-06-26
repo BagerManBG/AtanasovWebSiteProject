@@ -4,22 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv='cache-control' content='no-cache'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
     <title>Atanasoff</title>
-<!-- Latest compiled and minified CSS -->
 
     <link rel="stylesheet" type="text/css" href="Resources/Libraries/bootsrap/css/bootstrap.css">
     <link rel="shortcut icon" type="image/png" href="Resources/Images/Favicon/favicon.ico">
     <link rel="stylesheet" type="text/css" href="CSS/reset.css">
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
     <link rel="stylesheet" type="text/css" href="CSS/HeaderFooter/header.css">
-    <link rel="stylesheet" type="text/css" href="CSS/HeaderFooter/home.css">
     <link rel="stylesheet" type="text/css" href="CSS/Forms/logIn_register.css">
     <link rel="stylesheet" type="text/css" href="CSS/Chat/chat.css">
 
     <script src="Resources/Libraries/JQuery/jquery.js"></script>
-    <script src="Resources/Libraries/bootsrap/js/bootstrap.js"></script>
+    <script src="Resources/Libraries/bootsrap/js/bootstrap.min.js"></script>
     <script src="JS/main.js"></script>
-    <script src="JS/slideshow.js"></script>
     <script src="JS/Forms/add_remove_highlighter.js"></script>
     <script src="JS/Forms/validate_register.js"></script>
     <script src="JS/Forms/log_in.js"></script>
@@ -34,28 +33,27 @@
 
 <body>
 <header>
-    <div style="display:block;" class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container_1">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <h1><a class="navbar-brand" href="#/home">Home</a></h1>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container header">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="nav-links">
+              <ul class="nav navbar-nav">
+                <li><a href="#/home">Home</a></li>
+                <li><a href="#/lectures">Calendar</a></li>
+                <li><a href="#/levels">Courses</a></li>
+                <li><a href="#/contacts">Contacts</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right" id="links">
+              </ul>
+            </div>
+        </div>
     </div>
-    <div class="collapse navbar-collapse"  >
-      <ul class="nav navbar-nav" id="links">
-        <li><a class="dynamic">Register</a></li>
-        <li><a class="dynamic">Log In</a></li>
-        <li><a href="#" class="dynamic">Log Out</a></li>
-        <li><a href="#/lectures">Calendar</a></li>
-        <li><a href="#/levels">Courses</a></li>
-        <li><a href="#/contacts">Contacts</a></li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</div>
  </header>
 
  <div id="main"><div id="view-content"></div></div>
@@ -89,12 +87,6 @@
  <!--Login/Register Forms Begin-->
  <div id="formContainer" class="loginForm">
      <div class="form" method="post" action="Controllers/Account/register.php" enctype="multipart/form-data">
-
-         <!--<ul class="tab-group">
-             <li class="tab active"><a href="#login" id="logInTab">Log In</a></li>
-             <li class="tab"><a href="#signup" id="registerTab">Sign Up</a></li>
-         </ul>-->
-
          <div class="tab-content">
              <div id="login">
                  <h1>Welcome Back!</h1>
@@ -117,69 +109,6 @@
 
                  </form>
              </div>
-             <!--
-             <div id="signup">
-                 <h1>Sign Up for Free</h1>
-
-                 <form action="Controllers/Account/register.php" method="post" enctype="multipart/form-data">
-
-                     <div class="top-row">
-                         <div class="field-wrap">
-                          <input name="last_name" id="last_name" type="text" autocomplete="off" placeholder="Last Name"/>
-
-                             <p id="errorDisplay">
-                                 <span id='2'></span>
-                             </p>
-                         </div>
-                     </div>
-
-                     <div class="field-wrap">
-                        <input name="email" id="email" type="text" autocomplete="off" placeholder="Email Address"/>
-
-                         <p id="errorDisplay">
-                             <span id='3'></span>
-                         </p>
-                     </div>
-
-                     <div class="field-wrap">
-                        <input name="password" id="password" type="password" autocomplete="off" placeholder="Set A Password"/>
-
-                         <p id="errorDisplay">
-                             <span id='4'></span>
-                         </p>
-                     </div>
-
-                     <div class="field-wrap">
-                         <input name="password_confirm" id="password_confirm" type="password" autocomplete="off" placeholder="Confirm Password"/>
-
-                         <p id="errorDisplay">
-                             <span id='5'></span>
-                         </p>
-                     </div>
-
-                     <div class="field-wrap">
-
-                             <input name="skype" id="skype" type="text" autocomplete="off" placeholder="Skype Name(optional)"/>
-
-                             <img src="Resources/Images/Register/test2.png" class="qmark" title="Field Explanation Number 1">
-
-                         <p id="errorDisplay">
-                             <span id='6'></span>
-                         </p>
-                     </div>
-
-                     <div class="field-wrap">
-                             <input name="google_acc" id="google_acc" type="text" autocomplete="off" placeholder="Google + Account(optional)"/>
-
-                             <img src="Resources/Images/Register/test2.png" class="qmark" title="Field Explanation Number 2">
-
-                         <p id="errorDisplay">
-                             <span id='7'><</span>
-                         </p>
-                     </div>
-
-                     <button type="button" class="button button-block" id="registerButton">Get Started</button>
-                     -->
                  </form>
              </div>
          </div>
@@ -188,6 +117,4 @@
 
  <div id="mask"></div>
  <!--Login/Register Forms End-->
-
-
 </body>

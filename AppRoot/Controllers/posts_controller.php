@@ -6,10 +6,10 @@
 
   switch ($method) {
     case 'create':
-      $controller->create($data["type"], $data["content"]);
+      $controller->create($data["type"], $data["content"], $data["index"]);
       break;
     case 'edit':
-      $controller->edit($data["id"], $data["type"], $data["content"]);
+      $controller->edit($data["id"], $data["type"], $data["content"], $data["index"]);
       break;
   }
 
@@ -19,9 +19,9 @@
       $this->tableName = "posts";
     }
 
-    function create($type, $content) {
+    function create($type, $content, $index) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
-        $info = ["type" => $type, "content" => $content, "date" => date()];
+        $info = ["type" => $type, "content" => $content, "post_index" => $index];
         $id = $this->db->saveArray($this->tableName, $info);
 
         header('Location: ' . '../#/home');
@@ -32,9 +32,9 @@
       }
     }
 
-    function edit($id, $type, $content) {
+    function edit($id, $type, $content, $index) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
-        $info = ["id" => $id, "type" => $type, "content" => $content];
+        $info = ["id" => $id, "type" => $type, "content" => $content, "post_index" => $index];
         $result = $this->db->saveArray($this->tableName, $info);
         header('Location: ' . '../#/home');
         exit();

@@ -77,7 +77,9 @@ body {
 @media screen and (max-width: 1200px) and (min-width: 768px){
   .emo {
     width: 80%;
-    margin-left: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
   }
 
   .emo form .form-group:last-of-type {

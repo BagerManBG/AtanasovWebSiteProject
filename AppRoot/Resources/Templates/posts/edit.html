@@ -10,6 +10,7 @@
         var obj = JSON.parse(data);
         $("#id").attr('value', obj[0]["id"]);
         $("#type").val(obj[0]["type"]);
+        $("#index").val(obj[0]["post_index"]);
         $("#content").html( obj[0]["content"]);
       }
     });
@@ -24,11 +25,16 @@
       <select class="form-control" name="type" id="type">
         <option value="0">Text</option>
         <option value="1">Video</option>
+        <option value="2">Image</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="content">Text/Video Link</label>
+      <label for="content">Text/Video Link/Image Source</label>
       <textarea class="form-control" style="resize: vertical;" name="content" id="content"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="index">Index</label>
+      <input type="number" class="form-control" name="index" id="index" />
     </div>
     <div class="form-group">
       <input class="form-control" type="hidden" value="edit" name="action" />

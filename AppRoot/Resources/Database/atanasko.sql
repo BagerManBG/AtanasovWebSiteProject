@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2017 at 02:38 PM
+-- Generation Time: Jun 26, 2017 at 08:25 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `chat_users` (
 --
 
 INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `role_id`, `last_time_online`) VALUES
-(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1, 1490882647),
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1, 1498391675),
 (158, 'BagerMan@abv.bg', 'Bager', 'Man', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1480628567),
 (159, 'test@abv.bg', 'Todor', 'Nikolov', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1480713177),
 (160, 'emil_krumov@hotmail.com', 'Emil', 'Krumov', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1484040618);
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `lectures` (
   `start` time NOT NULL,
   `end` time NOT NULL,
   `course_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `lectures`
@@ -129,9 +129,8 @@ INSERT INTO `lectures` (`id`, `title`, `description`, `date`, `date_end`, `start
 (4, 'На тошко евента', 'нееееееееееееееееееееееееееееееееееееееее, хич', '2017-01-24', '2017-01-24', '12:00:00', '13:00:00', 0),
 (5, 'Hah... Gaaaay', 'Да видим как ще излезне това', '2017-02-02', '2017-02-02', '01:00:00', '02:00:00', 15),
 (6, 'Seats Test', 'Test for seats', '2017-03-25', '2017-03-25', '01:00:00', '02:34:00', 9),
-(7, 'Presentation testzzzz', 'Test in front of supreme leader Atanassoff lorem ipsum dolor sit amet, consequtor abab aba lorem ipsum dolor sit amet, consequtor abab aba ', '2017-03-31', '2017-03-31', '13:00:00', '14:02:00', 8),
-(8, 'Weekend', 'Can safdksad', '2017-04-07', '2017-04-09', '01:02:00', '14:01:00', 8),
-(9, 'Nz vrat', 'asdas', '2017-04-28', '2017-04-29', '01:02:00', '01:00:00', 8);
+(8, 'Weekend', 'Can safdksad', '2017-04-07', '2017-04-08', '01:02:00', '14:01:00', 8),
+(11, 'А дали Емо е наистина велик?', 'дай да видим', '2017-06-27', '2017-06-29', '01:00:00', '14:00:00', 8);
 
 -- --------------------------------------------------------
 
@@ -146,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `send_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sender_id` int(11) NOT NULL,
   `receiver_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=156 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `messages`
@@ -295,7 +294,19 @@ INSERT INTO `messages` (`id`, `message`, `send_time`, `sender_id`, `receiver_id`
 (140, '123456', '1490882620', 0, 158),
 (141, 'passwordemo', '1490882628', 0, 158),
 (142, '&chcy;&icy;&chcy;&iecy;', '1490883212', 0, 1),
-(143, 'pederas sait', '1492750032', 160, 1);
+(143, 'pederas sait', '1492750032', 160, 1),
+(144, 'test', '1493202336', 160, 1),
+(145, 'test', '1493202337', 160, 1),
+(146, 'test', '1493202337', 160, 1),
+(147, 'test', '1493202338', 160, 1),
+(148, 'test', '1493202338', 160, 1),
+(149, 'test', '1493202339', 160, 1),
+(150, 'test', '1493202340', 160, 1),
+(151, 'test', '1493202340', 160, 1),
+(152, 'test', '1493202341', 160, 1),
+(153, 'test', '1493202341', 160, 1),
+(154, 'test', '1493202342', 160, 1),
+(155, '&lt;script&gt;alert&lpar;1&rpar;&lt;&sol;script&gt;', '1493733908', 160, 1);
 
 -- --------------------------------------------------------
 
@@ -350,18 +361,24 @@ INSERT INTO `online_lectures` (`id`, `title`, `lecture_index`, `video_link`, `co
 DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(11) NOT NULL,
-  `type` tinyint(1) NOT NULL DEFAULT '0',
+  `type` smallint(11) NOT NULL DEFAULT '0',
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `post_index` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `type`, `content`, `date`) VALUES
-(1, 0, 'asdasdasdsad', '0000-00-00'),
-(2, 1, 'https://www.youtube.com/watch?v=-AN71tjEYJw', '0000-00-00');
+INSERT INTO `posts` (`id`, `type`, `content`, `post_index`) VALUES
+(1, 0, 'asdasdasdsad', -2),
+(2, 1, 'https://www.youtube.com/watch?v=-AN71tjEYJw', -1),
+(3, 0, 'Благодаря ти, Емо, че си супер пич!', 0),
+(4, 1, 'https://www.youtube.com/watch?v=QygpaIJclm4', 1),
+(5, 0, 'kjjhghj', 2),
+(6, 2, 'http://az616578.vo.msecnd.net/files/2016/07/02/636030757259556361-1129479309_elon-musk.jpg', 5),
+(7, 0, 'bravo', -2),
+(8, 0, 'jkhjhk', -7);
 
 -- --------------------------------------------------------
 
@@ -373,7 +390,7 @@ DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `roles`
@@ -381,7 +398,8 @@ CREATE TABLE IF NOT EXISTS `roles` (
 
 INSERT INTO `roles` (`id`, `name`) VALUES
 (1, 'admin'),
-(2, 'normal');
+(2, 'normal'),
+(3, 'banned');
 
 -- --------------------------------------------------------
 
@@ -395,7 +413,7 @@ CREATE TABLE IF NOT EXISTS `seats` (
   `seat_index` int(11) NOT NULL,
   `lecture_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `seats`
@@ -404,7 +422,7 @@ CREATE TABLE IF NOT EXISTS `seats` (
 INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
 (1, 1, 6, NULL),
 (2, 2, 6, NULL),
-(3, 3, 6, NULL),
+(3, 3, 6, 4),
 (4, 0, 6, 5),
 (5, 5, 6, NULL),
 (6, 6, 6, NULL),
@@ -412,7 +430,7 @@ INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
 (8, 0, 7, 5),
 (9, 3, 7, NULL),
 (10, 4, 7, NULL),
-(11, 5, 7, NULL),
+(11, 0, 7, 12),
 (12, 6, 7, NULL),
 (13, 0, 7, 5),
 (14, 0, 7, 5),
@@ -435,8 +453,20 @@ INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
 (31, 2, 9, NULL),
 (32, 3, 9, NULL),
 (33, 0, 9, 5),
-(34, 5, 9, NULL),
-(35, 6, 9, NULL);
+(34, 0, 9, 12),
+(35, 6, 9, NULL),
+(36, 1, 10, NULL),
+(37, 2, 10, NULL),
+(38, 3, 10, NULL),
+(39, 4, 10, NULL),
+(40, 5, 10, NULL),
+(41, 0, 10, 12),
+(42, 1, 11, NULL),
+(43, 2, 11, NULL),
+(44, 3, 11, NULL),
+(45, 0, 11, 12),
+(46, 5, 11, NULL),
+(47, 6, 11, NULL);
 
 -- --------------------------------------------------------
 
@@ -492,7 +522,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `google_acc` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` int(11) NOT NULL DEFAULT '2'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -500,20 +530,22 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secret_question`, `secret_answer`, `skype`, `google_acc`, `avatar`, `role_id`) VALUES
 (1, 'atanasoff@gmail.com', 'Atanas', 'Atanasov', 'e10adc3949ba59abbe56e057f20f883e', 'My favourite class?', 'Zh class.', NULL, NULL, 'http://localhost:8088/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
-(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'bagerman98', 'toshko@gmail.com', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(3, 'toshko_1998@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(4, 'test@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(5, '', '', '', '81dc9bdb52d04dc20036dbd8313ed055', 'Emo qk li e?', 'Em da ne kat tosho vrat!', 'emo', 'gogle@gogle.gogle', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
+(2, 'BagerMan@abv.bg', 'Bager', 'Man', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'bagerman98', 'toshko@gmail.com', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
+(3, 'toshko_1998@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
+(4, 'test@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
+(5, '', '', '', '81dc9bdb52d04dc20036dbd8313ed055', 'Emo qk li e?', 'Em da ne kat tosho vrat!', 'emo', 'gogle@gogle.gogle', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
 (6, 'emo@abv.bg', 'emo', 'emov', 'd7613e3be440114904df5802ef2e31c8', '', '', NULL, NULL, 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(7, 'toshko@abv.bg', 'newestg', 'test', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'korona', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(7, 'toshko@abv.bg', 'newestg', 'test', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'korona', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
 (8, 'test@test.test', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '', '', 'toshko@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (9, 'test@test.tes', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(10, 'slavislavchev@abv.bg', 'Slavi', 'Slavcheva', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'gotino_zubar4e', 'bosatnajenitewe@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(10, 'slavislavchev@abv.bg', 'Slavi', 'Slavcheva', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'gotino_zubar4e', 'bosatnajenitewe@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
 (11, 'emo@abv.bgg', 'emo', 'dog', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (12, 'emil_krumov@hotmail.com', 'Emil', 'Krumov', 'f1887d3f9e6ee7a32fe5e76f4ab80d63', '', '', 'asdas', 'sad@abv.bg', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
 (13, 'icp@asd.bg', 'Itzo', 'Itxo', '81dc9bdb52d04dc20036dbd8313ed055', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (14, 'abba@bg.bg', 'Abba', 'Beatle', '81dc9bdb52d04dc20036dbd8313ed055', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(15, 'asd@asd.bg', 'asd', 'asd', '6867d9167683fb8f42558a81ad107f5b', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2);
+(15, 'asd@asd.bg', 'asd', 'asd', '6867d9167683fb8f42558a81ad107f5b', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(16, 'asdsa@abv.bg', 'random', 'sdf', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(17, 'banica@abv.bg', 'banica', 'banica', 'b343c20f32a9459238a115dfa08689c1', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3);
 
 --
 -- Indexes for dumped tables
@@ -569,7 +601,8 @@ ALTER TABLE `online_lectures`
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `type` (`type`);
 
 --
 -- Indexes for table `roles`
@@ -629,12 +662,12 @@ ALTER TABLE `difficulty_levels`
 -- AUTO_INCREMENT for table `lectures`
 --
 ALTER TABLE `lectures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=144;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=156;
 --
 -- AUTO_INCREMENT for table `online_courses`
 --
@@ -649,17 +682,17 @@ ALTER TABLE `online_lectures`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `seats`
 --
 ALTER TABLE `seats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -669,7 +702,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -30,6 +30,11 @@ a, a:hover, a:focus {
   vertical-align: middle;
 }
 
+#operations .btn {
+  margin-left: 0.2em;
+  margin-right: 0.2em;;
+}
+
 #description {
   background-color: #eee;
   padding: 5% 2%;
@@ -68,10 +73,24 @@ hr {
 }
 
 .course, .level, .lecture {
-  background-color: #fff;
+  background-color: #5d836e;
   padding: 1em 0em 1em 0em;
   margin-bottom: 0.3em;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.lecture, .level, .course {
+  color: #fff;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.course:hover, .level:hover, .lecture:hover {
+  background-color: #155149;
+  transition: 0.3s;
 }

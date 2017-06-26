@@ -36,6 +36,10 @@
 
     function create($title, $description, $date, $date_end, $start, $end, $courseId) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        if ($date_end == null) {
+          $date_end = $date;
+        }
+
         $info = ["title" => $title, "description" => $description, "date" => $date, "date_end" => $date_end, "start" => $start, "end" => $end, "course_id" => $courseId];
         $id = $this->db->saveArray($this->tableName, $info);
 
@@ -53,6 +57,10 @@
 
     function edit($id, $title, $description, $date, $date_end, $start, $end, $courseId) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        if ($date_end == null) {
+          $date_end = $date;
+        }
+        
         $info = ["id" => $id, "title" => $title, "description" => $description, "date" => $date, "date_end" => $date_end, "start" => $start, "end" => $end, "course_id" => $courseId];
         $result = $this->db->saveArray($this->tableName, $info);
         header('Location: ' . '../#/lectures');

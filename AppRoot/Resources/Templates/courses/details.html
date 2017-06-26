@@ -37,9 +37,13 @@
       for (var i in obj) {
         var lecture = obj[i];
         var div = $('<div class="lecture"></div>');
-        var link = $('<div><h3>' + lecture["title"] + '</h3><p>' + lecture["description"] + '</p>');
+        var link = $('<div><h3><strong>' + lecture["title"] + '</strong></h3><p>' + lecture["description"] + '</p>');
         div.append(link);
         $('#lectures').append(div);
+      }
+
+      if (obj.length == 0) {
+        $('#lectures').append($('<p>No lectures available yet!</p>'));
       }
     }
   });

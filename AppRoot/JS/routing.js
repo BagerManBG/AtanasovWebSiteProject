@@ -1,5 +1,6 @@
 $(document).ready(function() {
   (function () {
+
       var router = Sammy(function() {
           var selector = '#view-content';
           var main = $(selector);
@@ -37,14 +38,6 @@ $(document).ready(function() {
             });
           });
 
-          this.get('#/lectures/:id/book', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'lectures/hall.html', function(templ) {
-              addHeader();
-              checkLogged(templ);
-            });
-          });
-
           this.get('#/admin', function() {
             $.get(path + 'admin.html', function(templ) {
               addHeader();
@@ -62,6 +55,13 @@ $(document).ready(function() {
           this.get('#/posts/:id/edit', function() {
             sessionStorage.setItem('id', this.params['id']);
             $.get(path + 'posts/edit.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
+            });
+          });
+
+          this.get('#/posts', function() {
+            $.get(path + 'posts/index.html', function(templ) {
               addHeader();
               checkAdmin(templ);
             });
@@ -142,11 +142,27 @@ $(document).ready(function() {
           });
 
           this.get('#/lectures', function() {
-            $.get(path + 'Lectures/calendar.html', function(templ) {
+            $.get(path + 'lectures/calendar.html', function(templ) {
               addHeader();
               main.html(templ);
               $('.modal-backdrop.fade.in').hide();
               $('body').attr('class', '');
+            });
+          });          
+
+          this.get('#/lectures/:id/book', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'lectures/hall.html', function(templ) {
+              removeMask();
+              addHeader();
+              checkLogged(templ);
+            });
+          });
+
+          this.get('#/lectures/stats', function() {
+            $.get(path + 'lectures/stats.html', function(templ) {
+              addHeader();
+              checkAdmin(templ);
             });
           });
 
@@ -160,6 +176,7 @@ $(document).ready(function() {
           this.get('#/lectures/:id/edit', function() {
             sessionStorage.setItem('id', this.params['id']);
             $.get(path + 'lectures/edit.html', function(templ) {
+              removeMask();
               addHeader();
               checkAdmin(templ);
             });
@@ -236,6 +253,11 @@ $(document).ready(function() {
             });
           }
 
+          function removeMask() {
+            $('.modal-backdrop.fade.in').hide();
+            $('body').css('overflow-y', 'scroll');
+          }
+
           function addHeader() {
               $('#header').attr('class', '');
               $('#header nav').attr('class', 'nav-scroll');
@@ -255,9 +277,19 @@ $(document).ready(function() {
               method: 'GET',
               success: function(result) {
                 if (result == 'logged') {
-                  main.html(template);
+                  $.ajax({
+                    url: 'Controllers/Account/checkRole.php',
+                    method: 'GET',
+                    success: function(result) {
+                      if (result == 'banned') {
+                        main.html('<h3 color="red">Banned</h3>');
+                      } else {
+                        main.html(template);
+                      }
+                    }
+                  });
                 } else {
-                  main.html('<h3>Not authorized</h3>');
+                  location.href = "#/home";
                 }
               }
             });
@@ -271,7 +303,7 @@ $(document).ready(function() {
                 if (result == 'admin') {
                   main.html(template);
                 } else {
-                  main.html('<h3>Not authorized</h3>');
+                  location.href = "#/home";
                 }
               }
             });

@@ -1,9 +1,8 @@
 <script src="JS/libs/moment.min.js"></script>
 <script type="text/javascript" src="JS/libs/fullcalendar.js"></script>
-<script type="text/javascript" src="JS/libs/bootstrap.js"></script>
 <script type="text/javascript" src="JS/utils.js"></script>
 <link rel="stylesheet" href="CSS/calendar/fullcalendar.css">
-<link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="CSS/modal.css">
 <script type="text/javascript">
   function deleteLecture(id) {
     if (confirm('Delete lecture?')) {
@@ -12,7 +11,7 @@
         url: "Controllers/lectures_controller.php",
         data: { 'action': 'delete', 'id': id },
         success: function(result) {
-          // TO-DO: redirect
+          location.reload();
         }
       });
     }
@@ -49,7 +48,7 @@
               if (role == 'admin') {
                 var admin = $('#admin-ops');
                 admin.html('');
-                var adminActions = $('<hr /><div><a class="btn btn-warning" href="#/lectures/' + event.id + '/edit">Edit</a><button class="btn btn-danger" onclick="deleteLecture(' + event.id + ')">Delete</button></div>');
+                var adminActions = $('<div class="modal-footer"><a class="btn btn-warning" href="#/lectures/' + event.id + '/edit">Edit</a><button class="btn btn-danger" onclick="deleteLecture(' + event.id + ')">Delete</button></div>');
                 admin.append(adminActions);
               }
             }

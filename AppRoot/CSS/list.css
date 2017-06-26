@@ -26,10 +26,36 @@ hr {
   margin-top: 2%;
 }
 
-.course, .action, .user {
+.course, .user {
   text-align: center;
   background-color: #fff;
   padding: 1em 0em 1em 0em;
   margin-bottom: 1em;
-  width: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.action {
+  background-color: #5d836e;
+  padding: 1em 0em 1em 0em;
+  margin-bottom: 0.3em;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #fff;
+}
+
+.action:hover {
+  background-color: #155149;
+  transition: 0.3s;
+}
+
+#admin {
+  margin-top: 5em;
+}
+
+#admin a:hover {
+  text-decoration: none;
 }

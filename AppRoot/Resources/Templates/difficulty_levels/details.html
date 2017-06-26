@@ -35,10 +35,14 @@
 
       for (var i in obj) {
         var course = obj[i];
-        var div = $('<div class="course"></div>');
-        var link = $('<a href="#/courses/' + course['id'] + '/details">' + course["name"] + '</a>');
-        div.append(link);
-        $('#courses').append(div);
+        var div = $('<div class="course">' + course["name"] + '</div>');
+        var link = $('<a href="#/courses/' + course['id'] + '/details"></a>');
+        link.append(div);
+        $('#courses').append(link);
+      }
+
+      if (obj.length == 0) {
+        $('#courses').append($('<p>No courses available yet!</p>'));
       }
     }
   });
