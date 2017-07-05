@@ -31,6 +31,13 @@ $(document).ready(function() {
             });
           });
 
+          this.get('#/chat', function() {
+            $.get(path + 'chat.html', function(templ) {
+              addHeader();
+              checkLogged(templ);
+            });
+          });
+
           this.get('#/chat-admin', function() {
             $.get(path + 'chat_admin.html', function(templ) {
               addHeader();
@@ -81,66 +88,6 @@ $(document).ready(function() {
             });
           });
 
-          this.get('#/levels', function() {
-            $.get(path + 'difficulty_levels/index.html', function(templ) {
-              addHeader();
-              main.html(templ);
-            });
-          });
-
-          this.get('#/levels/:id/details', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'difficulty_levels/details.html', function(templ) {
-              addHeader();
-              main.html(templ);
-            });
-          });
-
-          this.get('#/levels/create', function() {
-            $.get(path + 'difficulty_levels/create.html', function(templ) {
-              addHeader();
-              checkAdmin(templ);
-            });
-          });
-
-          this.get('#/levels/:id/edit', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'difficulty_levels/edit.html', function(templ) {
-              addHeader();
-              checkAdmin(templ);
-            });
-          });
-
-          this.get('#/courses', function() {
-            $.get(path + 'courses/index.html', function(templ) {
-              addHeader();
-              main.html(templ);
-            });
-          });
-
-          this.get('#/courses/create', function() {
-            $.get(path + 'courses/create.html', function(templ) {
-              addHeader();
-              checkAdmin(templ);
-            });
-          });
-
-          this.get('#/courses/:id/details', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'courses/details.html', function(templ) {
-              addHeader();
-              main.html(templ);
-            });
-          });
-
-          this.get('#/courses/:id/edit', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'courses/edit.html', function(templ) {
-              addHeader();
-              checkAdmin(templ);
-            });
-          });
-
           this.get('#/lectures', function() {
             $.get(path + 'lectures/calendar.html', function(templ) {
               addHeader();
@@ -148,14 +95,23 @@ $(document).ready(function() {
               $('.modal-backdrop.fade.in').hide();
               $('body').attr('class', '');
             });
-          });          
+          });
 
           this.get('#/lectures/:id/book', function() {
+            sessionStorage.setItem('id', this.params['id']);
+            $.get(path + 'lectures/seat-booking.html', function(templ) {
+              removeMask();
+              addHeader();
+              checkLogged(templ);
+            });
+          });
+
+          this.get('#/lectures/:id/hall', function() {
             sessionStorage.setItem('id', this.params['id']);
             $.get(path + 'lectures/hall.html', function(templ) {
               removeMask();
               addHeader();
-              checkLogged(templ);
+              checkAdmin(templ);
             });
           });
 
@@ -182,65 +138,126 @@ $(document).ready(function() {
             });
           });
 
-          this.get('#/online-courses', function() {
-            $.get(path + 'online_courses/index.html', function(templ) {
-              addHeader();
-              main.html(templ);
-            });
-          });
+          // this.get('#/levels', function() {
+          //   $.get(path + 'difficulty_levels/index.html', function(templ) {
+          //     addHeader();
+          //     main.html(templ);
+          //   });
+          // });
+          //
+          // this.get('#/levels/:id/details', function() {
+          //   sessionStorage.setItem('id', this.params['id']);
+          //   $.get(path + 'difficulty_levels/details.html', function(templ) {
+          //     addHeader();
+          //     main.html(templ);
+          //   });
+          // });
+          //
+          // this.get('#/levels/create', function() {
+          //   $.get(path + 'difficulty_levels/create.html', function(templ) {
+          //     addHeader();
+          //     checkAdmin(templ);
+          //   });
+          // });
+          //
+          // this.get('#/levels/:id/edit', function() {
+          //   sessionStorage.setItem('id', this.params['id']);
+          //   $.get(path + 'difficulty_levels/edit.html', function(templ) {
+          //     addHeader();
+          //     checkAdmin(templ);
+          //   });
+          // });
+          //
+          // this.get('#/courses', function() {
+          //   $.get(path + 'courses/index.html', function(templ) {
+          //     addHeader();
+          //     main.html(templ);
+          //   });
+          // });
+          //
+          // this.get('#/courses/create', function() {
+          //   $.get(path + 'courses/create.html', function(templ) {
+          //     addHeader();
+          //     checkAdmin(templ);
+          //   });
+          // });
+          //
+          // this.get('#/courses/:id/details', function() {
+          //   sessionStorage.setItem('id', this.params['id']);
+          //   $.get(path + 'courses/details.html', function(templ) {
+          //     removeMask();
+          //     addHeader();
+          //     main.html(templ);
+          //   });
+          // });
+          //
+          // this.get('#/courses/:id/edit', function() {
+          //   sessionStorage.setItem('id', this.params['id']);
+          //   $.get(path + 'courses/edit.html', function(templ) {
+          //     addHeader();
+          //     checkAdmin(templ);
+          //   });
+          // });
 
-          this.get('#/online-courses/create', function() {
-            $.get(path + 'online_courses/create.html', function(templ) {
-              addHeader();
-              checkAdmin(templ);
-            });
-          });
-
-          this.get('#/online-courses/:id/details', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'online_courses/details.html', function(templ) {
-              addHeader();
-              main.html(templ);
-            });
-          });
-
-          this.get('#/online-courses/:id/edit', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'online_courses/edit.html', function(templ) {
-              addHeader();
-              checkAdmin(templ);
-            });
-          });
-
-          this.get('#/online-lectures', function() {
-            $.get(path + 'online_lectures/index.html', function(templ) {
-              addHeader();
-              main.html(templ);
-            });
-          });
-
-          this.get('#/online-lectures/create', function() {
-            $.get(path + 'online_lectures/create.html', function(templ) {
-              addHeader();
-              checkAdmin(templ);
-            });
-          });
-
-          this.get('#/online-lectures/:id/details', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'online_lectures/details.html', function(templ) {
-              addHeader();
-              main.html(templ);
-            });
-          });
-
-          this.get('#/online-lectures/:id/edit', function() {
-            sessionStorage.setItem('id', this.params['id']);
-            $.get(path + 'online_lectures/edit.html', function(templ) {
-              addHeader();
-              checkAdmin(templ);
-            });
-          });
+          // this.get('#/online-courses', function() {
+          //   $.get(path + 'online_courses/index.html', function(templ) {
+          //     addHeader();
+          //     main.html(templ);
+          //   });
+          // });
+          //
+          // this.get('#/online-courses/create', function() {
+          //   $.get(path + 'online_courses/create.html', function(templ) {
+          //     addHeader();
+          //     checkAdmin(templ);
+          //   });
+          // });
+          //
+          // this.get('#/online-courses/:id/details', function() {
+          //   sessionStorage.setItem('id', this.params['id']);
+          //   $.get(path + 'online_courses/details.html', function(templ) {
+          //     addHeader();
+          //     main.html(templ);
+          //   });
+          // });
+          //
+          // this.get('#/online-courses/:id/edit', function() {
+          //   sessionStorage.setItem('id', this.params['id']);
+          //   $.get(path + 'online_courses/edit.html', function(templ) {
+          //     addHeader();
+          //     checkAdmin(templ);
+          //   });
+          // });
+          //
+          // this.get('#/online-lectures', function() {
+          //   $.get(path + 'online_lectures/index.html', function(templ) {
+          //     addHeader();
+          //     main.html(templ);
+          //   });
+          // });
+          //
+          // this.get('#/online-lectures/create', function() {
+          //   $.get(path + 'online_lectures/create.html', function(templ) {
+          //     addHeader();
+          //     checkAdmin(templ);
+          //   });
+          // });
+          //
+          // this.get('#/online-lectures/:id/details', function() {
+          //   sessionStorage.setItem('id', this.params['id']);
+          //   $.get(path + 'online_lectures/details.html', function(templ) {
+          //     addHeader();
+          //     main.html(templ);
+          //   });
+          // });
+          //
+          // this.get('#/online-lectures/:id/edit', function() {
+          //   sessionStorage.setItem('id', this.params['id']);
+          //   $.get(path + 'online_lectures/edit.html', function(templ) {
+          //     addHeader();
+          //     checkAdmin(templ);
+          //   });
+          // });
 
           // this.get('#/login', function() {
           //   $('#formContainer').show();

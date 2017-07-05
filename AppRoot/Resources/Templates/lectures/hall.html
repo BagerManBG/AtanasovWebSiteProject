@@ -4,73 +4,58 @@
 <script>
     var id = getQueryVariable("id");
 
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/checkIfAlreadyBooked.php?id=" + id,
-      success: function(data) {
-        console.log(data);
-        var obj = JSON.parse(data);
-        if (obj.length > 0) {
-          $('#hall').html('<p>Already booked a seat!</p>');
+
+    function unbook(user_id) {
+      $.ajax({
+        type: 'POST',
+        url: 'Controllers/lectures_controller.php',
+        data: { "action": 'unbook', 'user_id': user_id, "lecture_id": id },
+        success: function(data) {
+          location.reload();
         }
-      }
-    });
+      })
+    }
 
     $.ajax({
       type: "POST",
-      url: "Models/ViewModels/getFreeSeats.php?id=" + id,
+      url: "Models/ViewModels/getTakenSeats.php?id=" + id,
       success: function(data) {
         var obj = JSON.parse(data);
-        if (obj.length == 0) {
-          $('#hall').html('<p>No free seats</p>');
-        } else {
-          for (var index in obj) {
-            seat = obj[index];
-            var button = $('#seat-' + seat.seat_index + ' button');
-            button.attr('disabled', false);
-            button.html('Choose seat');
-          }
+
+        for (var index in obj) {
+          seat = obj[index];
+          var button = $('#seat-' + seat.seat_index + ' button');
+          button.attr('disabled', false);
+          button.html(seat.email + '<br />UNBOOK');
+          button.on('click', function() {unbook(seat.user_id)});
         }
       }
     });
-</script>
-<script>
-  function book(index) {
-    $.ajax({
-      type: 'POST',
-      url: 'Controllers/lectures_controller.php',
-      data: { "action": 'book', 'seat_index': index, "lecture_id": id },
-      success: function(data) {
-        location.href = "#/lectures";
-        location.reload();
-      }
-    })
-  }
 </script>
 <div id="hall">
   <div id="seats">
     <div class="column">
       <div class="desk" id='seat-1'>
-          <button type="button" class="seat" name="seat" data-id="1" onclick="book(1)" disabled="disabled">Seat taken</button>
+          <button type="button" class="seat" name="seat" data-id="1" disabled="disabled">Seat free</button>
       </div>
       <div class="desk" id='seat-2'>
-          <button type="button" class="seat" name="seat" data-id="2" onclick="book(2)" disabled="disabled">Seat taken</button>
+          <button type="button" class="seat" name="seat" data-id="2" disabled="disabled">Seat free</button>
       </div>
     </div>
     <div class="column">
       <div class="desk" id='seat-3'>
-          <button type="button" class="seat" name="seat" data-id="3" onclick="book(3)" disabled="disabled">Seat taken</button>
+          <button type="button" class="seat" name="seat" data-id="3" disabled="disabled">Seat free</button>
       </div>
       <div class="desk" id='seat-4'>
-          <button type="button" class="seat" name="seat" data-id="4" onclick="book(4)" disabled="disabled">Seat taken</button>
+          <button type="button" class="seat" name="seat" data-id="4" disabled="disabled">Seat free</button>
       </div>
     </div>
     <div class="column">
       <div class="desk" id='seat-5'>
-          <button type="button" class="seat" name="seat" data-id="5" onclick="book(5)" disabled="disabled">Seat taken</button>
+          <button type="button" class="seat" name="seat" data-id="5" disabled="disabled">Seat free</button>
       </div>
       <div class="desk" id='seat-6'>
-          <button type="button" class="seat" name="seat" data-id="6" onclick="book(6)" disabled="disabled">Seat taken</button>
+          <button type="button" class="seat" name="seat" data-id="6" disabled="disabled">Seat free</button>
       </div>
     </div>
   </div>

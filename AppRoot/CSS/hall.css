@@ -21,12 +21,16 @@
 #hall .column .desk .seat {
   background-color: #758638;
   height: 9em;
-  width: 40%;
+  width: 80%;
   display: inline-block;
 }
 
 #hall .column .desk button.seat {
   border: none;
+}
+
+#hall button:disabled {
+  color: #000;
 }
 
 #hall #lecturer {

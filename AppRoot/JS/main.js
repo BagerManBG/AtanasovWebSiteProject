@@ -43,13 +43,13 @@ $(document).ready(function() {
 });
 
 function OpenForm(tab) {
-
+  console.log(tab);
     switch (tab) {
         case 'log':
             $('#logInTab').click();
             break;
         case 'reg':
-            $('#registerTab').click();
+            $('#logInTab').click();
             break;
         default:
             break;
@@ -88,7 +88,7 @@ function UserHandler() {
                 htmlToAdd = "<li><a href='#/register' class='dynamic account'>Register</a></li><li><a class='dynamic account' id='log'>Log In</a></li>";
                 $('#links').prepend(htmlToAdd);
             } else {
-                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/profile' class='dynamic'>Profile</a></li>";
+                htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/profile' class='dynamic'>Profile</a></li><li><a href='#/chat' class='dynamic'>Chat</a></li>";
 
                 $.ajax({
                     url: 'Controllers/Account/checkRole.php',

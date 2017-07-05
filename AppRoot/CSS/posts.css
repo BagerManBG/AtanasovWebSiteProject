@@ -11,6 +11,7 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 5px #ccc;
   margin-top: 1em;
+  text-align: center;
 }
 
 #posts .post.slide iframe {
@@ -25,9 +26,17 @@
 #posts .post .content {
   padding: 2% 1%;
   width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#posts .post a.btn {
+#posts #post_0 {
+  background-color: #5d836e;
+  color: #fff;
+}
+
+#posts .post .btn {
   width: 50%;
   border-radius: 0;
   border-width: 0;
@@ -43,7 +52,7 @@
     width: 90%;
   }
 
-  #posts .post a.btn {
+  #posts .post .btn {
     width: 100%;
   }
 }

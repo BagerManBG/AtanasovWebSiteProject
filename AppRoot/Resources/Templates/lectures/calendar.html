@@ -33,7 +33,7 @@
           $('#start').html('<i class="fa fa-calendar-plus-o"></i>&nbsp;<b>Start</b>: ' + event.date + ' ' + event.startTime);
           $('#end').html('<i class="fa fa-calendar-plus-o"></i>&nbsp;<b>End</b>: ' + event.date_end + ' ' + event.endTime);
           $('#description').html('<i class="fa fa-calendar-check-o"></i>&nbsp;<b>Description</b>: ' + event.description);
-          $('#course').html('<i class="fa fa-calendar-check-o"></i>&nbsp;<b>Course</b>: <a href="#/courses/' + event.courseId + '/details">' + event.name + '</a>');
+          //$('#course').html('<i class="fa fa-calendar-check-o"></i>&nbsp;<b>Course</b>: <a href="#/courses/' + event.courseId + '/details">' + event.name + '</a>');
           $('#book').attr('href', '#/lectures/' + event.id + '/book');
 
           var now = moment();
@@ -48,7 +48,7 @@
               if (role == 'admin') {
                 var admin = $('#admin-ops');
                 admin.html('');
-                var adminActions = $('<div class="modal-footer"><a class="btn btn-warning" href="#/lectures/' + event.id + '/edit">Edit</a><button class="btn btn-danger" onclick="deleteLecture(' + event.id + ')">Delete</button></div>');
+                var adminActions = $('<div class="modal-footer"><a class="btn btn-default" href="#/lectures/' + event.id + '/hall">Manage seats</a><a class="btn btn-warning" href="#/lectures/' + event.id + '/edit">Edit</a><button class="btn btn-danger" onclick="deleteLecture(' + event.id + ')">Delete</button></div>');
                 admin.append(adminActions);
               }
             }
@@ -91,7 +91,7 @@
                 <br>
                 <h4 id="description"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Description</b>: </h4>
                 <br>
-                <h4 id="course"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Course</b>: </h4>
+                <!-- <h4 id="course"><i class="fa fa-calendar-check-o"></i>&nbsp;<b>Course</b>: </h4> -->
               </div>
             </div>
             <div style="text-align: right;" id="admin-ops"></div>

@@ -22,6 +22,14 @@ function startSlideshow(indices) {
 					break;
 			}
 		});
+
+		$(document).keydown(function(event) {
+			if (event.which == 37) {
+				MoveLeft(currPicNum - 1);
+		 	} else if (event.which == 39) {
+				MoveRight(currPicNum + 1);
+			}
+		})
 	});
 
 	function MoveRight(nextPicNum) {

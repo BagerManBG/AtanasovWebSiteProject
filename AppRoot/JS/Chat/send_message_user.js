@@ -1,30 +1,30 @@
 $(document).ready(function() {
+    //
+    // $('#send').click(function() {
+    //     SendMessage();
+    // });
 
-    $('#send').click(function() {
-
-        SendMessage();
-    });
-
-    $(document).keypress(function(e) {
+    $('#chatBody textarea').keypress(function(e) {
 
         if (e.which == 13) {
             SendMessage();
+            e.preventDefault();
         }
     });
 });
 
 function SendMessage() {
+    var area = $('#chatBody textarea');
 
-    if ($('#chatBody #type input').val() != '') {
+    if (area.val() != '') {
 
         var data = {
-            message: $('#chatBody #type input').val(),
+            message: area.val(),
             sender_id: getId('user'),
             receiver_id: getId('admin')
         };
 
-        $('#chatBody #type input').val('');
-        $('#send').addClass('blurred');
+        area.val('');
 
         $.ajax({
             url: 'Controllers/Chat/sendMessage.php',

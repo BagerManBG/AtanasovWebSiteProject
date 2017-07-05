@@ -6,70 +6,15 @@
 <script src="JS/Chat/send_message_user.js"></script>
 <script src="JS/Chat/get_messages_user.js"></script>
 <!-- Temporary -->
-
-<div id="quesitonBubble">
-	<img src="Resources/Images/Chat/bubble.png">
-</div>
-
 <div id="chatBox">
+		<div id="chatBody">
+				<div id="content"></div>
+				<div id="type">
+						<textarea name="message" rows="3" placeholder="Type your message..."></textarea>
 
-	<div id="chatHeader">
-		<p id="status"></p>
-		<div id="close">
-			<img src="Resources/Images/Chat/close.png">
+						<!-- <div id="send" class="blurred">
+								<img src="Resources/Images/Chat/send.png">
+						</div> -->
+				</div>
 		</div>
-	</div>
-
-	<div id="chatBody">
-
-		<div id="content">
-
-			<!-- <div class="hisMessage">
-				<p class="message">Hi :)</p>
-			</div>
-
-			<div class="myMessage">
-				<p class="message">Are you testing the chat design again???</p>
-			</div>
-
-			<div class="hisMessage">
-				<p class="message">Lorem ipsum dolor sit amet, consectetur(...)</p>
-			</div>
-
-			<div class="myMessage">
-				<p class="message">...</p>
-			</div> -->
-
-		</div>
-
-		<div id="type">
-
-			<input type="text" name="message" placeholder="Type Your Message...">
-
-			<div id="send" class="blurred">
-				<img src="Resources/Images/Chat/send.png">
-			</div>
-		</div>
-
-		<!-- <div id="connect">
-			<label for="connectFirstName" id="firstNameLabel">
-				<p>Tell us your first name.</p>
-				<input type="text" id="connectFirstName" autocomplete="off">
-			</label>
-
-			<label for="connectLastName" id="lastNameLabel">
-				<p>Tell us your last name.</p>
-				<input type="text" id="connectLastName" autocomplete="off">
-			</label>
-
-			<label for="connectEmail" id="emailLabel">
-				<p>Tell us your email</p>
-				<input type="text" id="connectEmail" autocomplete="off">
-			</label>
-
-			<input type="button" id="connectButton" value="Start a chat">
-		</div> -->
-
-	</div>
-
 </div>

@@ -29,7 +29,7 @@ $.ajax({
       index = indices[i];
       var post = obj[i];
       var postDiv = $('<div class="post slide" id="post_' + (index) + '"></div>');
-      var links = $('<div class="links"><a href="#/posts/' + post["id"] + '/edit" class="btn btn-warning">Edit</a><a href="#/posts/' + post["id"] + '/delete" class="btn btn-danger">Delete</a></div>');
+      var links = $('<div class="links"><a href="#/posts/' + post["id"] + '/edit" class="btn btn-warning">Edit</a><button onclick="deletePost(' + post["id"] + ')" class="btn btn-danger">Delete</button></div>');
       var postElement = null;
 
       switch (post["type"]) {

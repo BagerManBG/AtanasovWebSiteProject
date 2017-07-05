@@ -67,14 +67,19 @@ body {
   right: 0;
   background-color: rgba(37, 37, 37, 0.7);
   text-align: center;
-  height: 3.7em;
+  height: 3.15em;
+}
+
+.arrow {
+  width: 40%;
+  display: inline-block;
 }
 
 .slide .links {
   display: none;
 }
 
-#navigation-menu .arrow {
+#navigation-menu .arrow img {
   width: 2.5em;
   margin: 0.3em 10%;
 }

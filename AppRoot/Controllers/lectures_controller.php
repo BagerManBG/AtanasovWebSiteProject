@@ -6,13 +6,16 @@
 
   switch ($method) {
     case 'create':
-      $controller->create($data["title"], $data["description"], $data["date"], $data["date_end"], $data["start"], $data["end"], $data["courseId"]);
+      $controller->create($data["title"], $data["description"], $data["date"], $data["date_end"], $data["start"], $data["end"]);
       break;
     case 'edit':
-      $controller->edit($data["id"], $data["title"], $data["description"], $data["date"], $data["date_end"], $data["start"], $data["end"], $data["courseId"]);
+      $controller->edit($data["id"], $data["title"], $data["description"], $data["date"], $data["date_end"], $data["start"], $data["end"]);
       break;
     case 'book':
       $controller->book($data["seat_index"], $data["lecture_id"]);
+      break;
+    case 'unbook':
+      $controller->unbook($data["user_id"], $data["lecture_id"]);
       break;
     case 'delete':
       $controller->delete($data["id"]);
@@ -34,13 +37,13 @@
       $this->tableName = "lectures";
     }
 
-    function create($title, $description, $date, $date_end, $start, $end, $courseId) {
+    function create($title, $description, $date, $date_end, $start, $end) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
         if ($date_end == null) {
           $date_end = $date;
         }
 
-        $info = ["title" => $title, "description" => $description, "date" => $date, "date_end" => $date_end, "start" => $start, "end" => $end, "course_id" => $courseId];
+        $info = ["title" => $title, "description" => $description, "date" => $date, "date_end" => $date_end, "start" => $start, "end" => $end];
         $id = $this->db->saveArray($this->tableName, $info);
 
         for ($i = 1; $i <= 6; $i++) {
@@ -55,13 +58,13 @@
       }
     }
 
-    function edit($id, $title, $description, $date, $date_end, $start, $end, $courseId) {
+    function edit($id, $title, $description, $date, $date_end, $start, $end) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
         if ($date_end == null) {
           $date_end = $date;
         }
-        
-        $info = ["id" => $id, "title" => $title, "description" => $description, "date" => $date, "date_end" => $date_end, "start" => $start, "end" => $end, "course_id" => $courseId];
+
+        $info = ["id" => $id, "title" => $title, "description" => $description, "date" => $date, "date_end" => $date_end, "start" => $start, "end" => $end];
         $result = $this->db->saveArray($this->tableName, $info);
         header('Location: ' . '../#/lectures');
         exit();
@@ -81,7 +84,7 @@
         $seat = $this->db->fetchArray($getSeatQuery);
         if (is_null($seat[0]['user_id'])) {
           $user_id = $_SESSION['logged_user']['id'];
-          $info = ['id' => $seat[0]['id'], 'lecture_id' => $lecture_id, 'seat_index' => $data[0]['seat_index'], 'user_id' => $user_id];
+          $info = ['id' => $seat[0]['id'], 'lecture_id' => $lecture_id, 'seat_index' => $seat[0]['seat_index'], 'user_id' => $user_id];
           $this->db->saveArray('seats', $info);
           header('Location: ' . '../#/lectures');
         }
@@ -91,11 +94,23 @@
       }
     }
 
+    function unbook($user_id, $lecture_id) {
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $checkIfUserHasBookedSeat = 'SELECT * FROM seats WHERE lecture_id = ' . $lecture_id . ' AND user_id = ' . $user_id;
+        $seat = $this->db->fetchArray($checkIfUserHasBookedSeat);
+
+        if (sizeof($seat) > 0) {
+          $query = "UPDATE seats SET user_id = NULL WHERE lecture_id = " . $lecture_id . " AND user_id = " . $user_id;
+          $this->db->fetchArray($query);
+        }
+      }
+    }
+
     function delete($id) {
       if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
         $result = $this->db->deleteRow($this->tableName, $id, "id");
       } else {
-        header('Location: ' . '../#/home');
+        header('Location: ' . '../#/lectures');
         exit();
       }
     }

@@ -2,3 +2,17 @@
 <div id="posts">
 </div>
 <script src="JS/getPosts.js"></script>
+<script>
+  function deletePost(id) {
+    if (confirm('Delete post?')) {
+      $.ajax({
+        type: "POST",
+        url: "Controllers/posts_controller.php",
+        data: { 'action': 'delete', 'id': id },
+        success: function(result) {
+          location.reload();
+        }
+      });
+    }
+  }
+</script>

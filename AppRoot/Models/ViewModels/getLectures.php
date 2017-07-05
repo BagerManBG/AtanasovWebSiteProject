@@ -6,7 +6,7 @@
     $user_id = $_SESSION['logged_user']['id'];
   }
 
-  $query = "SELECT l.id, l.title, l.description, l.date, l.date_end, l.start as startTime, l.end as endTime, l.course_id AS courseId, c.name FROM lectures l INNER JOIN courses c ON l.course_id = c.id";
+  $query = "SELECT l.id, l.title, l.description, l.date, l.date_end, l.start as startTime, l.end as endTime FROM lectures l";
   $result = $db->fetchArray($query);
   $events = array();
 

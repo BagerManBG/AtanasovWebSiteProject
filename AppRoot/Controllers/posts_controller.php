@@ -11,6 +11,9 @@
     case 'edit':
       $controller->edit($data["id"], $data["type"], $data["content"], $data["index"]);
       break;
+    case 'delete':
+      $controller->delete($data["id"]);
+      break;
   }
 
   class PostsController {
@@ -40,6 +43,15 @@
         exit();
       } else {
         header('Location: ' . '../#/home');
+        exit();
+      }
+    }
+
+    function delete($id) {
+      if (isset($_SESSION["logged_user"]) && $_SESSION["logged_user"]["role"] == "admin") {
+        $result = $this->db->deleteRow($this->tableName, $id, "id");
+      } else {
+        header('Location: ' . '../#/posts');
         exit();
       }
     }
