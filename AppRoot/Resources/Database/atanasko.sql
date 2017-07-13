@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2017 at 08:25 AM
+-- Generation Time: Jul 13, 2017 at 12:40 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -35,17 +35,18 @@ CREATE TABLE IF NOT EXISTS `chat_users` (
   `avatar` varchar(255) NOT NULL,
   `role_id` int(11) NOT NULL,
   `last_time_online` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `chat_users`
 --
 
 INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `role_id`, `last_time_online`) VALUES
-(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1, 1498391675),
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1, 1499942447),
 (158, 'BagerMan@abv.bg', 'Bager', 'Man', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1480628567),
 (159, 'test@abv.bg', 'Todor', 'Nikolov', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1480713177),
-(160, 'emil_krumov@hotmail.com', 'Emil', 'Krumov', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1484040618);
+(160, 'emil_krumov@hotmail.com', 'Emil', 'Krumov', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1484040618),
+(161, '', 'Atanas', 'Atanassoff', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1498636294);
 
 -- --------------------------------------------------------
 
@@ -117,8 +118,8 @@ CREATE TABLE IF NOT EXISTS `lectures` (
   `date_end` date NOT NULL,
   `start` time NOT NULL,
   `end` time NOT NULL,
-  `course_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `course_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `lectures`
@@ -129,8 +130,9 @@ INSERT INTO `lectures` (`id`, `title`, `description`, `date`, `date_end`, `start
 (4, 'На тошко евента', 'нееееееееееееееееееееееееееееееееееееееее, хич', '2017-01-24', '2017-01-24', '12:00:00', '13:00:00', 0),
 (5, 'Hah... Gaaaay', 'Да видим как ще излезне това', '2017-02-02', '2017-02-02', '01:00:00', '02:00:00', 15),
 (6, 'Seats Test', 'Test for seats', '2017-03-25', '2017-03-25', '01:00:00', '02:34:00', 9),
-(8, 'Weekend', 'Can safdksad', '2017-04-07', '2017-04-08', '01:02:00', '14:01:00', 8),
-(11, 'А дали Емо е наистина велик?', 'дай да видим', '2017-06-27', '2017-06-29', '01:00:00', '14:00:00', 8);
+(11, 'А дали Емо е наистина велик?', 'дай да видим', '2017-06-27', '2017-06-29', '01:00:00', '14:00:00', 8),
+(12, 'Hills of Rock', 'Best fucking fest ever!', '2017-06-30', '2017-07-01', '17:00:00', '23:55:00', NULL),
+(15, 'Жега е', 'дасдасд', '2017-07-12', '2017-07-12', '01:00:00', '02:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `send_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sender_id` int(11) NOT NULL,
   `receiver_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=156 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=209 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `messages`
@@ -306,7 +308,60 @@ INSERT INTO `messages` (`id`, `message`, `send_time`, `sender_id`, `receiver_id`
 (152, 'test', '1493202341', 160, 1),
 (153, 'test', '1493202341', 160, 1),
 (154, 'test', '1493202342', 160, 1),
-(155, '&lt;script&gt;alert&lpar;1&rpar;&lt;&sol;script&gt;', '1493733908', 160, 1);
+(155, '&lt;script&gt;alert&lpar;1&rpar;&lt;&sol;script&gt;', '1493733908', 160, 1),
+(156, 'zdr bepce', '1498636300', 161, 1),
+(157, 'sdfd', '1498734221', 160, 1),
+(158, 'sdf', '1498734233', 160, 1),
+(159, 'cv', '1498734239', 160, 1),
+(160, 'zfx', '1498734276', 160, 1),
+(161, '&kcy;&ocy;&scy;&tcy;&ucy;&rcy;', '1498736899', 0, 160),
+(162, 'yay', '1498739039', 160, 1),
+(163, 'sdfs', '1498739245', 160, 1),
+(164, 'dfgdfg', '1499171569', 0, 1),
+(165, 'ghjghj', '1499171574', 0, 1),
+(166, 'gjghj', '1499171576', 0, 1),
+(167, 'hkhjk', '1499171578', 0, 1),
+(168, 'sdg', '1499696203', 160, 1),
+(169, '&jcy;&kcy;&scy;&fcy;', '1499771217', 0, 160),
+(170, '&zcy;&tscy;&scy;&dcy;', '1499773615', 160, 1),
+(171, 'asdad', '1499844444', 160, 1),
+(172, 'chat', '1499844506', 0, 1),
+(173, 'xcvcb', '1499844542', 0, 1),
+(174, 'asdasd', '1499844711', 0, 1),
+(175, 'hkjh', '1499844780', 0, 1),
+(176, 'hallo&comma; you bastards', '1499867490', 0, 1),
+(177, 'halp', '1499868137', 20, 1),
+(178, 'you bastard', '1499869226', 20, 1),
+(179, 'you sick fak', '1499869238', 20, 1),
+(180, 'you ba4', '1499869243', 20, 1),
+(181, 'y tho&quest;', '1499869247', 20, 1),
+(182, 'hallo', '1499869446', 0, 0),
+(183, 'hallo', '1499869457', 0, 0),
+(184, '&colon;&apos;&lpar;', '1499869464', 0, 0),
+(185, 'dfsfsdf', '1499869467', 0, 0),
+(186, 'nkjk', '1499869516', 0, 0),
+(187, 'gfdg', '1499869621', 0, 0),
+(188, 'asasd', '1499869687', 1, 0),
+(189, 'kjl', '1499869701', 1, 0),
+(190, 'sdf', '1499870003', 1, 0),
+(191, '&scy;&dcy;&fcy;&scy;&fcy;', '1499875149', 1, 1),
+(192, '&fcy;&gcy;&khcy;&fcy;', '1499875151', 1, 1),
+(193, '&scy;&fcy;&scy;&dcy;&fcy;', '1499875162', 1, 1),
+(194, 'jkkj', '1499927243', 1, 0),
+(195, 'asdsa', '1499927686', 1, 20),
+(196, 'yay', '1499927692', 1, 20),
+(197, 'wohoo', '1499927701', 1, 20),
+(198, 'sdfsf', '1499927873', 1, 3),
+(199, 'fdgd', '1499935250', 1, 2),
+(200, 'asdasd', '1499938208', 20, 1),
+(201, 'asd', '1499938261', 20, 1),
+(202, 'asdas', '1499938274', 20, 1),
+(203, 'asdad', '1499938288', 20, 1),
+(204, 'test', '1499938337', 20, 1),
+(205, 'boos', '1499941706', 21, 1),
+(206, 'reaccs', '1499941708', 21, 1),
+(207, 'only', '1499941709', 21, 1),
+(208, '&colon;&apos;&lpar;', '1499941735', 1, 21);
 
 -- --------------------------------------------------------
 
@@ -364,21 +419,23 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `type` smallint(11) NOT NULL DEFAULT '0',
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `post_index` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `type`, `content`, `post_index`) VALUES
-(1, 0, 'asdasdasdsad', -2),
 (2, 1, 'https://www.youtube.com/watch?v=-AN71tjEYJw', -1),
-(3, 0, 'Благодаря ти, Емо, че си супер пич!', 0),
+(3, 0, 'Благодаря ти, Емо, че си супер пич!', 1),
 (4, 1, 'https://www.youtube.com/watch?v=QygpaIJclm4', 1),
 (5, 0, 'kjjhghj', 2),
 (6, 2, 'http://az616578.vo.msecnd.net/files/2016/07/02/636030757259556361-1129479309_elon-musk.jpg', 5),
-(7, 0, 'bravo', -2),
-(8, 0, 'jkhjhk', -7);
+(8, 0, 'jkhjhk', -7),
+(9, 2, 'https://static.pexels.com/photos/126407/pexels-photo-126407.jpeg', 10),
+(10, 0, 'Index 10 again', 10),
+(12, 0, '00000000', 0),
+(13, 0, 'new post', -5);
 
 -- --------------------------------------------------------
 
@@ -413,7 +470,7 @@ CREATE TABLE IF NOT EXISTS `seats` (
   `seat_index` int(11) NOT NULL,
   `lecture_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `seats`
@@ -422,21 +479,21 @@ CREATE TABLE IF NOT EXISTS `seats` (
 INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
 (1, 1, 6, NULL),
 (2, 2, 6, NULL),
-(3, 3, 6, 4),
-(4, 0, 6, 5),
+(3, 3, 6, NULL),
+(4, 0, 6, NULL),
 (5, 5, 6, NULL),
 (6, 6, 6, NULL),
-(7, 0, 7, 10),
-(8, 0, 7, 5),
+(7, 0, 7, NULL),
+(8, 0, 7, NULL),
 (9, 3, 7, NULL),
 (10, 4, 7, NULL),
-(11, 0, 7, 12),
+(11, 0, 7, NULL),
 (12, 6, 7, NULL),
-(13, 0, 7, 5),
-(14, 0, 7, 5),
-(15, 0, 7, 5),
-(16, 0, 7, 5),
-(17, 0, 7, 5),
+(13, 0, 7, NULL),
+(14, 0, 7, NULL),
+(15, 0, 7, NULL),
+(16, 0, 7, NULL),
+(17, 0, 7, NULL),
 (18, 1, 0, NULL),
 (19, 2, 0, NULL),
 (20, 3, 0, NULL),
@@ -452,21 +509,45 @@ INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
 (30, 1, 9, NULL),
 (31, 2, 9, NULL),
 (32, 3, 9, NULL),
-(33, 0, 9, 5),
-(34, 0, 9, 12),
+(33, 0, 9, NULL),
+(34, 0, 9, NULL),
 (35, 6, 9, NULL),
 (36, 1, 10, NULL),
 (37, 2, 10, NULL),
 (38, 3, 10, NULL),
 (39, 4, 10, NULL),
 (40, 5, 10, NULL),
-(41, 0, 10, 12),
-(42, 1, 11, NULL),
+(41, 0, 10, NULL),
+(42, 0, 11, NULL),
 (43, 2, 11, NULL),
 (44, 3, 11, NULL),
-(45, 0, 11, 12),
+(45, 0, 11, NULL),
 (46, 5, 11, NULL),
-(47, 6, 11, NULL);
+(47, 6, 11, NULL),
+(48, 1, 12, NULL),
+(49, 2, 12, NULL),
+(50, 3, 12, NULL),
+(51, 4, 12, NULL),
+(52, 5, 12, NULL),
+(53, 0, 12, NULL),
+(54, 0, 13, NULL),
+(55, 2, 13, NULL),
+(56, 3, 13, NULL),
+(57, 0, 13, NULL),
+(58, 5, 13, NULL),
+(59, 6, 13, NULL),
+(60, 1, 14, 12),
+(61, 2, 14, NULL),
+(62, 3, 14, NULL),
+(63, 4, 14, NULL),
+(64, 5, 14, NULL),
+(65, 6, 14, NULL),
+(66, 1, 15, NULL),
+(67, 2, 15, NULL),
+(68, 3, 15, NULL),
+(69, 4, 15, 12),
+(70, 5, 15, NULL),
+(71, 6, 15, NULL);
 
 -- --------------------------------------------------------
 
@@ -522,7 +603,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `google_acc` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role_id` int(11) NOT NULL DEFAULT '2'
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -534,8 +615,8 @@ INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secr
 (3, 'toshko_1998@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
 (4, 'test@abv.bg', 'Todor', 'Nikolov', 'e10adc3949ba59abbe56e057f20f883e', '', '', NULL, NULL, 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
 (5, '', '', '', '81dc9bdb52d04dc20036dbd8313ed055', 'Emo qk li e?', 'Em da ne kat tosho vrat!', 'emo', 'gogle@gogle.gogle', 'http://localhost:8088/AtanasovWebSiteProject/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
-(6, 'emo@abv.bg', 'emo', 'emov', 'd7613e3be440114904df5802ef2e31c8', '', '', NULL, NULL, 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(7, 'toshko@abv.bg', 'newestg', 'test', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'korona', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
+(6, 'emo@abv.bg', 'emo', 'emov', 'd7613e3be440114904df5802ef2e31c8', '', '', NULL, NULL, 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
+(7, 'toshko@abv.bg', 'newestg', 'test', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'korona', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (8, 'test@test.test', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '', '', 'toshko@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (9, 'test@test.tes', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (10, 'slavislavchev@abv.bg', 'Slavi', 'Slavcheva', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'gotino_zubar4e', 'bosatnajenitewe@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
@@ -545,7 +626,11 @@ INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secr
 (14, 'abba@bg.bg', 'Abba', 'Beatle', '81dc9bdb52d04dc20036dbd8313ed055', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (15, 'asd@asd.bg', 'asd', 'asd', '6867d9167683fb8f42558a81ad107f5b', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (16, 'asdsa@abv.bg', 'random', 'sdf', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(17, 'banica@abv.bg', 'banica', 'banica', 'b343c20f32a9459238a115dfa08689c1', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3);
+(17, 'banica@abv.bg', 'banica', 'banica', 'b343c20f32a9459238a115dfa08689c1', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
+(18, 'nasko_naskoff@gmail.com', 'Atanas', 'Atanassoff', '6ff65f2c74ce8d93bbebaf2152032088', '', '', 'nasko', 'nasko@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(19, 'testtest@abv.bg', 'test', 'test', 'cc03e747a6afbbcbf8be7668acfebee5', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(20, 'chat_test@abv.bg', 'chat', 'test', '47268c1687b2c072ac7e624bced6e7a7', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(21, 'boosonly@abv.bg', 'Boos', 'Reaccs', 'a4545830a99a238050b460f491b39886', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2);
 
 --
 -- Indexes for dumped tables
@@ -647,7 +732,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `chat_users`
 --
 ALTER TABLE `chat_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=161;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=162;
 --
 -- AUTO_INCREMENT for table `courses`
 --
@@ -662,12 +747,12 @@ ALTER TABLE `difficulty_levels`
 -- AUTO_INCREMENT for table `lectures`
 --
 ALTER TABLE `lectures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=156;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=209;
 --
 -- AUTO_INCREMENT for table `online_courses`
 --
@@ -682,7 +767,7 @@ ALTER TABLE `online_lectures`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -692,7 +777,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `seats`
 --
 ALTER TABLE `seats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -702,7 +787,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

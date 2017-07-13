@@ -1,22 +1,8 @@
 <link rel="stylesheet" href="CSS/forms.css">
 <script type="text/javascript" src="JS/utils.js"></script>
-<script>
-  var id = getQueryVariable("id");
-
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getPostsById.php?id=" + id,
-      success: function(data){
-        var obj = JSON.parse(data);
-        $("#id").attr('value', obj[0]["id"]);
-        $("#type").val(obj[0]["type"]);
-        $("#index").val(obj[0]["post_index"]);
-        $("#content").html( obj[0]["content"]);
-      }
-    });
-</script>
+<script src="JS/AjaxCalls/editPost.js"></script>
 <div class="emo">
-  <form method="post" action="Controllers/posts_controller.php">
+  <form method="post" action="Controllers/Posts/posts_controller.php">
     <div class="form-group">
       <input type="hidden" name="id" id="id" />
     </div>

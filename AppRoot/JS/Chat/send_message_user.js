@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    //
-    // $('#send').click(function() {
-    //     SendMessage();
-    // });
+
+    $('#send_button').click(function(){
+      SendMessage();
+    });
 
     $('#chatBody textarea').keypress(function(e) {
 

@@ -1,22 +1,6 @@
 <link rel="stylesheet" href="CSS/list.css">
+<script src="JS/AjaxCalls/getCourses.js"></script>
 
-<script>
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getCourses.php",
-      success: function(data){
-        var obj = JSON.parse(data);
-
-        for (var i in obj) {
-          var course = obj[i];
-          var div = $('<div class="course"></div>');
-          var link = $('<h4>' + course["name"] + '</h4><hr /><p>' + course["description"] + '</p><a class="button" href="#/courses/' + course["id"] + '/details">Learn more...</a>');
-          div.append(link);
-          $('#courses').append(div);
-        }
-      }
-    });
-</script>
 <div class="emo">
   <h3>Courses</h3>
   <br />

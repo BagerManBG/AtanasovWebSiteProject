@@ -46,7 +46,7 @@ function getId(person) {
 	else if(person === 'admin')
 	{
 		$.ajax({
-			url: '../../Controllers/Chat/getAdminId.php',
+			url: 'Controllers/Chat/getAdminId.php',
 			method: 'GET',
 			async: false,
 			success: function(result) {

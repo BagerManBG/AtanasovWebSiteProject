@@ -43,7 +43,6 @@ $(document).ready(function() {
 });
 
 function OpenForm(tab) {
-  console.log(tab);
     switch (tab) {
         case 'log':
             $('#logInTab').click();

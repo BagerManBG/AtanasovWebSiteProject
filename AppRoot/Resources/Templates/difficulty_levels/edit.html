@@ -1,20 +1,9 @@
 <link rel="stylesheet" href="CSS/forms.css">
 <script type="text/javascript" src="JS/utils.js"></script>
-<script>
-  var id = getQueryVariable("id");
+<script src="JS/editLevel.js"></script>
 
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getDifficultyLevelById.php?id=" + id,
-      success: function(data){
-        var obj = JSON.parse(data);
-        $("#id").attr('value', obj[0]["id"]);
-        $("#name").attr('value', obj[0]["name"]);
-      }
-    });
-</script>
 <div class="emo">
-  <form method="post" action="Controllers/difficulty_levels_controller.php">
+  <form method="post" action="Controllers/Levels/difficulty_levels_controller.php">
     <div class="form-group">
       <input type="hidden" name="id" id="id" />
     </div>

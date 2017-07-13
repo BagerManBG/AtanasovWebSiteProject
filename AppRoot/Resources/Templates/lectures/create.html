@@ -1,19 +1,7 @@
 <link rel="stylesheet" href="CSS/forms.css">
-<script>
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getCourses.php",
-      success: function(data){
-        var obj = JSON.parse(data);
-        for (var i = 0; i < obj.length; i++) {
-          $("#courseId").append($('<option value=' + obj[i]["id"] + '>' + obj[i]["name"] + '</option>'));
-        }
-      }
-    });
-</script>
 
 <div class="emo">
-  <form method="post" action="Controllers/lectures_controller.php">
+  <form method="post" action="Controllers/Lectures/lectures_controller.php">
     <div class="form-group">
       <label for="title">Name</label>
       <input class="form-control" type="text" name="title" id="title" />

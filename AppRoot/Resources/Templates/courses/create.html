@@ -1,19 +1,9 @@
 <link rel="stylesheet" href="CSS/HeaderFooter/nav.css">
 <link rel="stylesheet" href="CSS/forms.css">
-<script>
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getDifficultyLevels.php",
-      success: function(data){
-        var obj = JSON.parse(data);
-        for (var i = 0; i < obj.length; i++) {
-          $("#difficulty_level").append($('<option value=' + obj[i]["id"] + '>' + obj[i]["name"] + '</option>'));
-        }
-      }
-    });
-</script>
+<script src="JS/AjaxCalls/createCourse.js"></script>
+
 <div class="emo" >
-  <form method="post" action="Controllers/courses_controller.php">
+  <form method="post" action="Controllers/Courses/courses_controller.php">
     <div class="form-group">
       <label for="name">Name</label>
       <input class="form-control" type="text" name="name" id="name" />

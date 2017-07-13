@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
     $('.positionLeft').click(function(){
     	$('.regAction').hide()
     	$('.logAction').show()

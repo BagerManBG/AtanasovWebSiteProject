@@ -1,37 +1,9 @@
 <link rel="stylesheet" href="CSS/forms.css">
 <script type="text/javascript" src="JS/utils.js"></script>
-<script>
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getDifficultyLevels.php",
-      success: function(data){
-        var obj = JSON.parse(data);
-        for (var i = 0; i < obj.length; i++) {
-          $("#difficulty_level").append($('<option value=' + obj[i]["id"] + '>' + obj[i]["name"] + '</option>'));
-        }
-      }
-    });
-</script>
-<script>
-  $(document).ready(function () {
-    var id = getQueryVariable("id");
+<script src="JS/AjaxCalls/editCourse.js"></script>
 
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getCourseById.php?id=" + id,
-      success: function(data) {
-        var obj = JSON.parse(data);
-        $("#id").attr('value', id)
-        $("#name").attr('value', obj[0]["name"]);
-        $('#description').html(obj[0]["description"]);
-        $('#students_capacity').attr('value', obj[0]["students_capacity"]);
-        $('#difficulty_level').val(obj[0]["level_id"]);
-      }
-    });
-  });
-</script>
 <div class="emo" >
-  <form method="post" action="Controllers/courses_controller.php">
+  <form method="post" action="Controllers/Courses/courses_controller.php">
     <div class="form-group">
       <input class="form-control" type="hidden" name="id" id="id" />
     </div>

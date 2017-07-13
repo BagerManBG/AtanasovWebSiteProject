@@ -22,8 +22,8 @@
     overflow-y: visible;
 }
 
-.list #list_users {
-    height: 94%;
+.list {
+    height: 700px;
     overflow-y: scroll;
 }
 
@@ -67,13 +67,13 @@
 
 .chatBody {
     float: left;
-    height: 95%;
-    width: 40%;
+    height: 700px;
+    overflow-y: scroll;
+    width: 69%;
     margin: 0.25% 0px;
     margin-left: 2%;
     background-color: #e3e3e3;
     border: 1px solid #155149;
-    overflow: hidden;
 }
 
 .chatHeader {
@@ -94,6 +94,7 @@
 
 .messages {
     word-wrap: break-word;
+    margin: 1% 5%;
 }
 
 .ownMessage {
@@ -104,7 +105,6 @@
 .ownMessage .messages {
     float: right;
     padding: 2%;
-    margin: 3.6% 5% 0px;
     max-width: 80%;
     background-color: #fff;
     border-radius: 3px;
@@ -120,7 +120,6 @@
 .otherMessage .messages {
     float: left;
     padding: 2%;
-    margin: 3.6% 5% 0px;
     max-width: 62%;
     background-color: #155149;
     border-radius: 3px;
@@ -129,7 +128,7 @@
 }
 
 #typing {
-    height: 7%;
+    height: 14%;
     background-color: white;
 }
 

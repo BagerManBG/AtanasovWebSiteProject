@@ -1,37 +1,8 @@
 <link rel="stylesheet" href="CSS/hall.css">
 
 <script type="text/javascript" src="JS/utils.js"></script>
-<script>
-    var id = getQueryVariable("id");
+<script src="JS/AjaxCalls/hall.js"></script>
 
-
-    function unbook(user_id) {
-      $.ajax({
-        type: 'POST',
-        url: 'Controllers/lectures_controller.php',
-        data: { "action": 'unbook', 'user_id': user_id, "lecture_id": id },
-        success: function(data) {
-          location.reload();
-        }
-      })
-    }
-
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getTakenSeats.php?id=" + id,
-      success: function(data) {
-        var obj = JSON.parse(data);
-
-        for (var index in obj) {
-          seat = obj[index];
-          var button = $('#seat-' + seat.seat_index + ' button');
-          button.attr('disabled', false);
-          button.html(seat.email + '<br />UNBOOK');
-          button.on('click', function() {unbook(seat.user_id)});
-        }
-      }
-    });
-</script>
 <div id="hall">
   <div id="seats">
     <div class="column">

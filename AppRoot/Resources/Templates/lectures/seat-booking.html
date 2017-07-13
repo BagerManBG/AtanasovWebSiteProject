@@ -1,52 +1,8 @@
 <link rel="stylesheet" href="CSS/hall.css">
 
 <script type="text/javascript" src="JS/utils.js"></script>
-<script>
-    var id = getQueryVariable("id");
+<script src="JS/AjaxCalls/seatBooking.js"></script>
 
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/checkIfAlreadyBooked.php?id=" + id,
-      success: function(data) {
-        console.log(data);
-        var obj = JSON.parse(data);
-        if (obj.length > 0) {
-          $('#hall').html('<p>Already booked a seat!</p>');
-        }
-      }
-    });
-
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getFreeSeats.php?id=" + id,
-      success: function(data) {
-        var obj = JSON.parse(data);
-        if (obj.length == 0) {
-          $('#hall').html('<p>No free seats</p>');
-        } else {
-          for (var index in obj) {
-            seat = obj[index];
-            var button = $('#seat-' + seat.seat_index + ' button');
-            button.attr('disabled', false);
-            button.html('Choose seat');
-          }
-        }
-      }
-    });
-</script>
-<script>
-  function book(index) {
-    $.ajax({
-      type: 'POST',
-      url: 'Controllers/lectures_controller.php',
-      data: { "action": 'book', 'seat_index': index, "lecture_id": id },
-      success: function(data) {
-        location.href = "#/lectures";
-        location.reload();
-      }
-    })
-  }
-</script>
 <div id="hall">
   <div id="seats">
     <div class="column">

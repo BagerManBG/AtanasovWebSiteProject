@@ -1,38 +1,9 @@
 <link rel="stylesheet" href="CSS/forms.css">
 <script type="text/javascript" src="JS/utils.js"></script>
-<!-- <script>
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getCourses.php",
-      success: function(data){
-        var obj = JSON.parse(data);
-        for (var i = 0; i < obj.length; i++) {
-          $("#courseId").append($('<option value=' + obj[i]["id"] + '>' + obj[i]["name"] + '</option>'));
-        }
-      }
-    });
-</script> -->
-<script>
-  var id = getQueryVariable("id");
 
-    $.ajax({
-      type: "POST",
-      url: "Models/ViewModels/getLectureById.php?id=" + id,
-      success: function(data){
-        var obj = JSON.parse(data);
-        $("#id").attr('value', id);
-        $("#title").attr('value', obj[0]["title"]);
-        $('#description').html(obj[0]["description"]);
-        $('#date').attr('value', obj[0]["date"]);
-        $("#date_end").attr('value', obj[0]["date_end"]);
-        $('#start').attr('value', obj[0]["start"]);
-        $('#end').attr('value', obj[0]["end"]);
-        // $('#courseId').val(obj[0]["course_id"]);
-      }
-    });
-</script>
+<script src="JS/AjaxCalls/editLecture.js"></script>
 <div class="emo">
-  <form method="post" action="Controllers/lectures_controller.php">
+  <form method="post" action="Controllers/Lectures/lectures_controller.php">
     <div class="form-group">
       <input class="form-control" type="hidden" name="id" id="id" />
     </div>

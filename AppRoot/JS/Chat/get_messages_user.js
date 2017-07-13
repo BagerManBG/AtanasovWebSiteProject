@@ -1,61 +1,57 @@
 $(document).ready(function() {
+    var messages = new Array();
+    var id;
 
-    $('#quesitonBubble').click(function() {
+    $.ajax({
+        url: 'Controllers/Chat/getLoggedUserId.php',
+        method: 'GET',
+        async: false,
+        success: function(result) {
 
-        var messages = new Array();
-        var id;
+            if (result != 'error') {
+                id = result;
 
-        $.ajax({
-            url: 'Controllers/Chat/getLoggedUserId.php',
-            method: 'GET',
-            async: false,
-            success: function(result) {
+                setInterval(function() {
 
-                if (result != 'error') {
-                    id = result;
+                    $.ajax({
+                        url: 'Controllers/Chat/getMessages.php',
+                        method: 'POST',
+                        data: { user_id: id },
+                        success: function(result) {
 
-                    setInterval(function() {
+                            if (result != '') {
+                                var data = JSON.parse(result);
 
-                        $.ajax({
-                            url: 'Controllers/Chat/getMessages.php',
-                            method: 'POST',
-                            data: { user_id: id },
-                            success: function(result) {
+                                if (messages.length != data.length) {
+                                    messages = data;
+                                    $('#chatBody #content').empty();
 
-                                if (result != '') {
-                                    var data = JSON.parse(result);
+                                    for (var i = 0; i < data.length; i++) {
+                                        var msg = data[i]['message'];
+                                        var sender = data[i]['sender_id'];
+                                        var receiver = data[i]['receiver_id'];
 
-                                    if (messages.length != data.length) {
-                                        messages = data;
-                                        $('#chatBody #content').empty();
+                                        var target = null;
 
-                                        for (var i = 0; i < data.length; i++) {
-                                            var msg = data[i]['message'];
-                                            var sender = data[i]['sender_id'];
-                                            var receiver = data[i]['receiver_id'];
-
-                                            var target = null;
-
-                                            if (sender == id) {
-                                                target = 'myMessage';
-                                            } else if (receiver == id) {
-                                                target = 'hisMessage';
-                                            }
-
-                                            var messageHTML = "<div class='" + target + "'><p class='message'>" + msg + "</p></div>"
-
-                                            $('#chatBody #content').append(messageHTML);
+                                        if (sender == id) {
+                                            target = 'myMessage';
+                                        } else if (receiver == id) {
+                                            target = 'hisMessage';
                                         }
 
-                                        ScrollBottom();
+                                        var messageHTML = "<div class='" + target + "'><p class='message'>" + msg + "</p></div>";
+
+                                        $('#chatBody #content').append(messageHTML);
                                     }
+
+                                    ScrollBottom();
                                 }
                             }
-                        });
-                    }, 1000);
-                }
+                        }
+                    });
+                }, 1000);
             }
-        });
+        }
     });
 });
 

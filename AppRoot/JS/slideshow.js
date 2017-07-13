@@ -5,7 +5,6 @@ function startSlideshow(indices) {
 	var currPicNum = 0;
 	var currCirNum = 0;
 	var time = 1000;
-	console.log(indices);
 
 	$(document).ready(function() {
 		$('body').on('click', '.arrow', function(){

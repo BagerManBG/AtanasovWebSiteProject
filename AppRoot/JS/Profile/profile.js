@@ -13,7 +13,6 @@ $(document).ready(function(){
   });
 
   $( "#Cancel" ).click(function() {
-    console.log(passwordMode);
     if (passwordMode) {
       $( ".names" ).delay(300).fadeIn(300);
       $( ".password" ).fadeOut(300);

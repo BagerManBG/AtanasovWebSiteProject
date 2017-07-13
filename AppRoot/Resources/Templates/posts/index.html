@@ -1,18 +1,5 @@
 <link rel="stylesheet" href="CSS/posts.css">
 <div id="posts">
 </div>
-<script src="JS/getPosts.js"></script>
-<script>
-  function deletePost(id) {
-    if (confirm('Delete post?')) {
-      $.ajax({
-        type: "POST",
-        url: "Controllers/posts_controller.php",
-        data: { 'action': 'delete', 'id': id },
-        success: function(result) {
-          location.reload();
-        }
-      });
-    }
-  }
-</script>
+<script src="JS/AjaxCalls/getPosts.js"></script>
+<script src="JS/AjaxCalls/deletePost.js"></script>

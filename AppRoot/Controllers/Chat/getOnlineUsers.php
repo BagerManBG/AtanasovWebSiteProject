@@ -2,7 +2,7 @@
 
 require_once('../../Models/Database/db.class.php');
 
-$q = "SELECT * FROM `chat_users` WHERE `role_id` <> 1";
+$q = "SELECT u.* FROM messages m INNER JOIN users u ON m.sender_id = u.id WHERE u.role_id = 2 GROUP BY u.id ORDER BY m.send_time DESC";
 
 $result = $db->fetchArray($q);
 
