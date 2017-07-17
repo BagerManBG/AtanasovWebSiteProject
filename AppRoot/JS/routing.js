@@ -7,7 +7,9 @@ $(document).ready(function() {
           path = 'Resources/Templates/';
 
           this.get('#/', function() {
-            window.location = path + 'root.html';
+            $.get(path + 'root.html', function(templ) {
+              main.html(templ);
+            });
           });
 
           this.get('#/home', function() {

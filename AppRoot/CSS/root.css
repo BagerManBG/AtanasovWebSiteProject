@@ -2,6 +2,14 @@
   width: 100%;
 }
 
+.navbar.navbar-inverse.navbar-fixed-top {
+  visibility: hidden;
+}
+
+#view-content {
+  margin-top: 0;
+}
+
 #root #header {
   width: 100%;
   text-align: center;
