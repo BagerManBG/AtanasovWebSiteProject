@@ -1,14 +1,16 @@
 var id = getQueryVariable("id");
 
 function unbook(user_id) {
-  $.ajax({
-    type: 'POST',
-    url: 'Controllers/Lectures/lectures_controller.php',
-    data: { "action": 'unbook', 'user_id': user_id, "lecture_id": id },
-    success: function(data) {
-      location.reload();
-    }
-  })
+  if (confirm("Unbook student?")) {
+    $.ajax({
+      type: 'POST',
+      url: 'Controllers/Lectures/lectures_controller.php',
+      data: { "action": 'unbook', 'user_id': user_id, "lecture_id": id },
+      success: function(data) {
+        location.reload();
+      }
+    });
+  }
 }
 
 $.ajax({

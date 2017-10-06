@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="CSS/forms.css">
+<script src="JS/Posts/changeInputType.js"></script>
 
 <div class="emo">
-  <form method="post" action="Controllers/Posts/posts_controller.php">
+  <form method="post" action="Controllers/Posts/posts_controller.php" enctype="multipart/form-data">
     <div class="form-group">
       <label for="type">Type</label>
       <select class="form-control" name="type" id="type">
@@ -10,7 +11,7 @@
         <option value="2">Image</option>
       </select>
     </div>
-    <div class="form-group">
+    <div class="form-group" id="content-div">
       <label for="content">Text/Video Link/Image Source</label>
       <textarea class="form-control" style="resize: vertical;" name="content" id="content"></textarea>
     </div>

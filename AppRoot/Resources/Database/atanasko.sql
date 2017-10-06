@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2017 at 12:40 PM
--- Server version: 5.6.26
--- PHP Version: 5.5.28
+-- Generation Time: Oct 06, 2017 at 12:28 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,13 +30,14 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `chat_users`;
 CREATE TABLE IF NOT EXISTS `chat_users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `avatar` varchar(255) NOT NULL,
   `role_id` int(11) NOT NULL,
-  `last_time_online` int(11) DEFAULT NULL
+  `last_time_online` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8;
 
 --
@@ -42,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `chat_users` (
 --
 
 INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `role_id`, `last_time_online`) VALUES
-(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1, 1499942447),
+(1, 'atanasoff@gmail.com', 'Atanas', 'Atanasoff', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1, 1507205567),
 (158, 'BagerMan@abv.bg', 'Bager', 'Man', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1480628567),
 (159, 'test@abv.bg', 'Todor', 'Nikolov', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1480713177),
 (160, 'emil_krumov@hotmail.com', 'Emil', 'Krumov', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2, 1484040618),
@@ -56,11 +59,13 @@ INSERT INTO `chat_users` (`id`, `email`, `first_name`, `last_name`, `avatar`, `r
 
 DROP TABLE IF EXISTS `courses`;
 CREATE TABLE IF NOT EXISTS `courses` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
   `students_capacity` int(11) NOT NULL,
-  `difficulty_level` int(11) NOT NULL
+  `difficulty_level` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `course_difficulty_index` (`difficulty_level`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -90,8 +95,9 @@ INSERT INTO `courses` (`id`, `name`, `description`, `students_capacity`, `diffic
 
 DROP TABLE IF EXISTS `difficulty_levels`;
 CREATE TABLE IF NOT EXISTS `difficulty_levels` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -111,15 +117,17 @@ INSERT INTO `difficulty_levels` (`id`, `name`) VALUES
 
 DROP TABLE IF EXISTS `lectures`;
 CREATE TABLE IF NOT EXISTS `lectures` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
   `date` date NOT NULL,
   `date_end` date NOT NULL,
   `start` time NOT NULL,
   `end` time NOT NULL,
-  `course_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `course_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `lecture_course_index` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `lectures`
@@ -130,9 +138,9 @@ INSERT INTO `lectures` (`id`, `title`, `description`, `date`, `date_end`, `start
 (4, 'На тошко евента', 'нееееееееееееееееееееееееееееееееееееееее, хич', '2017-01-24', '2017-01-24', '12:00:00', '13:00:00', 0),
 (5, 'Hah... Gaaaay', 'Да видим как ще излезне това', '2017-02-02', '2017-02-02', '01:00:00', '02:00:00', 15),
 (6, 'Seats Test', 'Test for seats', '2017-03-25', '2017-03-25', '01:00:00', '02:34:00', 9),
-(11, 'А дали Емо е наистина велик?', 'дай да видим', '2017-06-27', '2017-06-29', '01:00:00', '14:00:00', 8),
 (12, 'Hills of Rock', 'Best fucking fest ever!', '2017-06-30', '2017-07-01', '17:00:00', '23:55:00', NULL),
-(15, 'Жега е', 'дасдасд', '2017-07-12', '2017-07-12', '01:00:00', '02:00:00', NULL);
+(15, 'Жега е', 'дасдасд', '2017-07-12', '2017-07-12', '01:00:00', '02:00:00', NULL),
+(16, 'Лекция по живота', 'Наско Насков казва мъдрости 3', '2017-10-18', '2017-10-18', '10:30:00', '12:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -142,11 +150,12 @@ INSERT INTO `lectures` (`id`, `title`, `description`, `date`, `date_end`, `start
 
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE IF NOT EXISTS `messages` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `message` varchar(510) COLLATE utf8mb4_unicode_ci NOT NULL,
   `send_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sender_id` int(11) NOT NULL,
-  `receiver_id` int(11) NOT NULL
+  `receiver_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=209 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -371,11 +380,13 @@ INSERT INTO `messages` (`id`, `message`, `send_time`, `sender_id`, `receiver_id`
 
 DROP TABLE IF EXISTS `online_courses`;
 CREATE TABLE IF NOT EXISTS `online_courses` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `picture` longblob,
-  `difficulty_level` int(11) NOT NULL
+  `difficulty_level` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `online_course_difficulty_index` (`difficulty_level`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -393,11 +404,13 @@ INSERT INTO `online_courses` (`id`, `name`, `description`, `picture`, `difficult
 
 DROP TABLE IF EXISTS `online_lectures`;
 CREATE TABLE IF NOT EXISTS `online_lectures` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lecture_index` int(11) NOT NULL,
   `video_link` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `course_id` int(11) NOT NULL
+  `course_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `lecture_course_id_index` (`course_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -415,11 +428,13 @@ INSERT INTO `online_lectures` (`id`, `title`, `lecture_index`, `video_link`, `co
 
 DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` smallint(11) NOT NULL DEFAULT '0',
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `post_index` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `post_index` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `type` (`type`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `posts`
@@ -429,13 +444,11 @@ INSERT INTO `posts` (`id`, `type`, `content`, `post_index`) VALUES
 (2, 1, 'https://www.youtube.com/watch?v=-AN71tjEYJw', -1),
 (3, 0, 'Благодаря ти, Емо, че си супер пич!', 1),
 (4, 1, 'https://www.youtube.com/watch?v=QygpaIJclm4', 1),
-(5, 0, 'kjjhghj', 2),
 (6, 2, 'http://az616578.vo.msecnd.net/files/2016/07/02/636030757259556361-1129479309_elon-musk.jpg', 5),
-(8, 0, 'jkhjhk', -7),
-(9, 2, 'https://static.pexels.com/photos/126407/pexels-photo-126407.jpeg', 10),
+(9, 0, '?;lk;', 10),
 (10, 0, 'Index 10 again', 10),
 (12, 0, '00000000', 0),
-(13, 0, 'new post', -5);
+(14, 2, 'http://cdn3-www.dogtime.com/assets/uploads/gallery/pembroke-welsh-corgi-dog-breed-pictures/puppy-2.jpg', 17);
 
 -- --------------------------------------------------------
 
@@ -445,8 +458,9 @@ INSERT INTO `posts` (`id`, `type`, `content`, `post_index`) VALUES
 
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -466,11 +480,14 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 
 DROP TABLE IF EXISTS `seats`;
 CREATE TABLE IF NOT EXISTS `seats` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `seat_index` int(11) NOT NULL,
   `lecture_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `seat_lecture_id_index` (`lecture_id`),
+  KEY `seats_user_id_index` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `seats`
@@ -547,7 +564,13 @@ INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
 (68, 3, 15, NULL),
 (69, 4, 15, 12),
 (70, 5, 15, NULL),
-(71, 6, 15, NULL);
+(71, 6, 15, NULL),
+(72, 1, 16, NULL),
+(73, 2, 16, NULL),
+(74, 3, 16, NULL),
+(75, 4, 16, NULL),
+(76, 5, 16, NULL),
+(77, 6, 16, NULL);
 
 -- --------------------------------------------------------
 
@@ -557,10 +580,11 @@ INSERT INTO `seats` (`id`, `seat_index`, `lecture_id`, `user_id`) VALUES
 
 DROP TABLE IF EXISTS `services`;
 CREATE TABLE IF NOT EXISTS `services` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` decimal(10,0) NOT NULL
+  `price` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -572,7 +596,9 @@ CREATE TABLE IF NOT EXISTS `services` (
 DROP TABLE IF EXISTS `students_courses`;
 CREATE TABLE IF NOT EXISTS `students_courses` (
   `student_id` int(11) NOT NULL,
-  `course_id` int(11) NOT NULL
+  `course_id` int(11) NOT NULL,
+  KEY `student_course_index` (`student_id`),
+  KEY `course_student_index` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -592,7 +618,7 @@ INSERT INTO `students_courses` (`student_id`, `course_id`) VALUES
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -602,8 +628,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `skype` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `google_acc` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role_id` int(11) NOT NULL DEFAULT '2'
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `role_id` int(11) NOT NULL DEFAULT '2',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `user_role_index` (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -619,9 +648,8 @@ INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secr
 (7, 'toshko@abv.bg', 'newestg', 'test', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'korona', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (8, 'test@test.test', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '', '', 'toshko@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (9, 'test@test.tes', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(10, 'slavislavchev@abv.bg', 'Slavi', 'Slavcheva', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'gotino_zubar4e', 'bosatnajenitewe@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 3),
+(10, 'slavislavchev@abv.bg', 'Slavi', 'Slavcheva', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'gotino_zubar4e', 'bosatnajenitewe@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (11, 'emo@abv.bgg', 'emo', 'dog', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(12, 'emil_krumov@hotmail.com', 'Emil', 'Krumov', 'f1887d3f9e6ee7a32fe5e76f4ab80d63', '', '', 'asdas', 'sad@abv.bg', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 1),
 (13, 'icp@asd.bg', 'Itzo', 'Itxo', '81dc9bdb52d04dc20036dbd8313ed055', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (14, 'abba@bg.bg', 'Abba', 'Beatle', '81dc9bdb52d04dc20036dbd8313ed055', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (15, 'asd@asd.bg', 'asd', 'asd', '6867d9167683fb8f42558a81ad107f5b', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
@@ -630,164 +658,10 @@ INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `secr
 (18, 'nasko_naskoff@gmail.com', 'Atanas', 'Atanassoff', '6ff65f2c74ce8d93bbebaf2152032088', '', '', 'nasko', 'nasko@gmail.com', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (19, 'testtest@abv.bg', 'test', 'test', 'cc03e747a6afbbcbf8be7668acfebee5', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
 (20, 'chat_test@abv.bg', 'chat', 'test', '47268c1687b2c072ac7e624bced6e7a7', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
-(21, 'boosonly@abv.bg', 'Boos', 'Reaccs', 'a4545830a99a238050b460f491b39886', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2);
+(21, 'boosonly@abv.bg', 'Boos', 'Reaccs', 'a4545830a99a238050b460f491b39886', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2),
+(22, 'bobo@homo.com', 'Bobito', 'Chaky', 'f48bce50349f2af456a78c8888d8c785', '', '', '', '', 'http://atanosoff.local/AppRoot/Resources/Images/ProfilePics/profile_default_image.jpg', 2);
+COMMIT;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `chat_users`
---
-ALTER TABLE `chat_users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `courses`
---
-ALTER TABLE `courses`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `course_difficulty_index` (`difficulty_level`);
-
---
--- Indexes for table `difficulty_levels`
---
-ALTER TABLE `difficulty_levels`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `lectures`
---
-ALTER TABLE `lectures`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `lecture_course_index` (`course_id`);
-
---
--- Indexes for table `messages`
---
-ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `online_courses`
---
-ALTER TABLE `online_courses`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `online_course_difficulty_index` (`difficulty_level`);
-
---
--- Indexes for table `online_lectures`
---
-ALTER TABLE `online_lectures`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `lecture_course_id_index` (`course_id`);
-
---
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `type` (`type`);
-
---
--- Indexes for table `roles`
---
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `seats`
---
-ALTER TABLE `seats`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `seat_lecture_id_index` (`lecture_id`),
-  ADD KEY `seats_user_id_index` (`user_id`);
-
---
--- Indexes for table `services`
---
-ALTER TABLE `services`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `students_courses`
---
-ALTER TABLE `students_courses`
-  ADD KEY `student_course_index` (`student_id`),
-  ADD KEY `course_student_index` (`course_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`),
-  ADD KEY `user_role_index` (`role_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `chat_users`
---
-ALTER TABLE `chat_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=162;
---
--- AUTO_INCREMENT for table `courses`
---
-ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
---
--- AUTO_INCREMENT for table `difficulty_levels`
---
-ALTER TABLE `difficulty_levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `lectures`
---
-ALTER TABLE `lectures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
---
--- AUTO_INCREMENT for table `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=209;
---
--- AUTO_INCREMENT for table `online_courses`
---
-ALTER TABLE `online_courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `online_lectures`
---
-ALTER TABLE `online_lectures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
---
--- AUTO_INCREMENT for table `roles`
---
-ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `seats`
---
-ALTER TABLE `seats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
---
--- AUTO_INCREMENT for table `services`
---
-ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

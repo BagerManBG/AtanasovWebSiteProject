@@ -8,6 +8,6 @@ $.ajax({
     $("#id").attr('value', obj[0]["id"]);
     $("#type").val(obj[0]["type"]);
     $("#index").val(obj[0]["post_index"]);
-    $("#content").html( obj[0]["content"]);
+    $("#content").html(obj[0]["content"]);
   }
 });
