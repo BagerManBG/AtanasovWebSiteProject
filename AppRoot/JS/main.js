@@ -86,6 +86,8 @@ function UserHandler() {
             if (result == '') {
                 htmlToAdd = "<li><a href='#/register' class='dynamic account'>Register</a></li><li><a class='dynamic account' id='log'>Log In</a></li>";
                 $('#links').prepend(htmlToAdd);
+
+                $('#log').css("cursor", "pointer");
             } else {
                 htmlToAdd = "<li><a href='Controllers/Account/logout.php' class='dynamic'>Log Out</a></li><li><a href='#/profile' class='dynamic'>Profile</a></li><li><a href='#/chat' class='dynamic'>Chat</a></li>";
 
