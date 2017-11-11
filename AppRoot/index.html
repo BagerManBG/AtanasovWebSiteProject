@@ -10,25 +10,25 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Atanasoff</title>
+    <title>EzikPro</title>
 
     <link rel="stylesheet" type="text/css" href="Resources/Libraries/bootsrap/css/bootstrap.css">
     <link rel="shortcut icon" type="image/png" href="Resources/Images/Favicon/favicon.ico">
     <link rel="stylesheet" type="text/css" href="CSS/reset.css">
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
     <link rel="stylesheet" type="text/css" href="CSS/HeaderFooter/header.css">
-    <link rel="stylesheet" type="text/css" href="CSS/Forms/logIn_register.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Forms/login_register.css">
     <link rel="stylesheet" type="text/css" href="CSS/Chat/chat.css">
 
-    <script src="Resources/Libraries/JQuery/jquery.js"></script>
-    <script src="Resources/Libraries/bootsrap/js/bootstrap.min.js"></script>
-    <script src="JS/main.js"></script>
-    <script src="JS/Forms/add_remove_highlighter.js"></script>
-    <script src="JS/Forms/validate_register.js"></script>
-    <script src="JS/Forms/log_in.js"></script>
-    <script src="JS/Profile/profile.js"></script>
-    <script src="JS/libs/sammy.js"></script>
-    <script src="JS/routing.js"></script>
+    <script src="Resources/Libraries/JQuery/jquery.js?version=1"></script>
+    <script src="Resources/Libraries/bootsrap/js/bootstrap.min.js?version=1"></script>
+    <script src="JS/main.js?version=1"></script>
+    <script src="JS/Forms/add_remove_highlighter.js?version=1"></script>
+    <script src="JS/Forms/validate_register.js?version=1"></script>
+    <script src="JS/Forms/log_in.js?version=1"></script>
+    <script src="JS/Profile/profile.js?version=1"></script>
+    <script src="JS/libs/sammy.js?version=1"></script>
+    <script src="JS/routing.js?version=1"></script>
 </head>
 
 <body>
@@ -55,7 +55,10 @@
     </div>
  </header>
 
- <div id="main"><div id="view-content"></div></div>
+<div id="main">
+   <div id="loader"></div>
+   <div id="view-content"></div>
+</div>
 
  <!--Login/Register Forms Begin-->
  <div id="formContainer" class="loginForm authForm">

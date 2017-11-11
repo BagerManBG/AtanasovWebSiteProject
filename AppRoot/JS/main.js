@@ -1,5 +1,9 @@
 var formOpened = false;
 
+($('#view-content')).ready(function() {
+  $('#loader').hide();
+});
+
 $(document).ready(function() {
 
     DynamicNav();

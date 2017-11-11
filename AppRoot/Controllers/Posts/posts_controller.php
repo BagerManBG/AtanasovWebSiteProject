@@ -70,8 +70,6 @@
 
         if ($record[0]["type"] == 2) {
           unlink(realpath("../../" . $record[0]["content"]));
-          echo(realpath("../../" . $record[0]["content"]));
-          exit;
         }
 
         $this->db->deleteRow($this->tableName, $id, "id");

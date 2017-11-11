@@ -1,8 +1,8 @@
 $(document).ready(function() {
   (function () {
+      var selector = '#view-content';
 
-      var router = Sammy(function() {
-          var selector = '#view-content';
+      var router = Sammy(selector, function() {
           var main = $(selector);
           path = 'Resources/Templates/';
 
