@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	$('#list_users').on('click', '.user', function(){
 
-		$('.chatBody #chatContent').empty();
+		$('#chatBody #chatContent').empty();
 
 		var messages = new Array();
 		id = $(this).attr('id');
@@ -25,7 +25,7 @@ $(document).ready(function(){
 						if(messages.length != data.length)
 						{
 							messages = data;
-							$('.chatBody #chatContent').empty();
+							$('#chatBody #chatContent').empty();
 
 							for (var i = 0; i < data.length; i++)
 							{
@@ -44,9 +44,9 @@ $(document).ready(function(){
 									target = 'ownMessage';
 								}
 
-								var messageHTML = "<div class='" + target + "'><p class='messages'>" + msg + "</p></div>"
+								var messageHTML = "<div class='" + target + "'><p class='message'>" + msg + "</p></div>"
 
-								$('.chatBody #chatContent').append(messageHTML);
+								$('#chatBody #chatContent').append(messageHTML);
 							}
 
 							ScrollBottom();

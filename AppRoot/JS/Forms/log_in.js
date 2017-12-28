@@ -20,7 +20,7 @@ $(document).ready(function() {
             datatype: 'json',
             data: { log_data: log_data },
             success: function(result) {
-
+                
                 if (result === 'OK') {
                     $('#formContainer').fadeOut(400);
                     location.reload();

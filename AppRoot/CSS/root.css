@@ -7,22 +7,7 @@
 }
 
 #view-content {
-  margin-top: 0;
-}
-
-#root #header {
-  width: 100%;
-  text-align: center;
-  background-color: #333;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-#root #header a {
-  text-decoration: none;
-  color: #fff;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-top: 5em;
 }
 
 #root #main {

@@ -7,7 +7,7 @@
 			'host' => 'localhost',
 			'user' => 'root',
 			'pass' => '',
-			'database'=>'ezikpro_atanasko',
+			'database'=> 'ezikpro_atanasko',
 			'encoding'=> 'utf8'
 		);
 

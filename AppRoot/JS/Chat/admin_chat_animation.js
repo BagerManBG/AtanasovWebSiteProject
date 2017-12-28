@@ -14,7 +14,7 @@ $(document).ready(function() {
     }
   });
 
-    $('.chatBody #typing #message_input').bind('keyup focus blur', function(){
+    $('#chatBody #typing #message_input').bind('keyup focus blur', function(){
 
 		CheckInput();
 	});
@@ -22,8 +22,8 @@ $(document).ready(function() {
 
 function CheckInput() {
 
-	var img = $('.showContent').find('.chatBody #typing #sendIcon');
-	var input = $('.chatBody #typing #message_input');
+	var img = $('.showContent').find('#chatBody #typing #sendIcon');
+	var input = $('#chatBody #typing #message_input');
 
 	if (input.val() === '')
 	{

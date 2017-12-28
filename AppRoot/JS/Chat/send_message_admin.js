@@ -16,15 +16,15 @@ $(document).ready(function(){
 
 function SendMessage() {
 
-	if ($('.chatBody #typing #message_input').val() != '') {
+	if ($('#chatBody #typing #message_input').val() != '') {
 
 		var data = {
-			message: $('.chatBody #typing #message_input').val(),
+			message: $('#chatBody #typing #message_input').val(),
 			sender_id: getId('admin'),
 			receiver_id: getId('user')
 		};
 
-		$('.chatBody #typing #message_input').val('');
+		$('#chatBody #typing #message_input').val('');
 		$('#sendIcon').addClass('blurred');
 
 		$.ajax({
@@ -41,7 +41,7 @@ function getId(person) {
 
 	if(person === 'user')
 	{
-		id = $('.chatBody #typing #user_id').val();
+		id = $('#chatBody #typing #user_id').val();
 	}
 	else if(person === 'admin')
 	{

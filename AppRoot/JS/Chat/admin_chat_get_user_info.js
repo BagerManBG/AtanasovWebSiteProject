@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 					var name = data['first_name'] + ' ' + data['last_name'];
 
-					$('.chatBody #typing #user_id').val(data['id']);
+					$('#chatBody #typing #user_id').val(data['id']);
 					$('#selectedName').text(name + " (" + data["email"] + ")");
 				}
 			}

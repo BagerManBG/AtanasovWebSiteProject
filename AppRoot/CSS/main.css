@@ -6,6 +6,30 @@ body {
   background-color: #f3f3f3;
 }
 
+#root-header {
+  width: 100%;
+  text-align: center;
+  background-color: #333;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+#root-header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#root-header a:first-of-type {
+  margin-right: 10%;
+}
+
+#root-header a:last-of-type {
+  margin-left: 10%;
+}
+
 #loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;

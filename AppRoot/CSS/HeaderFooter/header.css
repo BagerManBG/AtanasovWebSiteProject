@@ -1,5 +1,9 @@
 #view-content {
-  margin-top: 70px;
+  margin-top: calc(70px + 3em);
+}
+
+.navbar-inverse {
+    margin-top: 3em;
 }
 
 #view-content>h3, #view-content>.emo>h3 {

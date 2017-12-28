@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="CSS/reset.css">
+<link rel="stylesheet" href="CSS/Chat/chat.css">
 <link rel="stylesheet" href="CSS/Chat/admin_chat.css">
 
 <script src="JS/Chat/admin_chat_update_last_online.js?version=1"></script>
@@ -17,8 +18,9 @@
 
         </div>
     </div>
-    <div class="showContent">
-        <div class="chatBody">
+    
+    <div class="showContent" id="chatBox">
+        <div id="chatBody">
             <div class="chatHeader">
                 <p id="selectedName">Name</p>
             </div>
@@ -27,12 +29,13 @@
             </div>
             <div id="typing">
 
-                <input type="text" name="message" id="message_input" placeholder="Type Your Message...">
+                <!-- <input type="text" name="message" id="message_input" placeholder="Type Your Message..."> -->
                 <input type="hidden" id="user_id">
-
-                <div id="sendIcon" class="blurred">
+                <textarea name="message" id="message_input" rows="3" placeholder="Type your message..."></textarea>
+                <button id="sendIcon">Send</button>
+                <!-- <div id="sendIcon" class="blurred">
                     <img src="Resources/Images/Chat/send.png">
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

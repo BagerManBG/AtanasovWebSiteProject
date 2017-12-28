@@ -2,17 +2,19 @@
     height: 100%;
     width: 100%;
     position: relative;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 .list {
-    margin: 0.25% 0px;
+    margin-top: 0.25%;
     margin-left: 2%;
-    height: 95%;
+    margin-right: 1%;
     width: 25%;
     float: left;
     background-color: #e3e3e3;
     border: 1px solid #155149;
+    height: calc(100vh - 70px - 5em);
+    overflow-y: scroll;
 }
 
 #header {
@@ -20,11 +22,6 @@
     background-color: #155149;
     color: #fff;
     overflow-y: visible;
-}
-
-.list {
-    height: 700px;
-    overflow-y: scroll;
 }
 
 #header p {
@@ -55,25 +52,10 @@
 }
 
 .user .name {
-    font-size: 1em
+    font-size: 1em;
     display: inline;
     margin: 2%;
     vertical-align: middle;
-}
-
-/*.showContent {
-    display: none;
-}*/
-
-.chatBody {
-    float: left;
-    height: 700px;
-    overflow-y: scroll;
-    width: 69%;
-    margin: 0.25% 0px;
-    margin-left: 2%;
-    background-color: #e3e3e3;
-    border: 1px solid #155149;
 }
 
 .chatHeader {
@@ -82,80 +64,25 @@
 }
 
 .chatHeader p {
-    padding: 2%;
+    padding: 1%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: white;
 }
 
-.chatBody #chatContent {
-    height: 89%;
-    overflow-y: scroll;
-}
-
-.messages {
-    word-wrap: break-word;
-    margin: 1% 5%;
-}
-
-.ownMessage {
-    float: right;
-    width: 90%;
-}
-
-.ownMessage .messages {
-    float: right;
-    padding: 2%;
-    max-width: 80%;
-    background-color: #fff;
-    border-radius: 3px;
-    color: #155149;
-    font-size: 1em;
-}
-
-.otherMessage {
-    float: left;
-    width: 97%;
-}
-
-.otherMessage .messages {
-    float: left;
-    padding: 2%;
-    max-width: 62%;
-    background-color: #155149;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 1em;
-}
-
-#typing {
-    height: 14%;
-    background-color: white;
-}
-
-#typing input {
-    float: left;
-    width: 70%;
-    color: #000;
-    border: none;
-    border-bottom: 1px solid #808080;
-    margin: 3%;
-    padding-left: 1.4%;
-    font-size: 1em;
-}
-
-#typing #sendIcon {
-    width: 7%;
-    float: right;
-    border-radius: 100%;
-    overflow: hidden;
-    cursor: pointer;
-    margin-top: 1.5%;
-    margin-right: 3%;
-}
-
-#typing #sendIcon img {
-    float: left;
+#chatBody {
     width: 100%;
+    height: calc(100vh - 70px - 5em);
+    position: relative;
+}
+
+#chatBody #chatContent {
+    max-height: calc(100vh - 70px - 11em);
+}
+
+#chatBox {
+    float: left;
+    box-sizing: border-box;
+    margin-top: 0.25%;
 }
 
 #userInfo {
@@ -194,40 +121,15 @@
     opacity: 0.479;
 }
 
-@media only screen and (max-width: 800px) {
+#typing {
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
     .list {
-        width: 100%;
-        margin-bottom: 2%;
-    }
-    .user .name {
-        font-size: 3em;
-    }
-    .chatBody {
-        width: 100%;
-        margin-bottom: 2%;
-    }
-    #userInfo {
-        width: 100%;
-        max-height: 80%;
-    }
-    .profileInfoContent {
-        width: 60%;
-    }
-    .profileInfoContent #profilePic img {
-        width: 50%;
-    }
-    .otherMessage .messages {
-        max-width: 80%;
-        font-size: 2em;
-    }
-    .ownMessage .messages {
-        max-width: 80%;
-        font-size: 2em;
-    }
-    #typing input {
-        font-size: 2.5em;
-    }
-    .profileInfoContent {
-        margin-left: 18%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
