@@ -1,5 +1,8 @@
 <link rel="stylesheet" href="CSS/forms.css">
-
+<script>
+  $("#date").datepicker({ dateFormat: 'yy-mm-dd' });
+  $("#date_end").datepicker({ dateFormat: 'yy-mm-dd' });
+</script>
 <div class="emo">
   <form method="post" action="Controllers/Lectures/lectures_controller.php">
     <div class="form-group">
@@ -12,7 +15,7 @@
     </div>
     <div class="form-group">
       <label for="date">Start Date</label>
-      <input class="form-control" type="date" name="date" id="date" />
+      <input class="form-control" type="text" name="date" id="date" />
     </div>
     <div class="form-group">
       <label for="start">Start Time</label>
@@ -20,7 +23,7 @@
     </div>
     <div class="form-group">
       <label for="date_end">End Date</label>
-      <input class="form-control" type="date" name="date_end" id="date_end" />
+      <input class="form-control" type="text" name="date_end" id="date_end" />
     </div>
     <div class="form-group">
       <label for="end">End Time</label>

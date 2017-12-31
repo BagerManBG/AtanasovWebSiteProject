@@ -11,6 +11,9 @@
 
 var id = getQueryVariable("id");
 
+$("#date").datepicker({ dateFormat: 'yy-mm-dd' });
+$("#date_end").datepicker({ dateFormat: 'yy-mm-dd' });
+
 $.ajax({
   type: "POST",
   url: "Controllers/Lectures/getLectureById.php?id=" + id,
