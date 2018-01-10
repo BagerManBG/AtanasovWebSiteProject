@@ -6,6 +6,12 @@ $(document).ready(function() {
           var main = $(selector);
           path = 'Resources/Templates/';
 
+          this.before({except: {path: '#/sample'}}, function() {
+            if ($('.navbar-collapse').css("display") !== "none") {
+              $('.navbar-toggle').click();
+            }
+          });
+
           this.get('#/', function() {
             $.get(path + 'root.html', function(templ) {
               main.html(templ);

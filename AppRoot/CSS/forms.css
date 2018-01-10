@@ -74,9 +74,9 @@ body {
   background-color: #155149;
 }
 
-@media screen and (max-width: 1200px) and (min-width: 768px){
+@media screen and (max-width: 1200px) {
   .emo {
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     transition: 0.3s;
