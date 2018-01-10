@@ -114,8 +114,12 @@ $(document).ready(function() {
                 data: { reg_data: reg_data },
                 success: function(result) {
                     if (result === 'OK') {
-                      location.href = "#/home";
-                      location.reload();
+
+                        location.href = "#/home";
+                        location.reload();
+                    } else {
+
+                        console.log(result);
                     }
                 }
             });
