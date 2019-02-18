@@ -5,8 +5,8 @@
 	{
 		private $config = array(
 			'host' => 'localhost',
-			'user' => 'root',
-			'pass' => '',
+			'user' => 'root', //'ezikpro_emo'
+			'pass' => '', //'tosho_e_gei_42',
 			'database'=> 'ezikpro_atanasko',
 			'encoding'=> 'utf8'
 		);

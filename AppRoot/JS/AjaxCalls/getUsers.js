@@ -11,11 +11,14 @@ $.ajax({
 
       if (user["role_id"] == 3) {
         htmlToAdd += '<form action="Controllers/Account/unban.php" method="post"><input name="id" type="hidden" value="'
-                   + user.id + '"/><input type="submit" class="btn btn-warning" value="UNBAN"/></form></div>';
+                   + user.id + '"/><input type="submit" class="btn btn-warning" value="UNBAN"/></form>';
       } else {
         htmlToAdd += '<form action="Controllers/Account/ban.php" method="post"><input name="id" type="hidden" value="'
-                 + user.id + '"/><input type="submit" class="btn btn-danger" value="BAN"/></form></div>';
+                 + user.id + '"/><input type="submit" class="btn btn-danger" value="BAN"/></form>';
       }
+
+      htmlToAdd += '<form style="margin-top: 0.25rem" action="Controllers/Account/delete.php" method="post"><input name="id" type="hidden" value="'
+               + user.id + '"/><input type="submit" class="btn btn-danger" value="DELETE"/></form></div>';
 
       $('#users').append(htmlToAdd);
     }

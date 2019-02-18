@@ -1,13 +1,17 @@
+body {  
+  background-color: #ddd;
+}
+
 #root {
   width: 100%;
 }
 
-.navbar.navbar-inverse.navbar-fixed-top {
-  visibility: hidden;
+#view-content {
+  margin-top: 0;
 }
 
-#view-content {
-  margin-top: 5em;
+.navbar.navbar-inverse.navbar-fixed-top {
+  visibility: hidden;
 }
 
 #root #main {
@@ -21,13 +25,17 @@
   max-width: 90%;
 }
 
+#root #main #logo img {
+  width: 10%;
+}
+
 #root #main .col {
   display: inline-block;
   vertical-align: middle;
 }
 
 #root #main .col.side {
-  width: 25%;
+  width: 15%;
 }
 
 #root #main .col.side h3 {
@@ -48,4 +56,34 @@
 
 #root #partners p {
   color: #333;
+}
+
+.language {
+  background-color: #f3f3f3;
+  width: 30%;
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.language:hover {
+  background-color: #eee;
+}
+
+.language img {
+  width: 50%;
+}
+
+.language a {
+  color: #333 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  #root #main #logo img {
+    width: 30%;
+  }
+
+  .language {
+    width: 90%;
+  }
 }
